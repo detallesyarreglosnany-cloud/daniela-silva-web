@@ -2,333 +2,860 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Daniela Silva — Sistemas de IA que venden, agendan y cobran por ti</title>
-<meta name="description" content="Creo plataformas SaaS multitenant, agentes IA para WhatsApp y automatizacion para negocios de servicios. Precio fijo. Entrega en 30 dias. El codigo es tuyo.">
-<meta property="og:title" content="Daniela Silva — AI Systems & Automation">
-<meta property="og:description" content="SaaS multitenant, agentes IA y automatizacion para negocios.">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>KubIA Soluciones · Deja el cuaderno. Tu negocio cabe en tu bolsillo.</title>
+<meta name="description" content="Ventas, pedidos, inventario y finanzas en un solo lugar, desde tu teléfono y vendiendo 24/7. Tienda con QR, pagos en dólares, bolívares y pesos, y funciona sin internet. Hecho en Amazonas, para el mundo.">
+<meta name="theme-color" content="#0B1210">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+<link rel="apple-touch-icon" href="/assets/icon-180.png">
 <meta property="og:type" content="website">
+<meta property="og:locale" content="es_VE">
+<meta property="og:title" content="KubIA Soluciones · Tu negocio cabe en tu bolsillo">
+<meta property="og:description" content="Tienda con QR, pedidos, inventario y finanzas desde tu teléfono. Funciona sin internet. Hecho en Amazonas, para el mundo.">
+<meta property="og:image" content="https://daniela-silva-web.vercel.app/assets/og-kubia.png">
+<meta property="og:url" content="https://daniela-silva-web.vercel.app/">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=Cormorant+Garamond:ital,wght@1,500;1,600&display=swap">
 <style>
-:root{--ink:#070C16;--panel:#0D1626;--panel-2:#101C31;--line:#1C2A45;--line-soft:rgba(58,230,168,.14);--text:#EAF0F9;--muted:#8FA3BF;--aqua:#3AE6A8;--aqua-deep:#17B57E;--gold:#FFC15E;--danger:#FF7A6B;--radius:18px;--font-display:"Bricolage Grotesque",sans-serif;--font-body:"Instrument Sans",sans-serif;--font-mono:"JetBrains Mono",monospace;--max:1180px}*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}body{background:var(--ink);color:var(--text);font-family:var(--font-body);font-size:16.5px;line-height:1.65;overflow-x:hidden}::selection{background:var(--aqua);color:var(--ink)}img{max-width:100%}a{color:inherit;text-decoration:none}button{font-family:inherit;cursor:pointer;border:none}.wrap{max-width:var(--max);margin:0 auto;padding:0 22px}h1,h2,h3{font-family:var(--font-display);line-height:1.08;letter-spacing:-.02em}.eyebrow{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--aqua);display:inline-flex;align-items:center;gap:.6rem}.eyebrow::before{content:"";width:22px;height:1px;background:var(--aqua)}.section{padding:96px 0}.section-head{max-width:680px;margin-bottom:52px}.section-head h2{font-size:clamp(1.9rem,4.6vw,2.9rem);font-weight:700;margin:.7rem 0 .8rem}.section-head p{color:var(--muted);font-size:1.05rem}.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}.reveal.in{opacity:1;transform:none}.d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}.d4{transition-delay:.32s}.btn{display:inline-flex;align-items:center;justify-content:center;gap:.55rem;font-weight:600;font-size:.95rem;padding:.95rem 1.7rem;border-radius:999px;border:1px solid transparent;transition:transform .18s ease,box-shadow .18s ease,background .18s ease;white-space:nowrap;font-family:inherit}.btn:active{transform:scale(.97)}.btn-primary{background:var(--aqua);color:#05221A;box-shadow:0 0 0 0 rgba(58,230,168,.4)}.btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 34px -8px rgba(58,230,168,.55)}.btn-ghost{border-color:var(--line);color:var(--text);background:rgba(255,255,255,.02)}.btn-ghost:hover{border-color:var(--aqua);color:var(--aqua)}.btn-gold{background:var(--gold);color:#2B1A00}.btn-gold:hover{transform:translateY(-2px);box-shadow:0 10px 34px -8px rgba(255,193,94,.5)}.header{position:fixed;top:0;left:0;right:0;z-index:80;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);background:rgba(7,12,22,.78);border-bottom:1px solid rgba(28,42,69,.6)}.header-inner{display:flex;align-items:center;justify-content:space-between;height:66px}.logo{display:flex;align-items:center;gap:.65rem;font-family:var(--font-display);font-weight:700;font-size:1.06rem}.logo-mark{width:34px;height:34px;border-radius:10px;display:grid;place-items:center;background:linear-gradient(135deg,var(--aqua),#1E8F68);color:#05221A;font-size:.8rem;font-weight:800;letter-spacing:-.03em}.nav{display:flex;align-items:center;gap:1.6rem;font-size:.9rem}.nav a{color:var(--muted);transition:color .15s}.nav a:hover{color:var(--text)}.header-actions{display:flex;align-items:center;gap:.8rem}.lang-switch{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;font-family:var(--font-mono);font-size:.72rem}.lang-switch button{background:transparent;border:0;color:var(--muted);padding:.42rem .7rem;letter-spacing:.08em;transition:background .15s,color .15s;cursor:pointer}.lang-switch button.active{background:var(--aqua);color:#05221A;font-weight:600}.header .btn{padding:.6rem 1.15rem;font-size:.85rem}.burger{display:none;background:none;border:0;color:var(--text);width:40px;height:40px}.burger svg{width:24px;height:24px}.mobile-menu{position:fixed;inset:66px 0 0 0;background:rgba(7,12,22,.97);z-index:79;display:flex;flex-direction:column;gap:.4rem;padding:28px 24px;transform:translateY(-8px);opacity:0;pointer-events:none;transition:.25s ease}.mobile-menu.open{transform:none;opacity:1;pointer-events:auto}.mobile-menu a{font-family:var(--font-display);font-size:1.5rem;font-weight:600;padding:.7rem 0;border-bottom:1px solid var(--line)}.mobile-menu .btn{margin-top:1.4rem;width:100%}.hero{position:relative;padding:150px 0 90px;overflow:hidden}.hero::before{content:"";position:absolute;inset:-20% -10% auto;height:80%;background:radial-gradient(42% 55% at 18% 30%,rgba(58,230,168,.13),transparent 70%),radial-gradient(38% 50% at 85% 20%,rgba(255,193,94,.08),transparent 70%);pointer-events:none}.hero::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.5;background-image:linear-gradient(rgba(58,230,168,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(58,230,168,.05) 1px,transparent 1px);background-size:56px 56px;mask-image:radial-gradient(70% 60% at 50% 20%,#000 30%,transparent 100%);-webkit-mask-image:radial-gradient(70% 60% at 50% 20%,#000 30%,transparent 100%)}.hero-grid{position:relative;display:grid;grid-template-columns:1.08fr .92fr;gap:56px;align-items:center;z-index:1}.badge-live{display:inline-flex;align-items:center;gap:.55rem;font-family:var(--font-mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--aqua);border:1px solid var(--line-soft);border-radius:999px;padding:.45rem 1rem;background:rgba(58,230,168,.06)}.pulse-dot{width:8px;height:8px;border-radius:50%;background:var(--aqua);animation:pulse 1.8s infinite}@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(58,230,168,.6)}70%{box-shadow:0 0 0 9px rgba(58,230,168,0)}100%{box-shadow:0 0 0 0 rgba(58,230,168,0)}}.hero h1{font-size:clamp(2.5rem,6.2vw,4.3rem);font-weight:750;margin:1.3rem 0 1.1rem}.hero h1 .accent{background:linear-gradient(92deg,var(--aqua) 20%,var(--gold) 90%);-webkit-background-clip:text;background-clip:text;color:transparent}.hero-sub{color:var(--muted);font-size:1.12rem;max-width:540px;margin-bottom:1.9rem}.hero-ctas{display:flex;gap:.9rem;flex-wrap:wrap;margin-bottom:2.6rem}.hero-stats{display:flex;gap:2.4rem;flex-wrap:wrap}.stat .num{font-family:var(--font-display);font-size:1.85rem;font-weight:700;color:var(--text)}.stat .num em{color:var(--aqua);font-style:normal}.stat .lbl{font-size:.8rem;color:var(--muted);font-family:var(--font-mono);letter-spacing:.05em}.phone{position:relative;width:min(370px,100%);margin-left:auto;background:var(--panel);border:1px solid var(--line);border-radius:30px;box-shadow:0 40px 90px -30px rgba(0,0,0,.7),0 0 60px -20px rgba(58,230,168,.18);overflow:hidden;transform:rotate(1.5deg)}.phone-top{display:flex;align-items:center;gap:.75rem;padding:.95rem 1.1rem;background:linear-gradient(180deg,#0F1B31,#0D1626);border-bottom:1px solid var(--line)}.phone-avatar{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,var(--aqua),#1E8F68);color:#05221A;font-weight:800;font-size:.8rem}.phone-top .who b{display:block;font-size:.9rem}.phone-top .who span{font-size:.72rem;color:var(--aqua);font-family:var(--font-mono)}.chat{height:430px;padding:1.1rem;display:flex;flex-direction:column;gap:.65rem;overflow:hidden;position:relative;background:radial-gradient(120% 60% at 100% 0,rgba(58,230,168,.04),transparent 60%),var(--ink)}.msg{max-width:82%;padding:.62rem .85rem;border-radius:14px;font-size:.85rem;line-height:1.45;opacity:0;transform:translateY(12px) scale(.97);animation:msgIn .45s cubic-bezier(.2,.8,.25,1) forwards}.@keyframes msgIn{to{opacity:1;transform:none}}.msg.user{align-self:flex-end;background:#173A2C;border:1px solid rgba(58,230,168,.25);border-bottom-right-radius:4px}.msg.bot{align-self:flex-start;background:var(--panel-2);border:1px solid var(--line);border-bottom-left-radius:4px}.msg .time{display:block;font-size:.62rem;color:var(--muted);margin-top:.3rem;font-family:var(--font-mono)}.chip{align-self:center;font-family:var(--font-mono);font-size:.66rem;color:var(--gold);border:1px dashed rgba(255,193,94,.4);border-radius:999px;padding:.35rem .9rem;background:rgba(255,193,94,.06);opacity:0;animation:msgIn .45s ease forwards}.typing{align-self:flex-start;display:inline-flex;gap:5px;padding:.7rem .9rem;background:var(--panel-2);border:1px solid var(--line);border-radius:14px;border-bottom-left-radius:4px;opacity:0;animation:msgIn .3s ease forwards}.typing i{width:6px;height:6px;border-radius:50%;background:var(--muted);animation:blink 1s infinite}.typing i:nth-child(2){animation-delay:.15s}.typing i:nth-child(3){animation-delay:.3s}@keyframes blink{0%,80%,100%{opacity:.25}40%{opacity:1}}.marquee{border-block:1px solid var(--line);padding:1rem 0;overflow:hidden;background:rgba(13,22,38,.5)}.marquee-track{display:flex;gap:3rem;width:max-content;animation:scroll 30s linear infinite;font-family:var(--font-mono);font-size:.78rem;letter-spacing:.12em;color:var(--muted);text-transform:uppercase}.marquee-track span{display:flex;align-items:center;gap:3rem}.marquee-track b{color:var(--aqua);font-weight:500}@keyframes scroll{to{transform:translateX(-50%)}}.pain-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.pain{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:1.7rem;position:relative;overflow:hidden;transition:transform .25s ease,border-color .25s ease}.pain:hover{transform:translateY(-4px);border-color:rgba(255,122,107,.4)}.pain .n{font-family:var(--font-mono);color:var(--danger);font-size:.75rem;letter-spacing:.15em}.pain h3{font-size:1.15rem;margin:.7rem 0 .5rem}.pain p{color:var(--muted);font-size:.93rem}.svc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}.svc{background:linear-gradient(180deg,var(--panel-2),var(--panel));border:1px solid var(--line);border-radius:22px;padding:2rem;position:relative;overflow:hidden;transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease;display:flex;flex-direction:column}.svc:hover{transform:translateY(-5px);border-color:var(--line-soft);box-shadow:0 24px 60px -24px rgba(58,230,168,.25)}.svc.featured{border-color:rgba(58,230,168,.4)}.svc .flag{position:absolute;top:18px;right:18px;font-family:var(--font-mono);font-size:.62rem;letter-spacing:.12em;background:var(--aqua);color:#05221A;padding:.3rem .7rem;border-radius:999px;font-weight:600}.svc .flag.gold{background:var(--gold);color:#2B1A00}.svc h3{font-size:1.32rem;margin-bottom:.6rem}.svc>p{color:var(--muted);font-size:.95rem;margin-bottom:1.1rem}.svc-points{list-style:none;display:grid;gap:.45rem;margin-bottom:1.3rem;font-size:.88rem}.svc-points li{display:flex;gap:.55rem;align-items:flex-start;color:#C4D2E6}.svc-points li::before{content:"arrow";color:var(--aqua);font-family:var(--font-mono);flex-shrink:0}.svc-tech{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:1.4rem}.svc-tech span{font-family:var(--font-mono);font-size:.64rem;color:var(--muted);border:1px solid var(--line);padding:.25rem .6rem;border-radius:6px}.svc-foot{margin-top:auto;display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--line);padding-top:1.1rem}.svc-price small{display:block;font-family:var(--font-mono);font-size:.64rem;color:var(--muted);letter-spacing:.08em}.svc-price b{font-family:var(--font-display);font-size:1.25rem;color:var(--aqua)}.svc-foot a{font-size:.85rem;font-weight:600;color:var(--text);display:inline-flex;gap:.35rem;align-items:center}.svc-foot a:hover{color:var(--aqua)}.final{text-align:center;position:relative;border-radius:30px;overflow:hidden;background:linear-gradient(140deg,#0E2A21,#0D1626 55%);border:1px solid var(--line-soft);padding:clamp(3rem,7vw,5.5rem) clamp(1.4rem,5vw,4rem)}.final::before{content:"";position:absolute;inset:0;background:radial-gradient(50% 60% at 50% 0,rgba(58,230,168,.16),transparent 70%);pointer-events:none}.final h2{font-size:clamp(2rem,5vw,3.2rem);margin:.9rem 0 1rem;position:relative}.final p{color:var(--muted);max-width:560px;margin:0 auto 2rem;position:relative}.footer{border-top:1px solid var(--line);padding:60px 0 110px;background:rgba(13,22,38,.4)}.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;margin-bottom:40px}.footer h4{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.16em;color:var(--muted);text-transform:uppercase;margin-bottom:1rem}.footer a{display:block;color:var(--muted);font-size:.9rem;padding:.28rem 0;transition:color .15s}.footer a:hover{color:var(--aqua)}.footer .logo{margin-bottom:1rem}.footer .tag{color:var(--muted);font-size:.9rem;max-width:300px}.footer-bottom{border-top:1px solid var(--line);padding-top:1.6rem;display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;font-size:.8rem;color:var(--muted)}.sticky-cta{position:fixed;bottom:0;left:0;right:0;z-index:70;display:none;gap:.7rem;padding:.8rem 1rem calc(.8rem + env(safe-area-inset-bottom));background:rgba(7,12,22,.92);backdrop-filter:blur(14px);border-top:1px solid var(--line)}.sticky-cta .btn{flex:1;padding:.85rem .5rem;font-size:.88rem}.popup-overlay{position:fixed;inset:0;background:rgba(4,7,13,.75);backdrop-filter:blur(6px);z-index:100;display:grid;place-items:center;padding:20px;opacity:0;pointer-events:none;transition:opacity .3s}.popup-overlay.show{opacity:1;pointer-events:auto}.popup{background:linear-gradient(160deg,#12233C,var(--panel));border:1px solid rgba(255,193,94,.4);border-radius:24px;max-width:440px;width:100%;padding:2.2rem;position:relative;transform:translateY(24px) scale(.96);transition:transform .35s cubic-bezier(.2,.8,.25,1);box-shadow:0 40px 100px -20px rgba(0,0,0,.8)}.popup-overlay.show .popup{transform:none}.popup-close{position:absolute;top:14px;right:14px;background:none;border:1px solid var(--line);color:var(--muted);width:34px;height:34px;border-radius:50%;font-size:1rem;line-height:1;transition:.2s;cursor:pointer}.popup-close:hover{color:var(--text);border-color:var(--muted)}.popup h3{font-size:1.55rem;margin-bottom:.6rem}.popup p{color:var(--muted);font-size:.92rem;margin-bottom:1.1rem}.popup ul{list-style:none;display:grid;gap:.45rem;font-size:.86rem;margin-bottom:1.4rem}.popup ul li{display:flex;gap:.5rem;color:#D9E3F0}.popup ul li::before{content:"checkmark";color:var(--aqua);font-weight:700}@media(max-width:1000px){.hero-grid{grid-template-columns:1fr;gap:44px}.phone{margin:0 auto;transform:none}.svc-grid,.pain-grid{grid-template-columns:1fr 1fr}}@media(max-width:680px){body{font-size:15.5px}.section{padding:66px 0}.nav,.header .btn-primary{display:none}.burger{display:grid;place-items:center}.hero{padding:110px 0 60px}.hero-sub{font-size:1.02rem}.hero-ctas .btn{flex:1;justify-content:center}.hero-stats{gap:1.4rem}.stat .num{font-size:1.5rem}.svc-grid,.pain-grid{grid-template-columns:1fr}.chat{height:400px}.sticky-cta{display:flex}.footer{padding-bottom:130px}.footer-grid{grid-template-columns:1fr;gap:26px}}@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}html{scroll-behavior:auto}.reveal{opacity:1;transform:none}}
+:root{
+  --ink:#0B1210; --ink2:#111A17; --ink3:#18241F; --line:#22322C;
+  --em:#10B981; --em2:#34D399; --emd:#0A7D58; --glow:rgba(16,185,129,.35);
+  --white:#FFFFFF; --paper:#F4F7F5; --muted:#8FA39B; --muted2:#5E6F68; --text:#E8EFEC;
+  --r:22px; --gut:clamp(16px,4vw,40px); --max:1160px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--ink);color:var(--text);font-family:Sora,system-ui,sans-serif;font-weight:400;line-height:1.55;overflow-x:hidden}
+img,video{max-width:100%;display:block;height:auto}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
+.wrap{max-width:var(--max);margin:0 auto;padding-inline:var(--gut)}
+section{position:relative;padding-block:clamp(72px,10vw,128px)}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--em2)}
+.eyebrow::before{content:"";width:18px;height:2px;background:var(--em);border-radius:2px}
+h1,h2,h3{font-weight:700;letter-spacing:-.035em;line-height:1.05;color:var(--white)}
+h2{font-size:clamp(32px,5.4vw,58px);margin:14px 0 18px}
+h3{font-size:20px;letter-spacing:-.02em;line-height:1.2}
+.lead{font-size:clamp(16px,1.9vw,19px);color:var(--muted);max-width:620px}
+.serif{font-family:"Cormorant Garamond",serif;font-style:italic;font-weight:500;letter-spacing:0}
+.em{color:var(--em)}
+.center{text-align:center}.center .lead{margin-inline:auto}
+
+/* Botones */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 24px;border-radius:999px;font-weight:600;font-size:15px;transition:transform .2s,box-shadow .2s,background .2s}
+.btn:active{transform:scale(.97)}
+.btn-em{background:var(--em);color:#04140E;box-shadow:0 10px 30px -8px var(--glow)}
+.btn-em:hover{background:var(--em2);box-shadow:0 14px 40px -6px var(--glow)}
+.btn-ghost{border:1.5px solid var(--line);color:var(--white);background:rgba(255,255,255,.02)}
+.btn-ghost:hover{border-color:var(--em);color:var(--em2)}
+.btn svg{width:20px;height:20px;flex:none}
+
+/* Logo */
+.logo{display:inline-flex;align-items:flex-end;font-weight:600;letter-spacing:-.045em;line-height:.78;font-size:26px;color:var(--white)}
+.logo .ia{position:relative;color:var(--em)}
+.logo .sol{position:absolute;right:.02em;top:100%;margin-top:3px;font-family:"Cormorant Garamond",serif;font-style:italic;font-weight:500;font-size:.34em;letter-spacing:0;color:var(--muted);white-space:nowrap;line-height:1}
+
+/* Navegación */
+.nav{position:fixed;inset:0 0 auto 0;z-index:50;padding-top:env(safe-area-inset-top,0px);transition:background .3s,border-color .3s;border-bottom:1px solid transparent}
+.nav.solid{background:rgba(11,18,16,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-color:var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:70px;gap:16px}
+.nav nav{display:none;gap:28px;font-size:14px;color:var(--muted)}
+.nav nav a:hover{color:var(--white)}
+.nav .btn{min-height:42px;padding:0 18px;font-size:14px}
+@media(min-width:900px){.nav nav{display:flex}}
+
+/* Fondo tecnológico */
+.grid-bg{position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(16,185,129,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(16,185,129,.07) 1px,transparent 1px);background-size:48px 48px;-webkit-mask-image:radial-gradient(ellipse at 50% 30%,#000 10%,transparent 70%);mask-image:radial-gradient(ellipse at 50% 30%,#000 10%,transparent 70%)}
+.orb{position:absolute;border-radius:50%;filter:blur(80px);pointer-events:none;opacity:.55}
+
+/* Portada */
+.hero{padding-top:calc(110px + env(safe-area-inset-top,0px));padding-bottom:80px;overflow:hidden;min-height:100svh;display:flex;align-items:center}
+.hero .orb.a{width:520px;height:520px;background:#0E9F6E;top:-180px;right:-160px}
+.hero .orb.b{width:380px;height:380px;background:#064E3B;bottom:-120px;left:-140px}
+.hero-grid{display:grid;gap:56px;align-items:center;position:relative}
+@media(min-width:960px){.hero-grid{grid-template-columns:1.08fr .92fr}}
+.stamp{display:inline-flex;align-items:center;gap:8px;padding:7px 14px 7px 10px;border:1px solid var(--line);border-radius:999px;font-size:13px;color:var(--muted);background:rgba(255,255,255,.03)}
+.stamp i{width:8px;height:8px;border-radius:50%;background:var(--em);box-shadow:0 0 0 4px rgba(16,185,129,.18);animation:pulse 2s infinite}
+@keyframes pulse{50%{box-shadow:0 0 0 8px rgba(16,185,129,0)}}
+.hero h1{font-size:clamp(40px,7.2vw,78px);margin:22px 0 22px}
+.hero h1 .line2{display:block;color:var(--em)}
+.hero .lead{font-size:clamp(17px,2vw,20px);color:#B5C4BE}
+.hero .lead b{color:var(--white);font-weight:600}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+
+/* Teléfono + QR animado */
+.stage{position:relative;height:560px;max-width:440px;margin:0 auto;width:100%}
+.phone{position:absolute;left:50%;top:0;transform:translateX(-50%);width:258px;height:548px;border-radius:42px;background:#050807;padding:9px;box-shadow:0 0 0 1.5px #2A3A34,0 40px 80px -20px rgba(0,0,0,.8),0 0 120px -30px var(--glow)}
+.phone .scr{width:100%;height:100%;border-radius:34px;overflow:hidden;background:#fff;position:relative}
+.phone .scr img{width:100%;height:auto;animation:scrollapp 14s ease-in-out infinite}
+@keyframes scrollapp{0%,18%{transform:translateY(0)}45%,62%{transform:translateY(-26%)}88%,100%{transform:translateY(0)}}
+.phone .notch{position:absolute;top:13px;left:50%;transform:translateX(-50%);width:64px;height:18px;border-radius:20px;background:#050807;z-index:2}
+.phone .scr{padding-top:22px}
+.qrcard{position:absolute;left:-6px;bottom:52px;width:132px;padding:12px;border-radius:18px;background:#fff;box-shadow:0 20px 50px -10px rgba(0,0,0,.6);transform:rotate(-7deg);animation:float 6s ease-in-out infinite}
+.qrcard img{width:100%;border-radius:6px}
+.qrcard span{display:block;text-align:center;font-size:10px;font-weight:700;color:var(--ink);margin-top:6px;letter-spacing:.02em}
+.qrcard::after{content:"";position:absolute;inset:-3px;border-radius:21px;border:2px solid var(--em);opacity:0;animation:qrglow 4s ease-in-out infinite}
+.qrcard .scanline{position:absolute;left:12px;right:12px;height:2px;top:14px;background:var(--em);box-shadow:0 0 12px 3px var(--glow);animation:scan 4s ease-in-out infinite}
+@keyframes scan{0%,100%{top:14px;opacity:0}10%{opacity:1}45%{top:116px;opacity:1}55%,99%{opacity:0;top:116px}}
+@keyframes qrglow{0%,40%{opacity:0}50%,70%{opacity:1}90%,100%{opacity:0}}
+@keyframes float{50%{transform:rotate(-7deg) translateY(-10px)}}
+.order{position:absolute;right:-4px;top:96px;display:flex;align-items:center;gap:10px;padding:12px 14px;border-radius:16px;background:rgba(17,26,23,.92);border:1px solid var(--line);backdrop-filter:blur(8px);box-shadow:0 20px 40px -12px rgba(0,0,0,.6);animation:fly 7s ease-in-out infinite}
+.order .ic{width:34px;height:34px;border-radius:10px;background:rgba(16,185,129,.16);display:grid;place-items:center;color:var(--em)}
+.order b{display:block;font-size:13px;color:var(--white)}
+.order small{font-size:11px;color:var(--muted)}
+@keyframes fly{0%,8%{opacity:0;transform:translate(-90px,160px) scale(.7)}22%,78%{opacity:1;transform:none}92%,100%{opacity:0;transform:translate(10px,-10px)}}
+.paid{position:absolute;right:16px;bottom:120px;padding:9px 14px;border-radius:999px;background:var(--em);color:#04140E;font-size:12px;font-weight:700;box-shadow:0 10px 30px -6px var(--glow);animation:pop 7s ease-in-out infinite}
+@keyframes pop{0%,40%{opacity:0;transform:scale(.6)}48%,85%{opacity:1;transform:scale(1)}95%,100%{opacity:0}}
+@media(max-width:420px){.stage{height:520px}.phone{width:236px;height:502px}.qrcard{width:112px;left:-2px}.order{right:0}}
+
+/* Problema */
+.problem{background:var(--paper);color:var(--ink)}
+.problem h2{color:var(--ink)}
+.problem .eyebrow{color:var(--emd)}
+.problem .lead{color:var(--muted2)}
+.pgrid{display:grid;gap:48px;align-items:center}
+@media(min-width:960px){.pgrid{grid-template-columns:1.1fr .9fr}}
+.pains{display:grid;gap:12px;margin:30px 0}
+@media(min-width:600px){.pains{grid-template-columns:1fr 1fr}}
+.pain{display:flex;gap:14px;align-items:flex-start;padding:18px;border-radius:18px;background:#fff;border:1px solid #E2E8E5}
+.pain .e{font-size:24px;line-height:1}
+.pain p{font-size:15px;font-weight:600;color:var(--ink);line-height:1.35}
+.closing{font-size:clamp(19px,2.4vw,24px);font-weight:600;color:var(--ink);letter-spacing:-.02em;line-height:1.35;max-width:540px}
+.closing span{color:var(--emd)}
+.reel{position:relative;width:100%;max-width:320px;margin:0 auto;aspect-ratio:9/16;border-radius:28px;overflow:hidden;background:#000;box-shadow:0 30px 60px -20px rgba(11,18,16,.45)}
+.reel video{width:100%;height:100%;object-fit:cover}
+.reel .snd{position:absolute;right:12px;bottom:12px;padding:8px 12px;border-radius:999px;background:rgba(0,0,0,.6);color:#fff;font-size:12px;font-weight:600;backdrop-filter:blur(6px)}
+
+/* QR momento */
+.qr{overflow:hidden;text-align:center}
+.qr .orb{width:640px;height:640px;background:#0E9F6E;left:50%;top:40%;transform:translate(-50%,-50%);opacity:.22}
+.qr h2{font-size:clamp(44px,9vw,104px);letter-spacing:-.05em}
+.qr h2 span{display:inline-block;opacity:.18;transition:opacity .5s,color .5s}
+.qr h2 span.on{opacity:1}
+.qr h2 span:last-child.on{color:var(--em)}
+.steps3{display:grid;gap:14px;margin:56px auto 30px;max-width:980px;text-align:left}
+@media(min-width:800px){.steps3{grid-template-columns:repeat(3,1fr)}}
+.s3{position:relative;padding:26px;border-radius:var(--r);background:linear-gradient(180deg,var(--ink3),var(--ink2));border:1px solid var(--line);overflow:hidden}
+.s3 .n{font-size:12px;font-weight:700;color:var(--em);letter-spacing:.14em}
+.s3 .e{font-size:34px;margin:14px 0 10px}
+.s3 p{color:var(--muted);font-size:15px}
+.s3::after{content:"";position:absolute;left:0;top:0;height:2px;width:0;background:var(--em);transition:width 1.2s ease}
+.s3.in::after{width:100%}
+.fx{display:inline-flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:8px}
+.chip{padding:9px 16px;border-radius:999px;border:1px solid var(--line);font-size:14px;color:var(--text);background:rgba(255,255,255,.03)}
+.chip b{color:var(--em2);font-weight:700}
+
+/* Soluciones */
+.cards{display:grid;gap:14px;margin-top:44px}
+@media(min-width:680px){.cards{grid-template-columns:1fr 1fr}}
+@media(min-width:1020px){.cards{grid-template-columns:repeat(3,1fr)}}
+.card{position:relative;border-radius:var(--r);background:var(--ink2);border:1px solid var(--line);transition:border-color .3s,transform .3s}
+.card:hover{border-color:rgba(16,185,129,.5);transform:translateY(-3px)}
+.card summary{list-style:none;cursor:pointer;padding:26px 26px 22px}
+.card summary::-webkit-details-marker{display:none}
+.card .tag{display:inline-flex;align-items:center;justify-content:center;width:46px;height:46px;border-radius:14px;background:rgba(16,185,129,.12);color:var(--em);margin-bottom:18px}
+.card .tag svg{width:24px;height:24px}
+.card h3 .k{color:var(--muted);font-weight:400}
+.card p.f{color:var(--muted);font-size:15px;margin-top:8px}
+.card .more{display:inline-flex;align-items:center;gap:6px;margin-top:16px;font-size:13px;font-weight:600;color:var(--em2)}
+.card .more::after{content:"+";font-size:18px;line-height:1;transition:transform .3s}
+.card[open] .more::after{transform:rotate(45deg)}
+.card[open]{border-color:rgba(16,185,129,.5)}
+.card .body{padding:0 26px 26px}
+.card ul{list-style:none;display:grid;gap:9px;border-top:1px solid var(--line);padding-top:18px}
+.card li{display:flex;gap:10px;font-size:14px;color:#C4D2CC}
+.card li::before{content:"";flex:none;width:6px;height:6px;margin-top:8px;border-radius:50%;background:var(--em)}
+.case{margin-top:16px;padding:14px;border-radius:14px;background:rgba(16,185,129,.08);border:1px dashed rgba(16,185,129,.35);font-size:13px;color:#C4D2CC}
+.case b{color:var(--white)}
+.case .nums{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:10px;text-align:center}
+.case .nums strong{display:block;font-size:20px;color:var(--em2);letter-spacing:-.02em}
+.card .wa{display:inline-flex;margin-top:18px;font-size:14px;font-weight:600;color:var(--em2)}
+.card.custom{background:linear-gradient(135deg,rgba(16,185,129,.16),var(--ink2) 60%)}
+
+/* Hecho aquí */
+.here{background:var(--ink2);border-block:1px solid var(--line)}
+.feats{display:grid;gap:14px;margin-top:44px}
+@media(min-width:680px){.feats{grid-template-columns:1fr 1fr}}
+@media(min-width:1020px){.feats{grid-template-columns:repeat(4,1fr)}}
+.feat{padding:26px;border-radius:var(--r);background:var(--ink);border:1px solid var(--line)}
+.feat .e{font-size:30px}
+.feat h3{margin:16px 0 8px}
+.feat p{font-size:14px;color:var(--muted)}
+.offline-demo{display:flex;align-items:center;gap:8px;margin-top:14px;font-size:12px;font-weight:600}
+.offline-demo{color:#F59E0B}.offline-demo .dot{width:8px;height:8px;border-radius:50%;background:currentColor;transition:background .3s}
+.offline-demo.ok{color:var(--em2)}
+
+/* Demo */
+.demo-grid{display:grid;gap:40px;align-items:center}
+@media(min-width:960px){.demo-grid{grid-template-columns:1fr 1fr}}
+.shots{display:flex;gap:14px;justify-content:center}
+.shots img{width:31%;max-width:180px;border-radius:20px;border:6px solid #050807;box-shadow:0 30px 60px -20px rgba(0,0,0,.8)}
+.shots img:nth-child(2){transform:translateY(-26px)}
+.demo-box{padding:clamp(24px,4vw,40px);border-radius:28px;background:linear-gradient(160deg,var(--ink3),var(--ink2));border:1px solid var(--line)}
+.demo-box .qrs{display:none;align-items:center;gap:16px;margin-top:26px;padding:14px;border-radius:18px;border:1px solid var(--line)}
+.demo-box .qrs img{width:92px;background:#fff;padding:8px;border-radius:12px}
+.demo-box .qrs p{font-size:13px;color:var(--muted)}
+@media(min-width:900px){.demo-box .qrs{display:flex}}
+.vids{display:grid;gap:14px;margin-top:56px}
+@media(min-width:760px){.vids{grid-template-columns:1fr 1fr}}
+.vid{border-radius:var(--r);overflow:hidden;background:var(--ink2);border:1px solid var(--line)}
+.vid video{width:100%;aspect-ratio:9/16;max-height:620px;object-fit:contain;background:#000}
+.vid .cap{padding:16px 20px;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.vid .cap b{font-size:15px;color:var(--white)}
+.vid .cap small{font-size:13px;color:var(--muted)}
+
+/* Cómo trabajamos */
+.how{background:var(--paper);color:var(--ink)}
+.how h2{color:var(--ink)}.how .eyebrow{color:var(--emd)}.how .lead{color:var(--muted2)}
+.timeline{display:grid;gap:14px;margin-top:44px;counter-reset:s}
+@media(min-width:900px){.timeline{grid-template-columns:repeat(4,1fr)}}
+.tl{position:relative;padding:26px;border-radius:var(--r);background:#fff;border:1px solid #E2E8E5}
+.tl::before{counter-increment:s;content:"0" counter(s);display:block;font-size:44px;font-weight:800;letter-spacing:-.05em;color:var(--em);line-height:1;margin-bottom:16px}
+.tl h3{color:var(--ink)}
+.tl p{font-size:14px;color:var(--muted2);margin-top:8px}
+.tl .free{display:inline-block;margin-top:12px;padding:4px 10px;border-radius:999px;background:rgba(16,185,129,.14);color:var(--emd);font-size:12px;font-weight:700}
+
+/* Planes */
+.plans{display:grid;gap:14px;margin-top:44px;align-items:stretch}
+@media(min-width:720px){.plans{grid-template-columns:1fr 1fr}}
+@media(min-width:1100px){.plans{grid-template-columns:repeat(4,1fr)}}
+.plan{position:relative;display:flex;flex-direction:column;padding:28px 24px;border-radius:var(--r);background:var(--ink2);border:1px solid var(--line)}
+.plan.star{background:linear-gradient(180deg,rgba(16,185,129,.14),var(--ink2) 45%);border-color:var(--em);box-shadow:0 30px 70px -30px var(--glow)}
+.plan .badge{position:absolute;top:-12px;left:24px;padding:5px 12px;border-radius:999px;background:var(--em);color:#04140E;font-size:12px;font-weight:700}
+.plan h3{font-size:24px}
+.plan .for{color:var(--muted);font-size:14px;margin:6px 0 20px;min-height:42px}
+.price{position:relative;min-height:92px;margin-bottom:20px}
+.reveal{width:100%;min-height:58px;border-radius:16px;border:1.5px dashed rgba(16,185,129,.5);color:var(--em2);font-weight:600;display:flex;align-items:center;justify-content:center;gap:10px;background:rgba(16,185,129,.05);transition:background .2s}
+.reveal:hover{background:rgba(16,185,129,.12)}
+.reveal svg{width:18px;height:18px}
+.amount{display:none;animation:rise .6s cubic-bezier(.2,.8,.2,1.2)}
+.price.open .reveal{display:none}
+.price.open .amount{display:block}
+.amount .m{font-size:46px;font-weight:800;letter-spacing:-.05em;color:var(--white);line-height:1}
+.amount .m small{font-size:15px;font-weight:600;color:var(--muted);letter-spacing:0}
+.amount .impl{font-size:14px;color:var(--muted);margin-top:6px}
+.amount .impl s{color:var(--muted2)}
+@keyframes rise{from{opacity:0;transform:translateY(14px) scale(.96);filter:blur(6px)}to{opacity:1;transform:none;filter:none}}
+.spec{list-style:none;display:grid;gap:10px;font-size:13.5px;color:#C4D2CC;flex:1;align-content:start}
+.spec li{display:flex;justify-content:space-between;gap:12px;padding-bottom:10px;border-bottom:1px solid var(--line)}
+.spec li span{color:var(--muted);flex:1 1 auto}
+.spec li b{font-weight:600;color:var(--white);text-align:right;flex:0 1 auto;max-width:60%}
+.spec li.full{display:block}
+.spec li.full span{display:block;margin-bottom:4px}
+.spec li.full b{display:block;text-align:left;font-weight:400;color:#C4D2CC}
+.bonus{margin-top:18px;padding:14px;border-radius:14px;background:rgba(16,185,129,.08);border:1px solid rgba(16,185,129,.25)}
+.bonus p{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--em2);margin-bottom:8px}
+.bonus ul{list-style:none;display:grid;gap:6px;font-size:13px;color:#D4E0DB}
+.plan .btn{margin-top:20px;width:100%}
+.allinc{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:22px}
+.founder{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:18px;margin-top:22px;padding:22px 26px;border-radius:var(--r);background:linear-gradient(90deg,var(--em),#0E9F6E);color:#04140E}
+.founder b{font-size:18px;letter-spacing:-.02em}
+.founder p{font-size:14px;max-width:640px}
+.founder .btn{background:#04140E;color:var(--white)}
+.extras{margin-top:18px;font-size:14px;color:var(--muted);text-align:center}
+.extras b{color:var(--text)}
+
+/* Amazonas */
+.ama{overflow:hidden}
+.ama .orb{width:520px;height:520px;background:#065F46;right:-200px;top:10%;opacity:.4}
+.ama-grid{display:grid;gap:48px;align-items:center;position:relative}
+@media(min-width:900px){.ama-grid{grid-template-columns:.85fr 1.15fr}}
+.portrait{position:relative;max-width:420px;margin:0 auto;width:100%}
+.portrait img{width:100%;aspect-ratio:1;object-fit:cover;object-position:center 20%;border-radius:28px;position:relative;z-index:1}
+.portrait::before{content:"";position:absolute;inset:18px -18px -18px 18px;border-radius:28px;border:1.5px solid var(--em);opacity:.6}
+.portrait .loc{position:absolute;z-index:2;left:-10px;bottom:28px;padding:10px 16px;border-radius:999px;background:var(--ink);border:1px solid var(--line);font-size:13px;font-weight:600}
+.quote{font-size:clamp(17px,2vw,19px);color:#C4D2CC}
+.quote p+p{margin-top:14px}
+.bio{margin-top:26px;padding:20px;border-radius:18px;background:var(--ink2);border:1px solid var(--line)}
+.bio .role{font-size:12px;font-weight:700;letter-spacing:.12em;color:var(--em2)}
+.bio p{font-size:15px;color:var(--muted);margin-top:8px}
+.countries{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.countries span{padding:5px 10px;border-radius:999px;background:var(--ink3);font-size:12px;color:var(--text)}
+.sign{margin-top:22px}
+.sign img{width:220px;opacity:.95}
+.sign small{display:block;color:var(--muted);font-size:13px;margin-top:4px}
+
+/* FAQ */
+.faq{background:var(--ink2);border-block:1px solid var(--line)}
+.qa{max-width:820px;margin:40px auto 0;display:grid;gap:10px}
+.qa details{border-radius:18px;background:var(--ink);border:1px solid var(--line);transition:border-color .3s}
+.qa details[open]{border-color:rgba(16,185,129,.45)}
+.qa summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 22px;font-weight:600;color:var(--white)}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary::after{content:"+";font-size:24px;font-weight:300;color:var(--em);transition:transform .3s}
+.qa details[open] summary::after{transform:rotate(45deg)}
+.qa details p{padding:0 22px 20px;color:var(--muted)}
+
+/* Diagnóstico */
+.quiz{max-width:720px;margin:40px auto 0;padding:clamp(22px,4vw,40px);border-radius:28px;background:linear-gradient(160deg,var(--ink3),var(--ink2));border:1px solid var(--line)}
+.bar{height:4px;border-radius:4px;background:var(--line);overflow:hidden;margin-bottom:28px}
+.bar i{display:block;height:100%;width:0;background:var(--em);transition:width .4s}
+.q{display:none;animation:rise .45s ease}
+.q.on{display:block}
+.q h3{font-size:clamp(20px,2.6vw,26px);margin-bottom:6px}
+.q .hint{font-size:14px;color:var(--muted);margin-bottom:20px}
+.opts{display:grid;gap:10px}
+@media(min-width:560px){.opts{grid-template-columns:1fr 1fr}}
+.opt{display:flex;align-items:center;gap:12px;min-height:56px;padding:12px 16px;border-radius:16px;border:1.5px solid var(--line);background:var(--ink);text-align:left;font-size:15px;transition:border-color .2s,background .2s}
+.opt:hover{border-color:rgba(16,185,129,.6)}
+.opt.sel{border-color:var(--em);background:rgba(16,185,129,.1)}
+.opt .e{font-size:20px}
+.qnav{display:flex;justify-content:space-between;align-items:center;margin-top:24px;gap:12px}
+.qnav .back{color:var(--muted);font-size:14px;padding:10px 0}
+.qnav .back[hidden]{visibility:hidden;display:block}
+.field{display:grid;gap:8px;margin-bottom:14px}
+.field label{font-size:13px;color:var(--muted)}
+.field input{min-height:52px;padding:0 16px;border-radius:14px;border:1.5px solid var(--line);background:var(--ink);color:var(--white);font:inherit;font-size:16px}
+.field input:focus{outline:none;border-color:var(--em)}
+.result{padding:18px;border-radius:16px;background:var(--ink);border:1px solid var(--line);font-size:14px;color:#C4D2CC;white-space:pre-line;margin-bottom:18px}
+.result b{color:var(--em2)}
+
+/* Cierre */
+.final{text-align:center;overflow:hidden}
+.final .orb{width:700px;height:700px;background:#0E9F6E;left:50%;top:60%;transform:translate(-50%,-50%);opacity:.3}
+.final h2{font-size:clamp(38px,7vw,80px);max-width:900px;margin-inline:auto}
+.final .btn{margin-top:28px;min-height:60px;padding:0 30px;font-size:16px}
+
+footer{padding:48px 0 calc(40px + env(safe-area-inset-bottom,0px));border-top:1px solid var(--line);font-size:14px;color:var(--muted)}
+footer .wrap{display:flex;flex-wrap:wrap;gap:28px;justify-content:space-between;align-items:flex-end}
+footer .meta{display:grid;gap:6px}
+footer a:hover{color:var(--em2)}
+footer .copy{width:100%;font-size:12px;color:var(--muted2)}
+
+/* Botón flotante de WhatsApp */
+.fab{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:60;width:58px;height:58px;border-radius:50%;background:var(--em);color:#04140E;display:grid;place-items:center;box-shadow:0 14px 34px -8px var(--glow);transform:scale(0);transition:transform .35s cubic-bezier(.2,.8,.2,1.3)}
+.fab.show{transform:scale(1)}
+.fab svg{width:28px;height:28px}
+
+/* Aparición al hacer scroll */
+.rv{opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .8s ease}
+.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}.qr h2 span{opacity:1}}
+:focus-visible{outline:2px solid var(--em2);outline-offset:3px;border-radius:8px}
 </style>
 </head>
 <body>
 
-<!-- HEADER -->
-<header class="header" id="top">
-  <div class="wrap header-inner">
-    <a href="#top" class="logo"><span class="logo-mark">DS</span><span>Daniela Silva</span></a>
-    <nav class="nav">
-      <a href="#services" data-en="Services">Servicios</a>
-      <a href="#case" data-en="Flagship">Proyecto Estrella</a>
-      <a href="#about" data-en="About">Sobre mi</a>
-      <a href="#pricing" data-en="Packages">Paquetes</a>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2Zm5.8 14.13c-.25.69-1.44 1.32-1.98 1.37-.51.05-.99.24-3.34-.7-2.82-1.11-4.6-4-4.74-4.18-.14-.19-1.13-1.5-1.13-2.87s.71-2.03.97-2.31c.25-.28.55-.35.73-.35l.53.01c.17.01.4-.06.62.48.25.6.85 2.07.92 2.22.07.15.12.32.02.51-.1.19-.15.31-.29.48l-.44.51c-.15.15-.3.31-.13.6.17.28.76 1.25 1.63 2.03 1.12 1 2.07 1.31 2.36 1.46.29.15.46.12.63-.07.17-.19.73-.85.92-1.14.19-.29.38-.24.65-.15.26.1 1.68.79 1.97.94.29.15.48.22.55.34.07.12.07.69-.18 1.38Z"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><path fill="currentColor" d="M8 5.5v13a1 1 0 0 0 1.52.85l10.4-6.5a1 1 0 0 0 0-1.7L9.52 4.65A1 1 0 0 0 8 5.5Z"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M7 11V8a5 5 0 0 1 10 0v3M5 11h14v10H5z"/></symbol>
+</svg>
+
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a href="#inicio" class="logo" aria-label="KubIA Soluciones, inicio">Kub<span class="ia">IA<span class="sol">Soluciones</span></span></a>
+    <nav aria-label="Secciones">
+      <a href="#soluciones">Soluciones</a>
+      <a href="#demo">Demo</a>
+      <a href="#planes">Planes</a>
+      <a href="#diagnostico">Diagnóstico gratis</a>
     </nav>
-    <div class="header-actions">
-      <div class="lang-switch" role="group" aria-label="Idioma">
-        <button class="lang-es active" onclick="setLang('es')">ES</button>
-        <button class="lang-en" onclick="setLang('en')">EN</button>
-      </div>
-      <a href="#REEMPLAZAR_CON_CALENDLY_O_CALL_LINK" class="btn btn-primary" data-en="Book a Call">Agendar</a>
-      <button class="burger" aria-label="Menu" onclick="toggleMenu()"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/></svg></button>
-    </div>
+    <a class="btn btn-em wa-link" href="#" data-msg="Hola Daniela, vi el sitio de KubIA y quiero saber más.">
+      <svg><use href="#i-wa"/></svg>Hablemos
+    </a>
   </div>
 </header>
 
-<div class="mobile-menu" id="mobileMenu">
-  <a href="#services" onclick="toggleMenu()" data-en="Services">Servicios</a>
-  <a href="#case" onclick="toggleMenu()" data-en="Flagship">Proyecto Estrella</a>
-  <a href="#about" onclick="toggleMenu()" data-en="About">Sobre mi</a>
-  <a href="#pricing" onclick="toggleMenu()" data-en="Packages">Paquetes</a>
-  <a href="#booking" class="btn btn-primary" onclick="toggleMenu()" data-en="Book a Call">Agendar llamada</a>
-</div>
+<main>
 
-<!-- HERO -->
-<section class="hero">
+<!-- 1 · PORTADA -->
+<section class="hero" id="inicio">
+  <div class="grid-bg"></div><div class="orb a"></div><div class="orb b"></div>
   <div class="wrap hero-grid">
     <div>
-      <span class="badge-live reveal"><span class="pulse-dot"></span><span data-en="2 project slots open — August 2026">2 cupos disponibles — Agosto 2026</span></span>
-      <h1 class="reveal d1" data-en='Systems that <span class="accent">sell, book & collect</span> while you sleep.'>Sistemas que <span class="accent">venden, agendan y cobran</span> mientras duermes.</h1>
-      <p class="hero-sub reveal d2" data-en="I build multi-tenant booking SaaS, WhatsApp AI agents and automation for service businesses in the US and LATAM. Fixed price. Live in 30 days. You own the code.">Construyo SaaS de reservas multitenant, agentes IA en WhatsApp y automatizaciones para negocios de servicios en USA y LATAM. Precio fijo. En produccion en 30 dias. El codigo es tuyo.</p>
-      <div class="hero-ctas reveal d3">
-        <a href="#pricing" class="btn btn-primary" data-en="See packages">Ver paquetes</a>
-        <a href="#case" class="btn btn-ghost" data-en="See it live">Verlo en vivo</a>
-      </div>
-      <div class="hero-stats reveal d4">
-        <div class="stat"><div class="num"><em class="count" data-target="2.4" data-decimals="1" data-prefix="$" data-suffix="M+">$0M+</em></div><div class="lbl" data-en="revenue influenced">ingresos influenciados</div></div>
-        <div class="stat"><div class="num"><em class="count" data-target="50" data-suffix="+">0+</em></div><div class="lbl" data-en="systems shipped">sistemas entregados</div></div>
-        <div class="stat"><div class="num"><em class="count" data-target="8" data-suffix="+">0+</em></div><div class="lbl" data-en="years building">anos construyendo</div></div>
+      <span class="stamp"><i></i>Hecho en Amazonas, para el mundo 🌿</span>
+      <h1>Deja el cuaderno.<span class="line2">Tu negocio cabe en tu bolsillo.</span></h1>
+      <p class="lead">Ventas, pedidos, inventario y finanzas en un solo lugar. <b>Desde tu teléfono, vendiendo 24/7.</b></p>
+      <div class="cta-row">
+        <a class="btn btn-em wa-link" href="#" data-msg="Hola Daniela, vi el sitio de KubIA y quiero ordenar mi negocio. ¿Hablamos?"><svg><use href="#i-wa"/></svg>Hablemos por WhatsApp</a>
+        <a class="btn btn-ghost" href="/kubia/"><svg><use href="#i-play"/></svg>Prueba la demo</a>
       </div>
     </div>
-    <div class="reveal d2">
-      <div class="phone">
-        <span style="position:absolute;right:-8px;top:110px;transform:rotate(4deg);font-family:var(--font-mono);font-size:.66rem;background:var(--gold);color:#2B1A00;padding:.4rem .8rem;border-radius:8px;font-weight:600;box-shadow:0 8px 24px rgba(0,0,0,.4);" data-en="Live AI Demo">Demo IA en vivo</span>
-        <div class="phone-top">
-          <div class="phone-avatar">CA</div>
-          <div class="who"><b>Cleaning Angels</b><span data-en="AI Agent · 24/7">Agente IA · 24/7</span></div>
+    <div class="stage" aria-hidden="true">
+      <div class="phone"><div class="notch"></div><div class="scr"><img src="/assets/app-tienda.jpg" alt="" width="560" height="1213" fetchpriority="high"></div></div>
+      <div class="qrcard"><div class="scanline"></div><img src="/assets/qr-demo.svg" alt=""><span>Escanea y pide</span></div>
+      <div class="order"><div class="ic">🛒</div><div><b>Nuevo pedido</b><small>Carmen · 3 productos</small></div></div>
+      <div class="paid">✓ Pago recibido</div>
+    </div>
+  </div>
+</section>
+
+<!-- 2 · EL PROBLEMA -->
+<section class="problem" id="problema">
+  <div class="wrap pgrid">
+    <div class="rv">
+      <span class="eyebrow">El problema</span>
+      <h2>¿Te suena esto?</h2>
+      <div class="pains">
+        <div class="pain"><span class="e">💬</span><p>99+ mensajes preguntando "¿precio?"</p></div>
+        <div class="pain"><span class="e">📒</span><p>Pedidos anotados en un cuaderno que nadie entiende</p></div>
+        <div class="pain"><span class="e">📊</span><p>Un Excel que solo sabe usar una persona</p></div>
+        <div class="pain"><span class="e">💸</span><p>Clientes que deben y no sabes cuánto</p></div>
+      </div>
+      <p class="closing">No es falta de ganas. <span>Es que tu negocio creció y tus herramientas no.</span></p>
+    </div>
+    <div class="rv">
+      <div class="reel">
+        <video id="reel" src="/kubia/videos/KubIA-Reel-Mercadito-movil.mp4" muted loop playsinline preload="metadata" poster="/assets/reel-poster.jpg" aria-label="Reel: Mercadito Orinoco"></video>
+        <button class="snd" id="reelSnd" type="button">🔇 Activar sonido</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3 · EL MOMENTO QR -->
+<section class="qr" id="qr">
+  <div class="grid-bg"></div><div class="orb"></div>
+  <div class="wrap" style="position:relative">
+    <span class="eyebrow">Así de simple</span>
+    <h2 id="qrTitle"><span>Escanean.</span> <span>Piden.</span> <span>Pagan.</span></h2>
+    <p class="lead" style="margin-inline:auto">Tu cliente escanea un QR en tu mostrador, tu vitrina o tu Instagram, ve todo lo que tienes con su precio, arma su pedido y paga desde su teléfono. A ti te llega listo, ordenado y con su forma de entrega.</p>
+    <div class="steps3">
+      <div class="s3 rv"><span class="n">PASO 1</span><div class="e">📲</div><h3>Escanea</h3><p>Desde el mostrador, la vitrina o tu Instagram. Sin descargar nada.</p></div>
+      <div class="s3 rv"><span class="n">PASO 2</span><div class="e">🛒</div><h3>Arma su pedido</h3><p>Ve fotos, precios y disponibilidad, y elige delivery o retiro.</p></div>
+      <div class="s3 rv"><span class="n">PASO 3</span><div class="e">💳</div><h3>Paga con el QR de su banco</h3><p>Y a ti te llega el pedido completo, listo para despachar.</p></div>
+    </div>
+    <div class="fx"><span class="chip">Precios en <b>$</b> dólares</span><span class="chip"><b>Bs</b> bolívares</span><span class="chip"><b>COP</b> pesos</span><span class="chip">con la <b>tasa del día</b></span></div>
+  </div>
+</section>
+
+<!-- 4 · SOLUCIONES -->
+<section id="soluciones">
+  <div class="wrap">
+    <div class="rv">
+      <span class="eyebrow">Nuestras soluciones</span>
+      <h2>Una para cada forma <br>de vender.</h2>
+      <p class="lead">Toca cada una para ver qué incluye.</p>
+    </div>
+    <div class="cards">
+      <details class="card rv">
+        <summary>
+          <span class="tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l1.5-5h15L21 9M3 9v11h18V9M3 9h18M9 20v-6h6v6"/></svg></span>
+          <h3><span class="k">KubIA</span> Tienda</h3>
+          <p class="f">Tu catálogo y tu tienda en línea, abierta 24/7.</p>
+          <span class="more">Qué incluye</span>
+        </summary>
+        <div class="body"><ul>
+          <li>Catálogo con fotos y precios en 3 monedas</li><li>QR para pedir y pagar</li><li>Carrito con sugerencias</li><li>Delivery, retiro o envío nacional</li><li>Pago con QR del banco y captura</li><li>Confirmación por WhatsApp</li><li>Seguimiento del pedido</li><li>"Repetir mi último pedido"</li>
+        </ul><a class="wa wa-link" href="#" data-msg="Hola Daniela, me interesa KubIA Tienda.">Pide tu diagnóstico →</a></div>
+      </details>
+      <details class="card rv">
+        <summary>
+          <span class="tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 4h14v12H1zM15 9h4l4 4v3h-8"/><circle cx="6" cy="18" r="2"/><circle cx="18" cy="18" r="2"/></svg></span>
+          <h3><span class="k">KubIA</span> Distribución</h3>
+          <p class="f">Preventa en ruta, despachos organizados y cobranzas al día.</p>
+          <span class="more">Qué incluye</span>
+        </summary>
+        <div class="body"><ul>
+          <li>Preventa en ruta desde el teléfono</li><li>Pedidos aunque no haya señal</li><li>Organización de despachos y hoja de carga</li><li>Seguimiento de cobranzas y cuentas por cobrar</li><li>Control de crédito por cliente</li><li>Tasa del día</li><li>Reportes por vendedor</li>
+        </ul><a class="wa wa-link" href="#" data-msg="Hola Daniela, me interesa KubIA Distribución.">Pide tu diagnóstico →</a></div>
+      </details>
+      <details class="card rv">
+        <summary>
+          <span class="tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4M8 14l2 2 4-4"/></svg></span>
+          <h3><span class="k">KubIA</span> Agenda</h3>
+          <p class="f">Tus clientes reservan solos. Tú solo atiendes.</p>
+          <span class="more">Qué incluye</span>
+        </summary>
+        <div class="body"><ul>
+          <li>Reservas en línea 24/7</li><li>Recordatorios automáticos</li><li>Pagos y abonos</li><li>Portal del cliente</li><li>Gestión de personal y turnos</li><li>Historial de cada cliente</li>
+        </ul>
+        <div class="case"><b>Caso real:</b> una agencia de servicios de limpieza en Washington DC que gestionaba sus reservas por WhatsApp.
+          <div class="nums"><div><strong>−40%</strong>inasistencias</div><div><strong>+25%</strong>reservas en 60 días</div><div><strong>15 h</strong>ahorradas por semana</div></div>
         </div>
-        <div class="chat" id="chat"></div>
+        <a class="wa wa-link" href="#" data-msg="Hola Daniela, me interesa KubIA Agenda.">Pide tu diagnóstico →</a></div>
+      </details>
+      <details class="card rv">
+        <summary>
+          <span class="tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></svg></span>
+          <h3><span class="k">KubIA</span> Gestión</h3>
+          <p class="f">Inventario, finanzas y quién te debe, en tiempo real.</p>
+          <span class="more">Qué incluye</span>
+        </summary>
+        <div class="body"><ul>
+          <li>Inventario en vivo con alertas</li><li>Ventas en mostrador y en línea juntas</li><li>Finanzas y flujo de caja</li><li>Quién te debe y desde cuándo</li><li>Clientes (CRM) con historial</li><li>Roles y permisos para tu equipo</li><li>Reportes en tu teléfono</li>
+        </ul><a class="wa wa-link" href="#" data-msg="Hola Daniela, me interesa KubIA Gestión.">Pide tu diagnóstico →</a></div>
+      </details>
+      <details class="card rv">
+        <summary>
+          <span class="tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12Z"/><path d="M9 10h.01M15 10h.01M9 14c1.5 1.3 4.5 1.3 6 0"/></svg></span>
+          <h3><span class="k">KubIA</span> Asistente</h3>
+          <p class="f">Una IA que responde tu WhatsApp mientras trabajas.</p>
+          <span class="more">Qué incluye</span>
+        </summary>
+        <div class="body"><ul>
+          <li>Responde precios y disponibilidad</li><li>Toma pedidos y reservas</li><li>Atiende de noche y fines de semana</li><li>Te pasa los casos difíciles</li>
+        </ul><a class="wa wa-link" href="#" data-msg="Hola Daniela, me interesa KubIA Asistente.">Pide tu diagnóstico →</a></div>
+      </details>
+      <details class="card custom rv">
+        <summary>
+          <span class="tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2Z"/></svg></span>
+          <h3><span class="k">KubIA</span> a la Medida</h3>
+          <p class="f">¿Tienes una idea? La convertimos en tu sistema.</p>
+          <span class="more">Qué incluye</span>
+        </summary>
+        <div class="body"><ul>
+          <li>Tu idea de negocio convertida en sistema</li><li>Marca blanca con tu nombre</li><li>Integraciones a la medida</li><li>Precio a convenir</li>
+        </ul><a class="wa wa-link" href="#" data-msg="Hola Daniela, tengo una idea y quiero convertirla en un sistema (KubIA a la Medida).">Cuéntame tu idea →</a></div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- 5 · HECHO PARA CÓMO SE TRABAJA AQUÍ -->
+<section class="here">
+  <div class="wrap">
+    <div class="rv">
+      <span class="eyebrow">Pensado para la vida real</span>
+      <h2>Hecho para cómo <br>se trabaja aquí.</h2>
+    </div>
+    <div class="feats">
+      <div class="feat rv"><div class="e">📶</div><h3>Funciona sin internet</h3><p>Si se va la señal, sigues vendiendo. Al volver, todo se sincroniza.</p><div class="offline-demo" id="net"><span class="dot"></span><span class="t">Sin señal · guardando</span></div></div>
+      <div class="feat rv"><div class="e">💱</div><h3>Tres monedas</h3><p>Dólares, bolívares y pesos, con la tasa del día.</p></div>
+      <div class="feat rv"><div class="e">📱</div><h3>Desde tu teléfono</h3><p>No necesitas computadora.</p></div>
+      <div class="feat rv"><div class="e">🔒</div><h3>Tus datos son tuyos</h3><p>Cada negocio ve solo lo suyo.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 6 · PRUÉBALA AHORA -->
+<section id="demo">
+  <div class="wrap">
+    <div class="demo-grid">
+      <div class="demo-box rv">
+        <span class="eyebrow">Pruébala ahora</span>
+        <h2>No te lo contamos. <span class="em">Pruébalo.</span></h2>
+        <p class="lead">Haz un pedido como si fueras cliente y mira cómo llega al panel del negocio. Apaga el internet a mitad de camino, si quieres.</p>
+        <div class="cta-row"><a class="btn btn-em" href="/kubia/"><svg><use href="#i-play"/></svg>Abrir la demo</a></div>
+        <div class="qrs"><img src="/assets/qr-demo.svg" alt="Código QR de la demo de KubIA"><p>¿Estás en la computadora? <b style="color:var(--white)">Escanea con tu teléfono</b> y pruébala como la vería tu cliente.</p></div>
+      </div>
+      <div class="shots rv" aria-hidden="true">
+        <img src="/assets/app-tienda.jpg" alt="" loading="lazy" width="560" height="1213">
+        <img src="/assets/app-panel.jpg" alt="" loading="lazy" width="560" height="1213">
+        <img src="/assets/app-enviado.jpg" alt="" loading="lazy" width="560" height="1213">
+      </div>
+    </div>
+    <div class="vids">
+      <div class="vid rv">
+        <video controls playsinline preload="none" poster="/assets/carmen-poster.jpg" src="/kubia/videos/KubIA-Carmen-movil.mp4"></video>
+        <div class="cap"><div><b>La historia de Carmen</b><br><small>Un pedido, de principio a fin</small></div></div>
+      </div>
+      <div class="vid rv">
+        <video controls playsinline preload="none" poster="/assets/lanzamiento-poster.jpg" src="/kubia/videos/KubIA-Lanzamiento-movil.mp4"></video>
+        <div class="cap"><div><b>Así nace KubIA</b><br><small>El lanzamiento de la marca</small></div></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- MARQUEE -->
-<div class="marquee" aria-hidden="true">
-  <div class="marquee-track">
-    <span>USA · Colombia · Peru · Canada · Cleaning · Legal · Real Estate · Home Services ·</span>
-    <span>USA · Colombia · Peru · Canada · Cleaning · Legal · Real Estate · Home Services ·</span>
-  </div>
-</div>
-
-<!-- PROBLEMA -->
-<section class="section">
+<!-- 7 · CÓMO TRABAJAMOS -->
+<section class="how">
   <div class="wrap">
-    <div class="section-head reveal">
-      <span class="eyebrow" data-en="The Problem">El problema</span>
-      <h2 data-en="Every unanswered message is money walking out the door.">Cada mensaje sin responder es dinero saliendo por la puerta.</h2>
-    </div>
-    <div class="pain-grid">
-      <div class="pain reveal"><span class="n">01</span><h3 data-en="Manual bookings">Reservas a mano</h3><p data-en="Your team books everything manually. Every missed inquiry at 9 PM is a client who booked with your competitor at 9:05.">Tu equipo agenda todo a mano. Cada consulta perdida es un cliente que reservo con la competencia.</p></div>
-      <div class="pain reveal d1"><span class="n">02</span><h3 data-en="Leads go cold">Los leads se enfrían</h3><p data-en="78% of clients buy from whoever answers first. If your response takes hours, you already lost.">El 78% compra a quien responde primero. Si tardas horas, ya perdiste.</p></div>
-      <div class="pain reveal d2"><span class="n">03</span><h3 data-en="Growth ceiling">Techo de crecimiento</h3><p data-en="Custom dev costs $80K+. Off-the-shelf doesn't fit. You're stuck.">El desarrollo a medida cuesta $80K+. El software generico no funciona.</p></div>
+    <div class="rv"><span class="eyebrow">Cómo trabajamos</span><h2>De la idea a tu negocio <br>funcionando.</h2></div>
+    <div class="timeline">
+      <div class="tl rv"><h3>Diagnóstico gratis</h3><p>Conversamos 20 minutos sobre tu negocio.</p><span class="free">Sin costo</span></div>
+      <div class="tl rv"><h3>Demo con tu marca y presupuesto</h3><p>Te mostramos tu sistema con tu logo antes de que pagues.</p></div>
+      <div class="tl rv"><h3>Desarrollo y puesta en marcha</h3><p>Lo dejamos funcionando.</p></div>
+      <div class="tl rv"><h3>Acompañamiento</h3><p>Seguimos contigo según tu plan.</p></div>
     </div>
   </div>
 </section>
 
-<!-- SERVICIOS -->
-<section class="section" id="services">
+<!-- 8 · PLANES -->
+<section id="planes">
   <div class="wrap">
-    <div class="section-head reveal">
-      <span class="eyebrow" data-en="What I Build">Lo que construyo</span>
-      <h2 data-en="Four systems. One goal: revenue on autopilot.">Cuatro sistemas. Un objetivo: ingresos automatizados.</h2>
+    <div class="center rv">
+      <span class="eyebrow">Planes</span>
+      <h2>Elige cómo quieres arrancar</h2>
+      <p class="lead">Todos incluyen tu tienda con QR, pedidos, inventario y funcionamiento sin internet.</p>
     </div>
-    <div class="svc-grid">
-      <div class="svc featured reveal">
-        <span class="flag" data-en="FLAGSHIP">ESTRELLA</span>
-        <h3 data-en="Multi-Tenant Booking SaaS">SaaS Multitenant de Reservas</h3>
-        <p data-en="The Cleaning Angels platform, white-label. Each client gets their own brand, domain and Stripe account. You become the SaaS company.">La plataforma de Cleaning Angels, white-label. Cada cliente su marca, dominio y cuenta de Stripe. Tu te conviertes en empresa SaaS.</p>
-        <ul class="svc-points">
-          <li data-en="Online booking + dynamic pricing">Reservas online + precios dinamicos</li>
-          <li data-en="Automated payments (Stripe)">Pagos automaticos (Stripe)</li>
-          <li data-en="Client portal + staff management">Portal de clientes + gestion de personal</li>
+    <div class="plans">
+      <article class="plan rv">
+        <h3>Arranque</h3><p class="for">Para quien se configura solo</p>
+        <div class="price"><button class="reveal" type="button"><svg><use href="#i-lock"/></svg>Ver precio</button>
+          <div class="amount"><div class="m">12 $<small> /mes</small></div><div class="impl">+ 150 $ de implementación</div></div></div>
+        <ul class="spec">
+          <li class="full"><span>Configuración</span><b>Tú cargas tus productos, fotos, precios, tasa, clientes y marca, con el manual en PDF</b></li>
+          <li><span>Onboarding</span><b>Opcional, aparte</b></li>
+          <li><span>Capacitación en vivo</span><b>2 sesiones</b></li>
+          <li><span>Capacitación virtual</span><b>1 al mes</b></li>
+          <li><span>Soporte</span><b>Fallas de la plataforma</b></li>
+          <li><span>Usuarios / roles</span><b>3 / 3</b></li>
+          <li><span>Productos con foto</span><b>Hasta 150</b></li>
+          <li><span>Sucursales</span><b>1</b></li>
         </ul>
-        <div class="svc-tech"><span>Next.js</span><span>Supabase</span><span>Stripe Connect</span><span>Multitenant RLS</span></div>
-        <div class="svc-foot">
-          <div class="svc-price"><small data-en="FROM">DESDE</small><b>$3,500</b></div>
-          <a href="#pricing" data-en="View">Ver</a>
+        <a class="btn btn-ghost wa-link" href="#" data-msg="Hola Daniela, me interesa el plan Arranque de KubIA.">Lo quiero</a>
+      </article>
+      <article class="plan star rv">
+        <span class="badge">⭐ Recomendado</span>
+        <h3>Crece</h3><p class="for">Para quien quiere ayuda para arrancar</p>
+        <div class="price"><button class="reveal" type="button"><svg><use href="#i-lock"/></svg>Ver precio</button>
+          <div class="amount"><div class="m">25 $<small> /mes</small></div><div class="impl">+ 399 $ de implementación</div></div></div>
+        <ul class="spec">
+          <li class="full"><span>Configuración</span><b>Ponemos tu logo, colores y nombre; tú cargas tus productos</b></li>
+          <li><span>Onboarding</span><b>✅ Incluido</b></li>
+          <li><span>Capacitación en vivo</span><b>4 sesiones</b></li>
+          <li><span>Capacitación virtual</span><b>2 al mes</b></li>
+          <li><span>Soporte</span><b>Fallas y dudas de uso</b></li>
+          <li><span>Usuarios / roles</span><b>8 / 5</b></li>
+          <li><span>Productos con foto</span><b>Hasta 500</b></li>
+          <li><span>Sucursales</span><b>2</b></li>
+        </ul>
+        <div class="bonus"><p>Bonos</p><ul><li>🎁 QR imprimible para tu mostrador</li><li>🎁 Primer mes sin mensualidad</li><li>🎁 Te cargamos tus primeros 20 productos</li></ul></div>
+        <a class="btn btn-em wa-link" href="#" data-msg="Hola Daniela, me interesa el plan Crece de KubIA.">Lo quiero</a>
+      </article>
+      <article class="plan rv">
+        <h3>Total</h3><p class="for">Para quien quiere todo resuelto</p>
+        <div class="price"><button class="reveal" type="button"><svg><use href="#i-lock"/></svg>Ver precio</button>
+          <div class="amount"><div class="m">35 $<small> /mes</small></div><div class="impl">+ 499 $ de implementación</div></div></div>
+        <ul class="spec">
+          <li class="full"><span>Configuración</span><b>Lo hacemos todo: catálogo, combos y promociones</b></li>
+          <li><span>Onboarding</span><b>✅ Completo</b></li>
+          <li><span>Capacitación en vivo</span><b>Las que tu equipo necesite</b></li>
+          <li><span>Capacitación virtual</span><b>Las que necesites</b></li>
+          <li><span>Soporte</span><b>Prioritario</b></li>
+          <li><span>Usuarios / roles</span><b>20 / sin límite</b></li>
+          <li><span>Productos con foto</span><b>Hasta 2.000</b></li>
+          <li><span>Sucursales</span><b>5</b></li>
+        </ul>
+        <div class="bonus"><p>Bonos</p><ul><li>🎁 Todo lo de Crece</li><li>🎁 Video promocional de 30 s con tu tienda</li><li>🎁 Tu tienda enlazada en tu Instagram y WhatsApp</li><li>🎁 Revisión de ventas a los 30 días</li></ul></div>
+        <a class="btn btn-ghost wa-link" href="#" data-msg="Hola Daniela, me interesa el plan Total de KubIA.">Lo quiero</a>
+      </article>
+      <article class="plan rv">
+        <h3>A la Medida</h3><p class="for">Marca blanca o sistema propio</p>
+        <div class="price"><div class="amount" style="display:block;animation:none"><div class="m" style="font-size:34px">A convenir</div><div class="impl">Lo definimos juntos</div></div></div>
+        <ul class="spec">
+          <li class="full"><span>Configuración</span><b>Lo definimos juntos</b></li>
+          <li><span>Onboarding</span><b>✅</b></li>
+          <li><span>Capacitación</span><b>A convenir</b></li>
+          <li><span>Soporte</span><b>Dedicado</b></li>
+          <li><span>Usuarios / roles</span><b>A convenir</b></li>
+          <li><span>Productos con foto</span><b>A convenir</b></li>
+          <li><span>Sucursales</span><b>A convenir</b></li>
+        </ul>
+        <a class="btn btn-ghost wa-link" href="#" data-msg="Hola Daniela, quiero un sistema a la medida / marca blanca con KubIA.">💬 Hablemos</a>
+      </article>
+    </div>
+    <div class="founder rv">
+      <div><b>🚀 Precio de fundador para los primeros 10 negocios</b><p>Implementación con 50% de descuento a cambio de tu testimonio en video.</p></div>
+      <a class="btn wa-link" href="#" data-msg="Hola Daniela, quiero uno de los 10 cupos con precio de fundador de KubIA.">Quiero mi cupo</a>
+    </div>
+    <p class="extras rv"><b>Se contratan aparte:</b> onboarding, capacitación adicional, creación de catálogo y fotos, videos promocionales y KubIA Asistente.</p>
+  </div>
+</section>
+
+<!-- 9 · HECHO EN AMAZONAS -->
+<section class="ama" id="nosotros">
+  <div class="orb"></div>
+  <div class="wrap ama-grid">
+    <div class="portrait rv">
+      <img src="/assets/daniela-silva.jpg" alt="Daniela Silva, fundadora de KubIA" loading="lazy" width="900" height="900">
+      <span class="loc">📍 Puerto Ayacucho, Amazonas</span>
+    </div>
+    <div class="rv">
+      <span class="eyebrow">Hecho en Amazonas</span>
+      <h2>Si funciona aquí, <span class="em">funciona en cualquier parte.</span></h2>
+      <div class="quote">
+        <p>KubIA nace en Puerto Ayacucho, donde el internet se va, la luz se va y se cobra en tres monedas. Por eso lo hicimos para que funcione igual.</p>
+        <p>Somos un equipo pequeño que conoce tu negocio porque vive donde tú vives.</p>
+      </div>
+      <div class="bio">
+        <span class="role">CREADORA DE SISTEMAS IA · FUNDADORA SAAS</span>
+        <p>Más de 8 años construyendo infraestructura digital para negocios. No solo código: opero mi propio SaaS, así que sé exactamente lo que cuesta mantener un sistema vivo después del lanzamiento. No vendo horas; construyo activos que trabajan por ti.</p>
+        <div class="countries"><span>🇻🇪 Venezuela</span><span>🇨🇴 Colombia</span><span>🇵🇪 Perú</span><span>🇨🇦 Canadá</span><span>🇺🇸 Estados Unidos</span></div>
+      </div>
+      <div class="sign"><img src="/assets/firma.png" alt="Firma de Daniela Silva" loading="lazy" width="700" height="191"><small>Daniela Silva · Fundadora de KubIA</small></div>
+    </div>
+  </div>
+</section>
+
+<!-- 10 · PREGUNTAS FRECUENTES -->
+<section class="faq" id="preguntas">
+  <div class="wrap">
+    <div class="center rv"><span class="eyebrow">Preguntas frecuentes</span><h2>Lo que todos preguntan</h2></div>
+    <div class="qa">
+      <details><summary>¿Y si se va el internet?</summary><p>Sigues vendiendo. Todo se guarda en el teléfono y se sincroniza cuando vuelve la señal.</p></details>
+      <details><summary>¿Funciona en bolívares?</summary><p>Sí: dólares, bolívares y pesos, con la tasa del día.</p></details>
+      <details><summary>¿Necesito computadora?</summary><p>No. Todo funciona desde el teléfono.</p></details>
+      <details><summary>¿Mis datos son míos?</summary><p>Sí. Cada negocio ve solo su información.</p></details>
+      <details><summary>¿Mis clientes tienen que descargar algo?</summary><p>No. Escanean el QR o abren tu enlace y listo.</p></details>
+      <details><summary>¿Cuánto tarda en estar listo?</summary><p>Depende del plan. Te lo decimos en el diagnóstico.</p></details>
+      <details><summary>¿Puedo cambiar de plan?</summary><p>Sí, cuando tu negocio crezca.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- DIAGNÓSTICO GRATIS -->
+<section id="diagnostico">
+  <div class="wrap">
+    <div class="center rv">
+      <span class="eyebrow">Diagnóstico gratis</span>
+      <h2>¿Qué necesita tu negocio?</h2>
+      <p class="lead">Responde 4 preguntas en 2 minutos. Al final te llevamos a WhatsApp con tus respuestas listas.</p>
+    </div>
+    <div class="quiz rv" id="quiz">
+      <div class="bar"><i id="qbar"></i></div>
+
+      <div class="q on" data-key="rubro">
+        <h3>¿Qué tipo de negocio tienes?</h3><p class="hint">Elige el más parecido.</p>
+        <div class="opts">
+          <button class="opt" type="button"><span class="e">🛒</span>Bodegón o abasto</button>
+          <button class="opt" type="button"><span class="e">🚚</span>Distribuidora</button>
+          <button class="opt" type="button"><span class="e">🥩</span>Carnicería o charcutería</button>
+          <button class="opt" type="button"><span class="e">🍔</span>Restaurante o comida</button>
+          <button class="opt" type="button"><span class="e">👗</span>Ropa o accesorios</button>
+          <button class="opt" type="button"><span class="e">🔧</span>Repuestos o ferretería</button>
+          <button class="opt" type="button"><span class="e">💅</span>Salud, belleza o servicios</button>
+          <button class="opt" type="button"><span class="e">✨</span>Otro</button>
         </div>
       </div>
 
-      <div class="svc reveal d1">
-        <span class="flag gold" data-en="MOST POPULAR">MAS SOLICITADO</span>
-        <h3 data-en="WhatsApp AI Agent">Agente IA de WhatsApp</h3>
-        <p data-en="An AI agent trained on your business that answers in seconds, quotes, qualifies leads and books 24/7 with your brand's voice.">Un agente IA entrenado en tu negocio que responde al instante, cotiza, califica y agenda 24/7 con tu voz.</p>
-        <ul class="svc-points">
-          <li data-en="Official WhatsApp Business API">API oficial de WhatsApp Business</li>
-          <li data-en="Books into your calendar">Agenda en tu calendario</li>
-          <li data-en="Human handoff when needed">Transferencia a humano cuando se requiere</li>
-        </ul>
-        <div class="svc-tech"><span>Claude API</span><span>WhatsApp API</span><span>n8n</span><span>Supabase</span></div>
-        <div class="svc-foot">
-          <div class="svc-price"><small data-en="FROM">DESDE</small><b>$1,800</b></div>
-          <a href="#pricing" data-en="View">Ver</a>
+      <div class="q" data-key="ventas">
+        <h3>¿Cómo vendes hoy?</h3><p class="hint">Lo que más usas.</p>
+        <div class="opts">
+          <button class="opt" type="button"><span class="e">💬</span>Por WhatsApp, a mano</button>
+          <button class="opt" type="button"><span class="e">📸</span>Por Instagram</button>
+          <button class="opt" type="button"><span class="e">🏪</span>Solo en el local</button>
+          <button class="opt" type="button"><span class="e">🗺️</span>En la calle, con vendedores</button>
         </div>
       </div>
 
-      <div class="svc reveal d2">
-        <h3 data-en="AI Voice Agents">Agentes de Voz IA</h3>
-        <p data-en="A voice agent that answers your phone, understands context, quotes and books. English and Spanish. Your clients won't believe it's not human.">Un agente de voz que contesta tu telefono, entiende contexto, cotiza y agenda. EN/ES. Tus clientes no creerian que no es humano.</p>
-        <ul class="svc-points">
-          <li data-en="Answers 100% of calls, 24/7">Contesta el 100% de llamadas, 24/7</li>
-          <li data-en="Natural bilingual voice">Voz natural bilingue</li>
-          <li data-en="Call transcripts + CRM sync">Transcripciones + sync con CRM</li>
-        </ul>
-        <div class="svc-tech"><span>ElevenLabs</span><span>Twilio</span><span>Claude API</span></div>
-        <div class="svc-foot">
-          <div class="svc-price"><small data-en="FROM">DESDE</small><b>$2,200</b></div>
-          <a href="#pricing" data-en="View">Ver</a>
+      <div class="q" data-key="dolor">
+        <h3>¿Qué es lo que más te quita el sueño?</h3><p class="hint">Sé honesto, nadie te juzga.</p>
+        <div class="opts">
+          <button class="opt" type="button"><span class="e">💬</span>Responder precios todo el día</button>
+          <button class="opt" type="button"><span class="e">📦</span>No sé cuánto inventario tengo</button>
+          <button class="opt" type="button"><span class="e">💸</span>Clientes que me deben</button>
+          <button class="opt" type="button"><span class="e">📒</span>Pedidos desordenados</button>
+          <button class="opt" type="button"><span class="e">📅</span>Citas y reservas</button>
+          <button class="opt" type="button"><span class="e">💡</span>Tengo una idea y no sé cómo hacerla</button>
         </div>
       </div>
 
-      <div class="svc reveal d3">
-        <h3 data-en="MVP in 30 Days">MVP en 30 Dias</h3>
-        <p data-en="Have a SaaS idea or manual operation drowning in work? I turn it into a functional product — validated, documented and live in 30 days.">Tienes una idea de SaaS o una operacion ahogada en trabajo? La convierto en producto funcional en 30 dias.</p>
-        <ul class="svc-points">
-          <li data-en="Full-stack MVP with auth + payments">MVP full-stack con auth + pagos</li>
-          <li data-en="Workflow automation (n8n, Make)">Automatizacion de flujos (n8n, Make)</li>
-          <li data-en="AI-augmented dev = 5x faster">Desarrollo potenciado IA = 5x mas rapido</li>
-        </ul>
-        <div class="svc-tech"><span>Next.js</span><span>Supabase</span><span>Claude Code</span></div>
-        <div class="svc-foot">
-          <div class="svc-price"><small data-en="FROM">DESDE</small><b>$2,500</b></div>
-          <a href="#pricing" data-en="View">Ver</a>
+      <div class="q" data-key="equipo">
+        <h3>¿Cuántas personas trabajan contigo?</h3><p class="hint">Contándote a ti.</p>
+        <div class="opts">
+          <button class="opt" type="button"><span class="e">🙋</span>Solo yo</button>
+          <button class="opt" type="button"><span class="e">👥</span>De 2 a 5</button>
+          <button class="opt" type="button"><span class="e">🏢</span>De 6 a 20</button>
+          <button class="opt" type="button"><span class="e">🏭</span>Más de 20</button>
         </div>
       </div>
+
+      <div class="q" data-key="fin">
+        <h3>¡Listo! Esto es lo que vemos</h3><p class="hint" id="qreco"></p>
+        <div class="field"><label for="qname">Tu nombre y el de tu negocio (opcional)</label><input id="qname" autocomplete="organization" placeholder="Ej.: Ana, Bodegón La Esquina"></div>
+        <div class="result" id="qres"></div>
+        <a class="btn btn-em" id="qsend" href="#" target="_blank" rel="noopener" style="width:100%"><svg><use href="#i-wa"/></svg>Enviar mi diagnóstico por WhatsApp</a>
+      </div>
+
+      <div class="qnav"><button class="back" id="qback" type="button" hidden>← Atrás</button><span style="font-size:13px;color:var(--muted)" id="qstep">1 de 4</span></div>
     </div>
   </div>
 </section>
 
-<!-- CASO DE ESTUDIO -->
-<section class="section" id="case">
-  <div class="wrap">
-    <div class="final reveal" style="text-align:left;max-width:none;background:linear-gradient(120deg,rgba(58,230,168,.07),rgba(255,193,94,.05) 60%,transparent),var(--panel);border:1px solid var(--line-soft);padding:3rem">
-      <span class="eyebrow" style="color:var(--gold)" data-en="Flagship Project">Proyecto Estrella</span>
-      <h2 style="text-align:left;margin-bottom:1rem" data-en="Cleaning Angels — Washington DC/MD/VA">Cleaning Angels — Washington DC/MD/VA</h2>
-      <p style="text-align:left;color:var(--muted);max-width:none" data-en="A cleaning agency running 40+ weekly bookings through WhatsApp and paper. I designed, built and operate the platform that automated everything: online booking, payments, client portal, staff management and automated communications.">Una agencia de limpieza con 40+ reservas semanales gestionadas por WhatsApp. Diseña, construi y opero la plataforma que automatizo todo: reservas online, pagos, portal de clientes, gestion de personal y comunicaciones automaticas.</p>
-      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin:2rem 0">
-        <div style="background:rgba(7,12,22,.6);border:1px solid var(--line);border-radius:14px;padding:1rem"><b style="color:var(--aqua)">-40%</b><br><span style="font-size:.76rem;color:var(--muted)">no-shows</span></div>
-        <div style="background:rgba(7,12,22,.6);border:1px solid var(--line);border-radius:14px;padding:1rem"><b style="color:var(--aqua)">+25%</b><br><span style="font-size:.76rem;color:var(--muted)">reservas en 60d</span></div>
-        <div style="background:rgba(7,12,22,.6);border:1px solid var(--line);border-radius:14px;padding:1rem"><b style="color:var(--gold)">15h</b><br><span style="font-size:.76rem;color:var(--muted)">ahorradas/semana</span></div>
-        <div style="background:rgba(7,12,22,.6);border:1px solid var(--line);border-radius:14px;padding:1rem"><b style="color:var(--gold)">28</b><br><span style="font-size:.76rem;color:var(--muted)">dias hasta lanzamiento</span></div>
-      </div>
-      <a href="https://cleaning.angelss.co" target="_blank" rel="noopener" class="btn btn-primary" data-en="Visit live site">Ver sitio en vivo</a>
-    </div>
+<!-- 11 · CIERRE -->
+<section class="final">
+  <div class="grid-bg"></div><div class="orb"></div>
+  <div class="wrap" style="position:relative">
+    <h2 class="rv">Tu negocio, ordenado y <span class="em">vendiendo 24/7.</span></h2>
+    <a class="btn btn-em wa-link rv" href="#" data-msg="Hola Daniela, quiero mi diagnóstico gratis de KubIA."><svg><use href="#i-wa"/></svg>Pide tu diagnóstico gratis por WhatsApp</a>
   </div>
 </section>
 
-<!-- SOBRE MI -->
-<section class="section" id="about">
+</main>
+
+<footer>
   <div class="wrap">
-    <div class="section-head reveal">
-      <span class="eyebrow" data-en="Who's behind this">Quien esta detras</span>
-      <h2 data-en="I don't sell hours. I build assets that work for you.">No vendo horas. Construyo activos que trabajan por ti.</h2>
+    <div class="meta">
+      <span class="logo" style="margin-bottom:18px">Kub<span class="ia">IA<span class="sol">Soluciones</span></span></span>
+      <span>Desarrollado por Daniela Silva</span>
+      <span>📍 Puerto Ayacucho, Amazonas, Venezuela</span>
     </div>
-    <div style="max-width:680px">
-      <div style="background:var(--panel);border:1px solid var(--line);border-radius:22px;padding:2rem;margin-bottom:2rem">
-        <div style="width:96px;height:96px;border-radius:26px;margin-bottom:1.2rem;background:linear-gradient(135deg,var(--aqua),var(--gold));display:grid;place-items:center;font-family:var(--font-display);font-size:2rem;font-weight:800;color:#05221A">DS</div>
-        <h3>Daniela Silva</h3>
-        <span style="color:var(--aqua);font-family:var(--font-mono);font-size:.74rem;letter-spacing:.1em;display:block;margin:.4rem 0 1rem" data-en="AI SYSTEMS BUILDER · SAAS FOUNDER">CREADORA DE SISTEMAS IA · FUNDADORA SAAS</span>
-        <p style="color:var(--muted);margin-bottom:1rem" data-en="8+ years building digital infrastructure for businesses in Venezuela, Colombia, Peru, Canada and the United States.">8+ anos construyendo infraestructura digital para negocios en Venezuela, Colombia, Peru, Canada y Estados Unidos.</p>
-        <p style="color:var(--muted)" data-en="I don't just code. I operate my own SaaS (Cleaning Angels) so I know exactly what it takes to keep a system alive after launch.">No solo codigo. Opero mi propio SaaS (Cleaning Angels) asi que se exactamente lo que cuesta mantener un sistema vivo post-lanzamiento.</p>
-        <div style="margin-top:1.4rem;border-top:1px solid var(--line);padding-top:1rem;color:var(--muted);font-size:.9rem" data-en="Based in Venezuela · Working globally · EN/ES bilingual">Base en Venezuela · Trabajo global · Bilingue EN/ES</div>
-      </div>
-      <h3 style="margin:1.6rem 0 .8rem" data-en="Tech Stack">Stack Tecnologico</h3>
-      <p style="color:var(--muted);margin-bottom:1rem" data-en="Frontend & Product: Next.js 15, React 19, TypeScript, Tailwind CSS, conversion-focused UX"><strong>Frontend:</strong> Next.js 15, React 19, TypeScript, Tailwind CSS</p>
-      <p style="color:var(--muted);margin-bottom:1rem" data-en="Backend & Data: Supabase, PostgreSQL + RLS, Prisma, Redis, Stripe Connect"><strong>Backend:</strong> Supabase, PostgreSQL + RLS, Prisma, Redis, Stripe Connect</p>
-      <p style="color:var(--muted);margin-bottom:1rem" data-en="AI & Automation: Claude API, OpenAI, Gemini, n8n, Make, WhatsApp Business API"><strong>IA:</strong> Claude API, Claude Code, OpenAI, Gemini, n8n, Make, WhatsApp API</p>
-      <p style="color:var(--muted)" data-en="Infrastructure & Deployment: Vercel, GitHub Actions, Docker, Cloudflare, Twilio"><strong>Infra:</strong> Vercel, GitHub Actions, Docker, Cloudflare, Twilio</p>
+    <div class="meta" style="text-align:right">
+      <a class="wa-link" href="#" data-msg="Hola Daniela, vi el sitio de KubIA.">💬 WhatsApp 0422-1754245</a>
+      <a href="/kubia/">▶ Demo interactiva</a>
     </div>
-  </div>
-</section>
-
-<!-- PRECIOS -->
-<section class="section" id="pricing">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <span class="eyebrow" data-en="Investment">Inversion</span>
-      <h2 data-en="Fixed price. No hourly surprises. Code is yours.">Precio fijo. Sin sorpresas. El codigo es tuyo.</h2>
-      <p data-en="Compare: a traditional agency quotes $40K-$80K and 6 months for the same scope.">Compara: una agencia tradicional cotiza $40K-$80K y 6 meses por lo mismo.</p>
-    </div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:20px;align-items:stretch">
-      <div class="svc reveal" style="background:var(--panel);border:1px solid var(--line)">
-        <h3 data-en="AI Agent Suite">Suite Agente IA</h3>
-        <p style="color:var(--muted);margin:1rem 0" data-en="WhatsApp AI + Web Widget + Calendar Integration">WhatsApp IA + Widget Web + Integracion Calendario</p>
-        <div style="font-family:var(--font-display);font-size:2rem;font-weight:750;margin-bottom:.3rem">$1,800 <small style="font-size:.75rem;color:var(--muted);font-family:var(--font-body);font-weight:400" data-en="setup">setup</small></div>
-        <span style="font-family:var(--font-mono);font-size:.72rem;color:var(--gold);margin-bottom:1.2rem;display:block" data-en="+ $199/mo · hosting, AI & support">+ $199/mes · hosting, IA y soporte</span>
-        <ul style="list-style:none;gap:.45rem;font-size:.88rem;margin:1.2rem 0">
-          <li style="display:flex;gap:.5rem;color:#C4D2E6"><span style="color:var(--aqua);font-weight:700">✓</span> <span data-en="WhatsApp AI agent">Agente IA WhatsApp</span></li>
-          <li style="display:flex;gap:.5rem;color:#C4D2E6"><span style="color:var(--aqua);font-weight:700">✓</span> <span data-en="Web chat widget">Widget de chat web</span></li>
-          <li style="display:flex;gap:.5rem;color:#C4D2E6"><span style="color:var(--aqua);font-weight:700">✓</span> <span data-en="Trained on your services">Entrenado en tus servicios</span></li>
-          <li style="display:flex;gap:.5rem;color:#C4D2E6"><span style="color:var(--aqua);font-weight:700">✓</span> <span data-en="Human handoff included">Transferencia a humano incluida</span></li>
-        </ul>
-        <a href="#booking" class="btn btn-ghost" style="width:100%;margin-top:auto" data-en="Start with AI Agent">Empezar con Agente IA</a>
-      </div>
-
-      <div class="svc hot reveal d1" style="background:linear-gradient(180deg,rgba(58,230,168,.08),var(--panel) 45%);border-color:rgba(58,230,168,.5);box-shadow:0 30px 70px -30px rgba(58,230,168,.35)">
-        <div style="position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--aqua);color:#05221A;font-family:var(--font-mono);font-size:.62rem;font-weight:600;letter-spacing:.12em;padding:.35rem .9rem;border-radius:999px;white-space:nowrap" data-en="BEST ROI">MEJOR ROI</div>
-        <h3 style="margin-top:.8rem" data-en="Revenue Autopilot">Plataforma Revenue Autopilot</h3>
-        <p style="color:var(--muted);margin:1rem 0" data-en="Your entire operation automated">Toda tu operacion automatizada</p>
-        <div style="font-family:var(--font-display);font-size:2rem;font-weight:750;margin-bottom:.3rem">$2,800 <small style="font-size:.75rem;color:var(--muted);font-family:var(--font-body);font-weight:400" data-en="setup">setup</small></div>
-        <span style="font-family:var(--font-mono);font-size:.72rem;color:var(--gold);margin-bottom:1.2rem;display:block" data-en="+ $299/mo · hosting, maintenance">+ $299/mes · hosting, mantenimiento</span>
-        <ul style="list-style:none;gap:.45rem;font-size:.88rem;margin:1.2rem 0">
-          <li style="display:flex;gap:.5rem;color:#C4D2E6"><span style="color:var(--aqua);font-weight:700">✓</span> <span data-en="Booking platform">Plataforma de reservas</span></li>
-          <li style="display:flex;gap:.5rem;color:#C4D2E6"><span style="color:var(--aqua);font-weight:700">✓</span> <span data-en="Online payments + invoicing">Pagos online + facturacion</span></li>
-          <li style="display:flex;gap:.5rem;color:#C4D2E6"><span style="color:var(--aqua);font-weight:700">✓</span> <span data-en="Client portal">Portal de clientes</span></li>
-          <li style="display:flex;gap:.5rem;color:#C4D2E6"><span style="color:var(--aqua);font-weight:700">✓</span> <span data-en="WhatsApp AI agent INCLUDED">Agente IA WhatsApp INCLUIDO</span></li>
-        </ul>
-        <a href="#booking" class="btn btn-primary" style="width:100%;margin-top:auto" data-en="I want the full platform">Quiero la plataforma completa</a>
-      </div>
-
-      <div class="svc reveal d2" style="background:var(--panel);border:1px solid var(--line)">
-        <h3 data-en="White-Label SaaS">SaaS White-Label</h3>
-        <p style="color:var(--muted);margin:1rem 0" data-en="Multi-tenant. Resell to your clients.">Multitenant. Revende a tus clientes.</p>
-        <div style="font-family:var(--font-display);font-size:2rem;font-weight:750;margin-bottom:.3rem">$3,500 <small style="font-size:.75rem;color:var(--muted);font-family:var(--font-body);font-weight:400" data-en="setup">setup</small></div>
-        <span style="font-family:var(--font-mono);font-size:.72rem;color:var(--gold);margin-bottom:1.2rem;display:block" data-en="+ $499/mo · infrastructure">+ $499/mes · infraestructura</span>
-        <ul style="list-style:none;gap:.45rem;font-size:.88rem;margin:1.2rem 0">
-          <li style="display:flex;gap:.5rem;color:#C4D2E6"><span style="color:var(--aqua);font-weight:700">✓</span> <span data-en="Multitenant architecture">Arquitectura multitenant</span></li>
-          <li style="display:flex;gap:.5rem;color:#C4D2E6"><span style="color:var(--aqua);font-weight:700">✓</span> <span data-en="Your brand, your pricing">Tu marca, tus precios</span></li>
-          <li style="display:flex;gap:.5rem;color:#C4D2E6"><span style="color:var(--aqua);font-weight:700">✓</span> <span data-en="Stripe Connect">Stripe Connect</span></li>
-          <li style="display:flex;gap:.5rem;color:#C4D2E6"><span style="color:var(--aqua);font-weight:700">✓</span> <span data-en="Admin superpanel">Superpanel admin</span></li>
-        </ul>
-        <a href="#booking" class="btn btn-ghost" style="width:100%;margin-top:auto" data-en="Become SaaS provider">Convertirme en proveedor SaaS</a>
-      </div>
-    </div>
-    <p style="text-align:center;color:var(--muted);font-size:.86rem;margin-top:2rem;font-family:var(--font-mono)" data-en="Every package includes: source code · documentation · 30 days post-launch support">Todos los paquetes incluyen: codigo fuente · documentacion · 30 dias de soporte post-lanzamiento</p>
-  </div>
-</section>
-
-<!-- FINAL CTA -->
-<section class="section" id="booking">
-  <div class="wrap">
-    <div class="final reveal">
-      <span class="badge-live" style="justify-content:center;width:fit-content;margin:0 auto 1.2rem"><span class="pulse-dot" style="background:var(--gold)"></span><span data-en="Only 2 slots left for August 2026">Solo quedan 2 cupos para Agosto 2026</span></span>
-      <h2 data-en="Your competition already answers in 10 seconds. And you?">Tu competencia ya responde en 10 segundos. Y tu?</h2>
-      <p data-en="Book a free 45-minute strategy call. No pitch, no pressure: we map your bottlenecks and I'll tell you honestly if I'm the right fit.">Agenda una llamada estrategica gratuita de 45 minutos. Sin pitch, sin presion: mapeamos tus problemas y te digo con honestidad si soy la persona indicada.</p>
-      <div class="hero-ctas" style="justify-content:center">
-        <a href="#REEMPLAZAR_CON_CALENDLY_O_CALL_LINK" target="_blank" rel="noopener" class="btn btn-primary" data-en="Book my free call">Agendar mi llamada gratis</a>
-        <a href="https://wa.me/#REEMPLAZAR_CON_WHATSAPP" target="_blank" rel="noopener" class="btn btn-ghost" data-en="Write me on WhatsApp">Escribe por WhatsApp</a>
-      </div>
-      <p style="font-size:.8rem;color:var(--muted);margin-top:1.2rem" data-en="Free · 45 min · Reply guaranteed within 24 hours · REEMPLAZAR_EMAIL">Gratis · 45 min · Respuesta garantizada en 24 horas</p>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer class="footer">
-  <div class="wrap">
-    <div class="footer-grid">
-      <div>
-        <a href="#top" class="logo"><span class="logo-mark">DS</span><span>Daniela Silva</span></a>
-        <p class="tag" data-en="Multi-tenant SaaS, AI agents and automation for service businesses in the US and LATAM.">SaaS multitenant, agentes IA y automatizacion para negocios de servicios.</p>
-        <div class="lang-switch" style="margin-top:1.2rem">
-          <button class="lang-es active" onclick="setLang('es')">ES</button>
-          <button class="lang-en" onclick="setLang('en')">EN</button>
-        </div>
-      </div>
-      <div>
-        <h4 data-en="Navigate">Navegar</h4>
-        <a href="#services" data-en="Services">Servicios</a>
-        <a href="#case" data-en="Flagship">Proyecto Estrella</a>
-        <a href="#about" data-en="About">Sobre mi</a>
-        <a href="#pricing" data-en="Packages">Paquetes</a>
-        <a href="#booking" data-en="Book a Call">Agendar</a>
-      </div>
-      <div>
-        <h4 data-en="Contact">Contacto</h4>
-        <a href="mailto:REEMPLAZAR_EMAIL">hello@tu-email.com</a>
-        <a href="https://wa.me/#REEMPLAZAR_CON_WHATSAPP" target="_blank" rel="noopener" data-en="WhatsApp">WhatsApp</a>
-        <a href="https://cleaning.angelss.co" target="_blank" rel="noopener">cleaning.angelss.co</a>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <span data-en="2026 Daniela Silva · All rights reserved">2026 Daniela Silva · Todos los derechos reservados</span>
-      <span data-en="Built with Next.js-ready architecture · Deployed on Vercel">Arquitectura lista para Next.js · Desplegado en Vercel</span>
-    </div>
+    <p class="copy">© <span id="yr">2026</span> KubIA Soluciones. Hecho en Amazonas, para el mundo.</p>
   </div>
 </footer>
 
-<!-- STICKY CTA MOBILE -->
-<div class="sticky-cta">
-  <a href="https://wa.me/#REEMPLAZAR_CON_WHATSAPP" target="_blank" rel="noopener" class="btn btn-primary" data-en="WhatsApp me">Escribeme</a>
-  <a href="#pricing" class="btn btn-ghost" data-en="Pricing">Precios</a>
-</div>
+<a class="fab wa-link" id="fab" href="#" data-msg="Hola Daniela, vi el sitio de KubIA y quiero saber más." aria-label="Escríbenos por WhatsApp"><svg><use href="#i-wa"/></svg></a>
 
 <script>
-let currentLang='es';const titles={es:'Daniela Silva — Sistemas de IA que venden, agendan y cobran por ti',en:'Daniela Silva — AI Systems that sell, book & collect for you'};document.querySelectorAll('[data-en]').forEach(el=>{el.dataset.es=el.innerHTML});function setLang(lang){if(lang===currentLang)return;currentLang=lang;document.documentElement.lang=lang;document.title=titles[lang];document.querySelectorAll('[data-en]').forEach(el=>{el.innerHTML=lang==='en'?el.dataset.en:el.dataset.es});document.querySelectorAll('.lang-switch button').forEach(b=>{b.classList.toggle('active',(lang==='es'&&b.classList.contains('lang-es'))||(lang==='en'&&b.classList.contains('lang-en')))});restartChat()}function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open')}const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});document.querySelectorAll('.reveal:not(.in)').forEach(el=>io.observe(el));const counterIO=new IntersectionObserver(entries=>{entries.forEach(e=>{if(!e.isIntersecting)return;const el=e.target;const target=parseFloat(el.dataset.target);const dec=parseInt(el.dataset.decimals||0);const pre=el.dataset.prefix||'',suf=el.dataset.suffix||'';const dur=1400,t0=performance.now();function tick(t){const p=Math.min((t-t0)/dur,1);const eased=1-Math.pow(1-p,3);el.textContent=pre+(target*eased).toFixed(dec)+suf;if(p<1)requestAnimationFrame(tick)}requestAnimationFrame(tick);counterIO.unobserve(el)})},{threshold:.6});document.querySelectorAll('.count').forEach(el=>counterIO.observe(el));const chatBox=document.getElementById('chat');const chatScripts={es:[{t:'user',m:'Hola! Precio limpieza profunda para apto de 2 habitaciones?',d:900},{t:'bot',m:'Hola! Para 2h la limpieza profunda es <b>$189</b>. Te muestro disponibilidad?',d:2100},{t:'user',m:'Si, el viernes puede ser?',d:1700},{t:'bot',m:'Perfecto. Viernes <b>9:00 AM</b> o <b>1:30 PM</b>. Cual prefieres?',d:2000},{t:'user',m:'9 AM',d:1500},{t:'bot',m:'✓ <b>Reservado viernes 9:00 AM.</b> Link de pago enviado.',d:2100},{t:'chip',m:'RESERVA #4821 CREADA · PAGO RECIBIDO',d:2600}],en:[{t:'user',m:'Hi! Price for deep clean, 2-bedroom?',d:900},{t:'bot',m:'Hi! For 2 bed, deep clean is <b>$189</b>. See availability?',d:2100},{t:'user',m:'Yes — does Friday work?',d:1700},{t:'bot',m:'Perfect. <b>Friday 9:00 AM</b> or <b>1:30 PM</b>. Which?',d:2000},{t:'user',m:'9 AM',d:1500},{t:'bot',m:'✓ <b>Booked Friday 9:00 AM.</b> Payment link sent.',d:2100},{t:'chip',m:'BOOKING #4821 CREATED · PAYMENT RECEIVED',d:2600}]};let chatTimers=[];const reduceMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;function clearChat(){chatTimers.forEach(clearTimeout);chatTimers=[];chatBox.innerHTML=''}function now(){return new Date().toLocaleTimeString(currentLang==='es'?'es-VE':'en-US',{hour:'numeric',minute:'2-digit'})}function playChat(){clearChat();const script=chatScripts[currentLang];let t=reduceMotion?0:600;script.forEach((step,i)=>{if(step.t==='bot'&&!reduceMotion){chatTimers.push(setTimeout(()=>{const ty=document.createElement('div');ty.className='typing';ty.innerHTML='<i></i><i></i><i></i>';chatBox.appendChild(ty);chatBox.scrollTop=chatBox.scrollHeight},t));t+=900}chatTimers.push(setTimeout(()=>{const typing=chatBox.querySelector('.typing');if(typing)typing.remove();const el=document.createElement('div');if(step.t==='chip'){el.className='chip';el.textContent=step.m}else{el.className='msg '+step.t;el.innerHTML=step.m+'<span class="time">'+now()+'</span>'}chatBox.appendChild(el);chatBox.scrollTop=chatBox.scrollHeight},t));t+=reduceMotion?50:step.d});chatTimers.push(setTimeout(playChat,t+3200))}function restartChat(){playChat()}playChat();let lastY=0;const header=document.querySelector('.header');window.addEventListener('scroll',()=>{const y=window.scrollY;if(window.innerWidth<=680&&y>200&&y>lastY&&!document.getElementById('mobileMenu').classList.contains('open')){header.style.transform='translateY(-100%)'}else{header.style.transform=''}lastY=y},{passive:true})
+(function(){
+  var WA='584221754245';
+  function wa(msg){return 'https://wa.me/'+WA+'?text='+encodeURIComponent(msg)}
+  document.querySelectorAll('.wa-link').forEach(function(a){
+    a.href=wa(a.dataset.msg||'Hola Daniela');a.target='_blank';a.rel='noopener';
+  });
+  document.getElementById('yr').textContent=new Date().getFullYear();
+
+  // Barra de navegación y botón flotante
+  var nav=document.getElementById('nav'),fab=document.getElementById('fab');
+  function onScroll(){var y=window.scrollY;nav.classList.toggle('solid',y>30);fab.classList.toggle('show',y>innerHeight*.8)}
+  addEventListener('scroll',onScroll,{passive:true});onScroll();
+
+  // Aparición al hacer scroll
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.15});
+  document.querySelectorAll('.rv,.s3').forEach(function(el){io.observe(el)});
+
+  // "Escanean. Piden. Pagan." palabra por palabra
+  var words=document.querySelectorAll('#qrTitle span'),qrDone=false;
+  new IntersectionObserver(function(es,o){es.forEach(function(e){if(e.isIntersecting&&!qrDone){qrDone=true;o.disconnect();
+    words.forEach(function(w,i){setTimeout(function(){w.classList.add('on')},250+i*550)})}})},{threshold:.5}).observe(document.getElementById('qrTitle'));
+
+  // Reel: se reproduce solo cuando está a la vista
+  var reel=document.getElementById('reel'),snd=document.getElementById('reelSnd');
+  new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var p=reel.play();if(p&&p.catch)p.catch(function(){})}else reel.pause()})},{threshold:.4}).observe(reel);
+  snd.addEventListener('click',function(){reel.muted=!reel.muted;snd.textContent=reel.muted?'🔇 Activar sonido':'🔊 Sonido activado';if(!reel.muted){reel.currentTime=0;reel.play()}});
+
+  // Indicador sin internet / sincronizado
+  var net=document.getElementById('net'),on=false;
+  setInterval(function(){on=!on;net.classList.toggle('ok',on);net.lastChild.textContent=on?'Conectado · sincronizado ✓':'Sin señal · guardando'},3000);
+
+  // Precios: se revelan al tocar
+  document.querySelectorAll('.reveal').forEach(function(b){b.addEventListener('click',function(){b.parentNode.classList.add('open')})});
+
+  // Diagnóstico
+  var qs=[].slice.call(document.querySelectorAll('.q')),i=0,ans={},bar=document.getElementById('qbar'),
+      back=document.getElementById('qback'),step=document.getElementById('qstep'),name=document.getElementById('qname');
+  var reco={
+    'Bodegón o abasto':'KubIA Tienda + Gestión','Distribuidora':'KubIA Distribución','Carnicería o charcutería':'KubIA Tienda + Gestión',
+    'Restaurante o comida':'KubIA Tienda','Ropa o accesorios':'KubIA Tienda','Repuestos o ferretería':'KubIA Tienda + Gestión',
+    'Salud, belleza o servicios':'KubIA Agenda','Otro':'KubIA a la Medida'};
+  function pick(){
+    var r=reco[ans.rubro]||'KubIA Tienda';
+    if(ans.dolor==='Citas y reservas')r='KubIA Agenda';
+    if(ans.dolor==='Tengo una idea y no sé cómo hacerla')r='KubIA a la Medida';
+    if(ans.dolor==='Responder precios todo el día'&&r.indexOf('Asistente')<0&&r!=='KubIA a la Medida')r+=' (y, si quieres, KubIA Asistente)';
+    var plan=ans.equipo==='Solo yo'?'Arranque o Crece':ans.equipo==='De 2 a 5'?'Crece':ans.equipo==='De 6 a 20'?'Total':'Total o A la Medida';
+    if(r==='KubIA a la Medida')plan='A la Medida';
+    return {r:r,plan:plan};
+  }
+  function msg(){var p=pick(),n=name.value.trim();
+    return 'Hola Daniela, hice el diagnóstico en el sitio de KubIA.'+(n?'\nSoy: '+n:'')+
+      '\n• Negocio: '+ans.rubro+'\n• Vendo: '+ans.ventas+'\n• Lo que más me cuesta: '+ans.dolor+'\n• Equipo: '+ans.equipo+
+      '\n• Recomendación: '+p.r+' · plan '+p.plan+'\n¿Agendamos los 20 minutos?'}
+  function show(n){
+    qs[i].classList.remove('on');i=n;qs[i].classList.add('on');
+    bar.style.width=(i/4*100)+'%';back.hidden=i===0;step.textContent=i<4?(i+1)+' de 4':'¡Listo!';
+    if(i===4){var p=pick();
+      document.getElementById('qreco').innerHTML='Te recomendamos <b style="color:var(--em2)">'+p.r+'</b> con el plan <b style="color:var(--em2)">'+p.plan+'</b>. Lo confirmamos juntos en el diagnóstico.';
+      upd()}
+  }
+  function upd(){document.getElementById('qres').textContent=msg();document.getElementById('qsend').href=wa(msg())}
+  name.addEventListener('input',upd);
+  qs.forEach(function(q,k){q.querySelectorAll('.opt').forEach(function(o){o.addEventListener('click',function(){
+    q.querySelectorAll('.opt').forEach(function(x){x.classList.remove('sel')});o.classList.add('sel');
+    ans[q.dataset.key]=o.lastChild.textContent.trim();
+    setTimeout(function(){show(k+1)},260);
+  })})});
+  back.addEventListener('click',function(){if(i>0)show(i-1)});
+})();
 </script>
 </body>
 </html>
