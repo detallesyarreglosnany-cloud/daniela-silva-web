@@ -1,5 +1,5 @@
 // KubIA · service worker: guarda la app para abrirla y usarla sin internet.
-const CACHE = 'kubia-v2';
+const CACHE = 'kubia-v3';
 const CORE = ['/kubia/', '/kubia/index.html', '/kubia/manifest.json', '/kubia/icons/icon-192.png', '/kubia/icons/icon-512.png', '/kubia/icons/icon-180.png'];
 
 self.addEventListener('install', (e) => {
