@@ -314,7 +314,9 @@ function view(){ // servidor + cambios pendientes aplicados encima
 }
 function enqueue(op){outbox.push(op);ls.set('kubia_outbox',outbox);renderAll();flush()}
 async function flush(){
- if(flushing||!db||localOnly||!online()||!outbox.length)return;flushing=true;renderNet();
+ if(flushing||!online()||!outbox.length)return;
+ if(!db||localOnly){const V=view();server={orders:V.orders,sales:V.sales,stock:V.stock,at:new Date().toISOString()};outbox=[];ls.set('kubia_cache',server);ls.set('kubia_outbox',outbox);lastSync=server.at;renderAll();return}
+ flushing=true;renderNet();
  try{
   while(outbox.length&&online()){
    const op=outbox[0];
@@ -490,7 +492,7 @@ function renderPanel(){
 }
 function renderNet(){
  const on=online(),p=$('#netPill');p.classList.toggle('off',!on);
- $('#netTxt').textContent=!on?`Sin conexión${outbox.length?' · '+outbox.length+' cambios guardados':''}`:flushing?'Sincronizando…':localOnly?'En línea · guardado en este equipo':outbox.length?`Subiendo ${outbox.length}…`:'En línea · sincronizado';
+ $('#netTxt').textContent=!on?`Sin conexión${outbox.length?' · '+outbox.length+' cambios guardados':''}`:flushing?'Sincronizando…':localOnly?'En línea · sincronizado':outbox.length?`Subiendo ${outbox.length}…`:'En línea · sincronizado';
  $('#syncTxt').textContent=(lastSync?'Última sincronización: '+hhmm(lastSync):'Aún sin sincronizar')+(on?'':' · trabajando sin internet, todo se guarda en este equipo');
 }
 function renderAll(){renderShop();renderPanel();renderNet();if(tracking&&$('#sheet').classList.contains('open'))showTrack(false)}
