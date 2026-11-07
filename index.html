@@ -269,10 +269,36 @@ h3{font-size:20px;letter-spacing:-.02em;line-height:1.2}
 .allinc{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:22px}
 .founder{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:18px;margin-top:22px;padding:22px 26px;border-radius:var(--r);background:linear-gradient(90deg,var(--em),#0E9F6E);color:#04140E}
 .founder b{font-size:18px;letter-spacing:-.02em}
-.founder p{font-size:14px;max-width:640px}
+.founder p{font-size:14px;max-width:640px;font-weight:600}
+.fpack{list-style:none;display:grid;gap:6px;margin:12px 0 10px;font-size:14px}
+.fpack strong{font-weight:700}
 .founder .btn{background:#04140E;color:var(--white)}
 .extras{margin-top:18px;font-size:14px;color:var(--muted);text-align:center}
 .extras b{color:var(--text)}
+
+/* Comparte y gana */
+.share-grid{display:grid;gap:14px;margin-top:44px}
+@media(min-width:900px){.share-grid{grid-template-columns:repeat(3,1fr)}}
+.sg{position:relative;overflow:hidden;display:flex;flex-direction:column;padding:28px 24px;border-radius:var(--r);background:var(--ink2);border:1px solid var(--line)}
+.sg::before{content:attr(data-e);position:absolute;right:-14px;top:-18px;font-size:120px;opacity:.14;transform:rotate(-12deg);pointer-events:none}
+.sg .who{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--em2)}
+.sg h3{font-size:22px;margin:10px 0 10px}
+.sg p{font-size:15px;color:var(--muted)}
+.sg .big{font-size:44px;font-weight:800;letter-spacing:-.05em;color:var(--white);line-height:1;margin:6px 0 4px}
+.sg .btn{margin-top:auto}
+.sg .sp{flex:1;min-height:18px}
+.comm{list-style:none;display:grid;gap:8px;margin:14px 0 6px}
+.comm li{display:flex;justify-content:space-between;align-items:baseline;gap:10px;padding:10px 12px;border-radius:12px;background:var(--ink);border:1px solid var(--line);font-size:14px}
+.comm li b{color:var(--em2);font-size:18px;letter-spacing:-.02em}
+.comm li small{color:var(--muted);font-size:12px;display:block}
+.how3{display:grid;gap:12px;margin-top:22px;counter-reset:h}
+@media(min-width:900px){.how3{grid-template-columns:repeat(3,1fr)}}
+.how3 div{display:flex;gap:12px;align-items:flex-start;padding:18px;border-radius:18px;border:1px dashed rgba(16,185,129,.4);font-size:14px;color:#C4D2CC}
+.how3 div::before{counter-increment:h;content:counter(h);flex:none;display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--em);color:#04140E;font-weight:800}
+.how3 code{color:var(--em2);font-family:inherit;font-weight:600;word-break:break-all}
+.terms{margin-top:16px;font-size:12.5px;color:var(--muted2);line-height:1.6}
+.refchip{display:none;margin-top:14px;padding:8px 14px;border-radius:999px;background:rgba(16,185,129,.12);border:1px solid rgba(16,185,129,.4);font-size:13px;color:var(--em2);width:fit-content}
+.refchip.on{display:inline-block}
 
 /* Amazonas */
 .ama{overflow:hidden}
@@ -368,6 +394,7 @@ footer .copy{width:100%;font-size:12px;color:var(--muted2)}
       <a href="#soluciones">Soluciones</a>
       <a href="#demo">Demo</a>
       <a href="#planes">Planes</a>
+      <a href="#comparte">Comparte y gana</a>
       <a href="#diagnostico">Diagnóstico gratis</a>
     </nav>
     <a class="btn btn-em wa-link" href="#" data-msg="Hola Daniela, vi el sitio de KubIA y quiero saber más.">
@@ -390,6 +417,7 @@ footer .copy{width:100%;font-size:12px;color:var(--muted2)}
         <a class="btn btn-em wa-link" href="#" data-msg="Hola Daniela, vi el sitio de KubIA y quiero ordenar mi negocio. ¿Hablamos?"><svg><use href="#i-wa"/></svg>Hablemos por WhatsApp</a>
         <a class="btn btn-ghost" href="/kubia/"><svg><use href="#i-play"/></svg>Prueba la demo</a>
       </div>
+      <span class="refchip" id="refchip"></span>
       <a class="founder-mini" href="#nosotros"><img src="/assets/daniela-silva.jpg" alt="Daniela Silva" width="900" height="900"><div><b>Daniela Silva</b><span>Fundadora de KubIA · Conóceme ↓</span></div></a>
     </div>
     <div class="stage" aria-hidden="true">
@@ -667,10 +695,66 @@ footer .copy{width:100%;font-size:12px;color:var(--muted2)}
       </article>
     </div>
     <div class="founder rv">
-      <div><b>🚀 Precio de fundador para los primeros 10 negocios</b><p>Implementación con 50% de descuento a cambio de tu testimonio en video.</p></div>
-      <a class="btn wa-link" href="#" data-msg="Hola Daniela, quiero uno de los 10 cupos con precio de fundador de KubIA.">Quiero mi cupo</a>
+      <div>
+        <b>🚀 Paquete Fundador · solo para los primeros 10 negocios</b>
+        <ul class="fpack">
+          <li>🔒 Tu mensualidad <strong>congelada de por vida</strong>: si el precio sube, el tuyo no</li>
+          <li>🏅 Sello <strong>"Negocio Fundador KubIA"</strong> en tu tienda</li>
+          <li>📣 Tu negocio en la <strong>vitrina</strong> de nuestro sitio</li>
+          <li>🎬 <strong>Video promocional de 30 s</strong> con tu tienda</li>
+          <li>🗳️ <strong>Votas</strong> las próximas funciones de KubIA</li>
+        </ul>
+        <p>A cambio de tu testimonio en video.</p>
+      </div>
+      <a class="btn wa-link" href="#" data-msg="Hola Daniela, quiero uno de los 10 cupos del Paquete Fundador de KubIA.">Quiero mi cupo</a>
     </div>
     <p class="extras rv"><b>Se contratan aparte:</b> onboarding, capacitación adicional, creación de catálogo y fotos, videos promocionales y KubIA Asistente.</p>
+  </div>
+</section>
+
+<!-- COMPARTE Y GANA -->
+<section id="comparte" style="background:var(--ink2);border-block:1px solid var(--line)">
+  <div class="wrap">
+    <div class="rv">
+      <span class="eyebrow">Comparte y gana</span>
+      <h2>Recomienda KubIA <br><span class="em">y gana tú también.</span></h2>
+      <p class="lead">Si conoces un negocio que todavía anota en cuaderno, nos haces un favor a los dos.</p>
+    </div>
+    <div class="share-grid">
+      <div class="sg rv" data-e="🎁">
+        <span class="who">¿Ya eres cliente?</span>
+        <div class="big">2 meses</div>
+        <h3>de mensualidad gratis</h3>
+        <p>Por cada negocio que nos recomiendes y contrate. Y el negocio que llega recibe de regalo el <b style="color:var(--white)">QR imprimible</b> para su mostrador.</p>
+        <span class="sp"></span>
+        <a class="btn btn-ghost wa-link" href="#" data-msg="Hola Daniela, soy cliente de KubIA y quiero mi código para recomendar.">Pide tu código</a>
+      </div>
+      <div class="sg rv" data-e="💸" style="border-color:rgba(16,185,129,.55)">
+        <span class="who">¿No eres cliente? Sé promotor</span>
+        <h3>Gana comisión por cada negocio que traigas</h3>
+        <p>Un solo pago, calculado sobre la implementación.</p>
+        <ul class="comm">
+          <li><span>Arranque<small>9 % de 150 $</small></span><b>13,50 $</b></li>
+          <li><span>Crece<small>13 % de 399 $</small></span><b>51,87 $</b></li>
+          <li><span>Total<small>15 % de 499 $</small></span><b>74,85 $</b></li>
+        </ul>
+        <span class="sp"></span>
+        <a class="btn btn-em wa-link" href="#" data-msg="Hola Daniela, quiero ser promotor de KubIA. ¿Cómo obtengo mi código?">Quiero ser promotor</a>
+      </div>
+      <div class="sg rv" data-e="⭐">
+        <span class="who">Premio extra</span>
+        <div class="big">3 clientes</div>
+        <h3>= sesión de estrategia de 30 min con Daniela</h3>
+        <p>Cuando 3 negocios que recomendaste contraten el plan Crece o uno superior. Para clientes y promotores.</p>
+        <span class="sp"></span>
+      </div>
+    </div>
+    <div class="how3 rv">
+      <div><span>Pide tu <b style="color:var(--white)">código personal</b> por WhatsApp. Te lo damos nosotros.</span></div>
+      <div><span>Comparte tu enlace: <code>daniela-silva-web.vercel.app/?ref=TUCODIGO</code></span></div>
+      <div><span>Cuando el negocio pague su implementación completa y pasen 30 días, <b style="color:var(--white)">recibes tu premio</b>.</span></div>
+    </div>
+    <p class="terms rv"><b>Condiciones:</b> el negocio recomendado debe ser nuevo en KubIA. Cuenta el primer código con el que llegó, y vale 60 días. Solo valen los códigos entregados por KubIA. No aplica para recomendarte a ti mismo. La comisión se calcula sobre la implementación efectivamente pagada, nunca sobre la mensualidad; los planes A la Medida se acuerdan aparte. Si el negocio pide reembolso, no hay premio. Los meses gratis se aplican a tus próximas mensualidades.</p>
   </div>
 </section>
 
@@ -711,6 +795,7 @@ footer .copy{width:100%;font-size:12px;color:var(--muted2)}
       <details><summary>¿Mis datos son míos?</summary><p>Sí. Cada negocio ve solo su información.</p></details>
       <details><summary>¿Mis clientes tienen que descargar algo?</summary><p>No. Escanean el QR o abren tu enlace y listo.</p></details>
       <details><summary>¿Cuánto tarda en estar listo?</summary><p>Depende del plan. Te lo decimos en el diagnóstico.</p></details>
+      <details><summary>¿Cómo gano por recomendar KubIA?</summary><p>Si eres cliente, ganas 2 meses de mensualidad gratis por cada negocio que contrate. Si no lo eres, ganas una comisión sobre la implementación: 9 % en Arranque, 13 % en Crece y 15 % en Total. Mira "Comparte y gana".</p></details>
       <details><summary>¿Puedo cambiar de plan?</summary><p>Sí, cuando tu negocio crezca.</p></details>
     </div>
   </div>
@@ -816,7 +901,16 @@ footer .copy{width:100%;font-size:12px;color:var(--muted2)}
 <script>
 (function(){
   var WA='584221754245';
-  function wa(msg){return 'https://wa.me/'+WA+'?text='+encodeURIComponent(msg)}
+  // Código de recomendación: ?ref=CODIGO. Cuenta el PRIMERO y vale 60 días.
+  var REF=null,DAY=864e5;
+  try{
+    var st=JSON.parse(localStorage.getItem('kubia_ref')||'null');
+    if(st&&st.c&&Date.now()-st.t<60*DAY)REF=st.c;
+    var q=(new URLSearchParams(location.search).get('ref')||'').trim().toUpperCase();
+    if(!REF&&/^[A-Z0-9-]{2,20}$/.test(q)){REF=q;localStorage.setItem('kubia_ref',JSON.stringify({c:q,t:Date.now()}))}
+  }catch(e){var q2=(new URLSearchParams(location.search).get('ref')||'').trim().toUpperCase();if(/^[A-Z0-9-]{2,20}$/.test(q2))REF=q2}
+  if(REF){var rc=document.getElementById('refchip');rc.textContent='🤝 Te recomendó: '+REF;rc.classList.add('on')}
+  function wa(msg){if(REF)msg+='\n\nMe recomendó: '+REF;return 'https://wa.me/'+WA+'?text='+encodeURIComponent(msg)}
   document.querySelectorAll('.wa-link').forEach(function(a){
     a.href=wa(a.dataset.msg||'Hola Daniela');a.target='_blank';a.rel='noopener';
   });
