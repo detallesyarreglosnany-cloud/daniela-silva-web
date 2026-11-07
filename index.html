@@ -67,7 +67,6 @@ h3{font-size:20px;letter-spacing:-.02em;line-height:1.2}
 @media(min-width:900px){.nav nav{display:flex}}
 
 /* Fondo tecnológico */
-.grid-bg{position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(16,185,129,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(16,185,129,.07) 1px,transparent 1px);background-size:48px 48px;-webkit-mask-image:radial-gradient(ellipse at 50% 30%,#000 10%,transparent 70%);mask-image:radial-gradient(ellipse at 50% 30%,#000 10%,transparent 70%)}
 .orb{position:absolute;border-radius:50%;filter:blur(80px);pointer-events:none;opacity:.55}
 
 /* Portada */
@@ -84,6 +83,11 @@ h3{font-size:20px;letter-spacing:-.02em;line-height:1.2}
 .hero .lead{font-size:clamp(17px,2vw,20px);color:#B5C4BE}
 .hero .lead b{color:var(--white);font-weight:600}
 .cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+
+.founder-mini{display:flex;align-items:center;gap:12px;margin-top:28px}
+.founder-mini img{width:52px;height:52px;border-radius:50%;object-fit:cover;object-position:center 20%;border:2px solid var(--em)}
+.founder-mini b{display:block;color:var(--white);font-size:15px;font-weight:600}
+.founder-mini span{font-size:13px;color:var(--muted)}
 
 /* Teléfono + QR animado */
 .stage{position:relative;height:560px;max-width:440px;margin:0 auto;width:100%}
@@ -148,31 +152,32 @@ h3{font-size:20px;letter-spacing:-.02em;line-height:1.2}
 .chip b{color:var(--em2);font-weight:700}
 
 /* Soluciones */
-.cards{display:grid;gap:14px;margin-top:44px}
+.cards{display:grid;gap:14px;margin-top:44px;align-items:start}
 @media(min-width:680px){.cards{grid-template-columns:1fr 1fr}}
 @media(min-width:1020px){.cards{grid-template-columns:repeat(3,1fr)}}
-.card{position:relative;border-radius:var(--r);background:var(--ink2);border:1px solid var(--line);transition:border-color .3s,transform .3s}
-.card:hover{border-color:rgba(16,185,129,.5);transform:translateY(-3px)}
+.card{position:relative;overflow:hidden;border-radius:var(--r);background:radial-gradient(120% 90% at 100% 0%,color-mix(in srgb,var(--c) 22%,transparent),transparent 60%),var(--ink2);border:1px solid color-mix(in srgb,var(--c) 30%,var(--line));transition:border-color .3s,transform .3s}
+.card::before{content:attr(data-e);position:absolute;right:-18px;top:-14px;font-size:150px;line-height:1;opacity:.2;transform:rotate(-12deg);pointer-events:none;transition:transform .5s,opacity .5s}
+.card:hover::before,.card[open]::before{transform:rotate(-4deg) scale(1.08);opacity:.28}
+.card:hover{border-color:var(--c);transform:translateY(-3px)}
+.card summary,.card .body{position:relative;z-index:1}
 .card summary{list-style:none;cursor:pointer;padding:26px 26px 22px}
 .card summary::-webkit-details-marker{display:none}
-.card .tag{display:inline-flex;align-items:center;justify-content:center;width:46px;height:46px;border-radius:14px;background:rgba(16,185,129,.12);color:var(--em);margin-bottom:18px}
-.card .tag svg{width:24px;height:24px}
+.card .tag{display:inline-flex;align-items:center;justify-content:center;width:60px;height:60px;border-radius:18px;font-size:32px;line-height:1;background:color-mix(in srgb,var(--c) 20%,transparent);border:1px solid color-mix(in srgb,var(--c) 40%,transparent);margin-bottom:18px;box-shadow:0 10px 30px -12px var(--c)}
 .card h3 .k{color:var(--muted);font-weight:400}
 .card p.f{color:var(--muted);font-size:15px;margin-top:8px}
-.card .more{display:inline-flex;align-items:center;gap:6px;margin-top:16px;font-size:13px;font-weight:600;color:var(--em2)}
+.card .more{display:inline-flex;align-items:center;gap:6px;margin-top:16px;font-size:13px;font-weight:600;color:var(--c)}
 .card .more::after{content:"+";font-size:18px;line-height:1;transition:transform .3s}
 .card[open] .more::after{transform:rotate(45deg)}
-.card[open]{border-color:rgba(16,185,129,.5)}
+.card[open]{border-color:var(--c)}
 .card .body{padding:0 26px 26px}
 .card ul{list-style:none;display:grid;gap:9px;border-top:1px solid var(--line);padding-top:18px}
 .card li{display:flex;gap:10px;font-size:14px;color:#C4D2CC}
-.card li::before{content:"";flex:none;width:6px;height:6px;margin-top:8px;border-radius:50%;background:var(--em)}
+.card li::before{content:"";flex:none;width:6px;height:6px;margin-top:8px;border-radius:50%;background:var(--c)}
 .case{margin-top:16px;padding:14px;border-radius:14px;background:rgba(16,185,129,.08);border:1px dashed rgba(16,185,129,.35);font-size:13px;color:#C4D2CC}
 .case b{color:var(--white)}
 .case .nums{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:10px;text-align:center}
 .case .nums strong{display:block;font-size:20px;color:var(--em2);letter-spacing:-.02em}
-.card .wa{display:inline-flex;margin-top:18px;font-size:14px;font-weight:600;color:var(--em2)}
-.card.custom{background:linear-gradient(135deg,rgba(16,185,129,.16),var(--ink2) 60%)}
+.card .wa{display:inline-flex;margin-top:18px;font-size:14px;font-weight:600;color:var(--c)}
 
 /* Hecho aquí */
 .here{background:var(--ink2);border-block:1px solid var(--line)}
@@ -186,6 +191,18 @@ h3{font-size:20px;letter-spacing:-.02em;line-height:1.2}
 .offline-demo{display:flex;align-items:center;gap:8px;margin-top:14px;font-size:12px;font-weight:600}
 .offline-demo{color:#F59E0B}.offline-demo .dot{width:8px;height:8px;border-radius:50%;background:currentColor;transition:background .3s}
 .offline-demo.ok{color:var(--em2)}
+
+.sync{display:grid;gap:22px;align-items:center;margin-top:44px;padding:clamp(22px,4vw,34px);border-radius:var(--r);background:linear-gradient(120deg,rgba(16,185,129,.16),var(--ink) 70%);border:1px solid rgba(16,185,129,.4)}
+@media(min-width:900px){.sync{grid-template-columns:1fr 1.1fr}}
+.sync h3{font-size:clamp(22px,2.6vw,28px)}
+.sync p{color:var(--muted);margin-top:8px;font-size:15px}
+.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;position:relative}
+.flow::before{content:"";position:absolute;left:12%;right:12%;top:28px;height:2px;background:var(--line)}
+.flow::after{content:"";position:absolute;left:12%;top:24px;width:10px;height:10px;border-radius:50%;background:var(--em);box-shadow:0 0 14px 4px var(--glow);animation:travel 2.4s linear infinite}
+@keyframes travel{from{left:12%}to{left:calc(88% - 10px)}}
+.fl{position:relative;z-index:1;text-align:center;font-size:12px;font-weight:600;color:var(--text)}
+.fl i{display:grid;place-items:center;width:56px;height:56px;margin:0 auto 8px;border-radius:16px;background:var(--ink2);border:1px solid var(--line);font-style:normal;font-size:24px}
+.fl small{display:block;font-weight:400;color:var(--em2);font-size:11px;margin-top:2px}
 
 /* Demo */
 .demo-grid{display:grid;gap:40px;align-items:center}
@@ -363,7 +380,7 @@ footer .copy{width:100%;font-size:12px;color:var(--muted2)}
 
 <!-- 1 · PORTADA -->
 <section class="hero" id="inicio">
-  <div class="grid-bg"></div><div class="orb a"></div><div class="orb b"></div>
+  <div class="orb a"></div><div class="orb b"></div>
   <div class="wrap hero-grid">
     <div>
       <span class="stamp"><i></i>Hecho en Amazonas, para el mundo 🌿</span>
@@ -373,6 +390,7 @@ footer .copy{width:100%;font-size:12px;color:var(--muted2)}
         <a class="btn btn-em wa-link" href="#" data-msg="Hola Daniela, vi el sitio de KubIA y quiero ordenar mi negocio. ¿Hablamos?"><svg><use href="#i-wa"/></svg>Hablemos por WhatsApp</a>
         <a class="btn btn-ghost" href="/kubia/"><svg><use href="#i-play"/></svg>Prueba la demo</a>
       </div>
+      <a class="founder-mini" href="#nosotros"><img src="/assets/daniela-silva.jpg" alt="Daniela Silva" width="900" height="900"><div><b>Daniela Silva</b><span>Fundadora de KubIA · Conóceme ↓</span></div></a>
     </div>
     <div class="stage" aria-hidden="true">
       <div class="phone"><div class="notch"></div><div class="scr"><img src="/assets/app-tienda.jpg" alt="" width="560" height="1213" fetchpriority="high"></div></div>
@@ -408,7 +426,7 @@ footer .copy{width:100%;font-size:12px;color:var(--muted2)}
 
 <!-- 3 · EL MOMENTO QR -->
 <section class="qr" id="qr">
-  <div class="grid-bg"></div><div class="orb"></div>
+  <div class="orb"></div>
   <div class="wrap" style="position:relative">
     <span class="eyebrow">Así de simple</span>
     <h2 id="qrTitle"><span>Escanean.</span> <span>Piden.</span> <span>Pagan.</span></h2>
@@ -431,9 +449,9 @@ footer .copy{width:100%;font-size:12px;color:var(--muted2)}
       <p class="lead">Toca cada una para ver qué incluye.</p>
     </div>
     <div class="cards">
-      <details class="card rv">
+      <details class="card rv" data-e="🛍️" style="--c:#10B981">
         <summary>
-          <span class="tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l1.5-5h15L21 9M3 9v11h18V9M3 9h18M9 20v-6h6v6"/></svg></span>
+          <span class="tag">🛍️</span>
           <h3><span class="k">KubIA</span> Tienda</h3>
           <p class="f">Tu catálogo y tu tienda en línea, abierta 24/7.</p>
           <span class="more">Qué incluye</span>
@@ -442,9 +460,9 @@ footer .copy{width:100%;font-size:12px;color:var(--muted2)}
           <li>Catálogo con fotos y precios en 3 monedas</li><li>QR para pedir y pagar</li><li>Carrito con sugerencias</li><li>Delivery, retiro o envío nacional</li><li>Pago con QR del banco y captura</li><li>Confirmación por WhatsApp</li><li>Seguimiento del pedido</li><li>"Repetir mi último pedido"</li>
         </ul><a class="wa wa-link" href="#" data-msg="Hola Daniela, me interesa KubIA Tienda.">Pide tu diagnóstico →</a></div>
       </details>
-      <details class="card rv">
+      <details class="card rv" data-e="🚚" style="--c:#F59E0B">
         <summary>
-          <span class="tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 4h14v12H1zM15 9h4l4 4v3h-8"/><circle cx="6" cy="18" r="2"/><circle cx="18" cy="18" r="2"/></svg></span>
+          <span class="tag">🚚</span>
           <h3><span class="k">KubIA</span> Distribución</h3>
           <p class="f">Preventa en ruta, despachos organizados y cobranzas al día.</p>
           <span class="more">Qué incluye</span>
@@ -453,9 +471,9 @@ footer .copy{width:100%;font-size:12px;color:var(--muted2)}
           <li>Preventa en ruta desde el teléfono</li><li>Pedidos aunque no haya señal</li><li>Organización de despachos y hoja de carga</li><li>Seguimiento de cobranzas y cuentas por cobrar</li><li>Control de crédito por cliente</li><li>Tasa del día</li><li>Reportes por vendedor</li>
         </ul><a class="wa wa-link" href="#" data-msg="Hola Daniela, me interesa KubIA Distribución.">Pide tu diagnóstico →</a></div>
       </details>
-      <details class="card rv">
+      <details class="card rv" data-e="📅" style="--c:#A78BFA">
         <summary>
-          <span class="tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4M8 14l2 2 4-4"/></svg></span>
+          <span class="tag">📅</span>
           <h3><span class="k">KubIA</span> Agenda</h3>
           <p class="f">Tus clientes reservan solos. Tú solo atiendes.</p>
           <span class="more">Qué incluye</span>
@@ -468,9 +486,9 @@ footer .copy{width:100%;font-size:12px;color:var(--muted2)}
         </div>
         <a class="wa wa-link" href="#" data-msg="Hola Daniela, me interesa KubIA Agenda.">Pide tu diagnóstico →</a></div>
       </details>
-      <details class="card rv">
+      <details class="card rv" data-e="📊" style="--c:#38BDF8">
         <summary>
-          <span class="tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></svg></span>
+          <span class="tag">📊</span>
           <h3><span class="k">KubIA</span> Gestión</h3>
           <p class="f">Inventario, finanzas y quién te debe, en tiempo real.</p>
           <span class="more">Qué incluye</span>
@@ -479,9 +497,9 @@ footer .copy{width:100%;font-size:12px;color:var(--muted2)}
           <li>Inventario en vivo con alertas</li><li>Ventas en mostrador y en línea juntas</li><li>Finanzas y flujo de caja</li><li>Quién te debe y desde cuándo</li><li>Clientes (CRM) con historial</li><li>Roles y permisos para tu equipo</li><li>Reportes en tu teléfono</li>
         </ul><a class="wa wa-link" href="#" data-msg="Hola Daniela, me interesa KubIA Gestión.">Pide tu diagnóstico →</a></div>
       </details>
-      <details class="card rv">
+      <details class="card rv" data-e="🤖" style="--c:#F472B6">
         <summary>
-          <span class="tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12Z"/><path d="M9 10h.01M15 10h.01M9 14c1.5 1.3 4.5 1.3 6 0"/></svg></span>
+          <span class="tag">🤖</span>
           <h3><span class="k">KubIA</span> Asistente</h3>
           <p class="f">Una IA que responde tu WhatsApp mientras trabajas.</p>
           <span class="more">Qué incluye</span>
@@ -490,9 +508,9 @@ footer .copy{width:100%;font-size:12px;color:var(--muted2)}
           <li>Responde precios y disponibilidad</li><li>Toma pedidos y reservas</li><li>Atiende de noche y fines de semana</li><li>Te pasa los casos difíciles</li>
         </ul><a class="wa wa-link" href="#" data-msg="Hola Daniela, me interesa KubIA Asistente.">Pide tu diagnóstico →</a></div>
       </details>
-      <details class="card custom rv">
+      <details class="card custom rv" data-e="💡" style="--c:#FACC15">
         <summary>
-          <span class="tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2Z"/></svg></span>
+          <span class="tag">💡</span>
           <h3><span class="k">KubIA</span> a la Medida</h3>
           <p class="f">¿Tienes una idea? La convertimos en tu sistema.</p>
           <span class="more">Qué incluye</span>
@@ -511,6 +529,15 @@ footer .copy{width:100%;font-size:12px;color:var(--muted2)}
     <div class="rv">
       <span class="eyebrow">Pensado para la vida real</span>
       <h2>Hecho para cómo <br>se trabaja aquí.</h2>
+    </div>
+    <div class="sync rv">
+      <div><h3>⚡ Todo se sincroniza en segundos</h3><p>Pedidos, despachos, estados y pagos. Lo que pasa en el teléfono de tu cliente, tu vendedor o tu repartidor aparece en tu panel al instante. Y si no hay señal, se pone al día apenas vuelve.</p></div>
+      <div class="flow" aria-hidden="true">
+        <div class="fl"><i>🛒</i>Pedidos<small>al instante</small></div>
+        <div class="fl"><i>🚚</i>Despachos<small>al instante</small></div>
+        <div class="fl"><i>📍</i>Estados<small>al instante</small></div>
+        <div class="fl"><i>💳</i>Pagos<small>al instante</small></div>
+      </div>
     </div>
     <div class="feats">
       <div class="feat rv"><div class="e">📶</div><h3>Funciona sin internet</h3><p>Si se va la señal, sigues vendiendo. Al volver, todo se sincroniza.</p><div class="offline-demo" id="net"><span class="dot"></span><span class="t">Sin señal · guardando</span></div></div>
@@ -678,6 +705,7 @@ footer .copy{width:100%;font-size:12px;color:var(--muted2)}
     <div class="center rv"><span class="eyebrow">Preguntas frecuentes</span><h2>Lo que todos preguntan</h2></div>
     <div class="qa">
       <details><summary>¿Y si se va el internet?</summary><p>Sigues vendiendo. Todo se guarda en el teléfono y se sincroniza cuando vuelve la señal.</p></details>
+      <details><summary>¿Cada cuánto se actualiza la información?</summary><p>En segundos. Pedidos, despachos, estados y pagos se sincronizan al instante entre los teléfonos y tu panel.</p></details>
       <details><summary>¿Funciona en bolívares?</summary><p>Sí: dólares, bolívares y pesos, con la tasa del día.</p></details>
       <details><summary>¿Necesito computadora?</summary><p>No. Todo funciona desde el teléfono.</p></details>
       <details><summary>¿Mis datos son míos?</summary><p>Sí. Cada negocio ve solo su información.</p></details>
@@ -759,7 +787,7 @@ footer .copy{width:100%;font-size:12px;color:var(--muted2)}
 
 <!-- 11 · CIERRE -->
 <section class="final">
-  <div class="grid-bg"></div><div class="orb"></div>
+  <div class="orb"></div>
   <div class="wrap" style="position:relative">
     <h2 class="rv">Tu negocio, ordenado y <span class="em">vendiendo 24/7.</span></h2>
     <a class="btn btn-em wa-link rv" href="#" data-msg="Hola Daniela, quiero mi diagnóstico gratis de KubIA."><svg><use href="#i-wa"/></svg>Pide tu diagnóstico gratis por WhatsApp</a>
