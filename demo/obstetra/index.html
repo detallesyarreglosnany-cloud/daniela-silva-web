@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Dra. Valentina Rondón · Ginecología y Obstetricia</title>
+<meta name="description" content="Agenda tu cita en línea con la Dra. Valentina Rondón, ginecóloga-obstetra. Control prenatal, ecografías, chequeo femenino, teleconsulta y emergencias. Página de ejemplo creada con KubIA Agenda.">
+<meta name="theme-color" content="#FFF7F4">
+<meta property="og:title" content="Dra. Valentina Rondón · Ginecología y Obstetricia">
+<meta property="og:description" content="Te acompaño en cada etapa: de tu primera consulta a tu primer abrazo. Agenda tu cita en línea.">
+<meta property="og:image" content="https://kubiav.com/assets/og-kubia.png">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🌸%3C/text%3E%3C/svg%3E">
+<script src="/assets/kubia-track.js"></script>
+<script defer src="/_vercel/insights/script.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&display=swap">
+<style>
+:root{--cream:#FFF7F4;--blush:#F8D7DA;--rose:#E7739A;--rose2:#C2507A;--lav:#B9A7F2;--lav2:#7C6AD8;--ink:#2B1E2F;--muted:#7A6B7E;--line:#F0DCE2;--card:#FFFFFF;--em:#10B981;--r:26px;--gut:clamp(16px,4vw,40px)}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--cream);color:var(--ink);font-family:Sora,system-ui,sans-serif;line-height:1.55;overflow-x:hidden}
+img{max-width:100%;display:block}a{color:inherit;text-decoration:none}button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
+.wrap{max-width:1080px;margin:0 auto;padding-inline:var(--gut)}
+section{padding-block:clamp(48px,7vw,90px);position:relative}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;font-weight:600;letter-spacing:-.02em;line-height:1.08}
+h2{font-size:clamp(30px,4.6vw,46px);margin:8px 0 12px}h2 i{color:var(--rose2)}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--rose2)}
+.lead{color:var(--muted);font-size:clamp(16px,1.9vw,18px);max-width:620px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 24px;border-radius:999px;font-weight:700;font-size:15px;transition:transform .2s,box-shadow .2s}
+.btn:active{transform:scale(.97)}
+.btn-rose{background:linear-gradient(135deg,var(--rose),var(--rose2));color:#fff;box-shadow:0 12px 30px -10px rgba(194,80,122,.6)}
+.btn-soft{background:#fff;border:1.5px solid var(--line);color:var(--ink)}
+.btn-sos{background:#E0245E;color:#fff}
+.blob{position:absolute;border-radius:50%;filter:blur(60px);opacity:.55;pointer-events:none}
+/* barra superior */
+.top{position:sticky;top:0;z-index:40;background:rgba(255,247,244,.85);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top,0px)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:10px;min-height:62px;padding-block:8px}
+.brand{font-family:Fraunces,serif;font-weight:600;font-size:16px;line-height:1.2}
+@media(max-width:420px){.brand small{display:none!important}}.brand small{display:block;font-family:Sora;font-size:11px;color:var(--muted);font-weight:600;letter-spacing:.06em}
+.vista{display:flex;padding:4px;border-radius:999px;background:#fff;border:1px solid var(--line);font-size:12px;font-weight:700}
+.vista button{padding:8px 12px;border-radius:999px;color:var(--muted)}.vista button.on{background:var(--ink);color:#fff}
+/* portada */
+.hero{padding-top:30px;overflow:hidden}
+.hero .grid{display:grid;gap:30px;align-items:center}@media(min-width:880px){.hero .grid{grid-template-columns:1.1fr .9fr}}
+.hola{font-family:Fraunces,serif;font-style:italic;font-size:clamp(22px,3vw,30px);color:var(--rose2);min-height:1.3em}
+.hero h1{font-size:clamp(38px,6vw,64px);margin:6px 0 14px}.hero h1 span{display:block;font-size:.5em;font-family:Sora;font-weight:600;color:var(--muted);letter-spacing:0;margin-top:10px}
+.stats{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0}
+.stats div{padding:10px 16px;border-radius:18px;background:#fff;border:1px solid var(--line);font-size:13px;color:var(--muted)}.stats b{display:block;font-size:22px;color:var(--ink);font-family:Fraunces,serif}
+.next{display:inline-flex;align-items:center;gap:10px;padding:10px 16px;border-radius:999px;background:#E8F8F1;color:#0A7D58;font-weight:700;font-size:14px;margin-bottom:18px}
+.next i{width:10px;height:10px;border-radius:50%;background:var(--em);box-shadow:0 0 0 0 rgba(16,185,129,.6);animation:pulse 1.8s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 10px rgba(16,185,129,0)}100%{box-shadow:0 0 0 0 rgba(16,185,129,0)}}
+.foto{position:relative;width:min(78%,400px);aspect-ratio:4/5;margin:0 auto}
+.foto .halo{position:absolute;inset:-6%;border-radius:46% 54% 50% 50%/55% 45% 55% 45%;background:linear-gradient(135deg,var(--blush),#E9E1FF);animation:morph 9s ease-in-out infinite}
+@keyframes morph{50%{border-radius:55% 45% 40% 60%/45% 55% 45% 55%}}
+.foto .pic{position:absolute;inset:4%;border-radius:40% 40% 34px 34px;overflow:hidden;background:linear-gradient(160deg,#F3C6D3,#C9B8F5);display:grid;place-items:center}
+.foto .pic img{width:100%;height:100%;object-fit:cover}
+.foto .ini{font-family:Fraunces,serif;font-size:110px;color:#fff;opacity:.9}
+.foto .tag{position:absolute;left:-4%;bottom:12%;padding:10px 14px;border-radius:16px;background:#fff;box-shadow:0 14px 30px -12px rgba(43,30,47,.3);font-size:13px;font-weight:700;animation:float 5s ease-in-out infinite}
+.foto .tag2{left:auto;right:-6%;bottom:auto;top:4%;animation-delay:-2.5s}
+@keyframes float{50%{transform:translateY(-8px)}}
+/* conóceme */
+.yo{display:grid;gap:24px;align-items:center}@media(min-width:880px){.yo{grid-template-columns:.9fr 1.1fr}}
+.vid{aspect-ratio:9/12;border-radius:var(--r);background:linear-gradient(160deg,#2B1E2F,#5A3E63);display:grid;place-items:center;color:#fff;text-align:center;max-width:340px;margin:0 auto;width:100%}
+.vid span{font-size:56px;display:block}
+.firma{font-family:Fraunces,serif;font-style:italic;font-size:30px;color:var(--rose2);margin-top:12px}
+/* servicios */
+.filt{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0}
+.filt button{padding:10px 16px;border-radius:999px;background:#fff;border:1.5px solid var(--line);font-weight:700;font-size:14px;color:var(--muted)}
+.filt button.on{background:var(--ink);border-color:var(--ink);color:#fff}
+.svc{display:grid;gap:14px}@media(min-width:680px){.svc{grid-template-columns:1fr 1fr}}@media(min-width:1000px){.svc{grid-template-columns:repeat(3,1fr)}}
+.flip{perspective:1200px;min-height:270px}
+.flip .in{position:relative;width:100%;height:100%;min-height:270px;transition:transform .7s cubic-bezier(.2,.8,.2,1);transform-style:preserve-3d}
+.flip.on .in{transform:rotateY(180deg)}
+.face{position:absolute;inset:0;border-radius:var(--r);padding:22px;backface-visibility:hidden;-webkit-backface-visibility:hidden;display:flex;flex-direction:column;border:1px solid var(--line);background:#fff}
+.face.back{transform:rotateY(180deg);background:linear-gradient(160deg,#fff,#FCEFF3)}
+.face .em{font-size:40px}.face h3{font-size:22px;margin:10px 0 4px}.face p{color:var(--muted);font-size:14px}
+.face .pr{margin-top:auto;display:flex;align-items:baseline;justify-content:space-between}
+.face .pr b{font-family:Fraunces,serif;font-size:30px}.face .pr small{color:var(--muted);font-size:12px}
+.face ul{list-style:none;display:grid;gap:7px;font-size:14px;margin:10px 0}.face li::before{content:"✓ ";color:var(--rose2);font-weight:800}
+.face .act{display:flex;gap:8px;margin-top:auto}.face .act .btn{min-height:42px;padding:0 16px;font-size:13px;flex:1}
+.hint{font-size:12px;color:var(--rose2);font-weight:700;margin-top:8px}
+/* plan mamá */
+.mama{border-radius:32px;background:linear-gradient(135deg,#FCE4EC,#EDE7FF);padding:clamp(22px,4vw,40px);overflow:hidden;position:relative}
+.wk{display:grid;gap:20px;align-items:center;margin-top:16px}@media(min-width:800px){.wk{grid-template-columns:auto 1fr}}
+.fruit{width:190px;height:190px;border-radius:50%;background:#fff;display:grid;place-items:center;font-size:96px;margin:0 auto;box-shadow:0 20px 40px -20px rgba(124,106,216,.6);transition:transform .4s}
+.wkn{font-family:Fraunces,serif;font-size:44px}
+input[type=range]{width:100%;accent-color:var(--rose2);height:34px}
+.wkinfo{background:#fff;border-radius:20px;padding:16px;margin-top:10px;font-size:14px}
+.wkinfo b{color:var(--rose2)}
+.paq{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px;margin-top:22px;padding:18px 20px;border-radius:22px;background:var(--ink);color:#fff}
+.paq b{font-family:Fraunces,serif;font-size:26px}.paq s{opacity:.6;margin-right:8px}
+/* agenda */
+.book{display:grid;gap:16px}@media(min-width:900px){.book{grid-template-columns:1.1fr .9fr;align-items:start}}
+.box{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:20px}
+.stp{font-size:12px;font-weight:800;letter-spacing:.12em;color:var(--rose2);margin-bottom:10px}
+select,input[type=date],input[type=text],input[type=tel]{width:100%;min-height:50px;padding:0 14px;border-radius:14px;border:1.5px solid var(--line);background:#fff;font:inherit;font-size:16px;color:var(--ink)}
+.cal{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;margin-top:10px}
+.cal .h{font-size:11px;font-weight:800;color:var(--muted);text-align:center}
+.cal button{aspect-ratio:1;border-radius:14px;font-weight:700;font-size:14px;border:1.5px solid transparent;position:relative}
+.cal .ok{background:#E8F8F1;color:#0A7D58}.cal .few{background:#FFF4DE;color:#B7791F}.cal .full{background:#F2EEF1;color:#B9AEB8;text-decoration:line-through;cursor:not-allowed}
+.cal .past,.cal .off{color:#D5C9D2;cursor:not-allowed}
+.cal .sel{border-color:var(--rose2);box-shadow:0 0 0 3px rgba(194,80,122,.18)}
+.legend{display:flex;flex-wrap:wrap;gap:12px;font-size:12px;color:var(--muted);margin-top:10px}.legend i{display:inline-block;width:12px;height:12px;border-radius:4px;margin-right:4px;vertical-align:-1px}
+.slots{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:10px}
+.slots button{min-height:46px;border-radius:12px;background:#F7F1F4;font-weight:700;font-size:14px}
+.slots button.busy{color:#C5B8C2;text-decoration:line-through;cursor:not-allowed;background:#FAF7F8}
+.slots button.sel{background:var(--rose2);color:#fff}
+.calc{margin-top:10px;padding:14px;border-radius:16px;background:linear-gradient(135deg,#FCE4EC,#EDE7FF);font-size:14px;display:none}
+.calc.on{display:block;animation:pop .5s}
+@keyframes pop{from{transform:scale(.95);opacity:0}}
+.sum{position:sticky;top:76px}
+.sum .row{display:flex;justify-content:space-between;gap:10px;font-size:14px;padding:8px 0;border-bottom:1px dashed var(--line)}
+.sum .tot{font-family:Fraunces,serif;font-size:30px}
+.pays{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:8px}
+.pays button{min-height:58px;border-radius:14px;border:1.5px solid var(--line);font-size:12px;font-weight:700;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px}
+.pays button span{font-size:20px}.pays button.sel{border-color:var(--rose2);background:#FCEFF3}
+.tog{display:flex;padding:4px;border-radius:999px;background:#F7F1F4;margin-top:10px}.tog button{flex:1;padding:10px;border-radius:999px;font-weight:700;font-size:13px;color:var(--muted)}.tog button.on{background:#fff;color:var(--ink);box-shadow:0 4px 12px -6px rgba(0,0,0,.2)}
+.drop{margin-top:10px;padding:16px;border-radius:16px;border:2px dashed #E3C7D2;text-align:center;font-size:13px;color:var(--muted);cursor:pointer}
+.msg{font-size:13px;color:#C2507A;margin-top:8px;min-height:18px}
+/* confirmación */
+.modal{position:fixed;inset:0;z-index:80;background:rgba(43,30,47,.55);display:none;align-items:flex-end;justify-content:center;padding:16px}
+.modal.on{display:flex}@media(min-width:700px){.modal{align-items:center}}
+.sheet{width:100%;max-width:480px;max-height:92vh;overflow:auto;background:#fff;border-radius:28px;padding:24px;animation:up .45s cubic-bezier(.2,.8,.2,1)}
+@keyframes up{from{transform:translateY(40px);opacity:0}}
+.wa{margin-top:14px;padding:14px;border-radius:18px;background:#E9F9EF}
+.bub{background:#DCF8C6;border-radius:14px;padding:12px;font-size:13px;line-height:1.45;box-shadow:0 1px 1px rgba(0,0,0,.08)}
+.conf{position:fixed;inset:0;pointer-events:none;z-index:90}
+/* exámenes */
+.files{display:grid;gap:8px;margin-top:12px}.files div{display:flex;justify-content:space-between;align-items:center;padding:12px 14px;border-radius:14px;background:#fff;border:1px solid var(--line);font-size:14px}
+/* sos */
+body.dr .sos{display:none}
+.sos{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:60;display:flex;align-items:center;gap:8px;padding:14px 18px;border-radius:999px;background:#E0245E;color:#fff;font-weight:800;box-shadow:0 14px 30px -10px rgba(224,36,94,.7)}
+.alarm{list-style:none;display:grid;gap:8px;margin:14px 0}.alarm li{padding:12px 14px;border-radius:14px;background:#FFF0F3;font-size:14px}
+/* testimonios / faq */
+.tst{display:grid;gap:12px}@media(min-width:800px){.tst{grid-template-columns:repeat(3,1fr)}}
+.tst div{padding:20px;border-radius:var(--r);background:#fff;border:1px solid var(--line);font-size:14px}.tst b{display:block;margin-top:10px;font-size:13px}
+.faq details{background:#fff;border:1px solid var(--line);border-radius:18px;margin-top:10px}.faq summary{padding:16px 18px;font-weight:700;list-style:none;cursor:pointer}.faq p{padding:0 18px 16px;color:var(--muted);font-size:14px}
+/* vista doctora */
+.doc{display:none}body.dr .doc{display:block}body.dr .pac{display:none}
+.dkp{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}@media(min-width:800px){.dkp{grid-template-columns:repeat(4,1fr)}}
+.dkp div{padding:16px;border-radius:20px;background:#fff;border:1px solid var(--line);font-size:13px;color:var(--muted)}.dkp b{display:block;font-family:Fraunces,serif;font-size:32px;color:var(--ink)}
+.req{display:grid;gap:10px;margin-top:12px}
+.rq{display:grid;grid-template-columns:1fr auto;gap:10px;align-items:center;padding:14px;border-radius:18px;background:#fff;border:1px solid var(--line)}
+.rq small{color:var(--muted)}.rq .pill{display:inline-block;padding:3px 10px;border-radius:999px;font-size:11px;font-weight:800;margin-top:6px}
+.p-new{background:#FFF4DE;color:#B7791F}.p-ok{background:#E8F8F1;color:#0A7D58}
+.rq.new{border-color:var(--rose);box-shadow:0 0 0 3px rgba(231,115,154,.15);animation:pop .5s}
+.kubia{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px;padding:22px;border-radius:24px;background:#0B1210;color:#E8EFEC;margin-top:30px}
+.kubia b{color:#10B981}
+.rv{opacity:0;transform:translateY(24px);transition:opacity .8s,transform .8s}.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+footer{padding:30px 0 100px;font-size:13px;color:var(--muted);text-align:center}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <div class="brand">Dra. Valentina Rondón<small>GINECOLOGÍA · OBSTETRICIA</small></div>
+  <div class="vista" role="tablist" aria-label="Cambiar vista"><button id="vP" class="on" type="button">👩 Paciente</button><button id="vD" type="button">👩‍⚕️ Doctora</button></div>
+</div></header>
+
+<main>
+<!-- ============ VISTA PACIENTE ============ -->
+<div class="pac">
+<section class="hero"><div class="blob" style="width:420px;height:420px;background:#F8C9D6;top:-160px;right:-120px"></div><div class="blob" style="width:340px;height:340px;background:#DCD3FF;bottom:-140px;left:-140px"></div>
+<div class="wrap grid">
+  <div class="rv">
+    <div class="hola" id="hola"></div>
+    <h1>Dra. Valentina Rondón<span>Ginecóloga-Obstetra · Te acompaño en cada etapa: de tu primera consulta a tu primer abrazo.</span></h1>
+    <div class="next"><i></i><span id="nextTxt">Próxima cita disponible: mañana, 9:00 am</span></div>
+    <div class="stats"><div><b>12</b>años de experiencia</div><div><b>+800</b>bebés acompañados</div><div><b>⭐ 4,9</b>de 320 pacientes</div></div>
+    <div style="display:flex;flex-wrap:wrap;gap:10px"><a class="btn btn-rose" href="#agenda">📅 Agendar mi cita</a><button class="btn btn-sos" type="button" data-sos>🚨 Emergencia</button></div>
+  </div>
+  <div class="foto rv"><div class="halo"></div><div class="pic"><img id="docPic" src="/demo/obstetra/doctora.jpg" alt="Dra. Valentina Rondón" onerror="this.remove()"><span class="ini">VR</span></div>
+    <div class="tag">🤰 Control prenatal</div><div class="tag tag2">💻 Teleconsulta</div></div>
+</div></section>
+
+<section><div class="wrap yo">
+  <div class="vid rv"><div><span>🎬</span><b>Conóceme en 30 segundos</b><p style="font-size:13px;opacity:.75;margin-top:6px">Espacio para el video de presentación</p></div></div>
+  <div class="rv"><span class="eyebrow">Conóceme</span><h2>Hola, soy <i>Valentina</i> 🌸</h2>
+    <p class="lead">Soy ginecóloga-obstetra y creo que cada mujer merece sentirse escuchada. Acompaño embarazos, chequeos y cada duda con calma, cercanía y ciencia. Aquí puedes agendar tu cita sin llamadas ni esperas, y enviarme tus exámenes antes de vernos.</p>
+    <div class="firma">Dra. Valentina Rondón</div>
+    <p style="font-size:13px;color:var(--muted);margin-top:4px">Especialista en Ginecología y Obstetricia · Consultorio 204, Torre Médica (dirección de ejemplo)</p></div>
+</div></section>
+
+<section style="background:#fff"><div class="wrap">
+  <div class="rv"><span class="eyebrow">Servicios</span><h2>¿En qué te <i>acompaño</i>?</h2><p class="lead">Toca una tarjeta para ver qué incluye. Precios de ejemplo.</p></div>
+  <div class="filt" id="filt"><button class="on" data-f="todos" type="button">Todos</button><button data-f="emb" type="button">🤰 Embarazo</button><button data-f="gin" type="button">🌸 Ginecología</button><button data-f="onl" type="button">💻 En línea</button><button data-f="urg" type="button">🚨 Urgencias</button></div>
+  <div class="svc" id="svc"></div>
+</div></section>
+
+<section><div class="wrap"><div class="mama rv"><div class="blob" style="width:260px;height:260px;background:#fff;top:-80px;right:-60px;opacity:.6"></div>
+  <span class="eyebrow">🤰 Plan Mamá</span><h2>Tu embarazo, <i>semana a semana</i></h2><p class="lead">Mueve la barra y descubre cómo crece tu bebé y qué control te toca.</p>
+  <div class="wk"><div class="fruit" id="fruit">🫐</div>
+    <div><div class="wkn">Semana <span id="wkN">8</span></div><input type="range" id="wk" min="4" max="40" value="8" aria-label="Semana de embarazo">
+      <div class="wkinfo" id="wkInfo"></div></div></div>
+  <div class="paq"><div><div style="font-size:13px;opacity:.8">Plan Mamá completo · 9 controles + 3 ecografías</div><b><s>435 $</s>360 $</b> <span style="font-size:13px;opacity:.8">o 9 cuotas de 40 $</span></div><button class="btn btn-rose" type="button" data-pick="mama">Quiero el Plan Mamá</button></div>
+  <p style="font-size:11px;color:var(--muted);margin-top:10px">Información orientativa. Tu doctora te indicará los controles según tu caso.</p>
+</div></div></section>
+
+<section id="agenda" style="background:#fff"><div class="wrap">
+  <div class="rv"><span class="eyebrow">Agenda en línea</span><h2>Elige tu día, <i>sin llamadas</i></h2><p class="lead">Los días en gris ya están llenos. Escoge un día y una hora libres, paga o abona, y la doctora confirma tu cita.</p></div>
+  <div class="book" style="margin-top:20px">
+    <div style="display:grid;gap:14px">
+      <div class="box"><div class="stp">PASO 1 · SERVICIO</div><select id="bSvc"></select></div>
+      <div class="box"><div class="stp">PASO 2 · DÍA</div>
+        <div style="display:flex;justify-content:space-between;align-items:center"><button id="mPrev" type="button" style="font-size:20px;padding:6px 12px">‹</button><b id="mName" style="font-family:Fraunces,serif;font-size:20px"></b><button id="mNext" type="button" style="font-size:20px;padding:6px 12px">›</button></div>
+        <div class="cal" id="cal"></div>
+        <div class="legend"><span><i style="background:#E8F8F1"></i>Disponible</span><span><i style="background:#FFF4DE"></i>Pocos cupos</span><span><i style="background:#F2EEF1"></i>Agenda llena</span></div></div>
+      <div class="box"><div class="stp">PASO 3 · HORA</div><div id="slotDay" style="font-size:14px;color:var(--muted)">Primero elige un día.</div><div class="slots" id="slots"></div>
+        <button id="espera" type="button" style="margin-top:10px;font-size:13px;color:var(--rose2);font-weight:700">🔔 ¿No hay cupo? Avísame si se libera</button></div>
+      <div class="box"><div class="stp">PASO 4 · TUS DATOS</div>
+        <div style="display:grid;gap:10px"><input type="text" id="pNom" placeholder="Tu nombre y apellido" autocomplete="name"><input type="tel" id="pTel" placeholder="Tu WhatsApp" autocomplete="tel">
+        <select id="pMot"><option value="">¿Motivo de la consulta?</option><option>Control de embarazo</option><option>Chequeo de rutina</option><option>Dolor o molestia</option><option>Planificación familiar</option><option>Revisar resultados</option><option>Otro</option></select>
+        <label style="font-size:13px;color:var(--muted);display:flex;gap:8px;align-items:center"><input type="checkbox" id="pEmb" style="width:20px;height:20px;accent-color:var(--rose2)"> Estoy embarazada o creo estarlo</label>
+        <div id="furBox" style="display:none"><label style="font-size:13px;color:var(--muted)">Fecha de tu última regla</label><input type="date" id="pFur"></div>
+        <div class="calc" id="calc"></div></div></div>
+    </div>
+    <div class="box sum" id="sum"><div class="stp">TU CITA</div>
+      <div class="row"><span>Servicio</span><b id="sSvc">—</b></div><div class="row"><span>Día</span><b id="sDia">—</b></div><div class="row"><span>Hora</span><b id="sHora">—</b></div>
+      <div class="tog"><button id="tFull" class="on" type="button">Pago completo</button><button id="tAbono" type="button">Abono 50 %</button></div>
+      <div style="display:flex;justify-content:space-between;align-items:baseline;margin-top:12px"><span style="color:var(--muted);font-size:14px">A pagar ahora</span><div style="text-align:right"><div class="tot" id="sTot">0 $</div><small id="sBs" style="color:var(--muted)">Bs 0 · tasa de ejemplo</small></div></div>
+      <div class="stp" style="margin-top:16px">PAGO</div>
+      <div class="pays" id="pays"><button data-p="Pago móvil" type="button"><span>📱</span>Pago móvil</button><button data-p="Transferencia" type="button"><span>🏦</span>Transferencia</button><button data-p="Zelle" type="button"><span>💵</span>Zelle</button><button data-p="Binance" type="button"><span>🪙</span>Binance</button><button data-p="Tarjeta" type="button"><span>💳</span>Tarjeta</button><button data-p="En consultorio" type="button"><span>🏥</span>En consultorio</button></div>
+      <div class="drop" id="cap">📎 Toca para adjuntar la captura del pago</div>
+      <button class="btn btn-rose" id="go" type="button" style="width:100%;margin-top:14px">Solicitar mi cita</button><p class="msg" id="bMsg"></p>
+      <p style="font-size:11px;color:var(--muted);margin-top:6px">Puedes reprogramar sin costo hasta 24 h antes.</p></div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="rv"><span class="eyebrow">Antes de tu consulta</span><h2>Envíame tus <i>exámenes</i> 📎</h2><p class="lead">Sube tus laboratorios, ecos anteriores o informes. Llego a tu consulta sabiendo tu historia. Solo la doctora puede verlos 🔒.</p></div>
+  <div class="box" style="margin-top:16px"><div class="drop" id="exDrop" style="padding:28px">⬆️ Toca para subir tus exámenes (PDF o foto)<br><small>En esta demo no se guarda ningún archivo.</small></div><div class="files" id="exList"></div></div>
+</div></section>
+
+<section style="background:#fff"><div class="wrap">
+  <div class="rv"><span class="eyebrow">Ellas lo cuentan</span><h2>Mamás y mujeres <i>acompañadas</i></h2></div>
+  <div class="tst" style="margin-top:16px">
+    <div>"Agendé de madrugada desde el teléfono y al día siguiente ya tenía la confirmación. Me sentí escuchada de verdad."<b>— María G. · Testimonio de ejemplo</b></div>
+    <div>"Con el Plan Mamá supe en cada semana qué me tocaba. Y mandar mis exámenes antes ahorró mucho tiempo."<b>— Andreína P. · Testimonio de ejemplo</b></div>
+    <div>"La teleconsulta me salvó: estaba fuera de la ciudad y resolví mi duda el mismo día."<b>— Carolina M. · Testimonio de ejemplo</b></div>
+  </div>
+  <div class="faq" style="margin-top:26px;max-width:760px">
+    <details><summary>¿Qué llevo a mi consulta?</summary><p>Tu cédula, tus exámenes recientes (o súbelos aquí antes) y, si estás embarazada, tu carnet prenatal.</p></details>
+    <details><summary>¿Atiende seguros?</summary><p>Consulta por WhatsApp qué seguros se reciben. También puedes pagar en línea o en el consultorio.</p></details>
+    <details><summary>¿Cómo reprogramo o cancelo?</summary><p>Desde el mensaje de confirmación, sin costo hasta 24 horas antes.</p></details>
+    <details><summary>¿Dónde queda el consultorio?</summary><p>Consultorio 204, Torre Médica (dirección de ejemplo). Lunes a viernes de 8:00 am a 5:00 pm; sábados de 8:00 am a 12:00 m.</p></details>
+  </div>
+</div></section>
+</div>
+
+<!-- ============ VISTA DOCTORA ============ -->
+<div class="doc"><section><div class="wrap">
+  <span class="eyebrow">Panel de la doctora · así lo ve ella</span><h2>Tus pacientes agendan solas. <i>Tú solo confirmas.</i></h2>
+  <div class="dkp" style="margin-top:16px"><div><b id="dHoy">6</b>citas hoy</div><div><b id="dNew">2</b>solicitudes nuevas</div><div><b>18</b>citas esta semana</div><div><b id="dPag">640 $</b>cobrado esta semana</div></div>
+  <div class="box" style="margin-top:14px"><div class="stp">SOLICITUDES POR CONFIRMAR</div><div class="req" id="req"></div></div>
+  <div class="box" style="margin-top:14px"><div class="stp">AGENDA DE HOY</div><div class="req" id="hoy"></div></div>
+  <div class="box" style="margin-top:14px"><div class="stp">EXÁMENES RECIBIDOS</div><div class="files" id="docEx"></div></div>
+  <div class="box" style="margin-top:14px;font-size:14px;color:var(--muted)">🔔 Recordatorios enviados hoy por WhatsApp: <b style="color:var(--ink)">9</b> · Pacientes en lista de espera: <b style="color:var(--ink)">3</b></div>
+</div></section></div>
+
+<div class="wrap"><div class="kubia"><div><div style="font-size:12px;letter-spacing:.12em;color:#8FA39B;font-weight:700">PÁGINA DE EJEMPLO</div><div style="font-size:18px;font-weight:700;margin-top:4px">Creada con <b>KubIA Agenda</b>: tus pacientes agendan, pagan y te envían sus exámenes solas.</div></div>
+<a class="btn" id="kubiaCta" target="_blank" rel="noopener" style="background:#10B981;color:#04140E">💬 Quiero la mía</a></div></div>
+</main>
+<footer>Demo de KubIA · Datos, precios y testimonios de ejemplo · <a href="https://kubiav.com" style="color:var(--rose2)">kubiav.com</a></footer>
+
+<button class="sos" type="button" data-sos>🚨 Emergencia</button>
+
+<div class="modal" id="mSos"><div class="sheet"><h3 style="font-size:26px">🚨 ¿Es una emergencia?</h3><p style="color:var(--muted);font-size:14px;margin-top:6px">Acude a emergencia o llama de inmediato si tienes alguna de estas señales:</p>
+<ul class="alarm"><li>🩸 Sangrado vaginal abundante</li><li>😣 Dolor fuerte en el vientre que no cede</li><li>🌡️ Fiebre alta o escalofríos</li><li>👶 Tu bebé se mueve menos de lo normal</li><li>💧 Salida de líquido</li><li>🤕 Dolor de cabeza fuerte, visión borrosa o hinchazón repentina</li></ul>
+<div style="display:grid;gap:10px"><a class="btn btn-sos" href="tel:+580000000000">📞 Llamar ahora (número de ejemplo)</a><button class="btn btn-soft" type="button" data-pick="emerg">Pedir consulta de emergencia</button><button class="btn btn-soft" type="button" data-close>Cerrar</button></div>
+<p style="font-size:11px;color:var(--muted);margin-top:10px">Esta página no reemplaza la atención médica de urgencia.</p></div></div>
+
+<div class="modal" id="mOk"><div class="sheet" id="okBody"></div></div>
+<canvas class="conf" id="conf"></canvas>
+
+<script>
+(function(){
+var $=function(id){return document.getElementById(id)};
+var TASA=45; // tasa de ejemplo
+var SV=[
+ {id:'gine',f:'gin',e:'🌸',n:'Consulta ginecológica',d:'40 min',p:30,inc:['Evaluación completa','Historia clínica','Indicaciones y récipe']},
+ {id:'prenatal',f:'emb',e:'🤰',n:'Control prenatal mensual',d:'30 min',p:35,inc:['Peso y tensión','Latido del bebé','Ecografía básica','Plan para tu próximo control']},
+ {id:'ecoobs',f:'emb',e:'👶',n:'Ecografía obstétrica',d:'30 min',p:40,inc:['Crecimiento y posición del bebé','Bienestar fetal','Imágenes para llevar']},
+ {id:'ecotv',f:'gin',e:'🩺',n:'Ecografía transvaginal',d:'25 min',p:35,inc:['Útero y ovarios','Informe escrito']},
+ {id:'anual',f:'gin',e:'💗',n:'Chequeo femenino anual',d:'60 min',p:60,inc:['Citología (Papanicolau)','Eco transvaginal','Examen de mamas','Recordatorio para tu próximo chequeo']},
+ {id:'tele',f:'onl',e:'💻',n:'Teleconsulta',d:'25 min',p:20,inc:['Videollamada','Récipe y órdenes digitales','Ideal si estás fuera de la ciudad']},
+ {id:'result',f:'onl',e:'📄',n:'Revisión de resultados',d:'20 min',p:15,inc:['Interpretación de tus laboratorios','Plan a seguir']},
+ {id:'plan',f:'gin',e:'🌱',n:'Planificación familiar',d:'30 min',p:30,inc:['Asesoría personalizada','Elección del método','Seguimiento']},
+ {id:'emerg',f:'urg',e:'🚨',n:'Consulta de emergencia',d:'Prioritaria',p:50,inc:['Atención el mismo día','Evaluación prioritaria']},
+ {id:'mama',f:'emb',e:'🤰',n:'Plan Mamá (paquete)',d:'9 controles',p:360,inc:['9 controles prenatales','3 ecografías','Acompañamiento todo el embarazo'],hide:true}
+];
+var byId={};SV.forEach(function(s){byId[s.id]=s});
+// --- Saludo que se escribe
+var H=['Hola, mamá 💕','Hola, mujer 🌸','Bienvenida 🤍'],hi=0,hc=0,del=false;
+(function tick(){var w=H[hi];$('hola').textContent=w.slice(0,hc);if(!del){hc++;if(hc>w.length){del=true;setTimeout(tick,1600);return}}else{hc--;if(hc<0){del=false;hc=0;hi=(hi+1)%H.length}}setTimeout(tick,del?40:85)})();
+// --- Servicios
+function renderSvc(f){$('svc').innerHTML=SV.filter(function(s){return !s.hide&&(f==='todos'||s.f===f)}).map(function(s){return '<div class="flip rv in" data-id="'+s.id+'"><div class="in"><div class="face"><div class="em">'+s.e+'</div><h3>'+s.n+'</h3><p>⏱ '+s.d+'</p><div class="hint">Toca para ver qué incluye ↻</div><div class="pr"><b>'+s.p+' $</b><small>precio de ejemplo</small></div></div><div class="face back"><h3>'+s.e+' '+s.n+'</h3><ul>'+s.inc.map(function(i){return '<li>'+i+'</li>'}).join('')+'</ul><div class="act"><button class="btn btn-soft" type="button" data-back>↺</button><button class="btn btn-rose" type="button" data-pick="'+s.id+'">Agendar · '+s.p+' $</button></div></div></div></div>'}).join('')}
+renderSvc('todos');
+$('filt').addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;document.querySelectorAll('#filt button').forEach(function(x){x.classList.toggle('on',x===b)});renderSvc(b.dataset.f)});
+$('svc').addEventListener('click',function(e){var c=e.target.closest('.flip');if(!c||e.target.closest('[data-pick]'))return;c.classList.toggle('on')});
+// --- Plan Mamá
+var FR=[[4,'🌱','una semilla de amapola','Primera consulta para confirmar tu embarazo y empezar el ácido fólico.'],[7,'🫐','un arándano','Eco de confirmación: ¡escuchamos su latido!'],[10,'🍓','una fresa','Primeros laboratorios y control prenatal.'],[13,'🍋','un limón','Eco del primer trimestre.'],[16,'🥑','un aguacate','Control mensual: peso, tensión y latido.'],[20,'🍌','un cambur','Eco morfológica: vemos cada detalle de su desarrollo.'],[24,'🌽','una mazorca','Prueba de glucosa entre las semanas 24 y 28.'],[28,'🍆','una berenjena','Inicia el tercer trimestre: controles cada 2 semanas.'],[32,'🥥','un coco','Eco de crecimiento y posición.'],[36,'🍈','un melón','Controles semanales y plan de parto.'],[40,'🍉','una patilla','¡Llegó la semana! Te acompaño en el gran día.']];
+function wk(){var w=+$('wk').value,f=FR[0];FR.forEach(function(x){if(w>=x[0])f=x});$('wkN').textContent=w;var fr=$('fruit');if(fr.textContent!==f[1]){fr.style.transform='scale(.7)';setTimeout(function(){fr.textContent=f[1];fr.style.transform='scale(1)'},150)}
+$('wkInfo').innerHTML='Tu bebé tiene el tamaño de <b>'+f[2]+'</b>.<br>'+f[3]}
+$('wk').addEventListener('input',wk);wk();
+// --- Agenda
+var sel={svc:'prenatal',dia:null,hora:null,pago:null,abono:false,cap:false};
+$('bSvc').innerHTML=SV.map(function(s){return '<option value="'+s.id+'">'+s.e+' '+s.n+' · '+s.p+' $</option>'}).join('');$('bSvc').value=sel.svc;
+$('bSvc').onchange=function(){sel.svc=this.value;sum()};
+var base=new Date();base.setHours(0,0,0,0);var mOff=0;var MES=['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
+function estado(d){var dw=d.getDay();if(d<base||dw===0)return d<base?'past':'off';var k=(d.getDate()*7+d.getMonth()*3)%10;if(dw===6)return k<5?'few':'full';return k<3?'full':(k<6?'few':'ok')}
+function cal(){var m=new Date(base.getFullYear(),base.getMonth()+mOff,1);$('mName').textContent=MES[m.getMonth()]+' '+m.getFullYear();
+ var h='<span class="h">L</span><span class="h">M</span><span class="h">M</span><span class="h">J</span><span class="h">V</span><span class="h">S</span><span class="h">D</span>';var pad=(m.getDay()+6)%7;for(var i=0;i<pad;i++)h+='<span></span>';
+ var dim=new Date(m.getFullYear(),m.getMonth()+1,0).getDate();for(var d=1;d<=dim;d++){var dt=new Date(m.getFullYear(),m.getMonth(),d);var st=estado(dt);var s=sel.dia&&sel.dia.getTime()===dt.getTime()?' sel':'';
+ h+='<button type="button" class="'+st+s+'" data-d="'+dt.getTime()+'" '+(st==='ok'||st==='few'?'':'disabled aria-disabled="true"')+' title="'+(st==='full'?'Agenda llena':'')+'">'+d+'</button>'}
+ $('cal').innerHTML=h;$('mPrev').disabled=mOff<=0;$('mPrev').style.opacity=mOff<=0?.3:1}
+$('mPrev').onclick=function(){if(mOff>0){mOff--;cal()}};$('mNext').onclick=function(){if(mOff<2){mOff++;cal()}};
+var SL=['8:00','8:40','9:20','10:00','10:40','11:20','2:00','2:40','3:20','4:00','4:40'];
+function slots(){if(!sel.dia){$('slots').innerHTML='';return}var dd=sel.dia;$('slotDay').textContent=fdia(dd);var sat=dd.getDay()===6;var few=estado(dd)==='few';
+ $('slots').innerHTML=SL.filter(function(s,i){return !sat||i<6}).map(function(s,i){var busy=((dd.getDate()+i*3)%(few?3:5))!==0;var lbl=s+(i<6?' am':' pm');return '<button type="button" class="'+(busy?'busy':'')+(sel.hora===lbl?' sel':'')+'" '+(busy?'disabled':'')+' data-h="'+lbl+'">'+lbl+'</button>'}).join('')}
+$('cal').addEventListener('click',function(e){var b=e.target.closest('button[data-d]');if(!b||b.disabled)return;sel.dia=new Date(+b.dataset.d);sel.hora=null;cal();slots();sum()});
+$('slots').addEventListener('click',function(e){var b=e.target.closest('button[data-h]');if(!b||b.disabled)return;sel.hora=b.dataset.h;slots();sum()});
+function fdia(d){return d.toLocaleDateString('es-VE',{weekday:'long',day:'numeric',month:'long'})}
+// próxima cita disponible
+(function(){for(var i=1;i<30;i++){var d=new Date(base);d.setDate(d.getDate()+i);var st=estado(d);if(st==='ok'||st==='few'){$('nextTxt').textContent='Próxima cita disponible: '+(i===1?'mañana':fdia(d))+', 9:20 am';break}}})();
+cal();
+// embarazo
+$('pEmb').onchange=function(){$('furBox').style.display=this.checked?'block':'none';if(!this.checked)$('calc').classList.remove('on')};
+$('pFur').onchange=function(){var f=new Date(this.value+'T12:00');if(isNaN(f))return;var dias=Math.floor((Date.now()-f)/864e5);if(dias<0||dias>300){$('calc').classList.add('on');$('calc').textContent='Revisa la fecha: parece fuera de rango.';return}
+ var sem=Math.floor(dias/7),d=dias%7;var fpp=new Date(f);fpp.setDate(fpp.getDate()+280);$('calc').innerHTML='🎉 Tienes aproximadamente <b>'+sem+' semanas y '+d+' días</b>.<br>Fecha probable de parto: <b>'+fpp.toLocaleDateString('es-VE',{day:'numeric',month:'long',year:'numeric'})+'</b>.<br><small>Cálculo orientativo; la doctora lo confirma con la ecografía.</small>';$('calc').classList.add('on');
+ if(sel.svc==='gine'){sel.svc='prenatal';$('bSvc').value='prenatal';sum()}};
+// pago
+$('pays').addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;sel.pago=b.dataset.p;document.querySelectorAll('#pays button').forEach(function(x){x.classList.toggle('sel',x===b)})});
+$('tFull').onclick=function(){sel.abono=false;this.classList.add('on');$('tAbono').classList.remove('on');sum()};
+$('tAbono').onclick=function(){sel.abono=true;this.classList.add('on');$('tFull').classList.remove('on');sum()};
+$('cap').onclick=function(){sel.cap=true;this.innerHTML='✅ captura_pago.jpg adjuntada';this.style.borderColor='#10B981';this.style.color='#0A7D58'};
+function money(n){return (Math.round(n*100)/100).toLocaleString('es-VE',{maximumFractionDigits:2})}
+function sum(){var s=byId[sel.svc];$('sSvc').textContent=s.e+' '+s.n;$('sDia').textContent=sel.dia?fdia(sel.dia):'—';$('sHora').textContent=sel.hora||'—';var t=s.p*(sel.abono?.5:1);$('sTot').textContent=money(t)+' $';$('sBs').textContent='Bs '+money(t*TASA)+' · tasa de ejemplo'}
+sum();
+document.addEventListener('click',function(e){var p=e.target.closest('[data-pick]');if(p){sel.svc=p.dataset.pick;$('bSvc').value=sel.svc;sum();closeAll();location.hash='';$('agenda').scrollIntoView({behavior:'smooth'})}
+ if(e.target.closest('[data-back]'))e.target.closest('.flip').classList.remove('on');
+ if(e.target.closest('[data-sos]'))$('mSos').classList.add('on');if(e.target.closest('[data-close]')||e.target.classList.contains('modal'))closeAll()});
+function closeAll(){document.querySelectorAll('.modal').forEach(function(m){m.classList.remove('on')})}
+$('espera').onclick=function(){$('bMsg').textContent='🔔 Listo: te avisaremos por WhatsApp si se libera un cupo esta semana.'};
+// solicitud
+$('go').onclick=function(){var m=$('bMsg');
+ if(!sel.dia||!sel.hora){m.textContent='Elige un día y una hora disponibles.';return}
+ if(!$('pNom').value.trim()||$('pTel').value.replace(/\D/g,'').length<10){m.textContent='Escribe tu nombre y tu WhatsApp.';return}
+ if(!sel.pago){m.textContent='Elige cómo vas a pagar.';return}m.textContent='';
+ var s=byId[sel.svc],nom=$('pNom').value.trim().split(' ')[0];
+ var rq={n:$('pNom').value.trim(),s:s.n,e:s.e,d:fdia(sel.dia),h:sel.hora,p:sel.pago,m:money(s.p*(sel.abono?.5:1)),ab:sel.abono,t:Date.now()};
+ try{var L=JSON.parse(localStorage.getItem('demo_obst')||'[]');L.unshift(rq);localStorage.setItem('demo_obst',JSON.stringify(L.slice(0,5)))}catch(x){}
+ var st=new Date(sel.dia);var hm=sel.hora.match(/(\d+):(\d+) (am|pm)/);var hh=+hm[1]%12+(hm[3]==='pm'?12:0);st.setHours(hh,+hm[2]);var en=new Date(st.getTime()+40*6e4);
+ function ic(d){return d.toISOString().replace(/[-:]/g,'').split('.')[0]+'Z'}
+ var ics='BEGIN:VCALENDAR\nVERSION:2.0\nBEGIN:VEVENT\nDTSTART:'+ic(st)+'\nDTEND:'+ic(en)+'\nSUMMARY:'+s.n+' · Dra. Valentina Rondón\nLOCATION:Consultorio 204\nEND:VEVENT\nEND:VCALENDAR';
+ var ok='<div style="text-align:center"><div style="font-size:60px">🌸</div><h3 style="font-size:28px">¡Listo, '+nom+'!</h3><p style="color:var(--muted);margin-top:6px">Tu solicitud llegó. La doctora la confirmará en breve.</p></div>'+
+ '<div class="box" style="margin-top:14px"><div class="row" style="display:flex;justify-content:space-between;font-size:14px;padding:6px 0"><span>'+s.e+' '+s.n+'</span><b>'+rq.m+' $'+(sel.abono?' (abono)':'')+'</b></div><div style="font-size:14px;color:var(--muted)">📅 '+rq.d+' · '+rq.h+'<br>💳 '+rq.p+(sel.cap?' · captura adjuntada':'')+'</div></div>'+
+ '<div class="wa"><div style="font-size:12px;font-weight:800;color:#0A7D58;margin-bottom:8px">ASÍ TE LLEGARÁ EL RECORDATORIO (24 h antes)</div><div class="bub">Hola, '+nom+' 🌸 Te recordamos tu cita de <b>'+s.n+'</b> mañana a las <b>'+rq.h+'</b> con la Dra. Valentina Rondón. Responde 1 para confirmar o 2 para reprogramar.<div style="text-align:right;font-size:11px;color:#667">9:00 ✓✓</div></div></div>'+
+ '<div style="display:grid;gap:10px;margin-top:14px"><a class="btn btn-rose" download="cita-dra-valentina.ics" href="data:text/calendar;charset=utf-8,'+encodeURIComponent(ics)+'">📅 Agregar a mi calendario</a><button class="btn btn-soft" type="button" id="verDoc">👩‍⚕️ Ver cómo le llegó a la doctora</button><button class="btn btn-soft" type="button" data-close>Cerrar</button></div>';
+ $('okBody').innerHTML=ok;$('mOk').classList.add('on');confetti();
+ $('verDoc').onclick=function(){closeAll();setVista(true);window.scrollTo({top:0,behavior:'smooth'})}};
+// exámenes
+var EX=[];$('exDrop').onclick=function(){var n=['Hematología_completa.pdf','Eco_semana_12.jpg','Perfil_tiroideo.pdf'][EX.length%3];EX.push(n);$('exList').innerHTML=EX.map(function(x){return '<div><span>📄 '+x+'</span><span style="color:#0A7D58;font-weight:700;font-size:12px">✓ Enviado</span></div>'}).join('')};
+// vista doctora
+var SEED=[{n:'Luisa Fernández',s:'Control prenatal mensual',e:'🤰',d:'jueves',h:'9:20 am',p:'Pago móvil',m:'35',ab:false},{n:'Karla Mendoza',s:'Chequeo femenino anual',e:'💗',d:'viernes',h:'10:40 am',p:'Zelle',m:'30',ab:true}];
+function renderDoc(){var L=[];try{L=JSON.parse(localStorage.getItem('demo_obst')||'[]')}catch(x){}var all=L.map(function(r){r.mine=1;return r}).concat(SEED);
+ $('dNew').textContent=all.filter(function(r){return !r.ok}).length;
+ $('req').innerHTML=all.map(function(r,i){return '<div class="rq'+(r.mine?' new':'')+'" data-i="'+i+'"><div><b>'+r.e+' '+r.n+'</b><br><small>'+r.s+' · '+r.d+' · '+r.h+'</small><br><small>💳 '+r.p+' · '+r.m+' $'+(r.ab?' (abono 50 %)':'')+' · 📎 captura</small><br><span class="pill p-new">Por confirmar</span></div><button class="btn btn-rose" type="button" style="min-height:42px;padding:0 16px" data-ok>✓ Confirmar</button></div>'}).join('');
+ $('hoy').innerHTML=[['8:00 am','🤰 Ana R. · Control prenatal · Semana 22'],['8:40 am','🩺 Mariela S. · Eco transvaginal'],['9:20 am','💻 Josefina T. · Teleconsulta'],['10:40 am','💗 Paola V. · Chequeo anual'],['2:00 pm','👶 Daniela C. · Eco obstétrica'],['3:20 pm','📄 Rosa M. · Revisión de resultados']].map(function(x){return '<div class="rq"><div><b>'+x[0]+'</b><br><small>'+x[1]+'</small></div><span class="pill p-ok">Confirmada</span></div>'}).join('');
+ $('docEx').innerHTML=(EX.length?EX:['Hematología_completa.pdf']).map(function(x){return '<div><span>📄 '+x+'</span><small style="color:var(--muted)">de '+(L[0]?L[0].n.split(' ')[0]:'Ana R.')+'</small></div>'}).join('')}
+$('req').addEventListener('click',function(e){var b=e.target.closest('[data-ok]');if(!b)return;var c=b.closest('.rq');c.querySelector('.pill').className='pill p-ok';c.querySelector('.pill').textContent='Confirmada · WhatsApp enviado ✓';b.remove();c.classList.remove('new');var n=$('dNew');n.textContent=Math.max(0,+n.textContent-1);confetti()});
+function setVista(dr){document.body.classList.toggle('dr',dr);$('vD').classList.toggle('on',dr);$('vP').classList.toggle('on',!dr);if(dr)renderDoc()}
+$('vP').onclick=function(){setVista(false)};$('vD').onclick=function(){setVista(true);window.scrollTo({top:0})};
+// confeti
+function confetti(){var c=$('conf'),x=c.getContext('2d');c.width=innerWidth;c.height=innerHeight;var P=[],C=['#E7739A','#B9A7F2','#10B981','#FBBF24','#F8D7DA'];for(var i=0;i<90;i++)P.push({x:innerWidth/2,y:innerHeight*.4,vx:(Math.random()-.5)*12,vy:-Math.random()*12-4,r:4+Math.random()*5,c:C[i%5],a:1});
+ (function f(){x.clearRect(0,0,c.width,c.height);var on=false;P.forEach(function(p){p.vy+=.35;p.x+=p.vx;p.y+=p.vy;p.a-=.012;if(p.a>0){on=true;x.globalAlpha=p.a;x.fillStyle=p.c;x.fillRect(p.x,p.y,p.r,p.r*1.6)}});if(on)requestAnimationFrame(f);else x.clearRect(0,0,c.width,c.height)})()}
+// aparición
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
+// CTA KubIA con código de recomendación
+var R=null;try{var st=JSON.parse(localStorage.getItem('kubia_ref')||'null');if(st&&st.c)R=st.c}catch(x){}
+$('kubiaCta').href='https://wa.me/584221754245?text='+encodeURIComponent('Hola Daniela, vi la demo de la Dra. Valentina (KubIA Agenda) y quiero una página así para mi consulta.'+(R?'\n\nMe recomendó: '+R:''));
+})();
+</script>
+</body>
+</html>
