@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>KubIA Soluciones · Deja el cuaderno. Tu negocio cabe en tu bolsillo.</title>
-<meta name="description" content="Ventas, pedidos, inventario y finanzas en un solo lugar, desde tu teléfono y vendiendo 24/7. Tienda con QR, pagos en dólares, bolívares y pesos, y funciona sin internet. Hecho en Amazonas, para el mundo.">
+<meta name="description" content="Ventas, pedidos, inventario y finanzas en un solo lugar, desde tu teléfono y vendiendo 24/7. Tienda con QR, precios en las monedas que uses a la tasa del día, y funciona sin internet. Hecho en Amazonas, para el mundo.">
 <meta name="theme-color" content="#0B1210">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
 <link rel="apple-touch-icon" href="/assets/icon-180.png">
@@ -281,6 +281,9 @@ h3{font-size:20px;letter-spacing:-.02em;line-height:1.2}
 .amount .m small{font-size:15px;font-weight:600;color:var(--muted);letter-spacing:0}
 .amount .impl{font-size:14px;color:var(--muted);margin-top:6px}
 .amount .impl s{color:var(--muted2)}
+.amount .launch{display:inline-block;margin-bottom:8px;padding:4px 10px;border-radius:999px;background:rgba(245,158,11,.15);color:#FBBF24;font-size:12px;font-weight:700}
+.amount .m s.old{font-size:22px;font-weight:600;color:var(--muted2);margin-right:8px;letter-spacing:-.02em}
+.amount .frz{font-size:12px;color:var(--em2);margin-top:6px;font-weight:600}
 @keyframes rise{from{opacity:0;transform:translateY(14px) scale(.96);filter:blur(6px)}to{opacity:1;transform:none;filter:none}}
 .spec{list-style:none;display:grid;gap:10px;font-size:13.5px;color:#C4D2CC;flex:1;align-content:start}
 .spec li{display:flex;justify-content:space-between;gap:12px;padding-bottom:10px;border-bottom:1px solid var(--line)}
@@ -455,6 +458,7 @@ footer .copy{width:100%;font-size:12px;color:var(--muted2)}
       <a href="#soluciones">Soluciones</a>
       <a href="#demo">Demo</a>
       <a href="#planes">Planes</a>
+      <a href="/sirve-para-mi">¿Sirve para mí?</a>
       <a href="#comparte">Comparte y gana</a>
       <a href="#diagnostico">Diagnóstico gratis</a>
     </nav>
@@ -551,7 +555,7 @@ footer .copy{width:100%;font-size:12px;color:var(--muted2)}
       <div class="s3 rv"><span class="n">PASO 2</span><div class="e">🛒</div><h3>Arma su pedido</h3><p>Ve fotos, precios y disponibilidad, y elige delivery o retiro.</p></div>
       <div class="s3 rv"><span class="n">PASO 3</span><div class="e">💳</div><h3>Paga con el QR de su banco</h3><p>Y a ti te llega el pedido completo, listo para despachar.</p></div>
     </div>
-    <div class="fx"><span class="chip">Precios en <b>$</b> dólares</span><span class="chip"><b>Bs</b> bolívares</span><span class="chip"><b>COP</b> pesos</span><span class="chip">con la <b>tasa del día</b></span></div>
+    <div class="fx"><span class="chip">Precios en <b>$</b> dólares</span><span class="chip"><b>€</b> euros</span><span class="chip"><b>Bs</b> bolívares</span><span class="chip"><b>COP</b> pesos</span><span class="chip">a la <b>tasa del día</b></span></div>
   </div>
 </section>
 
@@ -563,7 +567,7 @@ footer .copy{width:100%;font-size:12px;color:var(--muted2)}
       <h2>Una para cada forma <br>de vender.</h2>
       <p class="lead">Toca cada una para ver qué incluye.</p>
     </div>
-    <div class="rubros rv"><span>¿Cuál es tu negocio?</span><a href="/para/bodegones">🛒 Bodegones y abastos</a><a href="/para/distribuidoras">🚚 Distribuidoras</a><a href="/para/carnicerias">🥩 Carnicerías y charcuterías</a><a href="/para/restaurantes">🍔 Restaurantes y comida</a><a href="/para/tiendas-de-ropa">👗 Tiendas de ropa y accesorios</a><a href="/para/repuestos">🔧 Repuestos y ferreterías</a><a href="/para/salud-y-belleza">💅 Salud, belleza y servicios</a></div>
+    <div class="rubros rv"><span>¿Cuál es tu negocio?</span><a href="/sirve-para-mi" style="border-color:var(--em);color:var(--em2);font-weight:700">✨ Ver los 24 tipos de negocio →</a><a href="/para/bodegones">🛒 Bodegones y abastos</a><a href="/para/distribuidoras">🚚 Distribuidoras</a><a href="/para/carnicerias">🥩 Carnicerías y charcuterías</a><a href="/para/restaurantes">🍔 Restaurantes y comida</a><a href="/para/tiendas-de-ropa">👗 Tiendas de ropa y accesorios</a><a href="/para/repuestos">🔧 Repuestos y ferreterías</a><a href="/para/salud-y-belleza">💅 Salud, belleza y servicios</a></div>
     <div class="cards">
       <details class="card rv" data-e="🛍️" style="--c:#10B981">
         <summary>
@@ -573,7 +577,7 @@ footer .copy{width:100%;font-size:12px;color:var(--muted2)}
           <span class="more">Qué incluye</span>
         </summary>
         <div class="body"><ul>
-          <li>Catálogo con fotos y precios en 3 monedas</li><li>QR para pedir y pagar</li><li>Carrito con sugerencias</li><li>Delivery, retiro o envío nacional</li><li>Pago con QR del banco y captura</li><li>Confirmación por WhatsApp</li><li>Seguimiento del pedido</li><li>"Repetir mi último pedido"</li>
+          <li>Catálogo con fotos y precios en varias monedas, a la tasa del día</li><li>QR para pedir y pagar</li><li>Carrito con sugerencias</li><li>Delivery, retiro o envío nacional</li><li>Pago con QR del banco y captura</li><li>Confirmación por WhatsApp</li><li>Seguimiento del pedido</li><li>"Repetir mi último pedido"</li>
         </ul><a class="wa" href="#planes">Ver planes →</a></div>
       </details>
       <details class="card rv" data-e="🚚" style="--c:#F59E0B">
@@ -661,7 +665,7 @@ footer .copy{width:100%;font-size:12px;color:var(--muted2)}
       <div class="fv rv"><span class="e">💬</span><s>Clientes esperando respuesta</s><p>Ven tus productos y precios solos, a cualquier hora.</p></div>
       <div class="fv rv"><span class="e">📒</span><s>Pedidos perdidos en el chat</s><p>Cada pedido llega completo y ordenado.</p></div>
       <div class="fv rv"><span class="e">📦</span><s>No saber qué te queda</s><p>El inventario se descuenta solo con cada venta.</p></div>
-      <div class="fv rv"><span class="e">💸</span><s>Cuentas que no cuadran</s><p>Sabes quién pagó y quién debe, en dólares, bolívares y pesos.</p></div>
+      <div class="fv rv"><span class="e">💸</span><s>Cuentas que no cuadran</s><p>Sabes quién pagó y quién debe, en la moneda que uses.</p></div>
       <div class="fv rv"><span class="e">📶</span><s>Se fue la señal, se paró todo</s><p>Sigues vendiendo y todo se pone al día al volver.</p><div class="offline-demo" id="net"><span class="dot"></span><span class="t">Sin señal · guardando</span></div></div>
     </div>
     <div class="sync rv">
@@ -743,7 +747,7 @@ footer .copy{width:100%;font-size:12px;color:var(--muted2)}
       <article class="plan rv">
         <h3>Arranque</h3><p class="for">Para quien se configura solo</p>
         <div class="price"><button class="reveal" type="button"><svg><use href="#i-lock"/></svg>Ver precio</button>
-          <div class="amount"><div class="m">12 $<small> /mes</small></div><div class="impl">+ 150 $ de implementación</div></div></div>
+          <div class="amount"><div class="launch">🚀 Precio de lanzamiento</div><div class="m"><s class="old">19 $</s>12 $<small> /mes</small></div><div class="impl">+ 150 $ de implementación</div><div class="frz">Congelado por 1 año si implementas ahora</div></div></div>
         <ul class="spec">
           <li class="full"><span>Configuración</span><b>Tú cargas tus productos, fotos, precios, tasa, clientes y marca, con el manual en PDF</b></li>
           <li><span>Onboarding</span><b>Opcional, aparte</b></li>
@@ -760,7 +764,7 @@ footer .copy{width:100%;font-size:12px;color:var(--muted2)}
         <span class="badge">⭐ Recomendado</span>
         <h3>Crece</h3><p class="for">Para quien quiere ayuda para arrancar</p>
         <div class="price"><button class="reveal" type="button"><svg><use href="#i-lock"/></svg>Ver precio</button>
-          <div class="amount"><div class="m">25 $<small> /mes</small></div><div class="impl">+ 399 $ de implementación</div></div></div>
+          <div class="amount"><div class="launch">🚀 Precio de lanzamiento</div><div class="m"><s class="old">35 $</s>25 $<small> /mes</small></div><div class="impl">+ 399 $ de implementación</div><div class="frz">Congelado por 1 año si implementas ahora</div></div></div>
         <ul class="spec">
           <li class="full"><span>Configuración</span><b>Ponemos tu logo, colores y nombre; tú cargas tus productos</b></li>
           <li><span>Onboarding</span><b>✅ Incluido</b></li>
@@ -777,7 +781,7 @@ footer .copy{width:100%;font-size:12px;color:var(--muted2)}
       <article class="plan rv">
         <h3>Total</h3><p class="for">Para quien quiere todo resuelto</p>
         <div class="price"><button class="reveal" type="button"><svg><use href="#i-lock"/></svg>Ver precio</button>
-          <div class="amount"><div class="m">35 $<small> /mes</small></div><div class="impl">+ 599 $ de implementación</div></div></div>
+          <div class="amount"><div class="launch">🚀 Precio de lanzamiento</div><div class="m"><s class="old">49 $</s>35 $<small> /mes</small></div><div class="impl">+ 599 $ de implementación</div><div class="frz">Congelado por 1 año si implementas ahora</div></div></div>
         <ul class="spec">
           <li class="full"><span>Configuración</span><b>Lo hacemos todo: catálogo, combos y promociones</b></li>
           <li><span>Onboarding</span><b>✅ Completo</b></li>
@@ -796,7 +800,7 @@ footer .copy{width:100%;font-size:12px;color:var(--muted2)}
       <div>
         <b>🚀 Paquete Fundador · solo para los primeros 10 negocios</b>
         <ul class="fpack">
-          <li>🎁 <strong>4 meses de mensualidad gratis</strong></li>
+          <li>🎁 <strong>2 meses de mensualidad gratis</strong></li>
           <li>🎬📸 <strong>Beneficios sorpresa</strong> para tu negocio</li>
         </ul>
       </div>
@@ -899,7 +903,7 @@ footer .copy{width:100%;font-size:12px;color:var(--muted2)}
     <div class="qa">
       <details><summary>¿Y si se va el internet?</summary><p>Sigues vendiendo. Todo se guarda en el teléfono y se sincroniza cuando vuelve la señal.</p></details>
       <details><summary>¿Cada cuánto se actualiza la información?</summary><p>En segundos. Pedidos, despachos, estados y pagos se sincronizan al instante entre los teléfonos y tu panel.</p></details>
-      <details><summary>¿Funciona en bolívares?</summary><p>Sí: dólares, bolívares y pesos, con la tasa del día.</p></details>
+      <details><summary>¿En qué monedas funciona?</summary><p>En las que uses: dólares, euros, bolívares, pesos y otras, a la tasa del día. Tú eliges cuáles se muestran.</p></details>
       <details><summary>¿Necesito computadora?</summary><p>No. Todo funciona desde el teléfono.</p></details>
       <details><summary>¿Mis datos son míos?</summary><p>Sí. Cada negocio ve solo su información.</p></details>
       <details><summary>¿Mis clientes tienen que descargar algo?</summary><p>No. Escanean el QR o abren tu enlace y listo.</p></details>
@@ -1006,6 +1010,7 @@ footer .copy{width:100%;font-size:12px;color:var(--muted2)}
     <div class="meta" style="text-align:right">
       <a class="wa-link" href="#" data-msg="Hola Daniela, vi el sitio de KubIA.">💬 WhatsApp 0422-1754245</a>
       <a href="/kubia/">▶ Demo interactiva</a>
+      <a href="/sirve-para-mi">¿KubIA sirve para mi negocio?</a>
       <a href="/terminos">Términos y privacidad</a>
     </div>
     <p class="copy">© <span id="yr">2026</span> KubIA Soluciones. Hecho en Amazonas, para el mundo.</p>
