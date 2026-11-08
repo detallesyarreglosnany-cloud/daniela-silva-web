@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://kubiav.com/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://kubiav.com/kubia/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://kubiav.com/</loc></url>
+  <url><loc>https://kubiav.com/kubia/</loc></url>
+  <url><loc>https://kubiav.com/para/bodegones</loc></url>
+  <url><loc>https://kubiav.com/para/distribuidoras</loc></url>
+  <url><loc>https://kubiav.com/para/carnicerias</loc></url>
+  <url><loc>https://kubiav.com/para/restaurantes</loc></url>
+  <url><loc>https://kubiav.com/para/tiendas-de-ropa</loc></url>
+  <url><loc>https://kubiav.com/para/repuestos</loc></url>
+  <url><loc>https://kubiav.com/para/salud-y-belleza</loc></url>
+  <url><loc>https://kubiav.com/terminos</loc></url>
 </urlset>
