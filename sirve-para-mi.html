@@ -140,6 +140,6 @@ if(!REF&&/^[A-Z0-9-]{2,20}$/.test(q)){REF=q;localStorage.setItem('kubia_ref',JSO
 document.querySelectorAll('.wa-link').forEach(function(a){var m=a.dataset.msg||'Hola Daniela';if(REF)m+='\n\nMe recomendó: '+REF;
 a.href='https://wa.me/'+WA+'?text='+encodeURIComponent(m);a.target='_blank';a.rel='noopener'})})();</script>
 <script>(function(){var REF=null;try{var st=JSON.parse(localStorage.getItem('kubia_ref')||'null');if(st&&st.c&&Date.now()-st.t<60*864e5)REF=st.c}catch(e){}
-document.querySelectorAll('.share').forEach(function(a){var url='https://kubiav.com/negocio/'+a.dataset.anchor+(REF?'?ref='+REF:'');
+document.querySelectorAll('.share').forEach(function(a){var url='https://kubiav.com/'+(REF?'?ref='+REF:'');
 a.href='https://wa.me/?text='+encodeURIComponent(a.dataset.share+' '+url);a.target='_blank';a.rel='noopener'})})();</script>
 </body></html>
