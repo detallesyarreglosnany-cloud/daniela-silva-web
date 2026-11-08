@@ -500,7 +500,7 @@ function waMsg(o){
  const first=o.customer.name.split(' ')[0];
  if(o.status==='nuevo'||o.status==='confirmado'){
   const cuando=o.delivery==='local'?(o.day==='manana'?`*mañana* en el horario de *${o.slot}*`:`*hoy* en el horario de *${o.slot}*`):o.delivery==='nacional'?`por *${o.agency}* hacia *${o.city}*`:`para retirar en la tienda (${o.slot||'hoy'})`;
-  return`Hola, ${first} 👋 Somos *Bodegón La Esquina*.\n\nRecibimos tu pedido ${o.code}:\n${o.items.map(i=>`• ${i.qty}× ${PX[i.id].n}`).join('\n')}\n*Total: ${usd(o.total)}* (${bs(o.total)})\n\nTu pedido está agendado ${cuando}. ${o.delivery==='local'?`Lo recibe ${o.rec||first} en ${o.addr}.`:''}\n\n¿Nos confirmas que todo está bien? 🙌\n\n_Tienda creada con KubIA · Crea la tuya: daniela-silva-web.vercel.app_`}
+  return`Hola, ${first} 👋 Somos *Bodegón La Esquina*.\n\nRecibimos tu pedido ${o.code}:\n${o.items.map(i=>`• ${i.qty}× ${PX[i.id].n}`).join('\n')}\n*Total: ${usd(o.total)}* (${bs(o.total)})\n\nTu pedido está agendado ${cuando}. ${o.delivery==='local'?`Lo recibe ${o.rec||first} en ${o.addr}.`:''}\n\n¿Nos confirmas que todo está bien? 🙌\n\n_Tienda creada con KubIA · Crea la tuya: kubiav.com_`}
  return`Hola, ${first} 👋 Tu pedido ${o.code} está: ${statusTxt(o)}. ¡Gracias por comprar en Bodegón La Esquina!`;
 }
 function openModal(html){$('#mbox').innerHTML=html;$('#modal').classList.add('open')}
