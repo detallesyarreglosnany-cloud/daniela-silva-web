@@ -68,5 +68,18 @@
         }
       ]
     }
+  ],
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "daniela-silva-web.vercel.app"
+        }
+      ],
+      "destination": "https://kubiav.com/:path*",
+      "permanent": true
+    }
   ]
 }
