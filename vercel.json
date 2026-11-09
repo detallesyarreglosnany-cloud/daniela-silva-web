@@ -69,7 +69,7 @@
       ]
     }
   ],
-  "rewrites": [
+  "redirects": [
     {
       "source": "/",
       "has": [
@@ -78,17 +78,8 @@
           "value": "dravalentina.kubiav.com"
         }
       ],
-      "destination": "/demo/obstetra/index.html"
-    },
-    {
-      "source": "/:path((?!assets/|_vercel/|demo/).*)",
-      "has": [
-        {
-          "type": "host",
-          "value": "dravalentina.kubiav.com"
-        }
-      ],
-      "destination": "/demo/obstetra/:path"
+      "destination": "/demo/obstetra/",
+      "permanent": false
     }
   ]
 }
