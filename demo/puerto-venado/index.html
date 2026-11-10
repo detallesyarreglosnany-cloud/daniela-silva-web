@@ -631,7 +631,7 @@ h2{font-family:var(--disp);text-transform:uppercase;font-size:clamp(28px,4.6vw,4
       <div class="ti reveal"><span class="y">🤝</span><div><b>Crédito con confianza</b><p>Un sistema de crédito justo, que premia al que paga a tiempo.</p></div></div>
       <div class="ti reveal"><span class="y">📱</span><div><b>Hoy, también en tu celular</b><p>La misma atención de siempre, ahora a un toque y a cualquier hora.</p></div></div>
     </div>
-    <figure><img src="img/fundador.webp" alt="Integrante de Puerto Venado en el almacén" loading="lazy"><figcaption>Años de trabajo y la misma palabra con cada cliente.</figcaption></figure></div>
+    <figure><img src="img/presidente.webp" alt="Presidente de Distribuidora Puerto Venado junto al camión de despacho" loading="lazy" style="object-position:center 25%"><figcaption>Nuestro presidente: al frente de cada ruta, con la misma palabra con cada cliente.</figcaption></figure></div>
   </div>
 </section>
 
@@ -803,7 +803,7 @@ function card(p){
    '<div class="bd">'+(subOf(p)?'<span class="grpt">'+esc(subOf(p))+'</span>':'')+'<h4>'+esc(p.name)+'</h4><span class="pres">'+esc([p.presentation,p.brand].filter(Boolean).join(' · '))+'</span>'+
    (ms.length>1?'<div class="seg"><button data-m="b" class="'+(m==='b'?'on':'')+'">'+esc(unitLbl(p,'b'))+'</button><button data-m="u" class="'+(m==='u'?'on':'')+'">Unidad</button></div>':'<span class="unit">'+esc(unitLbl(p,m))+'</span>')+
    '<div class="price"><b>'+prim(pr)+'</b><span>'+secd(pr)+'</span></div>'+
-   (sv>0?(m==='b'?'<div class="save">💚 Ahorras '+prim(sv)+' por caja ('+Math.round(sv/(p.unitPrice*p.unitsPerBox)*100)+'%)</div>':'<div class="save alt">📦 Por caja te sale más barato</div>'):'')+
+   (sv>0?(m==='b'?'<div class="save">💚 Ahorras '+prim(sv)+' por caja'+(Math.round(sv/(p.unitPrice*p.unitsPerBox)*100)>=1?' ('+Math.round(sv/(p.unitPrice*p.unitsPerBox)*100)+'%)':'')+'</div>':'<div class="save alt">📦 Por caja te sale más barato</div>'):'')+
    (p.agotado?'<button class="add" disabled>Agotado</button>':q?'<div class="qty"><button data-q="-1" aria-label="Quitar">−</button><span>'+q+' '+(m==='u'?'und':'cj')+'</span><button data-q="1" aria-label="Agregar">+</button></div>':'<button class="add" data-q="1">+ Agregar</button>')+
    '</div></article>';
 }
@@ -892,9 +892,11 @@ function confirmOrder(tot){var k=Object.keys(cart).filter(function(x){return car
     $('#rep').onclick=function(){saveLast();toast('💾 Guardado: lo verás como “Repetir mi último pedido”')};$('#fin').onclick=function(){cart={};save();render();closeAll()}}})}
 $('#secList').innerHTML=SECLIST.map(function(x){return '<option value="'+esc(x)+'">'}).join('');
 function routeHTML(a){return (a.lug?'<li><b>Zona:</b> '+esc(a.lug.join(', '))+'</li>':'')+Object.keys(a.d).map(function(d){return '<li><b>'+esc(d)+':</b> '+esc(a.d[d].join(', '))+'</li>'}).join('')}
-function drawWho(){$('#who').innerHTML=ASE.concat([MAY]).map(function(a){var n=Object.keys(a.d).length+(a.lug?1:0);return '<div class="wcard"><div class="av" style="background:'+a.c+';margin:0">'+a.n[0]+'</div><div style="min-width:0;flex:1"><h4>'+esc(a.n)+'</h4><small>'+esc(a.r)+'</small>'+(n?'<details><summary>'+(a.lug?'📍 Ver su zona':'🗓 Ver su ruta')+'</summary><ul>'+routeHTML(a)+'</ul></details>':'<div class="rt">🏪 En el almacén y por la web, de 9 am a 6 pm</div>')+'</div><button class="wa" data-wa="'+esc(a.n)+'" aria-label="WhatsApp">💬</button></div>'}).join('')}
+var FOTOA={'Lucas Chávez':'img/lucas-chavez.webp'};
+function avIn(a){return FOTOA[a.n]?'<img src="'+FOTOA[a.n]+'" alt="'+esc(a.n)+'" style="width:100%;height:100%;object-fit:cover;object-position:center 15%;border-radius:50%">':a.n[0]}
+function drawWho(){$('#who').innerHTML=ASE.concat([MAY]).map(function(a){var n=Object.keys(a.d).length+(a.lug?1:0);return '<div class="wcard"><div class="av" style="background:'+a.c+';margin:0;overflow:hidden">'+avIn(a)+'</div><div style="min-width:0;flex:1"><h4>'+esc(a.n)+'</h4><small>'+esc(a.r)+'</small>'+(n?'<details><summary>'+(a.lug?'📍 Ver su zona':'🗓 Ver su ruta')+'</summary><ul>'+routeHTML(a)+'</ul></details>':'<div class="rt">🏪 En el almacén y por la web, de 9 am a 6 pm</div>')+'</div><button class="wa" data-wa="'+esc(a.n)+'" aria-label="WhatsApp">💬</button></div>'}).join('')}
 drawWho();
-function hitHTML(x,h){return '<div class="hit"><div class="av" style="background:'+h.a.c+';margin:0;width:44px;height:44px;font-size:16px">'+h.a.n[0]+'</div><div style="flex:1"><b>📍 '+esc(x.label)+'</b><span class="muted">Te atiende <strong style="color:var(--ink)">'+esc(h.a.n)+'</strong> · '+(h.d?'pasa los <strong style="color:var(--ink)">'+esc(h.d.toLowerCase())+'</strong>':'zona '+esc(x.label))+'</span></div><button class="wa" data-wa="'+esc(h.a.n)+'" style="width:44px;height:44px;border-radius:13px;background:#1fa855;color:#fff;font-size:20px;flex:0 0 auto" aria-label="WhatsApp">💬</button></div>'}
+function hitHTML(x,h){return '<div class="hit"><div class="av" style="background:'+h.a.c+';margin:0;width:44px;height:44px;font-size:16px;overflow:hidden">'+avIn(h.a)+'</div><div style="flex:1"><b>📍 '+esc(x.label)+'</b><span class="muted">Te atiende <strong style="color:var(--ink)">'+esc(h.a.n)+'</strong> · '+(h.d?'pasa los <strong style="color:var(--ink)">'+esc(h.d.toLowerCase())+'</strong>':'zona '+esc(x.label))+'</span></div><button class="wa" data-wa="'+esc(h.a.n)+'" style="width:44px;height:44px;border-radius:13px;background:#1fa855;color:#fff;font-size:20px;flex:0 0 auto" aria-label="WhatsApp">💬</button></div>'}
 var secT;$('#secIn').addEventListener('input',function(){clearTimeout(secT);var v=this.value;secT=setTimeout(function(){var r=findSec(v).slice(0,6),box=$('#secRes');box.className='secres';
   box.innerHTML=!v.trim()?'':r.length?r.map(function(x){return x.hits.map(function(h){return hitHTML(x,h)}).join('')}).join(''):'<div class="hit"><div class="av" style="background:'+MAY.c+';margin:0;width:44px;height:44px;font-size:16px">M</div><div><b>No encontramos ese sector</b><span class="muted">Escríbele a <strong style="color:var(--ink)">'+esc(MAY.n)+'</strong> (venta directa) y te asigna tu asesor.</span></div></div>'},200)});
 var di=Math.max(0,Math.min(5,(new Date().getDay()+6)%7));
