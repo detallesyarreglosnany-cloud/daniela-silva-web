@@ -1,0 +1,1191 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#08214f">
+<title>Inversiones Coalmar · Tienda en línea (demo)</title>
+<meta name="description" content="Demo propuesta por KubIA: tienda virtual 24/7 y panel de gestión para Inversiones Coalmar.">
+<link rel="icon" href="/demo/coalmar/img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap">
+<style>
+:root{
+ --navy:#0a2a63;--navy2:#08214f;--navy3:#051634;--sky:#1f9ad6;--sky2:#5fc3f0;--sun:#f6a31b;--sun2:#ffc54d;
+ --bg:#eef3f9;--card:#fff;--ink:#0c1a33;--muted:#5b6b84;--line:#dbe4f0;
+ --green:#16a34a;--amber:#d97706;--red:#dc2626;
+ --r:18px;--sh:0 8px 28px rgba(8,33,79,.10);--f:"Montserrat",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+ --topH:60px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{font-family:var(--f);background:var(--bg);color:var(--ink);line-height:1.45;-webkit-text-size-adjust:100%;overflow:hidden}
+button,input,select{font:inherit;color:inherit}
+button{cursor:pointer;border:0;background:none}
+img{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--sun);outline-offset:2px}
+[hidden]{display:none!important}
+
+/* ---------- barra superior ---------- */
+.top{height:var(--topH);background:linear-gradient(90deg,var(--navy3),var(--navy));color:#fff;display:flex;align-items:center;gap:10px;padding:0 14px;position:relative;z-index:50;box-shadow:0 2px 14px rgba(0,0,0,.25)}
+.brand{display:flex;align-items:center;gap:10px;min-width:0}
+.brand .lg{width:40px;height:40px;border-radius:50%;background:#fff;display:grid;place-items:center;overflow:hidden;flex:none;box-shadow:0 0 0 2px var(--sun)}
+.brand .lg img{width:118%;max-width:none}
+.brand b{font-size:16px;font-weight:800;letter-spacing:.2px;display:block;line-height:1.1}
+.brand small{font-size:10.5px;color:var(--sun2);font-weight:600;display:block}
+.seg{margin-left:auto;display:flex;background:rgba(255,255,255,.1);border-radius:999px;padding:3px;gap:2px}
+.seg button{color:#cfe0f7;font-size:13px;font-weight:700;padding:7px 12px;border-radius:999px;white-space:nowrap}
+.seg button[aria-pressed=true]{background:#fff;color:var(--navy)}
+.play{background:var(--sun);color:var(--navy3);font-weight:800;font-size:13px;padding:9px 14px;border-radius:999px;white-space:nowrap;box-shadow:0 4px 14px rgba(246,163,27,.45)}
+.play:hover{background:var(--sun2)}
+@media (max-width:760px){.brand small{display:none}.seg button span{display:none}.seg button{padding:7px 10px;font-size:15px}.play b{display:none}.play{padding:9px 12px}}
+
+/* ---------- escenario ---------- */
+.stage{height:calc(100dvh - var(--topH));display:flex;gap:18px;padding:0}
+.view{height:100%;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;scroll-behavior:smooth}
+#store{flex:1;background:var(--bg)}
+#panel{flex:1;background:#f5f7fb}
+#kubia{flex:1;background:#fff}
+body[data-mode=store] #panel,body[data-mode=store] #kubia{display:none}
+body[data-mode=panel] #store,body[data-mode=panel] #kubia{display:none}
+body[data-mode=kubia] #store,body[data-mode=kubia] #panel{display:none}
+/* Escritorio: tienda en un teléfono a la izquierda + panel a la derecha */
+@media (min-width:1100px){
+ .stage{padding:16px;background:radial-gradient(1200px 600px at 20% 0,#163a7c,transparent),linear-gradient(160deg,var(--navy3),#0b2457)}
+ body[data-mode=store] #panel,body[data-mode=panel] #store{display:block}
+ #store{flex:0 0 410px;border-radius:34px;border:10px solid #0b0f19;box-shadow:0 30px 60px rgba(0,0,0,.45);position:relative}
+ #panel{border-radius:18px;box-shadow:0 30px 60px rgba(0,0,0,.35)}
+ body[data-mode=kubia] .stage{padding:0;background:#fff}
+}
+
+/* ---------- tienda ---------- */
+.sw{padding:0 14px}
+.shead{position:sticky;top:0;z-index:20;background:rgba(10,42,99,.97);color:#fff;padding:10px 14px;display:flex;align-items:center;gap:10px;backdrop-filter:blur(6px)}
+.shead .q{flex:1;display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.12);border-radius:12px;padding:8px 11px;font-size:13px;color:#cfe0f7}
+.shead .q input{background:none;border:0;outline:0;color:#fff;width:100%;font-size:13px}
+.shead .q input::placeholder{color:#9fb8dc}
+.ib{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;background:rgba(255,255,255,.12);position:relative;font-size:18px;color:#fff;flex:none}
+.ib .n{position:absolute;top:-5px;right:-5px;background:var(--sun);color:var(--navy3);font-size:11px;font-weight:800;border-radius:999px;min-width:19px;height:19px;display:grid;place-items:center;padding:0 4px}
+.menu{position:sticky;top:60px;z-index:19;background:#fff;border-bottom:1px solid var(--line);box-shadow:var(--sh);padding:8px 14px 12px}
+.menu a{display:flex;align-items:center;gap:10px;padding:10px 6px;border-radius:10px;font-weight:600;font-size:14px;text-decoration:none}
+.menu a:hover{background:var(--bg)}
+
+.hero{position:relative;height:330px;overflow:hidden;color:#fff;background:var(--navy3)}
+.hero .sl{position:absolute;inset:0;opacity:0;transition:opacity .9s}
+.hero .sl.on{opacity:1}
+.hero .sl img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale(1.06);animation:kb 9s ease-out infinite alternate}
+@keyframes kb{to{transform:scale(1.16) translateY(-8px)}}
+.hero .sl::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,22,52,.15) 0%,rgba(5,22,52,.55) 45%,rgba(5,22,52,.94) 100%)}
+.hero .tx{position:absolute;left:16px;right:16px;bottom:18px;z-index:2}
+.pill{display:inline-flex;align-items:center;gap:6px;background:var(--sun);color:var(--navy3);font-weight:800;font-size:11px;padding:5px 10px;border-radius:999px;letter-spacing:.3px;text-transform:uppercase}
+.hero h1{font-size:27px;line-height:1.08;font-weight:900;margin:10px 0 6px;letter-spacing:-.3px}
+.hero h1 em{font-style:normal;color:var(--sun2)}
+.hero p{font-size:13.5px;color:#d9e6f8;max-width:360px}
+.hero .cta{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;font-weight:800;font-size:14px;border-radius:14px;padding:12px 16px;text-decoration:none;transition:transform .15s}
+.btn:active{transform:scale(.97)}
+.btn.sun{background:var(--sun);color:var(--navy3)}
+.btn.glass{background:rgba(255,255,255,.16);color:#fff;backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.25)}
+.btn.navy{background:var(--navy);color:#fff}
+.btn.line{background:#fff;color:var(--navy);border:1.5px solid var(--line)}
+.btn.wa{background:#1faa53;color:#fff}
+.btn.block{width:100%}
+.dots{position:absolute;right:14px;top:14px;z-index:3;display:flex;gap:5px}
+.dots i{width:7px;height:7px;border-radius:99px;background:rgba(255,255,255,.45);transition:.3s}
+.dots i.on{width:20px;background:var(--sun)}
+
+.trust{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;padding:14px;background:#fff;border-bottom:1px solid var(--line)}
+.trust div{text-align:center;font-size:10.5px;font-weight:600;color:var(--muted);line-height:1.2}
+.trust b{display:block;font-size:19px;margin-bottom:3px}
+
+.sec{padding:22px 14px 6px}
+.sec h2{font-size:20px;font-weight:900;color:var(--navy);letter-spacing:-.2px;display:flex;align-items:center;gap:8px}
+.sec .sub{font-size:13px;color:var(--muted);margin:3px 0 12px}
+.card{background:var(--card);border-radius:var(--r);box-shadow:var(--sh);border:1px solid var(--line)}
+
+/* antes / después */
+.ba{position:relative;height:210px;border-radius:var(--r);overflow:hidden;box-shadow:var(--sh);user-select:none}
+.ba .side{position:absolute;inset:0;padding:16px;display:flex;flex-direction:column;justify-content:center;gap:6px}
+.ba .bef{background:repeating-linear-gradient(135deg,#e9edf3 0 12px,#e2e7ef 12px 24px);color:#4b5568}
+.ba .aft{background:linear-gradient(135deg,var(--navy),var(--sky));color:#fff;clip-path:inset(0 0 0 var(--cut,50%))}
+.ba .aft .in{margin-left:auto;text-align:right;max-width:58%}
+.ba .bef .in{max-width:58%}
+.ba h4{font-size:15px;font-weight:900}
+.ba li{list-style:none;font-size:12.5px;font-weight:600}
+.ba .tag{font-size:10px;font-weight:800;letter-spacing:.6px;text-transform:uppercase;opacity:.75}
+.ba .bar{position:absolute;top:0;bottom:0;left:var(--cut,50%);width:3px;background:var(--sun);transform:translateX(-1.5px);pointer-events:none}
+.ba .bar::after{content:"⇆";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:34px;height:34px;border-radius:50%;background:var(--sun);color:var(--navy3);display:grid;place-items:center;font-weight:900;box-shadow:0 4px 12px rgba(0,0,0,.25)}
+.ba input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize}
+
+/* moneda */
+.cur{position:sticky;top:60px;z-index:15;background:rgba(238,243,249,.96);backdrop-filter:blur(6px);padding:10px 14px;display:flex;align-items:center;gap:8px;border-bottom:1px solid var(--line)}
+.cur .lbl{font-size:12px;font-weight:700;color:var(--muted)}
+.cur .seg2{display:flex;background:#fff;border:1px solid var(--line);border-radius:999px;padding:3px}
+.cur .seg2 button{font-size:12.5px;font-weight:800;padding:6px 11px;border-radius:999px;color:var(--muted)}
+.cur .seg2 button[aria-pressed=true]{background:var(--navy);color:#fff}
+.cur .rate{margin-left:auto;font-size:10.5px;color:var(--muted);text-align:right;line-height:1.2}
+.cur .rate b{color:var(--green)}
+
+.chips{display:flex;gap:8px;overflow-x:auto;padding:12px 14px 4px;scrollbar-width:none}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:none;display:flex;align-items:center;gap:6px;padding:9px 14px;border-radius:999px;background:#fff;border:1.5px solid var(--line);font-weight:700;font-size:13px;white-space:nowrap}
+.chip[aria-pressed=true]{background:var(--navy);border-color:var(--navy);color:#fff}
+
+.vit{display:flex;gap:12px;overflow-x:auto;padding:4px 14px 12px;scroll-snap-type:x mandatory;scrollbar-width:none}
+.vit::-webkit-scrollbar{display:none}
+.vit .v{flex:0 0 150px;scroll-snap-align:start;border-radius:16px;padding:10px;color:#fff;position:relative;overflow:hidden;min-height:170px;display:flex;flex-direction:column}
+.vit .v img{height:100px;object-fit:contain;margin:4px auto 6px;filter:drop-shadow(0 8px 10px rgba(0,0,0,.3));transition:transform .3s}
+.vit .v:hover img{transform:scale(1.06) rotate(-2deg)}
+.vit .v b{font-size:12.5px;line-height:1.2}
+.vit .v small{font-size:10.5px;opacity:.85}
+
+.catb{margin:18px 14px 10px;border-radius:var(--r);height:118px;position:relative;overflow:hidden;color:#fff;display:flex;align-items:flex-end;padding:14px}
+.catb img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.55}
+.catb::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--c1) 30%,transparent)}
+.catb .t{position:relative;z-index:1}
+.catb h3{font-size:21px;font-weight:900;line-height:1.05}
+.catb p{font-size:12px;opacity:.9}
+.catb .strip{position:absolute;right:-10px;top:10px;z-index:1;display:flex;gap:6px;animation:mv 14s linear infinite}
+.catb .strip img{height:90px;filter:drop-shadow(0 6px 10px rgba(0,0,0,.35))}
+@keyframes mv{0%{transform:translateX(30%)}100%{transform:translateX(-60%)}}
+
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;padding:0 14px}
+@media (min-width:640px) and (max-width:1099px){.grid{grid-template-columns:repeat(3,1fr)}}
+.prod{background:#fff;border-radius:16px;border:1px solid var(--line);box-shadow:0 4px 14px rgba(8,33,79,.06);overflow:hidden;display:flex;flex-direction:column;position:relative}
+.prod .ph{aspect-ratio:1/1;background:radial-gradient(circle at 50% 62%,#fff 0 30%,var(--c2) 75%);display:grid;place-items:center;position:relative}
+.prod .ph img{width:86%;height:86%;object-fit:contain;filter:drop-shadow(0 10px 12px rgba(8,33,79,.22));transition:transform .3s}
+.prod:hover .ph img{transform:scale(1.05)}
+.prod .ph .nf{font-size:12px;font-weight:700;color:var(--muted);text-align:center;padding:10px}
+.prod .ph .nf span{display:block;font-size:34px;margin-bottom:6px}
+.prod .badges{position:absolute;left:8px;top:8px;display:flex;flex-direction:column;gap:4px;z-index:1}
+.bdg{font-size:9.5px;font-weight:800;padding:3px 7px;border-radius:999px;text-transform:uppercase;letter-spacing:.3px;width:max-content}
+.bdg.new{background:var(--sun);color:var(--navy3)}
+.bdg.low{background:#fff3e0;color:#b45309}
+.bdg.out{background:var(--red);color:#fff}
+.prod .bd{padding:10px 10px 12px;display:flex;flex-direction:column;gap:4px;flex:1}
+.prod .br{font-size:10px;font-weight:800;color:var(--sky);text-transform:uppercase;letter-spacing:.5px}
+.prod .nm{font-size:13px;font-weight:700;line-height:1.2}
+.prod .pr{font-size:11px;color:var(--muted)}
+.tog{display:flex;background:var(--bg);border-radius:9px;padding:2px;margin-top:4px}
+.tog button{flex:1;font-size:11px;font-weight:800;padding:5px 0;border-radius:7px;color:var(--muted)}
+.tog button[aria-pressed=true]{background:#fff;color:var(--navy);box-shadow:0 1px 4px rgba(0,0,0,.1)}
+.price{margin-top:4px}
+.price b{font-size:19px;font-weight:900;color:var(--navy);letter-spacing:.5px}
+.price small{display:block;font-size:10.5px;color:var(--muted)}
+.save{font-size:10.5px;font-weight:800;color:var(--green);background:#e8f8ee;border-radius:7px;padding:3px 7px;width:max-content}
+.add{margin-top:auto;padding-top:8px}
+.add>button.a{width:100%;background:var(--navy);color:#fff;font-weight:800;font-size:13px;border-radius:11px;padding:9px}
+.add>button.a:disabled{background:#cbd5e1;color:#64748b;cursor:not-allowed}
+.qty{display:flex;align-items:center;justify-content:space-between;background:var(--sun);border-radius:11px;padding:3px}
+.qty button{width:32px;height:32px;border-radius:9px;background:rgba(255,255,255,.55);font-weight:900;font-size:17px;color:var(--navy3)}
+.qty span{font-weight:900;font-size:14px;color:var(--navy3)}
+.prod.out .ph img{filter:grayscale(1) opacity(.55)}
+
+.steps3{display:grid;gap:10px}
+.st3{display:flex;gap:12px;align-items:flex-start;padding:14px}
+.st3 .n{width:34px;height:34px;border-radius:50%;background:var(--sun);color:var(--navy3);font-weight:900;display:grid;place-items:center;flex:none}
+.st3 b{font-size:14px}
+.st3 p{font-size:12.5px;color:var(--muted)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.opt{padding:14px;border-radius:16px;background:#fff;border:1.5px solid var(--line)}
+.opt .e{font-size:26px}
+.opt b{display:block;font-size:14px;margin:4px 0 2px}
+.opt p{font-size:12px;color:var(--muted)}
+
+/* seguimiento */
+.track{padding:16px}
+.track .hd{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:12px}
+.track .hd b{font-size:15px}
+.track .hd small{font-size:11.5px;color:var(--muted)}
+.tl{position:relative;padding-left:4px}
+.tl .s{display:flex;gap:12px;align-items:flex-start;padding:7px 0;position:relative;color:#94a3b8}
+.tl .s::before{content:"";position:absolute;left:13px;top:34px;bottom:-8px;width:2px;background:var(--line)}
+.tl .s:last-child::before{display:none}
+.tl .s .d{width:28px;height:28px;border-radius:50%;border:2px solid var(--line);background:#fff;display:grid;place-items:center;font-size:13px;flex:none;z-index:1;transition:.4s}
+.tl .s b{font-size:13.5px;display:block}
+.tl .s small{font-size:11.5px}
+.tl .s.done{color:var(--ink)}
+.tl .s.done .d{background:var(--green);border-color:var(--green);color:#fff}
+.tl .s.done::before{background:var(--green)}
+.tl .s.now .d{background:var(--sun);border-color:var(--sun);color:var(--navy3);animation:pu 1.4s infinite}
+@keyframes pu{0%{box-shadow:0 0 0 0 rgba(246,163,27,.55)}100%{box-shadow:0 0 0 12px rgba(246,163,27,0)}}
+.rv{margin-top:12px;padding:14px;border-radius:14px;background:linear-gradient(135deg,#fff8e8,#fff);border:1.5px dashed var(--sun)}
+.stars{display:flex;gap:4px;font-size:28px;margin:6px 0}
+.stars button{color:#d6dde8;transition:transform .15s,color .15s}
+.stars button.on{color:var(--sun);transform:scale(1.1)}
+
+.reviews{display:flex;gap:12px;overflow-x:auto;padding:2px 14px 10px;scrollbar-width:none}
+.reviews::-webkit-scrollbar{display:none}
+.rev{flex:0 0 250px;padding:14px}
+.rev .s{color:var(--sun);letter-spacing:2px}
+.rev p{font-size:13px;margin:6px 0}
+.rev small{font-size:11px;color:var(--muted);font-weight:600}
+.score{display:flex;align-items:center;gap:12px;padding:14px;margin:0 14px 10px}
+.score b{font-size:34px;font-weight:900;color:var(--navy)}
+
+/* crédito */
+.cred{padding:16px}
+.sem{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:12px;font-weight:700;font-size:13px}
+.sem.g{background:#e8f8ee;color:#166534}.sem.y{background:#fff6e0;color:#92400e}.sem.r{background:#fde8e8;color:#991b1b}
+.sem i{width:12px;height:12px;border-radius:50%;flex:none}
+.sem.g i{background:var(--green)}.sem.y i{background:var(--amber)}.sem.r i{background:var(--red)}
+.meter{height:10px;border-radius:99px;background:var(--bg);overflow:hidden;margin:10px 0 4px}
+.meter i{display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,var(--green),var(--amber));width:0;transition:width 1.2s}
+.kv{display:flex;justify-content:space-between;font-size:12.5px;padding:6px 0;border-bottom:1px dashed var(--line)}
+.kv span{color:var(--muted)}
+
+/* equipo */
+.teamph{position:relative;border-radius:var(--r);overflow:hidden;height:190px;margin-bottom:12px}
+.teamph img{width:100%;height:100%;object-fit:cover;object-position:center 30%}
+.teamph::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(5,22,52,.85))}
+.teamph p{position:absolute;left:14px;bottom:12px;right:14px;z-index:1;color:#fff;font-weight:700;font-size:13.5px}
+.team{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.mem{padding:12px;display:flex;flex-direction:column;gap:6px}
+.mem .av{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;font-weight:900;color:#fff;font-size:16px}
+.mem b{font-size:13px;line-height:1.2}
+.mem small{font-size:11px;color:var(--muted);font-weight:600}
+.mem a{margin-top:auto;font-size:12px;font-weight:800;color:#1faa53;text-decoration:none}
+
+/* mapa */
+.map{position:relative;height:230px;border-radius:var(--r);overflow:hidden;background:linear-gradient(160deg,var(--navy),#0d3a86)}
+.map svg{position:absolute;inset:0;width:100%;height:100%}
+.pin{position:absolute;transform:translate(-50%,-100%);text-align:center;color:#fff;font-size:10.5px;font-weight:700;line-height:1.15}
+.pin i{display:block;width:16px;height:16px;margin:0 auto 3px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);background:var(--sun);box-shadow:0 0 0 4px rgba(246,163,27,.3)}
+.pin.main i{width:22px;height:22px;animation:pu 1.6s infinite}
+.locs{display:grid;gap:8px;margin-top:10px}
+.loc{display:flex;gap:10px;align-items:flex-start;padding:12px}
+.loc .e{font-size:22px}
+.loc b{font-size:13.5px}
+.loc p{font-size:12px;color:var(--muted)}
+.loc a{font-size:12px;font-weight:800;color:var(--sky);text-decoration:none}
+
+footer.sf{margin-top:24px;background:var(--navy3);color:#b8c8e3;padding:22px 16px 90px;font-size:12px}
+footer.sf b{color:#fff}
+footer.sf .kb{margin-top:14px;padding-top:14px;border-top:1px solid rgba(255,255,255,.12);display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+footer.sf .kb a{color:var(--sun2);font-weight:800;text-decoration:none}
+
+.fab{position:sticky;bottom:14px;margin:0 14px;z-index:16;display:flex;gap:8px;pointer-events:none}
+.fab>*{pointer-events:auto}
+.fab .cartbar{flex:1;display:flex;align-items:center;justify-content:space-between;background:var(--navy);color:#fff;border-radius:16px;padding:12px 16px;font-weight:800;font-size:14px;box-shadow:0 10px 26px rgba(8,33,79,.35)}
+.fab .cartbar small{display:block;font-size:11px;color:var(--sun2);font-weight:700}
+.fab .help{margin-left:auto;width:52px;height:52px;border-radius:16px;background:#1faa53;color:#fff;display:grid;place-items:center;font-size:24px;box-shadow:0 10px 26px rgba(31,170,83,.35);text-decoration:none}
+
+/* ---------- hojas y modales ---------- */
+.sheet{position:fixed;inset:0;z-index:70;display:flex;align-items:flex-end;justify-content:center;background:rgba(5,22,52,.55);backdrop-filter:blur(3px);animation:fd .2s}
+@keyframes fd{from{opacity:0}}
+.sheet .box{background:#fff;width:100%;max-width:520px;max-height:88dvh;overflow-y:auto;border-radius:22px 22px 0 0;padding:18px 16px 22px;animation:up .28s ease-out}
+@media (min-width:700px){.sheet{align-items:center}.sheet .box{border-radius:22px}}
+@keyframes up{from{transform:translateY(40px);opacity:.4}}
+.box h3{font-size:18px;font-weight:900;color:var(--navy);display:flex;align-items:center;justify-content:space-between;gap:8px}
+.box .x{width:34px;height:34px;border-radius:10px;background:var(--bg);font-size:18px}
+.ln{display:flex;gap:10px;align-items:center;padding:10px 0;border-bottom:1px solid var(--line)}
+.ln img{width:52px;height:52px;object-fit:contain;background:var(--bg);border-radius:10px;padding:4px}
+.ln .t{flex:1;min-width:0}
+.ln .t b{font-size:13px;display:block}
+.ln .t small{font-size:11px;color:var(--muted)}
+.tot{display:flex;justify-content:space-between;align-items:baseline;margin:14px 0 4px;font-weight:800}
+.tot b{font-size:22px;color:var(--navy)}
+.note{font-size:12px;color:var(--muted);background:var(--bg);padding:10px 12px;border-radius:12px;margin:10px 0}
+.ckst{display:flex;gap:6px;margin:12px 0}
+.ckst i{flex:1;height:5px;border-radius:99px;background:var(--line)}
+.ckst i.on{background:var(--sun)}
+label.f{display:block;font-size:12px;font-weight:700;color:var(--muted);margin:10px 0 4px}
+.in{width:100%;padding:12px;border:1.5px solid var(--line);border-radius:12px;background:#fff;font-size:14px}
+.in:focus{border-color:var(--sky);outline:0}
+.opts{display:grid;gap:8px}
+.opts button{display:flex;gap:10px;align-items:center;text-align:left;padding:12px;border-radius:14px;border:1.5px solid var(--line);background:#fff}
+.opts button[aria-pressed=true]{border-color:var(--navy);background:#eef4ff;box-shadow:0 0 0 2px rgba(10,42,99,.15)}
+.opts button .e{font-size:22px}
+.opts button b{font-size:13.5px;display:block}
+.opts button small{font-size:11.5px;color:var(--muted)}
+.asesor{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:12px;background:#eef8ff;border:1px solid #cfe8fb;margin-top:10px;font-size:12.5px}
+.asesor .av{width:36px;height:36px;border-radius:50%;background:var(--sky);color:#fff;font-weight:900;display:grid;place-items:center;flex:none}
+.up{display:flex;align-items:center;gap:10px;padding:14px;border:2px dashed var(--line);border-radius:14px;margin-top:10px;font-size:13px;font-weight:700;color:var(--muted)}
+.up.ok{border-color:var(--green);color:var(--green);background:#e8f8ee}
+.ok-big{text-align:center;padding:10px 0}
+.ok-big .e{font-size:54px;animation:pop .5s}
+@keyframes pop{0%{transform:scale(.3)}70%{transform:scale(1.15)}}
+.ok-big h4{font-size:20px;font-weight:900;color:var(--navy)}
+
+.toast{position:fixed;left:50%;top:calc(var(--topH) + 12px);transform:translateX(-50%);z-index:90;background:var(--navy3);color:#fff;padding:12px 16px;border-radius:14px;font-size:13.5px;font-weight:700;box-shadow:0 14px 30px rgba(0,0,0,.35);display:flex;gap:10px;align-items:center;animation:tin .35s ease-out;max-width:92vw}
+.toast b{color:var(--sun2)}
+@keyframes tin{from{transform:translate(-50%,-20px);opacity:0}}
+
+/* ---------- panel ---------- */
+.pw{max-width:1100px;margin:0 auto;padding:16px;transition:max-width .6s,padding .6s}
+.ph1{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.ph1 h2{font-size:20px;font-weight:900;color:var(--navy)}
+.live{display:flex;align-items:center;gap:6px;font-size:11.5px;font-weight:700;color:var(--green);background:#e8f8ee;padding:5px 10px;border-radius:999px}
+.live i{width:8px;height:8px;border-radius:50%;background:var(--green);animation:pu2 1.6s infinite}
+@keyframes pu2{0%{box-shadow:0 0 0 0 rgba(22,163,74,.6)}100%{box-shadow:0 0 0 8px rgba(22,163,74,0)}}
+.devs{margin-left:auto;display:flex;gap:4px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:3px}
+.devs button{font-size:12px;font-weight:700;padding:6px 10px;border-radius:999px;color:var(--muted)}
+.devs button[aria-pressed=true]{background:var(--navy);color:#fff}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:14px 0}
+.kpi{padding:12px}
+.kpi small{font-size:11px;color:var(--muted);font-weight:700;display:block}
+.kpi b{font-size:24px;font-weight:900;color:var(--navy)}
+.kpi.warn b{color:var(--amber)}.kpi.bad b{color:var(--red)}
+.ptabs{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;border-bottom:2px solid var(--line);margin-bottom:12px}
+.ptabs::-webkit-scrollbar{display:none}
+.ptabs button{flex:none;padding:10px 12px;font-weight:800;font-size:13px;color:var(--muted);border-bottom:3px solid transparent;margin-bottom:-2px;display:flex;gap:6px;align-items:center}
+.ptabs button[aria-pressed=true]{color:var(--navy);border-color:var(--sun)}
+.ptabs .c{background:var(--red);color:#fff;font-size:10px;border-radius:999px;padding:1px 6px}
+.tbar{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:10px;font-size:12px;color:var(--muted)}
+.tbar .rule{background:#eef4ff;color:var(--navy);padding:6px 10px;border-radius:10px;font-weight:700}
+.rows{display:grid;gap:8px}
+.row{display:grid;grid-template-columns:auto 1fr auto;gap:10px;align-items:center;padding:12px;background:#fff;border:1px solid var(--line);border-radius:14px;transition:background .5s,box-shadow .5s}
+.row.newr{animation:nr 2.4s}
+@keyframes nr{0%{background:#fff3d6;box-shadow:0 0 0 3px var(--sun)}100%{background:#fff}}
+.row input[type=checkbox]{width:18px;height:18px;accent-color:var(--navy)}
+.row .m b{font-size:13.5px}
+.row .m .meta{font-size:11.5px;color:var(--muted);display:flex;flex-wrap:wrap;gap:4px 10px;margin-top:2px}
+.row .m .meta span{white-space:nowrap}
+.row .r{text-align:right;display:flex;flex-direction:column;align-items:flex-end;gap:5px}
+.row .r .mt{font-weight:900;font-size:14px;color:var(--navy)}
+.row .r .mt small{display:block;font-size:10.5px;color:var(--muted);font-weight:600}
+.cdot{display:inline-flex;align-items:center;gap:4px;font-weight:700}
+.cdot i{width:9px;height:9px;border-radius:50%}
+.st{font-size:10.5px;font-weight:800;padding:3px 8px;border-radius:999px;white-space:nowrap}
+.st.pc{background:#fff3e0;color:#b45309}.st.cf{background:#e0f2fe;color:#075985}.st.pp{background:#ede9fe;color:#5b21b6}.st.ec{background:#e0e7ff;color:#3730a3}.st.en{background:#dcfce7;color:#166534}.st.dq{background:#fee2e2;color:#991b1b}
+.sbtn{font-size:12px;font-weight:800;padding:7px 11px;border-radius:10px;background:var(--navy);color:#fff;white-space:nowrap}
+.sbtn.g{background:var(--green)}.sbtn.l{background:#fff;color:var(--navy);border:1.5px solid var(--line)}
+.flag{font-size:11px;font-weight:800;color:var(--red);background:#fde8e8;border-radius:8px;padding:3px 8px}
+.bars{display:grid;gap:10px}
+.bars .b{font-size:12.5px;font-weight:700}
+.bars .t{height:12px;border-radius:99px;background:var(--bg);overflow:hidden;margin-top:4px}
+.bars .t i{display:block;height:100%;border-radius:99px;width:0;transition:width 1.2s ease-out}
+.pgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media (max-width:760px){.pgrid{grid-template-columns:1fr}.kpis{grid-template-columns:repeat(2,1fr)}.devs{display:none}}
+.pbox{padding:14px}
+.pbox h4{font-size:14px;font-weight:900;color:var(--navy);margin-bottom:10px}
+table.t{width:100%;border-collapse:collapse;font-size:12.5px}
+table.t th{text-align:left;color:var(--muted);font-size:11px;font-weight:800;padding:8px 6px;border-bottom:2px solid var(--line)}
+table.t td{padding:9px 6px;border-bottom:1px solid var(--line)}
+.inv img{width:34px;height:34px;object-fit:contain}
+.stk{height:8px;border-radius:99px;background:var(--bg);width:90px;overflow:hidden}
+.stk i{display:block;height:100%;border-radius:99px}
+/* marcos de dispositivo */
+.pw.dev-tablet{max-width:760px;padding:14px;border:12px solid #10151f;border-radius:28px;margin-top:14px;background:#f5f7fb}
+.pw.dev-phone{max-width:390px;padding:12px;border:10px solid #10151f;border-radius:34px;margin-top:14px;background:#f5f7fb}
+.pw.dev-phone .kpis{grid-template-columns:repeat(2,1fr)}
+.pw.dev-phone .row{grid-template-columns:auto 1fr}.pw.dev-phone .row .r{grid-column:1/-1;flex-direction:row;justify-content:space-between;align-items:center}
+.pw.dev-phone .pgrid{grid-template-columns:1fr}
+.devtag{position:sticky;top:8px;z-index:3;margin:0 auto 8px;width:max-content;background:var(--navy3);color:#fff;font-size:12px;font-weight:800;padding:6px 12px;border-radius:999px}
+
+/* ---------- propuesta ---------- */
+.kw{max-width:1080px;margin:0 auto;padding:0 16px}
+.khero{background:linear-gradient(135deg,var(--navy3),var(--navy) 55%,#0f4fa8);color:#fff;padding:40px 0 34px;position:relative;overflow:hidden}
+.khero::after{content:"";position:absolute;right:-120px;top:-120px;width:380px;height:380px;border-radius:50%;border:40px solid rgba(246,163,27,.18)}
+.khero h1{font-size:clamp(26px,5vw,42px);font-weight:900;line-height:1.05;max-width:720px;position:relative;z-index:1}
+.khero h1 em{font-style:normal;color:var(--sun2)}
+.khero p{color:#cfe0f7;max-width:640px;margin-top:10px;font-size:15px;position:relative;z-index:1}
+.ksec{padding:34px 0 8px}
+.ksec h2{font-size:24px;font-weight:900;color:var(--navy);letter-spacing:-.3px}
+.ksec .sub{color:var(--muted);font-size:14px;margin:4px 0 16px}
+.adg{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+@media (max-width:900px){.adg{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.adg{grid-template-columns:1fr}}
+.adg .c{padding:16px;border-radius:18px;border:1px solid var(--line);transition:transform .4s,box-shadow .4s}
+.adg .c.lit{transform:translateY(-6px);box-shadow:0 0 0 3px var(--sun),var(--sh)}
+.adg .c .k{font-size:11px;font-weight:900;letter-spacing:.8px;text-transform:uppercase}
+.adg .c h3{font-size:17px;font-weight:900;margin:4px 0 8px}
+.adg .c li{font-size:13px;margin:5px 0 5px 16px}
+.adg .a1{background:#f3f4f6}.adg .a1 .k{color:#6b7280}
+.adg .a2{background:#eef8ff}.adg .a2 .k{color:var(--sky)}
+.adg .a3{background:#fff8e8}.adg .a3 .k{color:#b45309}
+.adg .a4{background:linear-gradient(135deg,var(--navy),#0f4fa8);color:#fff;border:0}.adg .a4 .k{color:var(--sun2)}
+.ideas{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+@media (max-width:900px){.ideas{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.ideas{grid-template-columns:1fr}}
+.idea{padding:16px;display:flex;flex-direction:column;gap:6px}
+.idea .e{font-size:28px}
+.idea b{font-size:15px}
+.idea p{font-size:13px;color:var(--muted)}
+.idea .try{margin-top:auto;align-self:flex-start;font-size:12.5px;font-weight:800;color:var(--navy);background:var(--bg);border-radius:10px;padding:7px 11px}
+.qr{width:92px;height:92px;border-radius:10px;background:#fff;border:3px solid var(--navy);display:grid;grid-template-columns:repeat(7,1fr);gap:2px;padding:6px}
+.qr i{background:var(--navy);border-radius:1px}.qr i.o{background:transparent}
+.calc{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:4px}
+.calc .in{padding:9px;font-size:13px}
+.calc .res{grid-column:1/-1;font-size:13px;font-weight:800;color:var(--green)}
+.areas{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+@media (max-width:900px){.areas{grid-template-columns:1fr 1fr}}
+.area{padding:14px;text-align:center}
+.area .e{font-size:28px}
+.area b{display:block;font-size:13.5px;margin:4px 0}
+.area p{font-size:12px;color:var(--muted)}
+.facts{display:flex;flex-wrap:wrap;gap:8px}
+.facts span{background:var(--bg);border:1px solid var(--line);border-radius:999px;padding:8px 12px;font-size:13px;font-weight:700}
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px}
+@media (max-width:760px){.plans{grid-template-columns:1fr}}
+.plan{padding:18px;border-radius:18px;border:1.5px solid var(--line);background:#fff}
+.plan.hl{border-color:var(--sun);box-shadow:0 0 0 3px rgba(246,163,27,.25),var(--sh);position:relative}
+.plan.hl::before{content:"Recomendado para Coalmar";position:absolute;top:-11px;left:16px;background:var(--sun);color:var(--navy3);font-size:10.5px;font-weight:900;padding:3px 9px;border-radius:999px}
+.plan h4{font-size:17px;font-weight:900;color:var(--navy)}
+.plan .p{font-size:13px;color:var(--muted);margin:2px 0 10px}
+.plan li{font-size:13px;margin:5px 0 5px 16px}
+.us{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+@media (max-width:760px){.us{grid-template-columns:1fr 1fr}}
+.us .c{padding:16px;text-align:center}
+.us .c b{display:block;font-size:30px;font-weight:900;color:var(--navy)}
+.us .c small{font-size:12.5px;color:var(--muted);font-weight:600}
+.close{margin:34px 0 0;background:linear-gradient(135deg,var(--navy3),var(--navy));color:#fff;padding:40px 0 120px;text-align:center}
+.close h2{font-size:clamp(24px,4.5vw,36px);font-weight:900;line-height:1.1}
+.close p{color:#cfe0f7;max-width:620px;margin:10px auto 18px}
+.close .btn{font-size:16px;padding:15px 22px}
+.close .k{margin-top:16px;font-size:12.5px;color:#9fb8dc}
+.close .k a{color:var(--sun2);font-weight:800;text-decoration:none}
+.bigcta{animation:glow 2s infinite}
+@keyframes glow{0%,100%{box-shadow:0 0 0 0 rgba(246,163,27,.7)}50%{box-shadow:0 0 0 14px rgba(246,163,27,0)}}
+
+/* ---------- gancho inicial ---------- */
+#hook{position:fixed;inset:0;z-index:100;background:radial-gradient(900px 600px at 50% 30%,#0e2a5c,#020814 70%);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px;text-align:center;transition:opacity .7s}
+#hook.bye{opacity:0;pointer-events:none}
+.clock{font-size:clamp(54px,14vw,96px);font-weight:900;letter-spacing:-2px;font-variant-numeric:tabular-nums;line-height:1}
+.clock .c{animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.clock small{font-size:.3em;letter-spacing:0;font-weight:800;color:var(--sun2);margin-left:6px}
+.noti{margin:22px auto 0;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);backdrop-filter:blur(10px);border-radius:18px;padding:12px 14px;display:flex;gap:10px;align-items:center;text-align:left;max-width:360px;width:100%;opacity:0;transform:translateY(16px);transition:.6s}
+.noti.on{opacity:1;transform:none}
+.noti .av{width:40px;height:40px;border-radius:12px;background:#1faa53;display:grid;place-items:center;font-size:20px;flex:none}
+.noti b{font-size:13px;display:block}
+.noti span{font-size:13px;color:#d9e6f8}
+.noti small{display:block;font-size:11px;color:#9fb8dc;margin-top:2px}
+.hl1{margin-top:20px;font-size:clamp(17px,3.6vw,22px);font-weight:700;max-width:560px;min-height:2.6em;color:#d9e6f8}
+.hl1 b{color:var(--sun2)}
+.hlogo{margin-top:12px;display:flex;align-items:center;gap:10px;opacity:0;transform:scale(.9);transition:.7s}
+.hlogo.on{opacity:1;transform:none}
+.hlogo .lg{width:56px;height:56px;border-radius:50%;background:#fff;display:grid;place-items:center;overflow:hidden;box-shadow:0 0 0 3px var(--sun)}
+.hlogo .lg img{width:118%;max-width:none}
+.hlogo b{font-size:22px;font-weight:900;text-align:left;line-height:1.05}
+.hlogo b small{display:block;font-size:12px;color:var(--sun2);font-weight:700}
+.hbtns{margin-top:26px;display:flex;flex-direction:column;gap:10px;width:100%;max-width:360px}
+.hbtns .btn{font-size:16px;padding:15px}
+.hbtns .sk{color:#9fb8dc;font-size:13px;font-weight:700;padding:8px}
+.hk{position:absolute;bottom:16px;font-size:11.5px;color:#7f97bd}
+.hk b{color:var(--sun2)}
+
+/* ---------- tour ---------- */
+#tour{position:fixed;left:50%;transform:translateX(-50%);bottom:12px;z-index:110;width:min(720px,calc(100vw - 20px));background:rgba(5,22,52,.95);color:#fff;border-radius:18px;padding:10px 12px 12px;box-shadow:0 18px 40px rgba(0,0,0,.45);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.12)}
+#tour .tt{display:flex;align-items:center;gap:8px;font-size:11px;font-weight:800;color:var(--sun2);text-transform:uppercase;letter-spacing:.6px}
+#tour .tt .pg{margin-left:auto;color:#9fb8dc}
+#tour .sub{font-size:14px;line-height:1.4;margin:6px 0 8px;min-height:2.8em}
+#tour .ctl{display:flex;align-items:center;gap:6px}
+#tour .ctl button{width:36px;height:36px;border-radius:10px;background:rgba(255,255,255,.12);color:#fff;font-size:15px;display:grid;place-items:center}
+#tour .ctl button.x{margin-left:auto;width:auto;padding:0 12px;font-size:12px;font-weight:800}
+#tour .prog{flex:1;height:5px;border-radius:99px;background:rgba(255,255,255,.15);overflow:hidden}
+#tour .prog i{display:block;height:100%;background:var(--sun);width:0;transition:width .3s}
+body.touring .stage{height:calc(100dvh - var(--topH) - var(--tourH,150px))}
+body.touring .sheet{align-items:flex-start;padding-top:8px}
+body.touring .sheet .box{max-height:calc(100dvh - var(--tourH,150px) - 16px);border-radius:22px}
+body.touring .fab{display:none}
+.tf{position:relative;z-index:2;animation:tf 1.6s ease-in-out infinite;border-radius:16px}
+@keyframes tf{0%,100%{box-shadow:0 0 0 3px var(--sun),0 0 0 0 rgba(246,163,27,.5)}50%{box-shadow:0 0 0 3px var(--sun),0 0 0 12px rgba(246,163,27,0)}}
+.tap{position:fixed;z-index:95;width:44px;height:44px;border-radius:50%;background:rgba(246,163,27,.5);border:3px solid #fff;pointer-events:none;transform:translate(-50%,-50%) scale(.4);opacity:0;transition:transform .35s,opacity .35s}
+.tap.on{transform:translate(-50%,-50%) scale(1);opacity:1}
+#endc{position:fixed;inset:0;z-index:120;background:rgba(2,8,20,.9);display:flex;align-items:center;justify-content:center;padding:20px;color:#fff;text-align:center}
+#endc .bx{max-width:460px}
+#endc h2{font-size:28px;font-weight:900;line-height:1.1}
+#endc p{color:#cfe0f7;margin:10px 0 18px}
+#endc .btn{width:100%;margin-top:8px}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body data-mode="store">
+
+<!-- ===== Gancho de entrada ===== -->
+<div id="hook" role="dialog" aria-label="Bienvenida">
+  <div class="clock" aria-label="11:47 de la noche">11<span class="c">:</span>47<small>p. m.</small></div>
+  <div class="noti" id="noti"><div class="av">💬</div><div><b>Bodega La Esquina · Lechería</b><span>¿Tienen sardinas? Se me acabaron y abro a las 7 😩</span><small id="notiSt">Enviado · sin respuesta</small></div></div>
+  <p class="hl1" id="hl1"></p>
+  <div class="hlogo" id="hlogo"><div class="lg"><img src="/demo/coalmar/img/logo.png" alt=""></div><b>Coalmar<small>Tu distribuidora, abierta 24/7</small></b></div>
+  <div class="hbtns" id="hbtns">
+    <button class="btn sun" id="goTour">▶ Ver la demo guiada (con voz)</button>
+    <button class="sk" id="goFree">Explorar por mi cuenta →</button>
+  </div>
+  <div class="hk">Demo propuesta por <b>KubIA</b> · kubiav.com</div>
+</div>
+
+<!-- ===== Barra superior ===== -->
+<header class="top">
+  <div class="brand"><div class="lg"><img src="/demo/coalmar/img/logo.png" alt="Logo de Inversiones Coalmar"></div><div><b>Coalmar</b><small>Demo · propuesta de KubIA</small></div></div>
+  <nav class="seg" aria-label="Vista">
+    <button data-mode="store" aria-pressed="true">🛒 <span>Tienda</span></button>
+    <button data-mode="panel" aria-pressed="false">📊 <span>Panel</span></button>
+    <button data-mode="kubia" aria-pressed="false">💡 <span>Propuesta</span></button>
+  </nav>
+  <button class="play" id="playTop">▶ <b>Demo guiada</b></button>
+</header>
+
+<main class="stage">
+<!-- ===================== TIENDA ===================== -->
+<section id="store" class="view" aria-label="Tienda en línea">
+  <div class="shead">
+    <button class="ib" id="burger" aria-label="Menú" aria-expanded="false">☰</button>
+    <label class="q">🔍<input id="q" type="search" placeholder="Busca sardinas, aceite, azúcar…" aria-label="Buscar productos"></label>
+    <button class="ib" id="cartBtn" aria-label="Carrito">🛒<span class="n" id="cartN" hidden>0</span></button>
+  </div>
+  <nav class="menu" id="menu" hidden>
+    <a href="#cats" data-close>🗂️ Catálogo por categorías</a>
+    <a href="#nuevo" data-close>✨ Lo nuevo</a>
+    <a href="#como" data-close>🚚 Cómo pedir, despacho y retiro</a>
+    <a href="#track" data-close>📦 Mi pedido</a>
+    <a href="#credito" data-close>💳 Mi cuenta de crédito</a>
+    <a href="#equipo" data-close>👥 Nuestro equipo</a>
+    <a href="#ubicacion" data-close>📍 Ubicación y cobertura</a>
+    <a href="#reviews" data-close>⭐ Reseñas</a>
+  </nav>
+
+  <div class="hero" id="hero">
+    <div class="dots" id="dots"></div>
+    <div class="sl on"><img src="/demo/coalmar/img/hero-galpon.webp" alt="Montacargas moviendo una paleta en el galpón de Coalmar"></div>
+    <div class="sl"><img src="/demo/coalmar/img/hero-maruxa.webp" alt="Paletas de salsas Maruxa"></div>
+    <div class="sl"><img src="/demo/coalmar/img/hero-morro.webp" alt="Cajas de sardinas El Morro"></div>
+    <div class="tx">
+      <span class="pill">🌊 Abierto 24/7</span>
+      <h1 id="heroT">Tu distribuidora,<br><em>abierta las 24 horas</em></h1>
+      <p id="heroP">Más de 15 años llevando alimentos de calidad al mercado venezolano. Pide desde tu negocio, a cualquier hora.</p>
+      <div class="cta"><a class="btn sun" href="#cats">Hacer mi pedido</a><button class="btn glass" id="repeat">↻ Repetir mi último pedido</button></div>
+    </div>
+  </div>
+  <div class="trust">
+    <div><b>15+</b>años en el mercado</div>
+    <div><b>🧭</b>Oriente y Occidente</div>
+    <div><b>🚚</b>Despacho a tu negocio</div>
+    <div><b>📲</b>Pago en línea</div>
+  </div>
+
+  <div class="sec" id="antes">
+    <h2>📖 Del catálogo que se mira al que vende</h2>
+    <p class="sub">Desliza para comparar.</p>
+    <div class="ba" id="ba" style="--cut:50%">
+      <div class="side bef"><div class="in"><span class="tag">Antes · Catálogo en Canva</span><h4>Solo para mirar 👀</h4><ul><li>✗ Para pedir hay que llamar</li><li>✗ Esperar que alguien conteste</li><li>✗ Alguien anota a mano</li></ul></div></div>
+      <div class="side aft"><div class="in"><span class="tag">Ahora · Tienda Coalmar</span><h4>Para pedir ⚡</h4><ul><li>Pides en 3 toques ✓</li><li>Abierto 24/7 ✓</li><li>Sigues tu pedido en vivo ✓</li></ul></div></div>
+      <div class="bar"></div>
+      <input type="range" min="0" max="100" value="50" id="baR" aria-label="Comparar antes y después">
+    </div>
+  </div>
+
+  <div class="cur" id="moneda">
+    <span class="lbl">Ver precios en</span>
+    <div class="seg2" role="group" aria-label="Moneda">
+      <button data-cur="USD" aria-pressed="true">$ USD</button><button data-cur="VES" aria-pressed="false">Bs</button><button data-cur="EUR" aria-pressed="false">€ EUR</button>
+    </div>
+    <span class="rate">Tasa BCV del día<br><b>● actualizada 8:00 a. m.</b></span>
+  </div>
+
+  <div class="sec" id="nuevo" style="padding-bottom:0">
+    <h2>✨ Lo nuevo en Coalmar</h2>
+    <p class="sub">Lanzamientos que tus clientes ya están pidiendo.</p>
+  </div>
+  <div class="vit" id="vit"></div>
+
+  <div class="sec" style="padding-bottom:0"><h2>🗂️ Catálogo</h2><p class="sub" style="margin-bottom:0">Por categoría, con foto, presentación y disponibilidad real.</p></div>
+  <div class="chips" id="cats" role="group" aria-label="Categorías"></div>
+  <div id="catalog"></div>
+
+  <div class="sec" id="como">
+    <h2>🚚 Cómo pedir</h2>
+    <p class="sub">Así de fácil, desde tu teléfono.</p>
+    <div class="steps3">
+      <div class="card st3"><span class="n">1</span><div><b>Elige tus productos</b><p>Por caja o por unidad. Ves el precio en $, Bs o €.</p></div></div>
+      <div class="card st3"><span class="n">2</span><div><b>Despacho o retiro</b><p>Te lo llevamos según tu zona y día de ruta, o lo retiras en el galpón.</p></div></div>
+      <div class="card st3"><span class="n">3</span><div><b>Paga y sigue tu pedido</b><p>Pago móvil, transferencia o divisas. Sube tu comprobante y listo.</p></div></div>
+    </div>
+    <div class="two" style="margin-top:10px">
+      <div class="opt"><span class="e">🚚</span><b>Despacho a tu negocio</b><p>Según tu zona y día de ruta. Tu asesor te confirma la hora.</p></div>
+      <div class="opt"><span class="e">🏭</span><b>Retiro en galpón</b><p>Av. principal Mesones, zona industrial, Barcelona.</p></div>
+    </div>
+  </div>
+
+  <div class="sec" id="track">
+    <h2>📦 Mi pedido</h2>
+    <p class="sub">Síguelo en vivo, como en una app de delivery.</p>
+    <div class="card track" id="trackBox"></div>
+  </div>
+
+  <div class="sec" id="reviews" style="padding-bottom:0">
+    <h2>⭐ Lo que dicen nuestros clientes</h2>
+    <p class="sub">Reseñas de quienes ya reciben sus pedidos. <i>(Ejemplos para la demo)</i></p>
+  </div>
+  <div class="card score"><b>4,9</b><div><div style="color:var(--sun);letter-spacing:2px;font-size:18px">★★★★★</div><small style="color:var(--muted);font-weight:600">Promedio de reseñas verificadas</small></div></div>
+  <div class="reviews">
+    <div class="card rev"><div class="s">★★★★★</div><p>"Pedí a las 11 de la noche y a las 9 ya tenía mis sardinas en el local. Así sí."</p><small>Bodega · Lechería</small></div>
+    <div class="card rev"><div class="s">★★★★★</div><p>"Veo el precio en bolívares sin preguntar a nadie. Y el aceite llegó completo."</p><small>Abasto · Puerto La Cruz</small></div>
+    <div class="card rev"><div class="s">★★★★★</div><p>"Repito mi pedido de la semana en un toque. Me ahorra un montón de tiempo."</p><small>Minimercado · Barquisimeto</small></div>
+  </div>
+
+  <div class="sec" id="credito">
+    <h2>💳 Mi cuenta de crédito</h2>
+    <p class="sub">Para clientes con crédito aprobado.</p>
+    <div class="card cred">
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:8px"><b style="font-size:15px">Abastos La Ola</b><small style="color:var(--muted);font-weight:600">Cliente desde 2019</small></div>
+      <div class="sem g" style="margin-top:10px"><i></i>Al día · puedes seguir pidiendo a crédito</div>
+      <div class="meter"><i id="credM"></i></div>
+      <small style="color:var(--muted);font-weight:600">Usas el <b id="credP">0</b>% de tu límite</small>
+      <div style="margin-top:8px">
+        <div class="kv"><span>Límite de crédito</span><b>$ —</b></div>
+        <div class="kv"><span>Saldo por pagar</span><b>$ —</b></div>
+        <div class="kv"><span>Próximo vencimiento</span><b>en 5 días</b></div>
+        <div class="kv"><span>Plazo</span><b>15 días</b></div>
+      </div>
+      <button class="btn sun block" style="margin-top:12px" id="payNow">Pagar ahora</button>
+    </div>
+  </div>
+
+  <div class="sec" id="equipo">
+    <h2>👥 Nuestro equipo</h2>
+    <p class="sub">Detrás de cada caja hay personas. Escríbeles directo.</p>
+    <div class="teamph"><img src="/demo/coalmar/img/equipo.webp" alt="Equipo de Coalmar revisando la carga en el galpón"><p>Una labor impecable, todos los días, desde nuestro galpón en Barcelona.</p></div>
+    <div class="team" id="team"></div>
+  </div>
+
+  <div class="sec" id="ubicacion">
+    <h2>📍 Ubicación y cobertura</h2>
+    <p class="sub">Dónde estamos y quién te atiende en tu zona.</p>
+    <div class="map" aria-label="Mapa de cobertura">
+      <svg viewBox="0 0 400 230" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M70 150 C 140 110, 190 120, 230 95 S 320 90, 345 120" fill="none" stroke="#f6a31b" stroke-width="3" stroke-dasharray="8 7"/>
+        <path d="M70 150 C 120 175, 260 190, 345 120" fill="none" stroke="rgba(255,255,255,.25)" stroke-width="2" stroke-dasharray="4 6"/>
+        <text x="20" y="28" fill="rgba(255,255,255,.55)" font-size="12" font-weight="800" font-family="Montserrat">OCCIDENTE · Ronald Agraz</text>
+        <text x="380" y="28" fill="rgba(255,255,255,.55)" font-size="12" font-weight="800" font-family="Montserrat" text-anchor="end">ORIENTE · Freddy Hernández</text>
+      </svg>
+      <div class="pin" style="left:17.5%;top:65%"><i></i>Barquisimeto</div>
+      <div class="pin" style="left:57%;top:41%"><i></i>Caracas</div>
+      <div class="pin main" style="left:86%;top:52%"><i></i>Barcelona<br><span style="color:var(--sun2)">Galpón</span></div>
+    </div>
+    <div class="locs">
+      <div class="card loc"><span class="e">🏭</span><div><b>Galpón principal · Barcelona</b><p>Av. principal Mesones, zona industrial Barcelona, galpón S/N, Edo. Anzoátegui. Retiro de pedidos.</p><a href="https://www.google.com/maps/search/?api=1&query=Av+principal+Mesones+zona+industrial+Barcelona+Anzoategui" target="_blank" rel="noopener">Cómo llegar →</a></div></div>
+      <div class="card loc"><span class="e">🏢</span><div><b>Oficina · Caracas</b><p>Distrito Capital · Torre Provincial, piso 7.</p></div></div>
+      <div class="card loc"><span class="e">🏢</span><div><b>Oficina · Barquisimeto</b><p>Edo. Lara · CC Milenium, piso III.</p></div></div>
+    </div>
+  </div>
+
+  <div class="fab"><button class="cartbar" id="cartBar" hidden><span>🛒 <span id="cbN">0</span> productos<small>Ver pedido</small></span><span>$ — →</span></button><a class="help" href="https://wa.me/584126950037" target="_blank" rel="noopener" aria-label="Escribir a Ventas por WhatsApp">💬</a></div>
+
+  <footer class="sf">
+    <b>Inversiones Coalmar</b> · RIF J-31351466-7<br>
+    ¡Más de 15 años distribuyendo alimentos de calidad al mercado venezolano!<br>
+    Ventas: 0412-6950037 · Instagram <a href="https://instagram.com/coalmarca.ve" target="_blank" rel="noopener" style="color:#fff">@coalmarca.ve</a>
+    <div class="kb">⚡ Tienda y panel desarrollados por <a href="https://kubiav.com" target="_blank" rel="noopener">KubIA · kubiav.com</a> · Demo con fines de presentación.</div>
+  </footer>
+</section>
+
+<!-- ===================== PANEL ===================== -->
+<section id="panel" class="view" aria-label="Panel del negocio">
+  <div class="pw" id="pw">
+    <div class="devtag" id="devtag" hidden></div>
+    <div class="ph1">
+      <h2>📊 Panel Coalmar</h2>
+      <span class="live"><i></i>En línea · sincronizado <span id="syncT">hace 1 s</span></span>
+      <div class="devs" id="devs" role="group" aria-label="Ver en">
+        <button data-dev="" aria-pressed="true">💻 Computadora</button><button data-dev="tablet" aria-pressed="false">📱 Tablet</button><button data-dev="phone" aria-pressed="false">📲 Celular</button>
+      </div>
+    </div>
+    <div class="kpis">
+      <div class="card kpi"><small>Pedidos hoy</small><b id="kHoy">0</b></div>
+      <div class="card kpi warn"><small>Por confirmar</small><b id="kPc">0</b></div>
+      <div class="card kpi warn"><small>Pagos por verificar</small><b id="kPv">0</b></div>
+      <div class="card kpi bad"><small>Créditos vencidos</small><b id="kCv">0</b></div>
+    </div>
+    <p style="font-size:11.5px;color:var(--muted);margin:-4px 0 10px">Clientes, cifras y metas de ejemplo para la demo. Los montos se muestran como $ — porque la propuesta no incluye precios.</p>
+    <nav class="ptabs" id="ptabs">
+      <button data-t="ped" aria-pressed="true">📥 Pedidos <span class="c" id="tPc"></span></button>
+      <button data-t="pag" aria-pressed="false">💸 Pagos</button>
+      <button data-t="cre" aria-pressed="false">💳 Créditos</button>
+      <button data-t="inv" aria-pressed="false">📦 Inventario</button>
+      <button data-t="ven" aria-pressed="false">📈 Ventas y zonas</button>
+      <button data-t="com" aria-pressed="false">🏅 Comisiones</button>
+    </nav>
+    <div id="pbody"></div>
+  </div>
+</section>
+
+<!-- ===================== PROPUESTA ===================== -->
+<section id="kubia" class="view" aria-label="Propuesta de KubIA">
+  <div class="khero"><div class="kw">
+    <span class="pill">Propuesta para Inversiones Coalmar</span>
+    <h1 style="margin-top:12px">Del catálogo que se mira, <em>al catálogo que vende solo.</em></h1>
+    <p>Coalmar ya tiene el producto, el galpón y 15 años de confianza. Le sumamos una tienda abierta 24/7 y un panel que le dice qué pasa en cada zona, en tiempo real.</p>
+  </div></div>
+
+  <div class="kw">
+    <div class="ksec" id="adg">
+      <h2>El antes y el después</h2>
+      <p class="sub">Lo que cambia en el día a día de Coalmar.</p>
+      <div class="adg">
+        <div class="c a1"><span class="k">Antes</span><h3>Pedidos a pulmón</h3><ul><li>Catálogo en Canva: solo para mirar</li><li>Pedidos por llamada y WhatsApp</li><li>Notas en papel y errores al facturar</li><li>Cobranza a ciegas</li><li>Ventas que se pierden de noche</li></ul></div>
+        <div class="c a2"><span class="k">Lo que soluciona KubIA</span><h3>Todo en un solo lugar</h3><ul><li>Tienda que toma pedidos 24/7</li><li>Pedidos que llegan al asesor de la zona</li><li>Pagos con comprobante pegado al pedido</li><li>Créditos con recordatorios automáticos</li><li>Inventario que se descuenta solo</li></ul></div>
+        <div class="c a3"><span class="k">Lo que gana Coalmar</span><h3>Más ventas, menos errores</h3><ul><li>Pedidos que hoy no están entrando</li><li>Clientes que compran más (caja vs. unidad)</li><li>Horas de oficina liberadas</li><li>Cobranza más rápida</li><li>Decisiones con datos por zona</li></ul></div>
+        <div class="c a4"><span class="k">Después de KubIA</span><h3>Una distribuidora que vende sola</h3><ul><li>Abierta las 24 horas</li><li>Controlada desde el celular</li><li>Equipo enfocado en atender y despachar</li><li>Clientes que confían y repiten</li><li>Crecer sin desordenarse</li></ul></div>
+      </div>
+    </div>
+
+    <div class="ksec" id="ideas">
+      <h2>Ideas que ponen a Coalmar un paso adelante</h2>
+      <p class="sub">Toca las que tienen botón: funcionan.</p>
+      <div class="ideas">
+        <div class="card idea"><div style="display:flex;gap:12px;align-items:center"><div class="qr" id="qr" aria-hidden="true"></div><span class="e">📦</span></div><b>El QR que pide, no que muestra</b><p>Impreso en cada caja que sale del galpón. El bodeguero lo escanea cuando se le acaba y repone en 3 toques. Cada caja se vuelve un vendedor.</p><button class="try" data-try="qr">Simular escaneo →</button></div>
+        <div class="card idea"><span class="e">↻</span><b>Repetir mi último pedido</b><p>Lo que más usa una bodega: el pedido de la semana, completo, en un toque.</p><button class="try" data-try="rep">Probar →</button></div>
+        <div class="card idea"><span class="e">🔔</span><b>Recordatorio inteligente</b><p>"Hace 14 días compraste sardinas El Morro, ¿repetimos?" Llega justo cuando se le está acabando.</p><button class="try" data-try="rec">Ver mensaje →</button></div>
+        <div class="card idea"><span class="e">🧮</span><b>Calculadora de ganancia del bodeguero</b><p>Le muestra al cliente cuánto gana revendiendo. Le vendes el negocio, no solo el producto.</p><div class="calc"><input class="in" id="cC" inputmode="decimal" placeholder="Te cuesta ($)" aria-label="Costo por unidad"><input class="in" id="cV" inputmode="decimal" placeholder="Lo vendes ($)" aria-label="Precio de venta"><div class="res" id="cR">Escribe dos números y te digo tu margen.</div></div></div>
+        <div class="card idea"><span class="e">🎁</span><b>Arma tu combo bodega</b><p>Sardinas + aceite + azúcar + salsas en un solo pedido, con descuento por volumen.</p></div>
+        <div class="card idea"><span class="e">📶</span><b>Modo vendedor sin señal</b><p>El asesor toma pedidos en la calle aunque no haya internet, y se sincroniza al volver la señal.</p></div>
+        <div class="card idea"><span class="e">📸</span><b>De Instagram a la tienda</b><p>Cada publicación de @coalmarca.ve lleva al producto exacto, listo para pedir. Hoy 568 publicaciones no venden directo.</p></div>
+        <div class="card idea"><span class="e">⚽</span><b>Campañas de temporada</b><p>Mundial, Navidad, regreso a clases: banner y vitrina en la tienda, con productos que se pueden pedir.</p></div>
+        <div class="card idea"><span class="e">🛡️</span><b>Control de precios</b><p>El sistema avisa si una caja sale más cara que comprar por unidad, antes de publicar el precio.</p></div>
+      </div>
+    </div>
+
+    <div class="ksec" id="capacitacion">
+      <h2>Capacitación y acompañamiento</h2>
+      <p class="sub">No entregamos un sistema y nos vamos: capacitamos a su gente y los acompañamos hasta que camine solo.</p>
+      <div class="areas">
+        <div class="card area"><span class="e">🧑‍💼</span><b>Ventas</b><p>Tomar pedidos, cartera y rutas.</p></div>
+        <div class="card area"><span class="e">🚚</span><b>Despacho</b><p>Confirmar, preparar y entregar.</p></div>
+        <div class="card area"><span class="e">💸</span><b>Cobranza</b><p>Verificar pagos y dar seguimiento.</p></div>
+        <div class="card area"><span class="e">📊</span><b>Gerencia</b><p>Leer ventas, zonas y comisiones.</p></div>
+        <div class="card area"><span class="e">🤝</span><b>Atención al cliente</b><p>Responder rápido, pedir reseñas, resolver reclamos.</p></div>
+      </div>
+      <div class="note" style="margin-top:12px">📹 Videos cortos y manual sencillo para el personal nuevo · 🧭 Acompañamiento en el arranque · 💬 Soporte directo por WhatsApp con KubIA.</div>
+    </div>
+
+    <div class="ksec" id="inversion">
+      <h2>La inversión, a la medida de Coalmar</h2>
+      <p class="sub">El precio depende de lo que Coalmar necesita hoy, y crece con ustedes.</p>
+      <div class="facts">
+        <span>📦 Cantidad de productos</span><span>🧾 Volumen de pedidos y compras al mes</span><span>👤 Usuarios: asesores, coordinadores, despacho, cobranza</span><span>☁️ Datos y fotos en la nube</span><span>🧩 Módulos activos</span><span>🗺️ Sedes y zonas: Barcelona, Caracas, Barquisimeto</span><span>🌐 Dominio propio e identidad visual</span><span>📸 Fotos de producto retocadas</span>
+      </div>
+      <div class="plans">
+        <div class="plan"><h4>Vitrina</h4><p class="p">Para empezar a vender en línea.</p><ul><li>Tienda 24/7 con su marca</li><li>Pedidos al panel en segundos</li><li>Precios en $, Bs y €</li><li>Seguimiento y reseñas</li></ul></div>
+        <div class="plan hl"><h4>Distribuidora</h4><p class="p">Vender y controlar todo el ciclo.</p><ul><li>Todo lo de Vitrina</li><li>Créditos con recordatorios</li><li>Verificación de pagos</li><li>Inventario real</li><li>App de vendedor sin señal</li></ul></div>
+        <div class="plan"><h4>Corporativo</h4><p class="p">Varias sedes, zonas y equipos.</p><ul><li>Todo lo de Distribuidora</li><li>Ventas por zona y asesor</li><li>Comisiones automáticas</li><li>Multi-sede y permisos por área</li></ul></div>
+      </div>
+      <div class="note" style="margin-top:12px">💡 Estructura: <b>una inversión de arranque</b> (configuración, carga del catálogo, fotos y capacitación) + <b>una mensualidad</b> (nube, soporte y mejoras continuas). Cotización a la medida, sin compromiso.</div>
+    </div>
+
+    <div class="ksec" id="nosotros">
+      <h2>¿Quiénes somos?</h2>
+      <p class="sub"><b>KubIA</b>: soluciones digitales e inteligencia para negocios venezolanos. Hecho en Venezuela, para cómo se trabaja en Venezuela.</p>
+      <div class="us">
+        <div class="card c"><b>+10</b><small>distribuidoras en Venezuela ya venden con nosotros</small></div>
+        <div class="card c"><b>24/7</b><small>tiendas que venden mientras el equipo descansa</small></div>
+        <div class="card c"><b>🔒</b><small>Nube, respaldos diarios y clave por usuario</small></div>
+        <div class="card c"><b>🇻🇪</b><small>Tasa del día, pago móvil, crédito a bodegas y mala señal</small></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="close" id="cierre"><div class="kw">
+    <h2>Lo que acaban de ver ya tiene su nombre,<br>sus colores y sus productos.</h2>
+    <p>No es una plantilla: es Coalmar en línea. Lo armamos a su medida, capacitamos a su equipo y arrancamos esta misma semana.</p>
+    <a class="btn sun bigcta" id="ctaMain" target="_blank" rel="noopener" href="#">🚀 Quiero mi tienda</a>
+    <div class="k">KubIA · <a href="https://kubiav.com" target="_blank" rel="noopener">kubiav.com</a> · WhatsApp 0422-1754245</div>
+  </div></div>
+</section>
+</main>
+
+<!-- tour -->
+<div id="tour" hidden role="region" aria-label="Demo guiada">
+  <div class="tt"><span id="tCh">Demo guiada</span><span class="pg" id="tPg"></span></div>
+  <p class="sub" id="tSub" aria-live="polite"></p>
+  <div class="ctl">
+    <button id="tPrev" aria-label="Escena anterior">⏮</button>
+    <button id="tPlay" aria-label="Pausar">⏸</button>
+    <button id="tNext" aria-label="Escena siguiente">⏭</button>
+    <div class="prog"><i id="tProg"></i></div>
+    <button class="x" id="tX">Salir</button>
+  </div>
+</div>
+<div class="tap" id="tap"></div>
+<audio id="aud" preload="auto"></audio>
+
+<script>
+(()=>{
+'use strict';
+const B='/demo/coalmar/';
+const WA_KUBIA='584221754245';
+const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const sleep=ms=>new Promise(r=>setTimeout(r,ms));
+
+/* ---------------- datos ---------------- */
+const CATS=[
+ {id:'enlatados',n:'Enlatados del mar',ic:'🐟',c1:'#0a2a63',c2:'#d9ecff',bg:'hero-morro',p:'Sardinas El Morro · El sabor del Mar Caribe'},
+ {id:'aceites',n:'Aceites',ic:'🫒',c1:'#7a5200',c2:'#fff1c7',bg:'hero-maruxa',p:'Maruxa y Alimorca · Lo mejor para todas las cocinas'},
+ {id:'azucar',n:'Azúcar',ic:'🍬',c1:'#9b1c4a',c2:'#ffe1ea',bg:'hero-galpon',p:'Dulce Día y Refino · Endulza tu negocio'},
+ {id:'salsas',n:'Salsas y aderezos',ic:'🥫',c1:'#8a1d12',c2:'#ffe3dc',bg:'hero-maruxa',p:'Maruxa y Albro Foods · El toque de sabor'}
+];
+const P=[
+ {id:'mt',cat:'enlatados',br:'El Morro',n:'Sardinas en salsa de tomate',pr:'Lata · por caja o unidad',img:'morro-tomate',s:'ok'},
+ {id:'ma',cat:'enlatados',br:'El Morro',n:'Sardinas en aceite vegetal',pr:'Lata · por caja o unidad',img:'morro-aceite',s:'ok'},
+ {id:'mp',cat:'enlatados',br:'El Morro',n:'Sardinas en salsa picante',pr:'Lata 170 g',img:'morro-picante',s:'low'},
+ {id:'mf',cat:'enlatados',br:'El Morro',n:'Sardinas en tomate · Abrefácil',pr:'Lata abrefácil',img:'morro-abrefacil',s:'ok',nu:1},
+ {id:'xa',cat:'aceites',br:'Maruxa',n:'Aceite de soya',pr:'828 ml',img:'maruxa-aceite',s:'ok'},
+ {id:'aa',cat:'aceites',br:'Alimorca',n:'Aceite de soya',pr:'828 ml',img:'alimorca',s:'ok',nu:1},
+ {id:'dd',cat:'azucar',br:'Dulce Día',n:'Azúcar blanca',pr:'900 g',img:'dulcedia',s:'ok',nu:1},
+ {id:'rf',cat:'azucar',br:'Refino',n:'Azúcar refinada',pr:'900 g',img:'refino',s:'ok',nu:1},
+ {id:'xm',cat:'salsas',br:'Maruxa',n:'Mayonesa',pr:'445 g',img:'maruxa-mayonesa',s:'ok'},
+ {id:'xk',cat:'salsas',br:'Maruxa',n:'Salsa de tomate',pr:'Botella',img:'maruxa-ketchup',s:'ok'},
+ {id:'xv',cat:'salsas',br:'Maruxa',n:'Vinagre',pr:'1 L',img:'maruxa-vinagre',s:'ok'},
+ {id:'xs',cat:'salsas',br:'Maruxa',n:'Salsa de soya',pr:'Botella',img:'',s:'ok'},
+ {id:'bb',cat:'salsas',br:'Albro Foods',n:'Salsa barbecue BBQ',pr:'385 g',img:'albro-bbq',s:'ok',nu:1}
+];
+const PM=Object.fromEntries(P.map(p=>[p.id,p]));
+const TEAM=[
+ {n:'Ventas',r:'Pedidos y cotizaciones',t:'584126950037',tl:'0412-6950037',c:'#0a2a63',i:'🛒'},
+ {n:'Freddy Hernández',r:'Coordinador Oriente',t:'584121818195',tl:'0412-1818195',c:'#1f9ad6',i:'FH'},
+ {n:'Ronald Agraz',r:'Coordinador Occidente',t:'584126988771',tl:'0412-6988771',c:'#f6a31b',i:'RA'},
+ {n:'Despacho',r:'Rutas y entregas',t:'584126950037',c:'#16a34a',i:'🚚'},
+ {n:'Cobranza',r:'Pagos y créditos',t:'584126950037',c:'#7c3aed',i:'💸'},
+ {n:'Atención al cliente',r:'Dudas y reclamos',t:'584126950037',c:'#dc2626',i:'🤝'}
+];
+const ZONAS=[
+ ['Oriente · Anzoátegui','Freddy Hernández'],['Oriente · Monagas','Freddy Hernández'],['Oriente · Sucre','Freddy Hernández'],['Oriente · Nueva Esparta','Freddy Hernández'],
+ ['Centro · Caracas y Miranda','Ventas'],['Occidente · Lara','Ronald Agraz'],['Occidente · Zulia','Ronald Agraz'],['Occidente · Falcón','Ronald Agraz'],['Occidente · Portuguesa','Ronald Agraz']
+];
+const LAST=[['mt','caja',2],['xa','caja',1],['dd','caja',1],['xm','unidad',6]];
+const ST=['Por confirmar','Confirmado','En preparación','En camino','Entregado'];
+const STC={'Por confirmar':'pc','Confirmado':'cf','En preparación':'pp','En camino':'ec','Entregado':'en','En cola por deuda':'dq'};
+
+const S={cur:'USD',cat:'todo',q:'',by:{},cart:{},seq:1048,tab:'ped',dev:'',
+ orders:[
+  {id:'CM-1047',cli:'Bodega La Esquina',z:'Oriente · Anzoátegui',city:'Lechería',as:'Freddy Hernández',ren:6,cr:'g',st:'Entregado',min:640,pay:'Pago móvil',ref:'004512',pv:true},
+  {id:'CM-1046',cli:'Abastos Mar Caribe',z:'Oriente · Anzoátegui',city:'Puerto La Cruz',as:'Freddy Hernández',ren:9,cr:'g',st:'Por confirmar',min:12,pay:'Transferencia',ref:'778120',pv:false},
+  {id:'CM-1045',cli:'Supermercado Los Llanos',z:'Occidente · Lara',city:'Barquisimeto',as:'Ronald Agraz',ren:14,cr:'y',st:'Por confirmar',min:26,pay:'Crédito 15 días',ref:'',pv:true},
+  {id:'CM-1044',cli:'Comercial La Ola',z:'Oriente · Anzoátegui',city:'Lechería',as:'Freddy Hernández',ren:5,cr:'g',st:'Confirmado',min:48,pay:'Pago móvil',ref:'778120',pv:false},
+  {id:'CM-1043',cli:'Víveres San Juan',z:'Occidente · Lara',city:'Cabudare',as:'Ronald Agraz',ren:7,cr:'r',st:'En cola por deuda',min:75,pay:'Crédito 15 días',ref:'',pv:true},
+  {id:'CM-1042',cli:'Minimarket El Pescador',z:'Oriente · Sucre',city:'Cumaná',as:'Ventas',ren:4,cr:'g',st:'En preparación',min:260,pay:'Divisas al recibir',ref:'',pv:true,re:1},
+  {id:'CM-1041',cli:'Distribuidora Central',z:'Centro · Caracas y Miranda',city:'Caracas',as:'Ventas',ren:11,cr:'y',st:'En camino',min:380,pay:'Transferencia',ref:'552901',pv:true}
+ ],
+ my:{id:'CM-1047',st:4,rv:0}, credits:[
+  {cli:'Abastos La Ola',z:'Oriente',u:62,d:-5,cr:'g'},
+  {cli:'Supermercado Los Llanos',z:'Occidente',u:88,d:-1,cr:'y'},
+  {cli:'Víveres San Juan',z:'Occidente',u:100,d:9,cr:'r'},
+  {cli:'Distribuidora Central',z:'Centro',u:74,d:2,cr:'y'},
+  {cli:'Bodega La Esquina',z:'Oriente',u:20,d:-12,cr:'g'}
+ ],
+ stock:{mt:340,ma:210,mp:18,mf:95,xa:120,aa:64,dd:150,rf:42,xm:80,xk:57,xv:33,xs:25,bb:12}
+};
+
+/* ---------------- utilidades ---------------- */
+const curSym=()=>S.cur==='USD'?'$':S.cur==='VES'?'Bs':'€';
+const altTxt=()=>S.cur==='USD'?'Bs — · € — a tasa del día':S.cur==='VES'?'$ — · € — · tasa BCV de hoy':'$ — · Bs — a tasa del día';
+function toast(html,ms=3200){const t=document.createElement('div');t.className='toast';t.innerHTML=html;document.body.appendChild(t);setTimeout(()=>t.remove(),ms)}
+let AC;function bell(){try{AC=AC||new (window.AudioContext||window.webkitAudioContext)();const t=AC.currentTime;[880,1320].forEach((f,i)=>{const o=AC.createOscillator(),g=AC.createGain();o.type='sine';o.frequency.value=f;g.gain.setValueAtTime(0.0001,t+i*.14);g.gain.exponentialRampToValueAtTime(0.22,t+i*.14+.02);g.gain.exponentialRampToValueAtTime(0.0001,t+i*.14+.6);o.connect(g).connect(AC.destination);o.start(t+i*.14);o.stop(t+i*.14+.65)})}catch(e){}}
+const ago=m=>m<1?'ahora':m<60?`hace ${m} min`:m<1440?`hace ${Math.round(m/60)} h`:'ayer';
+const crTxt={g:['#16a34a','Al día'],y:['#d97706','Cerca del límite'],r:['#dc2626','Vencido']};
+const isDesk=()=>matchMedia('(min-width:1100px)').matches;
+
+/* ---------------- vistas ---------------- */
+function setMode(m){document.body.dataset.mode=m;$$('.seg button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.mode===m));}
+$$('.seg button').forEach(b=>b.onclick=()=>setMode(b.dataset.mode));
+
+/* hero */
+const sls=$$('#hero .sl');let hi=0;
+const HT=[['Tu distribuidora,<br><em>abierta las 24 horas</em>','Más de 15 años llevando alimentos de calidad al mercado venezolano. Pide desde tu negocio, a cualquier hora.'],['Llenamos tus anaqueles<br><em>con lo que más se vende</em>','Maruxa, Alimorca, Dulce Día, Refino, Albro Foods… todo en un solo pedido.'],['El sabor del Mar Caribe,<br><em>directo a tu negocio</em>','Sardinas El Morro por caja, con despacho a tu zona o retiro en galpón.']];
+$('#dots').innerHTML=sls.map((_,i)=>`<i class="${i?'':'on'}"></i>`).join('');
+function heroGo(i){hi=i;sls.forEach((s,j)=>s.classList.toggle('on',j===i));$$('#dots i').forEach((d,j)=>d.classList.toggle('on',j===i));$('#heroT').innerHTML=HT[i][0];$('#heroP').textContent=HT[i][1]}
+setInterval(()=>heroGo((hi+1)%sls.length),5200);
+
+/* menú */
+$('#burger').onclick=()=>{const m=$('#menu');m.hidden=!m.hidden;$('#burger').setAttribute('aria-expanded',!m.hidden)};
+$$('#menu [data-close]').forEach(a=>a.addEventListener('click',()=>{$('#menu').hidden=true}));
+
+/* antes / después */
+$('#baR').oninput=e=>$('#ba').style.setProperty('--cut',(100-e.target.value)+'%');
+
+/* moneda */
+function setCur(c){S.cur=c;$$('#moneda [data-cur]').forEach(b=>b.setAttribute('aria-pressed',b.dataset.cur===c));renderCatalog();renderCart()}
+$$('#moneda [data-cur]').forEach(b=>b.onclick=()=>setCur(b.dataset.cur));
+
+/* vitrina de novedades */
+$('#vit').innerHTML=P.filter(p=>p.nu).map((p,i)=>{const c=CATS.find(c=>c.id===p.cat);return `<button class="v" style="background:linear-gradient(160deg,${c.c1},${['#1f9ad6','#0f4fa8','#f6a31b','#7a5200','#9b1c4a'][i%5]})" data-go="${p.id}"><span class="pill" style="font-size:9.5px">Nuevo</span><img src="${B}img/${p.img}.webp" alt=""><b>${esc(p.br)}</b><small>${esc(p.n)}</small></button>`}).join('');
+$$('#vit [data-go]').forEach(b=>b.onclick=()=>{const el=$(`.prod[data-id="${b.dataset.go}"]`);if(el){el.scrollIntoView({behavior:'smooth',block:'center'});el.classList.add('tf');setTimeout(()=>el.classList.remove('tf'),2400)}});
+
+/* categorías */
+function renderChips(){$('#cats').innerHTML=[{id:'todo',n:'Todo',ic:'🛒'},...CATS].map(c=>`<button class="chip" data-cat="${c.id}" aria-pressed="${S.cat===c.id}">${c.ic} ${esc(c.n)}</button>`).join('');$$('#cats .chip').forEach(b=>b.onclick=()=>{S.cat=b.dataset.cat;renderChips();renderCatalog()})}
+$('#q').oninput=e=>{S.q=e.target.value.trim().toLowerCase();renderCatalog()};
+
+function card(p){
+ const c=CATS.find(c=>c.id===p.cat),by=S.by[p.id]||'caja',inC=S.cart[p.id],out=p.s==='out';
+ const ph=p.img?`<img src="${B}img/${p.img}.webp" alt="${esc(p.br+' '+p.n)}" loading="lazy">`:`<div class="nf"><span>📸</span>Foto en camino<br><small>del catálogo Coalmar</small></div>`;
+ const bd=[p.nu?'<span class="bdg new">Nuevo</span>':'',p.s==='low'?'<span class="bdg low">Pocas unidades</span>':'',out?'<span class="bdg out">Agotado</span>':''].join('');
+ const add=out?`<button class="a" disabled>Agotado · avísame</button>`:inC?`<div class="qty"><button data-dec="${p.id}" aria-label="Quitar uno">−</button><span>${inC.q} ${inC.by==='caja'?'caja'+(inC.q>1?'s':''):'und.'}</span><button data-inc="${p.id}" aria-label="Agregar uno">+</button></div>`:`<button class="a" data-add="${p.id}">+ Agregar</button>`;
+ return `<article class="prod${out?' out':''}" data-id="${p.id}" style="--c2:${c.c2}">
+  <div class="ph"><div class="badges">${bd}</div>${ph}</div>
+  <div class="bd"><span class="br">${esc(p.br)}</span><span class="nm">${esc(p.n)}</span><span class="pr">${esc(p.pr)}</span>
+   <div class="tog" role="group" aria-label="Comprar por"><button data-by="${p.id}|caja" aria-pressed="${by==='caja'}">Caja</button><button data-by="${p.id}|unidad" aria-pressed="${by==='unidad'}">Unidad</button></div>
+   <div class="price"><b>${curSym()} —</b><small>${by==='caja'?'Precio por caja':'Precio por unidad'} · ${altTxt()}</small></div>
+   ${by==='caja'?'<span class="save">💰 Ahorras —% llevando la caja</span>':'<span class="save" style="background:#fff6e0;color:#92400e">Por caja te sale más barato</span>'}
+   <div class="add">${add}</div></div></article>`;
+}
+function renderCatalog(){
+ const show=CATS.filter(c=>S.cat==='todo'||S.cat===c.id);let h='';
+ for(const c of show){
+  const ps=P.filter(p=>p.cat===c.id&&(!S.q||(p.br+' '+p.n+' '+c.n).toLowerCase().includes(S.q)));if(!ps.length)continue;
+  const strip=ps.filter(p=>p.img).slice(0,4).map(p=>`<img src="${B}img/${p.img}.webp" alt="">`).join('');
+  h+=`<div class="catb" id="cat-${c.id}" style="--c1:${c.c1};background:${c.c1}"><img class="bg" src="${B}img/${c.bg}.webp" alt=""><div class="strip">${strip}${strip}</div><div class="t"><h3>${c.ic} ${esc(c.n)}</h3><p>${esc(c.p)}</p></div></div><div class="grid">${ps.map(card).join('')}</div>`;
+ }
+ $('#catalog').innerHTML=h||'<p class="sub" style="padding:14px">No encontramos ese producto. Escríbenos y te lo conseguimos.</p>';
+}
+$('#catalog').addEventListener('click',e=>{
+ const t=e.target.closest('button');if(!t)return;
+ if(t.dataset.by){const[id,by]=t.dataset.by.split('|');S.by[id]=by;if(S.cart[id])S.cart[id].by=by}
+ else if(t.dataset.add){S.cart[t.dataset.add]={q:1,by:S.by[t.dataset.add]||'caja'}}
+ else if(t.dataset.inc){S.cart[t.dataset.inc].q++}
+ else if(t.dataset.dec){const c=S.cart[t.dataset.dec];if(--c.q<=0)delete S.cart[t.dataset.dec]}
+ else return;
+ renderCatalog();renderCart();
+});
+
+/* carrito */
+const cartCount=()=>Object.keys(S.cart).length;
+function renderCart(){const n=cartCount();$('#cartN').hidden=!n;$('#cartN').textContent=n;$('#cartBar').hidden=!n;$('#cbN').textContent=n;$('#cartBar').lastElementChild.textContent=`${curSym()} — →`}
+function openSheet(html){closeSheet();const s=document.createElement('div');s.className='sheet';s.id='sheet';s.innerHTML=`<div class="box" role="dialog" aria-modal="true">${html}</div>`;s.addEventListener('click',e=>{if(e.target===s||e.target.closest('[data-x]'))closeSheet()});document.body.appendChild(s);return s}
+function closeSheet(){const s=$('#sheet');if(s)s.remove()}
+function cartLines(){return Object.entries(S.cart).map(([id,c])=>{const p=PM[id];return `<div class="ln">${p.img?`<img src="${B}img/${p.img}.webp" alt="">`:'<span style="width:52px;text-align:center;font-size:24px">📸</span>'}<div class="t"><b>${esc(p.br)} · ${esc(p.n)}</b><small>${c.q} ${c.by==='caja'?'caja(s)':'unidad(es)'} · ${esc(p.pr)}</small></div><b>${curSym()} —</b></div>`}).join('')}
+function openCart(){
+ if(!cartCount()){openSheet(`<h3>🛒 Tu pedido <button class="x" data-x aria-label="Cerrar">✕</button></h3><p class="note">Tu carrito está vacío. ¿Repetimos tu último pedido?</p><button class="btn sun block" id="rep2">↻ Repetir mi último pedido</button>`);$('#rep2').onclick=()=>{repeatLast();openCart()};return}
+ openSheet(`<h3>🛒 Tu pedido <button class="x" data-x aria-label="Cerrar">✕</button></h3>${cartLines()}<div class="tot"><span>Total estimado</span><b>${curSym()} —</b></div><div class="note">${altTxt()}. Tu asesor confirma disponibilidad en minutos.</div><button class="btn navy block" id="toCk">Continuar →</button>`);
+ $('#toCk').onclick=()=>checkout(1);
+}
+$('#cartBtn').onclick=openCart;$('#cartBar').onclick=openCart;
+function repeatLast(){S.cart={};LAST.forEach(([id,by,q])=>{S.cart[id]={q,by};S.by[id]=by});renderCatalog();renderCart();toast('↻ <span>Tu último pedido se cargó: <b>4 productos</b></span>')}
+$('#repeat').onclick=()=>{repeatLast();openCart()};
+
+/* checkout */
+const CK={name:'Bodega La Esquina',tel:'0414-555 1234',z:0,ent:'des',pay:'pm',up:false,ref:''};
+function zAs(){return ZONAS[CK.z][1]}
+function checkout(step){
+ const bar=`<div class="ckst">${[1,2,3].map(i=>`<i class="${i<=step?'on':''}"></i>`).join('')}</div>`;
+ if(step===1){
+  openSheet(`<h3>Tu negocio <button class="x" data-x aria-label="Cerrar">✕</button></h3>${bar}
+  <label class="f" for="ckN">Nombre del negocio</label><input class="in" id="ckN" value="${esc(CK.name)}">
+  <label class="f" for="ckT">Teléfono (WhatsApp)</label><input class="in" id="ckT" value="${esc(CK.tel)}" inputmode="tel">
+  <label class="f" for="ckZ">Zona</label><select class="in" id="ckZ">${ZONAS.map((z,i)=>`<option value="${i}" ${i===CK.z?'selected':''}>${z[0]}</option>`).join('')}</select>
+  <div class="asesor" id="ckA"></div>
+  <button class="btn navy block" style="margin-top:14px" id="ck2">Continuar →</button>`);
+  const upd=()=>{const a=zAs(),t=TEAM.find(t=>t.n===a);$('#ckA').innerHTML=`<span class="av" style="background:${t.c}">${t.i}</span><div>Tu pedido llega directo a <b>${esc(a)}</b><br><small style="color:var(--muted)">${esc(t.r)} · te confirma por WhatsApp</small></div>`};
+  $('#ckZ').onchange=e=>{CK.z=+e.target.value;upd()};upd();
+  $('#ckN').oninput=e=>CK.name=e.target.value;$('#ckT').oninput=e=>CK.tel=e.target.value;
+  $('#ck2').onclick=()=>checkout(2);
+ }else if(step===2){
+  openSheet(`<h3>¿Cómo lo recibes? <button class="x" data-x aria-label="Cerrar">✕</button></h3>${bar}
+  <div class="opts" id="ent">
+   <button data-v="des" aria-pressed="${CK.ent==='des'}"><span class="e">🚚</span><div><b>Despacho a mi negocio</b><small>${esc(ZONAS[CK.z][0])} · día de ruta: martes y viernes (ejemplo)</small></div></button>
+   <button data-v="ret" aria-pressed="${CK.ent==='ret'}"><span class="e">🏭</span><div><b>Retiro en galpón · Barcelona</b><small>Av. principal Mesones, zona industrial · Lun a sáb</small></div></button>
+  </div>
+  <div class="note" id="entN"></div>
+  <button class="btn navy block" id="ck3">Continuar al pago →</button>`);
+  const upd=()=>{$$('#ent button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.v===CK.ent));$('#entN').innerHTML=CK.ent==='des'?'🚚 Despacho sin costo a partir del mínimo de compra de tu zona. Tu asesor te confirma la hora.':'📍 Te avisamos por WhatsApp cuando esté listo para retirar. <a href="https://www.google.com/maps/search/?api=1&query=Av+principal+Mesones+zona+industrial+Barcelona+Anzoategui" target="_blank" rel="noopener" style="color:var(--sky);font-weight:800">Ver en el mapa →</a>'};
+  $$('#ent button').forEach(b=>b.onclick=()=>{CK.ent=b.dataset.v;upd()});upd();
+  $('#ck3').onclick=()=>checkout(3);
+ }else if(step===3){
+  openSheet(`<h3>Pago <button class="x" data-x aria-label="Cerrar">✕</button></h3>${bar}
+  <div class="opts" id="pay">
+   <button data-v="pm" aria-pressed="${CK.pay==='pm'}"><span class="e">📲</span><div><b>Pago móvil</b><small>Bs a tasa del día</small></div></button>
+   <button data-v="tr" aria-pressed="${CK.pay==='tr'}"><span class="e">🏦</span><div><b>Transferencia</b><small>Bs o divisas</small></div></button>
+   <button data-v="dv" aria-pressed="${CK.pay==='dv'}"><span class="e">💵</span><div><b>Divisas al recibir</b><small>Efectivo en la entrega</small></div></button>
+   <button data-v="cr" aria-pressed="${CK.pay==='cr'}"><span class="e">💳</span><div><b>A crédito</b><small>Si tu cuenta tiene crédito aprobado</small></div></button>
+  </div>
+  <div id="upW"></div>
+  <div class="tot"><span>Total</span><b>${curSym()} —</b></div>
+  <button class="btn sun block" id="send">Enviar pedido ✓</button>`);
+  const upd=()=>{$$('#pay button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.v===CK.pay));$('#upW').innerHTML=(CK.pay==='pm'||CK.pay==='tr')?`<label class="f" for="ckR">Referencia</label><input class="in" id="ckR" value="${esc(CK.ref)}" placeholder="Últimos 6 dígitos" inputmode="numeric"><button class="up${CK.up?' ok':''}" id="upB" style="width:100%">${CK.up?'✅ Comprobante cargado · captura_pago.jpg':'📎 Subir captura del comprobante'}</button>`:'';
+   const r=$('#ckR');if(r)r.oninput=e=>CK.ref=e.target.value;const u=$('#upB');if(u)u.onclick=()=>{CK.up=true;if(!CK.ref)CK.ref='019284';upd()}};
+  $$('#pay button').forEach(b=>b.onclick=()=>{CK.pay=b.dataset.v;upd()});upd();
+  $('#send').onclick=placeOrder;
+ }
+}
+function placeOrder(){
+ const id='CM-'+(S.seq++),payN={pm:'Pago móvil',tr:'Transferencia',dv:'Divisas al recibir',cr:'Crédito 15 días'}[CK.pay];
+ const o={id,cli:CK.name||'Cliente nuevo',z:ZONAS[CK.z][0],city:ZONAS[CK.z][0].split('· ')[1],as:zAs(),ren:Math.max(1,cartCount()),cr:'g',st:'Por confirmar',min:0,pay:payN,ref:(CK.pay==='pm'||CK.pay==='tr')?(CK.ref||'019284'):'',pv:!(CK.pay==='pm'||CK.pay==='tr'),mine:1,ent:CK.ent};
+ S.cart={};renderCatalog();renderCart();S.my={id,st:0,rv:0};
+ openSheet(`<div class="ok-big"><div class="e">✅</div><h4>¡Pedido ${id} enviado!</h4><p class="note">Le llegó a <b>${esc(o.as)}</b>. Te confirmamos por WhatsApp en minutos. Puedes seguirlo en vivo.</p><button class="btn navy block" data-x id="goTrack">Seguir mi pedido →</button></div>`);
+ $('#goTrack').onclick=()=>{closeSheet();renderTrack();$('#track').scrollIntoView({behavior:'smooth',block:'start'})};
+ renderTrack();
+ setTimeout(()=>{S.orders.unshift(o);bell();renderPanel(true);toast(`🔔 <span>Nuevo pedido <b>${id}</b> · ${esc(o.cli)} · ${esc(o.z)}</span>`,3800)},1800);
+ return o;
+}
+
+/* seguimiento */
+function renderTrack(){
+ const o=S.orders.find(o=>o.id===S.my.id)||{id:S.my.id};const i=S.my.st;
+ const lbl=['Recibido','Confirmado','En preparación','En camino','Entregado'],ic=['📥','✅','📦','🚚','🏁'],sm=['Tu asesor lo está revisando','Disponibilidad confirmada','Armando tu pedido en el galpón','Va rumbo a tu negocio','¡Recibido! Gracias por tu compra'];
+ $('#trackBox').innerHTML=`<div class="hd"><div><b>Pedido ${esc(S.my.id)}</b><br><small>${esc(o.cli||'Bodega La Esquina')} · ${o.ent==='ret'?'Retiro en galpón':'Despacho'}</small></div><span class="st ${['pc','cf','pp','ec','en'][i]}">${lbl[i]}</span></div>
+ <div class="tl">${lbl.map((l,j)=>`<div class="s ${j<i||i===4?'done':j===i?'now':''}"><span class="d">${j<i||i===4?'✓':ic[j]}</span><div><b>${l}</b><small>${j<=i?sm[j]:'Pendiente'}</small></div></div>`).join('')}</div>
+ ${i===4?`<div class="rv" id="rvBox"><b>¿Cómo te fue con tu pedido?</b><div class="stars" id="stars">${[1,2,3,4,5].map(n=>`<button data-st="${n}" class="${n<=S.my.rv?'on':''}" aria-label="${n} estrellas">★</button>`).join('')}</div>${S.my.rv?'<small style="font-weight:700;color:var(--green)">¡Gracias! Tu reseña ya aparece en la tienda ⭐</small>':'<small style="color:var(--muted)">Tu reseña ayuda a otros negocios a confiar en Coalmar.</small>'}</div>`:`<button class="btn line block" style="margin-top:10px" id="wa1">💬 Escribir a mi asesor</button>`}`;
+ $$('#stars button').forEach(b=>b.onclick=()=>{S.my.rv=+b.dataset.st;renderTrack()});
+ const w=$('#wa1');if(w)w.onclick=()=>window.open('https://wa.me/584126950037','_blank','noopener');
+}
+function advanceMine(st){S.my.st=st;renderTrack()}
+
+/* crédito */
+let credDone=false;function credAnim(){$('#credM').style.width='62%';let n=0;const t=setInterval(()=>{n+=2;$('#credP').textContent=Math.min(n,62);if(n>=62)clearInterval(t)},20);credDone=true}
+new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting&&!credDone)credAnim()}),{threshold:.4}).observe($('#credito'));
+$('#payNow').onclick=()=>{openSheet(`<h3>💳 Pagar mi saldo <button class="x" data-x aria-label="Cerrar">✕</button></h3><p class="note">Elige el método, sube tu comprobante y Cobranza lo verifica. Tu semáforo se actualiza solo.</p><div class="opts"><button aria-pressed="true"><span class="e">📲</span><div><b>Pago móvil</b><small>Bs — a tasa del día</small></div></button><button aria-pressed="false"><span class="e">🏦</span><div><b>Transferencia</b><small>Bs o divisas</small></div></button></div><button class="btn sun block" style="margin-top:12px" data-x>📎 Subir comprobante</button>`)};
+
+/* equipo */
+$('#team').innerHTML=TEAM.map(t=>`<div class="card mem"><span class="av" style="background:${t.c}">${t.i}</span><b>${esc(t.n)}</b><small>${esc(t.r)}${t.tl?' · '+t.tl:''}</small><a href="https://wa.me/${t.t}" target="_blank" rel="noopener">💬 WhatsApp</a></div>`).join('');
+
+/* ---------------- panel ---------------- */
+function kpis(){const pc=S.orders.filter(o=>o.st==='Por confirmar').length;$('#kHoy').textContent=S.orders.length;$('#kPc').textContent=pc;$('#kPv').textContent=S.orders.filter(o=>!o.pv).length;$('#kCv').textContent=S.credits.filter(c=>c.cr==='r').length;$('#tPc').textContent=pc||'';$('#tPc').hidden=!pc}
+$$('#ptabs button').forEach(b=>b.onclick=()=>setTab(b.dataset.t));
+function setTab(t){S.tab=t;$$('#ptabs button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.t===t));renderPanel()}
+function renderPanel(fresh){
+ kpis();const t=S.tab;let h='';
+ if(t==='ped'){
+  h=`<div class="tbar"><span class="rule">🧭 Asignación automática por zona · si nadie lo atiende en 4 h, se reasigna</span><button class="sbtn g" id="bulk" style="margin-left:auto">✓ Confirmar seleccionados</button></div><div class="rows">${S.orders.map((o,i)=>`<div class="row${fresh&&i===0?' newr':''}" data-o="${o.id}">
+   <input type="checkbox" aria-label="Seleccionar ${o.id}" ${o.st==='Por confirmar'?'':'disabled'}>
+   <div class="m"><b>${esc(o.cli)}</b> <span class="st ${STC[o.st]}">${o.st}</span>${o.mine?' <span class="bdg new">Web</span>':''}
+    <div class="meta"><span>🧾 ${o.id}</span><span>📍 ${esc(o.city)}</span><span>🧭 ${esc(o.z.split(' · ')[0])}</span><span>👤 ${esc(o.as)}${o.re?' <b style="color:var(--amber)">↻ reasignado</b>':''}</span><span>📦 ${o.ren} renglones</span><span>⏱ ${ago(o.min)}</span><span class="cdot"><i style="background:${crTxt[o.cr][0]}"></i>${crTxt[o.cr][1]}</span></div></div>
+   <div class="r"><span class="mt">$ —<small>Bs — · ${esc(o.pay)}</small></span>${o.st==='Por confirmar'?`<button class="sbtn" data-cf="${o.id}">Confirmar</button>`:o.st==='En cola por deuda'?`<button class="sbtn l" data-ex="${o.id}">Excepción…</button>`:o.st!=='Entregado'?`<button class="sbtn l" data-nx="${o.id}">→ ${ST[ST.indexOf(o.st)+1]}</button>`:'<span class="st en">✓ Entregado</span>'}</div></div>`).join('')}</div>`;
+ }else if(t==='pag'){
+  const reps={};S.orders.forEach(o=>{if(o.ref)reps[o.ref]=(reps[o.ref]||0)+1});
+  h=`<div class="tbar">Cada comprobante llega pegado a su pedido. Al verificar, el pedido avanza solo.</div><div class="rows">${S.orders.filter(o=>o.ref||!o.pv).map(o=>`<div class="row" data-p="${o.id}"><span style="font-size:24px">${o.pv?'✅':'🧾'}</span><div class="m"><b>${esc(o.cli)} · ${o.id}</b><div class="meta"><span>${esc(o.pay)}</span><span>Ref. <b>${o.ref||'—'}</b></span><span>📎 captura_pago.jpg</span>${reps[o.ref]>1?'<span class="flag">⚠️ Referencia repetida en otro pedido</span>':''}</div></div><div class="r"><span class="mt">$ —<small>Bs — esperado</small></span>${o.pv?'<span class="st en">Verificado</span>':`<button class="sbtn g" data-pv="${o.id}">✓ Verificar</button>`}</div></div>`).join('')}</div>`;
+ }else if(t==='cre'){
+  h=`<div class="tbar"><span class="rule">🔔 Recordatorios automáticos: 3 días antes · el día del vencimiento · 3 días después</span></div><div class="rows">${S.credits.map(c=>`<div class="row"><span class="cdot" style="font-size:22px"><i style="width:14px;height:14px;background:${crTxt[c.cr][0]}"></i></span><div class="m"><b>${esc(c.cli)}</b><div class="meta"><span>🧭 ${c.z}</span><span>Usa ${c.u}% de su límite</span><span>${c.d>0?`<b style="color:var(--red)">Vencido hace ${c.d} días</b>`:c.d===0?'Vence hoy':`Vence en ${-c.d} días`}</span><span>Saldo $ —</span></div><div class="meter" style="margin:6px 0 0;height:7px"><i style="width:${c.u}%;background:${crTxt[c.cr][0]}"></i></div></div><div class="r"><button class="sbtn ${c.cr==='r'?'':'l'}" data-rem="${esc(c.cli)}">🔔 Recordar</button><button class="sbtn l" data-his="${esc(c.cli)}">Historial</button></div></div>`).join('')}</div>`;
+ }else if(t==='inv'){
+  h=`<div class="tbar">Cada venta descuenta del inventario. Si se agota, la tienda deja de venderlo sola.</div><div class="card" style="padding:6px 10px;overflow-x:auto"><table class="t inv"><thead><tr><th></th><th>Producto</th><th>Existencia</th><th>Estado</th><th></th></tr></thead><tbody>${P.map(p=>{const s=p.s==='out'?0:S.stock[p.id],pct=Math.min(100,s/3.4),col=s===0?'var(--red)':s<30?'var(--amber)':'var(--green)';return `<tr><td>${p.img?`<img src="${B}img/${p.img}.webp" alt="">`:'📸'}</td><td><b>${esc(p.br)}</b><br><small>${esc(p.n)}</small></td><td><div class="stk"><i style="width:${pct}%;background:${col}"></i></div><small>${s} cajas</small></td><td>${s===0?'<span class="st dq">Agotado</span>':s<30?'<span class="st pc">Reponer pronto</span>':'<span class="st en">OK</span>'}</td><td><button class="sbtn l" data-out="${p.id}">${p.s==='out'?'Reponer':'Marcar agotado'}</button></td></tr>`}).join('')}</tbody></table></div>`;
+ }else if(t==='ven'){
+  h=`<div class="pgrid"><div class="card pbox"><h4>🧭 Ventas por zona · este mes</h4><div class="bars"><div class="b">Oriente · Freddy Hernández<div class="t"><i style="--w:58%;background:var(--sky)"></i></div><small>58% de las ventas</small></div><div class="b">Occidente · Ronald Agraz<div class="t"><i style="--w:31%;background:var(--sun)"></i></div><small>31% de las ventas</small></div><div class="b">Centro · Ventas oficina<div class="t"><i style="--w:11%;background:var(--navy)"></i></div><small>11% de las ventas</small></div></div></div>
+  <div class="card pbox"><h4>🏅 Asesores · avance de la meta</h4><div class="bars"><div class="b">Freddy Hernández<div class="t"><i style="--w:92%;background:var(--green)"></i></div><small>92% de la meta</small></div><div class="b">Ronald Agraz<div class="t"><i style="--w:85%;background:var(--green)"></i></div><small>85% de la meta</small></div><div class="b">Ventas oficina<div class="t"><i style="--w:71%;background:var(--amber)"></i></div><small>71% de la meta</small></div></div></div>
+  <div class="card pbox"><h4>⭐ Producto estrella por zona</h4><table class="t"><tr><td>Oriente</td><td><b>El Morro en tomate</b></td></tr><tr><td>Occidente</td><td><b>Aceite Maruxa 828 ml</b></td></tr><tr><td>Centro</td><td><b>Azúcar Refino 900 g</b></td></tr></table></div>
+  <div class="card pbox"><h4>😴 Clientes que dejaron de comprar</h4><table class="t"><tr><td><b>Abasto Los Pinos</b><br><small>Oriente · último pedido hace 21 días</small></td><td><button class="sbtn l" data-vis>Agendar visita</button></td></tr><tr><td><b>Bodega Mi Esperanza</b><br><small>Occidente · hace 18 días</small></td><td><button class="sbtn l" data-vis>Agendar visita</button></td></tr><tr><td><b>Comercial Del Mar</b><br><small>Oriente · hace 16 días</small></td><td><button class="sbtn l" data-vis>Agendar visita</button></td></tr></table></div></div>`;
+ }else if(t==='com'){
+  h=`<div class="tbar"><span class="rule">🏅 Se calculan sobre lo entregado y cobrado. Las devoluciones se descuentan solas.</span></div><div class="card" style="padding:6px 10px;overflow-x:auto"><table class="t"><thead><tr><th>Asesor</th><th>Zona</th><th>Pedidos entregados</th><th>Entregado y cobrado</th><th>Comisión</th><th>Estado</th></tr></thead><tbody>
+   <tr><td><b>Freddy Hernández</b></td><td>Oriente</td><td>148</td><td>$ —</td><td>$ —</td><td><span class="st en">Calculada</span></td></tr>
+   <tr><td><b>Ronald Agraz</b></td><td>Occidente</td><td>97</td><td>$ —</td><td>$ —</td><td><span class="st en">Calculada</span></td></tr>
+   <tr><td><b>Ventas oficina</b></td><td>Centro</td><td>41</td><td>$ —</td><td>$ —</td><td><span class="st pc">2 cobros pendientes</span></td></tr></tbody></table></div><button class="btn navy" style="margin-top:12px" id="cierreMes">📄 Cerrar el mes en un clic</button>`;
+ }
+ $('#pbody').innerHTML=h;
+ requestAnimationFrame(()=>$$('#pbody .bars .t i').forEach(i=>i.style.width=i.style.getPropertyValue('--w')));
+}
+function confirmO(id){const o=S.orders.find(o=>o.id===id);if(!o||o.st!=='Por confirmar')return;o.st='Confirmado';if(S.my.id===id)advanceMine(1);}
+$('#pbody').addEventListener('click',e=>{
+ const b=e.target.closest('button');if(!b)return;
+ if(b.dataset.cf){confirmO(b.dataset.cf);toast(`✅ <span>${b.dataset.cf} confirmado · <b>el cliente ya fue notificado</b></span>`)}
+ else if(b.id==='bulk'){const ids=$$('#pbody .row input:checked').map(i=>i.closest('.row').dataset.o);if(!ids.length){toast('Marca uno o varios pedidos para confirmarlos en lote.');return}ids.forEach(confirmO);toast(`✅ <span>Confirmados: <b>${ids.join(', ')}</b></span>`)}
+ else if(b.dataset.nx){const o=S.orders.find(o=>o.id===b.dataset.nx);o.st=ST[ST.indexOf(o.st)+1];if(S.my.id===o.id)advanceMine(ST.indexOf(o.st))}
+ else if(b.dataset.ex){openSheet(`<h3>Excepción de gerencia <button class="x" data-x aria-label="Cerrar">✕</button></h3><p class="note">Este cliente tiene un crédito vencido. Para aprobar igual, gerencia escribe el motivo y queda registrado.</p><label class="f" for="exm">Motivo</label><input class="in" id="exm" placeholder="Ej.: abonó hoy, pago en camino"><button class="btn navy block" style="margin-top:12px" data-x>Aprobar con motivo</button>`);return}
+ else if(b.dataset.pv){const o=S.orders.find(o=>o.id===b.dataset.pv);o.pv=true;toast(`💸 <span>Pago de <b>${o.id}</b> verificado</span>`)}
+ else if(b.dataset.rem){remind(b.dataset.rem);return}
+ else if(b.dataset.his){openSheet(`<h3>Historial · ${esc(b.dataset.his)} <button class="x" data-x aria-label="Cerrar">✕</button></h3><div class="tl" style="margin-top:10px">${[['🔔','Recordatorio enviado','hace 3 días · automático'],['📞','Llamada de cobranza','hace 6 días · Cobranza'],['💸','Abono registrado','hace 12 días · pago móvil'],['🧾','Nota de entrega','hace 20 días · 15 días de plazo']].map(x=>`<div class="s done"><span class="d">${x[0]}</span><div><b>${x[1]}</b><small>${x[2]}</small></div></div>`).join('')}</div>`);return}
+ else if(b.dataset.out){const p=PM[b.dataset.out];p.s=p.s==='out'?'ok':'out';renderCatalog();toast(p.s==='out'?`🚫 <span><b>${esc(p.br)} ${esc(p.n)}</b> marcado agotado · la tienda ya no lo vende</span>`:`✅ <span>${esc(p.n)} disponible otra vez</span>`)}
+ else if(b.dataset.vis!==undefined){b.textContent='✓ Visita agendada';b.disabled=true;return}
+ else if(b.id==='cierreMes'){toast('📄 <span>Cierre de mes generado · <b>comisiones.pdf</b></span>');return}
+ else return;
+ renderPanel();
+});
+function remind(cli){openSheet(`<h3>🔔 Recordatorio de pago <button class="x" data-x aria-label="Cerrar">✕</button></h3><p class="note">Así le llega al cliente por WhatsApp. Amable, claro y con el botón para pagar:</p><div style="background:#e7fbe9;border-radius:14px;padding:12px 14px;font-size:13.5px;line-height:1.5">Hola, <b>${esc(cli)}</b> 👋 Te saluda Coalmar. Te recordamos que tu nota de entrega vence pronto. Puedes pagar desde aquí en un minuto 👉 <u>tu enlace de pago</u><br>¡Gracias por confiar en nosotros! 🌊</div><button class="btn wa block" style="margin-top:12px" data-x id="remOk">Enviar recordatorio</button>`);$('#remOk').addEventListener('click',()=>toast(`✅ <span>Recordatorio enviado a <b>${esc(cli)}</b> · queda en el historial</span>`))}
+$$('#devs button').forEach(b=>b.onclick=()=>setDev(b.dataset.dev));
+function setDev(d){S.dev=d;$('#pw').className='pw'+(d?' dev-'+d:'');$$('#devs button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.dev===d));const tg=$('#devtag');tg.hidden=!d;tg.textContent=d==='tablet'?'📱 Así se ve en la tablet del galpón':d==='phone'?'📲 Así se ve en el celular del coordinador':''}
+let sy=1;setInterval(()=>{sy=sy>=5?1:sy+1;$('#syncT').textContent=`hace ${sy} s`},1000);
+
+/* ---------------- propuesta ---------------- */
+$('#qr').innerHTML=Array.from({length:49},(_,i)=>`<i class="${'1101011011101001011101110100101101011101101011011'[i]==='1'?'':'o'}"></i>`).join('');
+$$('[data-try]').forEach(b=>b.onclick=()=>{const k=b.dataset.try;
+ if(k==='qr'||k==='rep'){setMode('store');repeatLast();setTimeout(openCart,300);if(k==='qr')toast('📷 <span>QR escaneado en la caja de <b>El Morro</b> · tu pedido de siempre, listo</span>')}
+ else if(k==='rec'){openSheet(`<h3>🔔 Recordatorio inteligente <button class="x" data-x aria-label="Cerrar">✕</button></h3><div style="background:#e7fbe9;border-radius:14px;padding:12px 14px;font-size:13.5px;line-height:1.5;margin-top:10px">¡Hola! 👋 Hace <b>14 días</b> te llevaste <b>2 cajas de sardinas El Morro</b>. ¿Repetimos tu pedido? Un toque y te lo despachamos el viernes 🚚</div><button class="btn sun block" style="margin-top:12px" data-x>↻ Repetir pedido</button>`)}
+});
+const calc=()=>{const c=parseFloat(($('#cC').value||'').replace(',','.')),v=parseFloat(($('#cV').value||'').replace(',','.'));$('#cR').textContent=(c>0&&v>0)?(v>c?`Ganas ${(v-c).toFixed(2)} $ por unidad · margen de ${Math.round((v-c)/v*100)}% 💪`:'Así no ganas: sube el precio de venta.'):'Escribe dos números y te digo tu margen.'};
+$('#cC').oninput=calc;$('#cV').oninput=calc;
+const WA_MSG='Hola KubIA 👋 Vi la demo de la tienda y el panel para Inversiones Coalmar. ¡La queremos! ¿Cuándo arrancamos?';
+$('#ctaMain').href=`https://wa.me/${WA_KUBIA}?text=${encodeURIComponent(WA_MSG)}`;
+
+/* ---------------- render inicial ---------------- */
+renderChips();renderCatalog();renderCart();renderTrack();renderPanel();
+
+/* ---------------- gancho ---------------- */
+const hook=$('#hook');
+const HL=['Una bodega en Lechería se quedó sin sardinas.','Mañana abre a las 7… y a esta hora <b>nadie contesta.</b>','Con Coalmar, <b>sí contesta.</b>'];
+let hookT=[];
+function hookAnim(){hookT.forEach(clearTimeout);hookT=[];$('#hl1').innerHTML='';$('#noti').classList.remove('on');$('#hlogo').classList.remove('on');$('#notiSt').textContent='Enviado · sin respuesta';
+ hookT.push(setTimeout(()=>$('#noti').classList.add('on'),600));
+ HL.forEach((t,i)=>hookT.push(setTimeout(()=>{$('#hl1').innerHTML=t},[1600,5200,11500][i])));
+ hookT.push(setTimeout(()=>{$('#notiSt').textContent='✓✓ Coalmar · Pedido CM-1047 recibido · 11:48 p. m.';$('#hlogo').classList.add('on')},12300));
+}
+hookAnim();
+function closeHook(){hook.classList.add('bye');setTimeout(()=>hook.hidden=true,700)}
+$('#goFree').onclick=()=>{closeHook()};
+$('#goTour').onclick=()=>{startTour(0)};
+$('#playTop').onclick=()=>startTour(1);
+
+/* ---------------- tour con voz ---------------- */
+const aud=$('#aud');
+const scroll=(sel,blk='start')=>{const el=typeof sel==='string'?$(sel):sel;if(el)el.scrollIntoView({behavior:'smooth',block:blk})};
+let focusEl=null;function focus(sel,blk){if(focusEl)focusEl.classList.remove('tf');const el=typeof sel==='string'?$(sel):sel;if(!el)return;focusEl=el;el.classList.add('tf');scroll(el,blk||'center')}
+function tapOn(sel){const el=typeof sel==='string'?$(sel):sel;if(!el)return;const r=el.getBoundingClientRect();const t=$('#tap');t.style.left=(r.left+r.width/2)+'px';t.style.top=(r.top+r.height/2)+'px';t.classList.add('on');setTimeout(()=>t.classList.remove('on'),450);el.click()}
+const SC=[
+ {ch:'El gancho',t:'Son las once y cuarenta y siete de la noche. Una bodega en Lechería se acaba de quedar sin sardinas. Mañana abre a las siete… y a esta hora, su proveedor no contesta. Con Coalmar, sí contesta. Mientras ustedes descansan, su tienda vende.',go(){hook.hidden=false;hook.classList.remove('bye');$('#hbtns').hidden=true;hookAnim()},end(){$('#hbtns').hidden=false;closeHook()}},
+ {ch:'La tienda · Identidad',t:'Esta es Inversiones Coalmar, en línea. Más de quince años llevando alimentos de calidad a toda Venezuela, ahora abiertos las veinticuatro horas, los siete días de la semana. Con sus colores, sus marcas y su gente.',go(){setMode('store');$('#store').scrollTop=0;focus('#hero','start');heroGo(0)},at:[[6,()=>heroGo(1)],[12,()=>heroGo(2)]]},
+ {ch:'La tienda · Antes y después',t:'Hoy su catálogo vive en Canva. Es bonito, pero solo se mira: para pedir, el cliente tiene que llamar o escribir, y alguien tiene que anotar. Aquí, el catálogo vende solo.',go(){setMode('store');focus('#ba');setBA(95)},at:[[8.5,()=>slideBA(95,5,1600)]]},
+ {ch:'La tienda · Catálogo',t:'Sardinas El Morro, aceites Maruxa y Alimorca, azúcar Dulce Día y Refino, las salsas Maruxa y la nueva BBQ de Albro Foods. Todo organizado por categoría, con foto, presentación y disponibilidad real.',go(){setMode('store');focus('#cats','start')},at:[[1,()=>pickCat('enlatados')],[4.5,()=>pickCat('aceites')],[7.5,()=>pickCat('azucar')],[10,()=>pickCat('salsas')],[15,()=>pickCat('todo')]]},
+ {ch:'La tienda · Precios en 3 monedas',t:'El cliente ve el precio en dólares, en bolívares a la tasa del día, o en euros. Un toque, y todo el catálogo cambia. Sin calculadora y sin preguntar.',go(){setMode('store');focus('#moneda','start')},at:[[3,()=>tapOn('#moneda [data-cur=VES]')],[6,()=>tapOn('#moneda [data-cur=EUR]')],[9.5,()=>tapOn('#moneda [data-cur=USD]')]]},
+ {ch:'La tienda · Caja o unidad',t:'Puede comprar por caja o por unidad, y la tienda le muestra cuánto ahorra llevándose la caja. Así, el cliente siempre compra más.',go(){setMode('store');focus('.prod[data-id=mt]')},at:[[2.5,()=>tapOn('.prod[data-id=mt] [data-by="mt|unidad"]')],[5.5,()=>{tapOn('.prod[data-id=mt] [data-by="mt|caja"]');focus('.prod[data-id=mt]')}]]},
+ {ch:'La tienda · Pedir en 3 segundos',t:'Agregar es un toque. Y para la bodega que compra lo mismo cada semana, existe el botón: repetir mi último pedido. Su pedido completo, en tres segundos.',go(){setMode('store');focus('.prod[data-id=ma]')},at:[[1,()=>{tapOn('.prod[data-id=ma] [data-add]');focus('.prod[data-id=ma]')}],[4,()=>{S.cart={};renderCatalog();renderCart();$('#store').scrollTop=0;focus('#repeat','center')}],[6.5,()=>{tapOn('#repeat')}]]},
+ {ch:'La tienda · Despacho o retiro',t:'Elige cómo recibir: despacho a su negocio, según su zona y su día de ruta, o retiro en el galpón de Barcelona, con mapa y horario. Y el pedido le llega directo al asesor de su zona.',go(){if(!cartCount())repeatLast();checkout(2)},at:[[6,()=>tapOn('#ent [data-v=ret]')],[9.5,()=>{CK.ent='des';checkout(1)}]]},
+ {ch:'La tienda · Pago en línea',t:'Paga en línea: pago móvil, transferencia o divisas. Sube su comprobante desde el teléfono, y queda pegado a su pedido. Nada de capturas perdidas en cinco chats distintos.',go(){CK.up=false;CK.ref='';checkout(3)},at:[[2,()=>tapOn('#pay [data-v=tr]')],[3.5,()=>tapOn('#pay [data-v=pm]')],[6,()=>tapOn('#upB')]]},
+ {ch:'La tienda · Seguimiento en vivo',t:'Y sigue su pedido en vivo, como en una aplicación de delivery: recibido, confirmado, en preparación, en camino… y entregado.',go(){closeSheet();setMode('store');S.my={id:'CM-1047',st:0,rv:0};renderTrack();focus('#track','start')},at:[[3.2,()=>advanceMine(1)],[4.6,()=>advanceMine(2)],[6.2,()=>advanceMine(3)],[8,()=>advanceMine(4)]]},
+ {ch:'La tienda · Reseñas',t:'Al recibir, deja su reseña. Las mejores estrellas quedan a la vista de los clientes nuevos. La confianza que ustedes ya se ganaron en la calle, ahora también se ve en internet.',go(){setMode('store');if(S.my.st<4)advanceMine(4);focus('#rvBox')},at:[[2,()=>tapOn('#stars [data-st="5"]')],[5,()=>focus('#reviews','start')]]},
+ {ch:'La tienda · Crédito',t:'El cliente con crédito ve su límite, su saldo y cuándo vence, con un semáforo claro. Y paga desde ahí mismo.',go(){focus('.cred');credDone=false;$('#credM').style.width='0';setTimeout(credAnim,400)}},
+ {ch:'La tienda · Nuestro equipo',t:'Detrás de cada caja hay personas. Ventas; Freddy Hernández, coordinador de Oriente; Ronald Agraz, coordinador de Occidente; despacho, cobranza y atención al cliente. Cada uno con su WhatsApp directo. Eso es cercanía.',go(){focus('#equipo','start')},at:[[5,()=>focus('#team')]]},
+ {ch:'La tienda · Ubicación',t:'Galpón en la zona industrial de Barcelona, y oficinas en Caracas y Barquisimeto. El cliente sabe dónde están, cómo llegar y quién lo atiende.',go(){focus('#ubicacion','start')}},
+ {ch:'El panel · Sincronización',t:'Ahora, del otro lado. Este es el panel de Coalmar. Miren lo que pasa cuando un cliente envía su pedido… Ahí está. En dos segundos. Eso no es un video: es sincronización en tiempo real.',go(){if(focusEl)focusEl.classList.remove('tf');setTab('ped');setDev('');if(isDesk()){setMode('store');$('#panel').scrollTop=0}else setMode('panel');repeatLast();CK.ent='des';CK.pay='pm';CK.up=true;CK.ref='019284'},at:[[2.6,()=>{if(isDesk()){checkout(3);}else{setMode('store');checkout(3)}}],[5.0,()=>{tapOn('#send')}],[6.2,()=>{if(!isDesk()){closeSheet();setMode('panel')}else closeSheet()}],[7.2,()=>focus('#pbody .row')]]},
+ {ch:'El panel · Bandeja de pedidos',t:'Cada pedido llega con todo lo necesario para decidir, en una sola fila: cliente, zona, asesor, monto en dólares y en bolívares, y el color de su crédito. Se confirma uno por uno o en lote, y el cliente recibe la confirmación al instante.',go(){panelMode();setTab('ped');focus('#pbody .row')},at:[[10.5,()=>{$$('#pbody .row input:not(:disabled)').forEach(i=>i.checked=true);focus('#bulk')}],[13.5,()=>tapOn('#bulk')],[15.5,()=>focus('#pbody .row')]]},
+ {ch:'El panel · Desde cualquier equipo',t:'Y se maneja desde la computadora de la oficina, la tablet del galpón o el celular del coordinador en la calle. Fácil, y sin instalar nada.',go(){panelMode();if(focusEl)focusEl.classList.remove('tf');setDev('');$('#panel').scrollTop=0},at:[[3.2,()=>setDev('tablet')],[6.2,()=>setDev('phone')]],end(){setDev('')}},
+ {ch:'El panel · Verificar pagos',t:'Cobranza verifica cada pago con el comprobante a la vista, y el sistema avisa si una referencia ya se usó antes.',go(){panelMode();setTab('pag');focus('#pbody .rows')},at:[[4.5,()=>{const f=$('#pbody .flag');if(f)focus(f.closest('.row'))}]]},
+ {ch:'El panel · Créditos y cobranza',t:'Los créditos se controlan solos: quién debe, cuánto y desde cuándo. El sistema envía recordatorios amables antes y después del vencimiento, y guarda el historial de cada gestión.',go(){panelMode();setTab('cre');focus('#pbody .rows')},at:[[6,()=>remind('Víveres San Juan')]],end(){closeSheet()}},
+ {ch:'El panel · Inventario real',t:'El inventario es real: cada venta descuenta. Si un producto se agota, la tienda deja de venderlo. Y le avisa qué reponer, antes de que falte.',go(){closeSheet();panelMode();setTab('inv');focus('#pbody .card')},at:[[4.5,()=>{tapOn('#pbody [data-out=bb]');if(isDesk())focusStore('.prod[data-id=bb]')}]],end(){if(PM.bb.s==='out'){PM.bb.s='ok';renderCatalog()}}},
+ {ch:'El panel · Ventas y zonas',t:'Ventas por zona y por asesor: Oriente contra Occidente, el producto estrella de cada región, y el cliente que dejó de comprar, para ir a buscarlo a tiempo.',go(){panelMode();setTab('ven');focus('#pbody .pgrid')}},
+ {ch:'El panel · Comisiones',t:'Las comisiones se calculan solas, sobre lo que de verdad se entregó y se cobró. El cierre de mes, en un clic.',go(){panelMode();setTab('com');focus('#pbody .card')},at:[[6,()=>focus('#cierreMes')]]},
+ {ch:'KubIA · Antes y después',t:'Antes: pedidos por teléfono, notas en papel y cobranza a ciegas. Lo que KubIA soluciona: todo en un solo lugar. Lo que ustedes ganan: más ventas, menos errores y más tiempo. Y después de KubIA: una distribuidora que vende sola, y se controla desde la palma de la mano.',go(){if(focusEl)focusEl.classList.remove('tf');setMode('kubia');$('#kubia').scrollTop=0;setTimeout(()=>scroll('#adg'),300);lit(0)},at:[[5,()=>lit(1)],[9.6,()=>lit(2)],[15,()=>lit(3)]],end(){lit(-1)}},
+ {ch:'KubIA · Capacitación',t:'Y no los dejamos solos. Capacitamos a su personal por área: ventas, despacho, cobranza y atención al cliente. Los acompañamos hasta que el sistema camine solo, con soporte directo por WhatsApp.',go(){setMode('kubia');focus('#capacitacion','start')}},
+ {ch:'KubIA · La inversión',t:'La inversión se arma a la medida de Coalmar: según la cantidad de productos, el volumen de pedidos, los usuarios y los datos en la nube. Un arranque, y una mensualidad que incluye la nube, el soporte y las mejoras.',go(){setMode('kubia');focus('#inversion','start')},at:[[10,()=>focus('.plans','center')]]},
+ {ch:'KubIA · Quiénes somos',t:'Somos KubIA. Más de diez distribuidoras en Venezuela ya venden y se controlan con nosotros. Lo que acaban de ver ya tiene su nombre, sus colores y sus productos. Toquen: quiero mi tienda. Y arrancamos esta misma semana.',go(){setMode('kubia');focus('#nosotros','start')},at:[[7,()=>{if(focusEl)focusEl.classList.remove('tf');scroll('#cierre')}],[12,()=>focus('#ctaMain')]]}
+];
+function panelMode(){setMode(isDesk()?(document.body.dataset.mode==='kubia'?'panel':document.body.dataset.mode):'panel');if(isDesk()&&document.body.dataset.mode==='kubia')setMode('panel')}
+function focusStore(sel){const el=$(sel);if(el){el.scrollIntoView({behavior:'smooth',block:'center'});el.classList.add('tf');setTimeout(()=>el.classList.remove('tf'),4000)}}
+function pickCat(c){S.cat=c;renderChips();renderCatalog();if(c!=='todo'){const el=$('#cat-'+c);if(el)el.scrollIntoView({behavior:'smooth',block:'start'})}else scroll('#cats')}
+function setBA(v){$('#baR').value=100-v;$('#ba').style.setProperty('--cut',v+'%')}
+function slideBA(a,b,ms){const t0=performance.now();const f=t=>{const k=Math.min(1,(t-t0)/ms),e=k<.5?2*k*k:1-Math.pow(-2*k+2,2)/2;setBA(a+(b-a)*e);if(k<1)requestAnimationFrame(f)};requestAnimationFrame(f)}
+function lit(i){$$('#adg .c').forEach((c,j)=>c.classList.toggle('lit',j===i))}
+
+let TI=-1,timers=[],playing=false,fbT=null;
+function tourH(){const t=$('#tour');if(!t.hidden)document.documentElement.style.setProperty('--tourH',(t.offsetHeight+20)+'px')}
+addEventListener('resize',tourH);
+function clearTimers(){timers.forEach(clearTimeout);timers=[];clearTimeout(fbT)}
+function startTour(i){
+ document.body.classList.add('touring');$('#tour').hidden=false;$('#endc')&&$('#endc').remove();
+ if(i>0)closeHook();
+ try{AC=AC||new (window.AudioContext||window.webkitAudioContext)();AC.resume()}catch(e){}
+ playScene(i);
+}
+function playScene(i){
+ clearTimers();if(SC[TI]&&SC[TI].end&&TI!==i)SC[TI].end();
+ if(i>=SC.length){finish();return}
+ TI=Math.max(0,i);const sc=SC[TI];
+ $('#tCh').textContent=sc.ch;requestAnimationFrame(tourH);$('#tPg').textContent=`${TI+1} / ${SC.length}`;$('#tSub').textContent=sc.t;$('#tProg').style.width=((TI+1)/SC.length*100)+'%';
+ try{sc.go&&sc.go()}catch(e){console.warn(e)}
+ aud.src=`${B}voz/${String(TI).padStart(2,'0')}.mp3`;
+ playing=true;$('#tPlay').textContent='⏸';
+ const p=aud.play();
+ const schedule=()=>{(sc.at||[]).forEach(([s,fn])=>timers.push(setTimeout(()=>{try{fn()}catch(e){console.warn(e)}},s*1000)))};
+ if(p&&p.then)p.then(schedule).catch(()=>{schedule();fbT=setTimeout(()=>playScene(TI+1),Math.max(6000,sc.t.length*75))});else schedule();
+}
+aud.addEventListener('ended',()=>{if(playing)timers.push(setTimeout(()=>playScene(TI+1),550))});
+$('#tNext').onclick=()=>{aud.pause();playScene(TI+1)};
+$('#tPrev').onclick=()=>{aud.pause();playScene(Math.max(0,TI-1))};
+$('#tPlay').onclick=()=>{if(aud.paused){aud.play();playing=true;$('#tPlay').textContent='⏸'}else{aud.pause();playing=false;$('#tPlay').textContent='▶'}};
+$('#tX').onclick=stopTour;
+function stopTour(){clearTimers();aud.pause();playing=false;if(SC[TI]&&SC[TI].end)SC[TI].end();TI=-1;$('#tour').hidden=true;document.body.classList.remove('touring');if(focusEl)focusEl.classList.remove('tf');closeSheet();$('#hbtns').hidden=false;if(!hook.hidden)closeHook()}
+function finish(){stopTour();const d=document.createElement('div');d.id='endc';d.innerHTML=`<div class="bx"><div class="hlogo on" style="justify-content:center;margin:0 0 14px"><div class="lg"><img src="${B}img/logo.png" alt=""></div><b>Coalmar<small>Tu distribuidora, abierta 24/7</small></b></div><h2>¿La queremos para Coalmar?</h2><p>Su tienda, su panel y su equipo capacitado. Arrancamos esta misma semana.</p><a class="btn sun bigcta" target="_blank" rel="noopener" href="https://wa.me/${WA_KUBIA}?text=${encodeURIComponent(WA_MSG)}">🚀 Quiero mi tienda</a><button class="btn glass" id="endR">↺ Ver la demo otra vez</button><button class="btn glass" id="endF">Explorar por mi cuenta</button><p style="font-size:12px;margin-top:14px">KubIA · kubiav.com · WhatsApp 0422-1754245</p></div>`;document.body.appendChild(d);$('#endR').onclick=()=>{d.remove();startTour(0)};$('#endF').onclick=()=>{d.remove();setMode('store')}}
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){if($('#sheet'))closeSheet();else if(!$('#tour').hidden)stopTour()}});
+})();
+</script>
+</body>
+</html>
