@@ -68,8 +68,11 @@ h3{font-size:20px;letter-spacing:-.02em;line-height:1.2}
 .nav .wrap{display:flex;align-items:center;justify-content:space-between;height:70px;gap:16px}
 .nav nav{display:none;gap:28px;font-size:14px;color:var(--muted)}
 .nav nav a:hover{color:var(--white)}
+.nav nav a{white-space:nowrap}
 .nav .btn{min-height:42px;padding:0 18px;font-size:14px}
-@media(min-width:900px){.nav nav{display:flex}}
+@media(min-width:900px){.nav nav{display:flex;gap:18px}}
+@media(min-width:1280px){.nav nav{gap:26px}}
+@media(max-width:1180px){.nav nav a[href='#comparte']{display:none}}
 
 /* Fondo tecnológico */
 .orb{position:absolute;border-radius:50%;filter:blur(80px);pointer-events:none;opacity:.55}
@@ -231,6 +234,23 @@ h3{font-size:20px;letter-spacing:-.02em;line-height:1.2}
 .fl i{display:grid;place-items:center;width:56px;height:56px;margin:0 auto 8px;border-radius:16px;background:var(--ink2);border:1px solid var(--line);font-style:normal;font-size:24px}
 .fl small{display:block;font-weight:400;color:var(--em2);font-size:11px;margin-top:2px}
 
+/* Casos reales */
+.casos{display:grid;gap:18px;margin-top:34px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.caso{display:flex;flex-direction:column;border-radius:26px;overflow:hidden;background:linear-gradient(160deg,var(--ink3),var(--ink2));border:1px solid var(--line);transition:transform .25s,border-color .25s,box-shadow .25s;text-decoration:none;color:inherit}
+.caso:hover{transform:translateY(-6px);border-color:var(--c,var(--em));box-shadow:0 24px 50px -20px var(--c,var(--glow))}
+.caso .shot{position:relative;aspect-ratio:4/5;overflow:hidden;background:#000}
+.caso .shot img{width:100%;height:100%;object-fit:cover;object-position:top;transition:transform 4s ease-out}
+.caso:hover .shot img{transform:translateY(-6%) scale(1.03)}
+.caso .shot::after{content:"";position:absolute;inset:auto 0 0;height:40%;background:linear-gradient(transparent,var(--ink3))}
+.caso .tags{position:absolute;left:14px;top:14px;z-index:1;display:flex;flex-wrap:wrap;gap:6px}
+.caso .tags span{font-size:11.5px;font-weight:700;padding:5px 10px;border-radius:999px;background:rgba(11,18,16,.82);border:1px solid var(--c,var(--em));color:var(--white);backdrop-filter:blur(6px)}
+.caso .in{padding:6px 20px 20px;display:flex;flex-direction:column;gap:6px;flex:1}
+.caso h3{font-size:20px;color:var(--white);letter-spacing:-.01em}
+.caso p{font-size:14.5px;color:var(--muted);flex:1}
+.btn-ver{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;min-height:62px;margin-top:12px;border-radius:18px;background:var(--c,var(--em));color:#04140E;font-weight:800;font-size:19px;letter-spacing:.08em;text-transform:uppercase;box-shadow:0 12px 30px -10px var(--c,var(--glow));transition:transform .2s,filter .2s}
+.btn-ver:hover{filter:brightness(1.1)}.btn-ver:active{transform:scale(.97)}
+.card .btn-ver{min-height:56px;font-size:16px;margin:4px 0 12px}
+.casos-note{margin-top:22px;text-align:center;color:var(--muted);font-size:14px}
 /* Demo */
 .demo-grid{display:grid;gap:40px;align-items:center}
 @media(min-width:960px){.demo-grid{grid-template-columns:1fr 1fr}}
@@ -457,7 +477,8 @@ footer .copy{width:100%;font-size:12px;color:var(--muted2)}
     <a href="#inicio" class="logo" aria-label="KubIA Soluciones, inicio">Kub<span class="ia">IA<span class="sol">Soluciones</span></span></a>
     <nav aria-label="Secciones">
       <a href="#soluciones">Soluciones</a>
-      <a href="#demo">Demo</a>
+      <a href="#casos">Casos reales</a>
+      <a href="#demo">Probar gratis</a>
       <a href="#planes">Planes</a>
       <a href="/sirve-para-mi">¿Sirve para mí?</a>
       <a href="#comparte">Comparte y gana</a>
@@ -481,7 +502,7 @@ footer .copy{width:100%;font-size:12px;color:var(--muted2)}
       <p class="lead">Ventas, pedidos, inventario y finanzas en un solo lugar. <b>Desde tu teléfono, vendiendo 24/7.</b></p>
       <div class="cta-row">
         <a class="btn btn-em wa-link" href="#" data-msg="Hola Daniela, vi el sitio de KubIA y quiero ordenar mi negocio. ¿Hablamos?"><svg><use href="#i-wa"/></svg>Hablemos por WhatsApp</a>
-        <a class="btn btn-ghost" href="/kubia/"><svg><use href="#i-play"/></svg>Prueba la demo</a>
+        <a class="btn btn-ghost" href="/kubia/"><svg><use href="#i-play"/></svg>Probar gratis</a>
       </div>
       <span class="refchip" id="refchip"></span>
       <a class="founder-mini" href="#nosotros"><img src="/assets/daniela-silva.jpg" alt="Daniela Silva" width="900" height="900"><div><b>Daniela Silva</b><span>Fundadora de KubIA · Conóceme ↓</span></div></a>
@@ -579,7 +600,7 @@ footer .copy{width:100%;font-size:12px;color:var(--muted2)}
         </summary>
         <div class="body"><ul>
           <li>Catálogo con fotos y precios en varias monedas, a la tasa del día</li><li>QR para pedir y pagar</li><li>Carrito con sugerencias</li><li>Delivery, retiro o envío nacional</li><li>Pago con QR del banco y captura</li><li>Confirmación por WhatsApp</li><li>Seguimiento del pedido</li><li>"Repetir mi último pedido"</li>
-        </ul><a class="wa" href="#planes">Ver planes →</a></div>
+        </ul><a class="btn-ver" href="/demo/puerto-venado/" target="_blank" rel="noopener" style="--c:#10B981">▶ Ver ejemplo real</a><a class="wa" href="#planes">Ver planes →</a></div>
       </details>
       <details class="card rv" data-e="🚚" style="--c:#F59E0B">
         <summary>
@@ -590,7 +611,7 @@ footer .copy{width:100%;font-size:12px;color:var(--muted2)}
         </summary>
         <div class="body"><ul>
           <li>Preventa en ruta desde el teléfono</li><li>Pedidos aunque no haya señal</li><li>Organización de despachos y hoja de carga</li><li>Seguimiento de cobranzas y cuentas por cobrar</li><li>Control de crédito por cliente</li><li>Tasa del día</li><li>Reportes por vendedor</li>
-        </ul><p class="pz">Precio según tu diagnóstico</p><a class="wa wa-link" href="#" data-msg="Hola Daniela, me interesa KubIA Distribución.">Pide tu diagnóstico →</a></div>
+        </ul><a class="btn-ver" href="/demo/coalmar/" target="_blank" rel="noopener" style="--c:#F59E0B">▶ Ver ejemplo real</a><p class="pz">Precio según tu diagnóstico</p><a class="wa wa-link" href="#" data-msg="Hola Daniela, me interesa KubIA Distribución.">Pide tu diagnóstico →</a></div>
       </details>
       <details class="card rv" data-e="📅" style="--c:#A78BFA">
         <summary>
@@ -601,7 +622,7 @@ footer .copy{width:100%;font-size:12px;color:var(--muted2)}
         </summary>
         <div class="body"><ul>
           <li>Reservas en línea 24/7</li><li>Recordatorios automáticos</li><li>Pagos y abonos</li><li>Portal del cliente</li><li>Gestión de personal y turnos</li><li>Historial de cada cliente</li>
-        </ul>
+        </ul><a class="btn-ver" href="/demo/obstetra/" target="_blank" rel="noopener" style="--c:#A78BFA">▶ Ver ejemplo real</a>
         <div class="case"><b>Caso real:</b> una agencia de servicios de limpieza en Washington DC que gestionaba sus reservas por WhatsApp.
           <div class="nums"><div><strong>−40%</strong>inasistencias</div><div><strong>+25%</strong>reservas en 60 días</div><div><strong>15 h</strong>ahorradas por semana</div></div>
         </div>
@@ -616,7 +637,7 @@ footer .copy{width:100%;font-size:12px;color:var(--muted2)}
         </summary>
         <div class="body"><ul>
           <li>Inventario en vivo con alertas</li><li>Ventas en mostrador y en línea juntas</li><li>Finanzas y flujo de caja</li><li>Quién te debe y desde cuándo</li><li>Clientes (CRM) con historial</li><li>Roles y permisos para tu equipo</li><li>Reportes en tu teléfono</li>
-        </ul><p class="pz">Precio según tu diagnóstico</p><a class="wa wa-link" href="#" data-msg="Hola Daniela, me interesa KubIA Gestión.">Pide tu diagnóstico →</a></div>
+        </ul><a class="btn-ver" href="/demo/coalmar/" target="_blank" rel="noopener" style="--c:#38BDF8">▶ Ver el panel en acción</a><p class="pz">Precio según tu diagnóstico</p><a class="wa wa-link" href="#" data-msg="Hola Daniela, me interesa KubIA Gestión.">Pide tu diagnóstico →</a></div>
       </details>
       <details class="card rv" data-e="🤖" style="--c:#F472B6">
         <summary>
@@ -655,6 +676,32 @@ footer .copy{width:100%;font-size:12px;color:var(--muted2)}
   </div>
 </section>
 
+<!-- CASOS REALES -->
+<section id="casos" style="background:var(--ink2);border-block:1px solid var(--line)">
+  <div class="wrap">
+    <div class="rv center">
+      <span class="eyebrow">Casos reales</span>
+      <h2>Míralo funcionando, <span class="em">no te lo imagines.</span></h2>
+      <p class="lead" style="margin-inline:auto">Tiendas, distribuidoras y consultorios que ya diseñamos. Ábrelos en tu teléfono y recórrelos como lo haría su cliente.</p>
+    </div>
+    <div class="casos">
+      <a class="caso rv" href="/demo/puerto-venado/" target="_blank" rel="noopener" style="--c:#F59E0B">
+        <div class="shot"><img src="/assets/casos/puerto-venado.webp" alt="Tienda en línea de Distribuidora Puerto Venado" loading="lazy" width="400" height="600"><div class="tags"><span>🚚 Distribución</span><span>🛍️ Tienda</span></div></div>
+        <div class="in"><h3>Distribuidora Puerto Venado</h3><p>Pedidos al mayor 24/7 con su catálogo real, precios en $ y Bs, asesores por zona y rutas de la semana. Conectada a la app de sus vendedores.</p><span class="btn-ver">▶ Ver</span></div>
+      </a>
+      <a class="caso rv" href="/demo/coalmar/" target="_blank" rel="noopener" style="--c:#38BDF8">
+        <div class="shot"><img src="/assets/casos/coalmar.webp" alt="Tienda y panel de gestión para una distribuidora de alimentos" loading="lazy" width="400" height="600"><div class="tags"><span>🚚 Distribución</span><span>📊 Gestión</span></div></div>
+        <div class="in"><h3>Inversiones Coalmar</h3><p>Tienda 24/7 y panel del negocio: pedidos que llegan en segundos, créditos, pagos, inventario y comisiones. Con recorrido guiado por voz.</p><span class="btn-ver">▶ Ver</span></div>
+      </a>
+      <a class="caso rv" href="/demo/obstetra/" target="_blank" rel="noopener" style="--c:#F472B6">
+        <div class="shot"><img src="/assets/casos/obstetra.webp" alt="Sitio de una ginecóloga obstetra con citas en línea" loading="lazy" width="400" height="600"><div class="tags"><span>📅 Agenda</span><span>🩺 Salud</span></div></div>
+        <div class="in"><h3>Consultorio de Ginecología y Obstetricia</h3><p>Sus pacientes reservan solas, reciben recordatorios y tienen su portal. La doctora ve su agenda desde el teléfono.</p><span class="btn-ver">▶ Ver</span></div>
+      </a>
+    </div>
+    <p class="casos-note">¿Quieres el tuyo? <a href="#demo" style="color:var(--em2);font-weight:700">Pruébalo gratis</a> o <a class="wa-link" href="#" data-msg="Hola Daniela, vi los casos reales en kubiav.com y quiero uno para mi negocio." style="color:var(--em2);font-weight:700">escríbenos</a>.</p>
+  </div>
+</section>
+
 <!-- 5 · CINCO PROBLEMAS, UNA SOLUCIÓN -->
 <section class="here" id="cinco">
   <div class="wrap">
@@ -690,7 +737,7 @@ footer .copy{width:100%;font-size:12px;color:var(--muted2)}
         <span class="eyebrow">Pruébala ahora</span>
         <h2>No te lo contamos. <span class="em">Pruébalo.</span></h2>
         <p class="lead">Haz un pedido como si fueras cliente y mira cómo llega al panel del negocio. Apaga el internet a mitad de camino, si quieres.</p>
-        <div class="cta-row"><a class="btn btn-em" href="/kubia/"><svg><use href="#i-play"/></svg>Abrir la demo</a></div>
+        <div class="cta-row"><a class="btn btn-em" href="/kubia/"><svg><use href="#i-play"/></svg>Probar gratis</a></div>
         <div class="qrs"><img src="/assets/qr-demo.svg" alt="Código QR de la demo de KubIA"><p>¿Estás en la computadora? <b style="color:var(--white)">Escanea con tu teléfono</b> y pruébala como la vería tu cliente.</p></div>
       </div>
       <div class="shots rv" aria-hidden="true">
@@ -1010,7 +1057,8 @@ footer .copy{width:100%;font-size:12px;color:var(--muted2)}
     </div>
     <div class="meta" style="text-align:right">
       <a class="wa-link" href="#" data-msg="Hola Daniela, vi el sitio de KubIA.">💬 WhatsApp 0422-1754245</a>
-      <a href="/kubia/">▶ Demo interactiva</a>
+      <a href="/kubia/">▶ Probar gratis</a>
+      <a href="#casos">⭐ Casos reales</a>
       <a href="/sirve-para-mi">¿KubIA sirve para mi negocio?</a>
       <a href="/afiliados">Gana recomendando KubIA</a>
       <a href="/terminos">Términos y privacidad</a>
