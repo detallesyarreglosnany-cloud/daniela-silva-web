@@ -22,7 +22,7 @@ a{color:inherit}
 header.top{position:sticky;top:0;z-index:40;background:rgba(42,3,6,.96);backdrop-filter:blur(8px);color:#fff}
 .top .wrap{display:flex;align-items:center;gap:10px;min-height:62px}
 .logo{display:flex;align-items:center;gap:10px;text-decoration:none;min-width:0}
-.logo img{height:42px;width:auto}
+.logo img{height:46px;width:46px;object-fit:contain;border-radius:50%;background:var(--wine2);padding:6px;box-shadow:0 0 0 2px var(--gold);flex:0 0 auto}
 .logo span{font-family:var(--disp);font-weight:700;font-size:15px;line-height:1.05;text-transform:uppercase;letter-spacing:.5px}
 .logo small{display:block;font-family:system-ui,sans-serif;font-weight:500;font-size:11px;opacity:.7;text-transform:none;letter-spacing:0}
 .chips-top{margin-left:auto;display:flex;gap:6px;align-items:center}
@@ -36,35 +36,40 @@ header.top{position:sticky;top:0;z-index:40;background:rgba(42,3,6,.96);backdrop
 .cartbtn.bump{animation:bump .4s}
 @keyframes bump{40%{transform:scale(1.18) rotate(-6deg)}}
 @media(max-width:600px){.logo span{display:none}.pill.rate .lbl{display:none}.pill{padding:5px 8px}}
-.hero{position:relative;overflow:hidden;background:var(--wine3);color:#fff;min-height:min(84vh,680px);display:flex;align-items:flex-end}
+.hero{position:relative;overflow:hidden;background:var(--wine3);color:#fff;min-height:min(92svh,780px);display:flex;align-items:flex-end}
 .scene{position:absolute;inset:0;opacity:0;transition:opacity 1.2s}
 .scene.on{opacity:1}
-.scene .bg{position:absolute;inset:-10%;animation:kb 9s ease-in-out infinite alternate}
-@keyframes kb{to{transform:scale(1.12) translate(-2%,-2%)}}
-.s0 .bg{background:radial-gradient(55% 45% at 72% 32%,#c0121f 0,transparent 70%),radial-gradient(45% 40% at 18% 85%,#7a4a00 0,transparent 70%),linear-gradient(160deg,#2a0306,#4a050b)}
-.s1 .bg{background:radial-gradient(55% 45% at 30% 28%,#1fa35c 0,transparent 68%),radial-gradient(42% 40% at 85% 78%,#ffb400 0,transparent 70%),linear-gradient(160deg,#1a0205,#0e2a1c)}
-.s2 .bg{background:radial-gradient(55% 45% at 75% 30%,#ffb400 0,transparent 68%),radial-gradient(45% 40% at 15% 70%,#8e0a14 0,transparent 70%),linear-gradient(160deg,#2a0306,#3a1a00)}
+.scene .bg{position:absolute;inset:0;background-size:cover;background-position:var(--pos,center);transform:scale(1.04);animation:kb 11s ease-out infinite alternate}
+@keyframes kb{to{transform:scale(1.15) translate(-1.5%,-1.5%)}}
+.scene::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(26,2,4,.30) 0%,rgba(26,2,4,.18) 30%,rgba(26,2,4,.62) 58%,rgba(26,2,4,.96) 100%)}
+.s0 .bg{background-image:url(img/equipo-grupo.webp);--pos:center 35%}
+.s1 .bg{background-image:url(img/camion.webp);--pos:center 40%}
+.s2 .bg{background-image:url(img/cargador.webp);--pos:center 25%}
+.s3 .bg{background-image:url(img/cliente-tienda.webp);--pos:center 30%}
 .pics{position:absolute;right:3%;top:8%;width:min(44%,500px);height:78%;pointer-events:none}
 .pics::before{content:"";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);height:86%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,rgba(255,210,92,.38),rgba(255,180,0,.08) 55%,transparent 70%);filter:blur(4px)}
 .pics img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 26px 30px rgba(0,0,0,.5));animation:fl 6s ease-in-out infinite}
 @keyframes fl{50%{translate:0 -14px}}
 .truck{position:absolute;bottom:30%;left:-140px;font-size:64px;animation:drive 7s linear infinite}
 @keyframes drive{to{left:110%}}
-.hero .wrap{position:relative;z-index:2;padding-bottom:48px;padding-top:60px;width:100%}
-.kicker{display:inline-block;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);border-radius:999px;padding:6px 12px;font-size:13px;margin-bottom:14px}
+.hero .wrap{position:relative;z-index:2;padding-bottom:40px;padding-top:120px;width:100%}
+.kicker{display:inline-flex;align-items:center;gap:6px;background:var(--gold);color:var(--wine3);border-radius:999px;padding:6px 13px;font-size:12.5px;font-weight:800;letter-spacing:.3px;text-transform:uppercase;margin-bottom:14px}
 .hero h1{font-family:var(--disp);text-transform:uppercase;font-size:clamp(36px,7vw,70px);line-height:1;letter-spacing:.2px;max-width:720px;min-height:2em;text-shadow:0 3px 14px rgba(0,0,0,.4)}
 .hero h1 em{font-style:normal;color:var(--gold2)}
 .hero p.sub{font-size:clamp(16px,2.4vw,20px);opacity:.9;max-width:560px;margin:14px 0 26px}
 .cta{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:56px;padding:0 28px;border-radius:16px;background:linear-gradient(135deg,var(--gold2),var(--gold));color:var(--wine3);font-weight:800;font-size:18px;box-shadow:0 10px 30px rgba(255,180,0,.35);text-decoration:none;transition:transform .15s}
 .cta:active{transform:scale(.97)}
-.cta.ghost{background:rgba(255,255,255,.1);color:#fff;box-shadow:none;border:1px solid rgba(255,255,255,.28);font-size:16px}
+.cta.ghost{background:rgba(255,255,255,.14);color:#fff;box-shadow:none;border:1px solid rgba(255,255,255,.3);font-size:16px;backdrop-filter:blur(6px)}
 .hero .btns{display:flex;flex-wrap:wrap;gap:10px}
-.dots{display:flex;gap:6px;margin-top:24px}
+.dots{position:absolute;top:18px;right:18px;z-index:3;display:flex;gap:6px}
 .dots i{width:28px;height:4px;border-radius:2px;background:rgba(255,255,255,.25);overflow:hidden;position:relative}
 .dots i.on::after{content:"";position:absolute;inset:0;background:var(--gold2);animation:prog 5s linear}
 @keyframes prog{from{transform:translateX(-100%)}}
-.trust{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:20px;font-size:13.5px;opacity:.88}
-@media(max-width:700px){.pics{left:0;right:0;top:12px;width:100%;height:250px}.hero .wrap{padding-top:268px}.hero h1{min-height:0}}
+.trustbar{background:#fff;border-bottom:1px solid var(--line);position:relative;z-index:4}
+.trustbar .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;padding-top:14px;padding-bottom:14px}
+.trustbar div{text-align:center;font-size:12px;font-weight:700;color:var(--muted);line-height:1.2}
+.trustbar b{display:block;font-size:22px;margin-bottom:3px;color:var(--wine3)}
+@media(max-width:700px){.hero{min-height:88svh}.hero h1{min-height:0}.hero .btns{padding-right:62px}.hero .btns .cta{flex:1 1 100%}.s0 .bg{background-size:auto 60%;background-repeat:no-repeat;background-position:center 6%;background-color:var(--wine3)}}
 section.blk{padding:60px 0}
 .eyebrow{font-size:12.5px;font-weight:800;letter-spacing:1.4px;text-transform:uppercase;color:var(--wine)}
 .dark .eyebrow{color:var(--gold)}
@@ -145,11 +150,14 @@ h2{font-family:var(--disp);text-transform:uppercase;font-size:clamp(28px,4.6vw,4
 .price{display:flex;align-items:baseline;gap:6px;flex-wrap:wrap}
 .price b{font-size:19px;font-weight:900}
 .price span{font-size:12px;color:var(--muted)}
-.save{font-size:12px;color:var(--green);font-weight:700}
+.save{font-size:11.5px;color:#145c39;background:#e3f6ea;font-weight:800;border-radius:8px;padding:4px 8px;align-self:flex-start;line-height:1.25}
+.save.alt{color:#7a4a00;background:#fff3d6}
 .add{margin-top:auto;min-height:42px;border-radius:12px;background:var(--wine);color:#fff;font-weight:800;font-size:15px}
 .add:disabled{background:#cfc6c3;cursor:not-allowed}
 .qty{margin-top:auto;display:grid;grid-template-columns:42px 1fr 42px;align-items:center;background:var(--bg);border-radius:12px;min-height:42px;text-align:center;font-weight:800}
 .qty button{height:42px;font-size:20px;font-weight:800}
+.prod .qty{background:var(--gold);color:var(--wine3);padding:3px;gap:0}
+.prod .qty button{height:36px;border-radius:9px;background:rgba(255,255,255,.55)}
 .empty{grid-column:1/-1;padding:30px;text-align:center;color:var(--muted)}
 .skel{height:230px;border-radius:var(--r);background:linear-gradient(90deg,#f3ece8,#fbf8f6,#f3ece8);background-size:200% 100%;animation:sk 1.2s infinite}
 @keyframes sk{to{background-position:-200% 0}}
@@ -218,6 +226,56 @@ h2{font-family:var(--disp);text-transform:uppercase;font-size:clamp(28px,4.6vw,4
 .btn{display:flex;width:100%;align-items:center;justify-content:center;gap:8px;min-height:52px;border-radius:14px;background:var(--wine);color:#fff;font-weight:800;font-size:16px;text-decoration:none}
 .btn.gold{background:var(--gold);color:var(--wine3)}
 .btn.line2{background:#fff;color:var(--wine3);border:1.5px solid var(--line)}
+.btn,.add,.cta,.qty button,.seg button{transition:transform .15s}
+.btn:active,.add:active,.qty button:active{transform:scale(.96)}
+.btn.glass{background:rgba(255,255,255,.14);color:#fff;border:1px solid rgba(255,255,255,.28);backdrop-filter:blur(6px)}
+.btn.wa{background:#1fa855;color:#fff}
+.curseg{display:inline-flex;background:var(--bg);border:1px solid var(--line);border-radius:999px;padding:3px;gap:2px}
+.curseg button{font-size:13px;font-weight:800;padding:7px 13px;border-radius:999px;color:var(--muted)}
+.curseg button.on{background:var(--wine);color:#fff}
+.curwrap{display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:12px;color:var(--muted);font-weight:600}
+.curwrap .rt b{color:var(--green)}
+.pill.rate{cursor:pointer}
+.nuevo{display:flex;gap:12px;overflow-x:auto;padding:4px 2px 12px;scroll-snap-type:x mandatory;scrollbar-width:none}
+.nuevo::-webkit-scrollbar{display:none}
+.nuevo .nv{flex:0 0 156px;scroll-snap-align:start;border-radius:18px;padding:10px 12px 12px;color:#fff;text-align:left;display:flex;flex-direction:column;min-height:186px;position:relative;overflow:hidden;background:linear-gradient(160deg,hsl(var(--h) 72% 34%),hsl(var(--h) 78% 16%))}
+.nuevo .nv img{height:104px;width:100%;object-fit:contain;margin:4px 0 8px;filter:drop-shadow(0 8px 10px rgba(0,0,0,.35));transition:transform .3s}
+.nuevo .nv:hover img{transform:scale(1.07) rotate(-2deg)}
+.nuevo .nv b{font-size:12.5px;line-height:1.2;text-transform:uppercase}
+.nuevo .nv small{font-size:11px;opacity:.85;margin-top:2px}
+.nuevo .tg{align-self:flex-start;background:var(--gold);color:var(--wine3);font-size:10px;font-weight:900;border-radius:999px;padding:3px 8px;text-transform:uppercase}
+.hl{animation:hl 1.8s ease-in-out 2}
+@keyframes hl{50%{box-shadow:0 0 0 4px var(--gold)}}
+.pgal{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 2px 12px;margin-top:20px;scrollbar-width:none}
+.pgal::-webkit-scrollbar{display:none}
+.pgal figure{flex:0 0 min(240px,70%);scroll-snap-align:start;border-radius:18px;overflow:hidden;position:relative;aspect-ratio:3/4;background:#1a0204}
+.pgal img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.pgal figure:hover img{transform:scale(1.06)}
+.pgal figcaption{position:absolute;left:0;right:0;bottom:0;padding:30px 12px 12px;background:linear-gradient(transparent,rgba(26,2,4,.9));font-size:13px;line-height:1.25}
+.pgal figcaption b{display:block;color:var(--gold2);font-size:11px;letter-spacing:.8px;text-transform:uppercase}
+.photo{position:relative;border-radius:24px;overflow:hidden;margin-top:22px;box-shadow:var(--sh)}
+.photo img{width:100%;height:clamp(220px,42vw,440px);object-fit:cover}
+.photo p{position:absolute;left:0;right:0;bottom:0;padding:40px 18px 16px;background:linear-gradient(transparent,rgba(26,2,4,.88));color:#fff;font-weight:700;font-size:15px}
+.acc{background:#fff;color:var(--ink);border-radius:20px;padding:18px;box-shadow:var(--sh)}
+.acc .sm{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:12px;font-weight:700;font-size:14px;background:#eaf7f0;color:#145c39;margin:10px 0}
+.acc .sm i{width:12px;height:12px;border-radius:50%;background:var(--green)}
+.acc .mt{height:10px;border-radius:99px;background:var(--bg);overflow:hidden;margin:6px 0 4px}
+.acc .mt i{display:block;height:100%;width:62%;border-radius:99px;background:linear-gradient(90deg,var(--green),var(--amber))}
+.acc .kv{display:flex;justify-content:space-between;font-size:14px;padding:7px 0;border-bottom:1px dashed var(--line)}
+.acc .kv span{color:var(--muted)}
+.hist{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:24px;align-items:start}
+.hist figure{border-radius:24px;overflow:hidden;box-shadow:var(--sh);position:relative}
+.hist figure img{width:100%;height:420px;object-fit:cover;object-position:center 20%}
+.hist figcaption{position:absolute;left:0;right:0;bottom:0;padding:34px 14px 12px;background:linear-gradient(transparent,rgba(26,2,4,.88));color:#fff;font-size:13.5px;font-weight:600}
+@media(max-width:760px){.hist{grid-template-columns:1fr}.hist figure img{height:300px}}
+.brandsimg{max-width:760px;margin:20px auto 0;background:#fff;border-radius:24px;padding:14px;box-shadow:var(--sh)}
+.brandsimg img{width:100%;height:auto;border-radius:12px}
+.seguir{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:18px;align-items:start;margin-top:20px}
+@media(max-width:760px){.seguir{grid-template-columns:1fr}}
+.seguir .box{background:#fff;border-radius:22px;padding:18px;box-shadow:var(--sh)}
+.seguir .hd{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:6px}
+.seguir .stt{font-size:12px;font-weight:800;border-radius:999px;padding:4px 10px;background:#fff7e6;color:#8a5a00}
+.seguir .stt.ok{background:#eaf7f0;color:#145c39}
 .modal{position:fixed;z-index:62;left:50%;top:50%;width:min(480px,calc(100% - 24px));max-height:calc(100% - 24px);overflow:auto;background:#fff;border-radius:22px;transform:translate(-50%,-46%) scale(.96);opacity:0;pointer-events:none;transition:all .25s}
 .modal.on{opacity:1;pointer-events:auto;transform:translate(-50%,-50%)}
 .mb{padding:20px}
@@ -342,10 +400,10 @@ h2{font-family:var(--disp);text-transform:uppercase;font-size:clamp(28px,4.6vw,4
 .ti p{color:var(--muted);font-size:15px}
 .loc{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:22px}
 @media(max-width:720px){.loc{grid-template-columns:1fr}}
-.locmap{border-radius:24px;min-height:240px;background:linear-gradient(135deg,#e7d6cf,#f3ebe2);position:relative;overflow:hidden;display:block}
-.locmap::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(35deg,transparent 0 38px,rgba(255,255,255,.75) 38px 44px),repeating-linear-gradient(-55deg,transparent 0 60px,rgba(255,255,255,.55) 60px 64px)}
-.pin{position:absolute;left:50%;top:46%;transform:translate(-50%,-100%);font-size:52px;animation:fl 2.4s ease-in-out infinite;filter:drop-shadow(0 8px 10px rgba(0,0,0,.25))}
-.locmap .lbl{position:absolute;left:50%;top:52%;transform:translateX(-50%);background:#fff;border-radius:10px;padding:6px 10px;font-weight:700;font-size:13px;white-space:nowrap;box-shadow:var(--sh)}
+.locmap{border-radius:24px;min-height:280px;background:#2b3a22 url(img/mapa.webp) center 70%/cover;position:relative;overflow:hidden;display:block}
+.locmap::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.05),rgba(26,2,4,.35))}
+.pin{position:absolute;left:28%;top:74%;transform:translate(-50%,-100%);font-size:52px;animation:fl 2.4s ease-in-out infinite;filter:drop-shadow(0 8px 10px rgba(0,0,0,.25))}
+.locmap .lbl{position:absolute;left:28%;top:80%;transform:translateX(-50%);background:#fff;border-radius:10px;padding:6px 10px;font-weight:700;font-size:13px;white-space:nowrap;box-shadow:var(--sh)}
 .locc{background:#fff;border-radius:24px;padding:22px;box-shadow:var(--sh);display:flex;flex-direction:column;gap:10px}
 .faq details{background:#fff;border-radius:16px;padding:15px 17px;margin-top:10px;box-shadow:var(--sh)}
 .faq summary{font-weight:700;cursor:pointer;list-style:none}
@@ -379,21 +437,24 @@ h2{font-family:var(--disp);text-transform:uppercase;font-size:clamp(28px,4.6vw,4
 </header>
 
 <section class="hero" id="inicio">
-  <div class="scene s0 on"><div class="bg"></div><div class="pics" data-pics="0"></div></div>
-  <div class="scene s1"><div class="bg"></div><span class="truck">🚚</span><div class="pics" data-pics="1"></div></div>
-  <div class="scene s2"><div class="bg"></div><div class="pics" data-pics="2"></div></div>
+  <div class="scene s0 on" role="img" aria-label="El equipo de Distribuidora Puerto Venado frente al camión"><div class="bg"></div></div>
+  <div class="scene s1" role="img" aria-label="Camión de despacho de Puerto Venado"><div class="bg"></div></div>
+  <div class="scene s2" role="img" aria-label="Trabajador de Puerto Venado cargando refrescos"><div class="bg"></div></div>
+  <div class="scene s3" role="img" aria-label="Negocio surtido por Puerto Venado"><div class="bg"></div></div>
+  <div class="dots" id="dots"><i class="on"></i><i></i><i></i><i></i></div>
   <div class="wrap">
     <span class="kicker" id="heroK"></span>
     <h1 id="heroT"></h1>
     <p class="sub" id="heroS"></p>
     <div class="btns">
       <a class="cta" href="#catalogo">🛒 Hacer mi pedido</a>
-      <a class="cta ghost" href="#asesor">💬 Hablar con mi asesor</a>
+      <button class="cta ghost" id="heroRep">↻ Repetir mi último pedido</button>
     </div>
-    <div class="dots" id="dots"><i class="on"></i><i></i><i></i></div>
-    <div class="trust"><span>🏭 Distribuidora al mayor</span><span>🚚 Despacho propio</span><span>🔒 Pedido seguro</span></div>
   </div>
 </section>
+<div class="trustbar"><div class="wrap">
+  <div><b>🚚</b>Despacho propio</div><div><b>💳</b>Crédito a tu ritmo</div><div><b>📲</b>Pago en línea</div><div><b>🙋</b>Asesor por zona</div>
+</div></div>
 
 <section class="blk" id="como">
   <div class="wrap center">
@@ -414,6 +475,8 @@ h2{font-family:var(--disp);text-transform:uppercase;font-size:clamp(28px,4.6vw,4
       <div><span class="eyebrow">Catálogo</span><h2>Todo para surtir tu negocio</h2></div>
       <label class="search">🔎<input id="q" type="search" placeholder="Buscar: Coca-Cola, galleta, salsa…" autocomplete="off"></label>
     </div>
+    <div class="curwrap" style="margin-top:12px"><span>Ver precios en</span><div class="curseg" role="group" aria-label="Moneda"><button data-cur="USD" class="on">$ Dólares</button><button data-cur="VES">Bs Bolívares</button></div><span class="rt">Tasa del día <b id="rateCur">…</b></span></div>
+    <div id="nuevoW" hidden><h3 style="font-family:var(--disp);text-transform:uppercase;font-size:22px;margin:18px 0 8px">✨ Lo nuevo en Puerto Venado</h3><div class="nuevo" id="nuevo"></div></div>
     <div class="vt-hero" id="vtHero" hidden>
       <div class="vt-track" id="vtTrack"></div>
       <button class="vt-arrow l" id="vtL" aria-label="Anterior">‹</button><button class="vt-arrow r" id="vtR" aria-label="Siguiente">›</button>
@@ -421,6 +484,18 @@ h2{font-family:var(--disp);text-transform:uppercase;font-size:clamp(28px,4.6vw,4
     </div>
     <div class="cats" id="cats"></div>
     <div id="list"><div class="grid" style="margin-top:20px"><div class="skel"></div><div class="skel"></div><div class="skel"></div><div class="skel"></div></div></div>
+  </div>
+</section>
+
+<section class="blk" id="seguir">
+  <div class="wrap">
+    <span class="eyebrow">Tu pedido en vivo</span>
+    <h2>Síguelo paso a paso</h2>
+    <p class="lead">Como en una app de delivery: sabes en qué va tu pedido, y al recibirlo lo calificas.</p>
+    <div class="seguir">
+      <div class="box"><div class="hd"><b>Pedido PV-1047 · ejemplo</b><span class="stt" id="sgSt">Recibido</span></div><div id="sgTl"></div><button class="btn line2" id="sgAgain" style="margin-top:4px">↻ Ver la simulación otra vez</button></div>
+      <div class="box" id="sgRv"><b style="font-size:17px">⭐ Al recibir, califica tu compra</b><p class="muted" style="font-size:14px;margin-top:4px">Tu opinión aparece en la tienda y ayuda a otros negocios a confiar en nosotros.</p><div class="stars" id="sgStars">⭐⭐⭐⭐⭐</div><p class="muted" style="font-size:12.5px;text-align:center" id="sgMsg">Se activa cuando el pedido llega.</p></div>
+    </div>
   </div>
 </section>
 
@@ -444,6 +519,7 @@ h2{font-family:var(--disp);text-transform:uppercase;font-size:clamp(28px,4.6vw,4
       <button class="on" data-t="c1">🪜 Cómo se gana</button>
       <button data-t="c2">🚦 Tu semáforo</button>
       <button data-t="c3">💳 Cómo pagar</button>
+      <button data-t="c4">👤 Mi cuenta</button>
     </div>
     <div class="tabp on" id="c1">
       <div class="ladder">
@@ -470,6 +546,19 @@ h2{font-family:var(--disp);text-transform:uppercase;font-size:clamp(28px,4.6vw,4
       </div>
       <div class="vis2">💳</div>
     </div>
+    <div class="tabp" id="c4">
+      <div class="acc">
+        <div style="display:flex;justify-content:space-between;gap:8px;align-items:center"><b style="font-size:17px">Abasto Ejemplo</b><small class="muted">Cliente desde 2019</small></div>
+        <div class="sm"><i></i>Al día · puedes seguir pidiendo a crédito</div>
+        <div class="mt"><i></i></div><small class="muted">Usas el <b>62%</b> de tu límite</small>
+        <div class="kv"><span>Límite de crédito</span><b>500,00 $</b></div>
+        <div class="kv"><span>Saldo por pagar</span><b>310,00 $</b></div>
+        <div class="kv"><span>Próximo vencimiento</span><b>en 5 días</b></div>
+        <button class="btn gold" style="margin-top:12px" id="accPay">💳 Pagar ahora</button>
+        <p class="muted" style="font-size:12px;margin-top:8px">Cifras de ejemplo. En la versión real cada cliente ve su propia cuenta.</p>
+      </div>
+      <div class="vis2">👤</div>
+    </div>
   </div>
 </section>
 
@@ -490,7 +579,7 @@ h2{font-family:var(--disp);text-transform:uppercase;font-size:clamp(28px,4.6vw,4
 </section>
 
 <section class="blk" style="padding-top:10px" id="marcas">
-  <div class="wrap center"><span class="eyebrow">Marcas</span><h2>Las marcas que tu cliente pide</h2></div>
+  <div class="wrap center"><span class="eyebrow">Marcas</span><h2>Las marcas que tu cliente pide</h2><div class="brandsimg"><img src="img/marcas.webp" alt="Coca-Cola, Zulia, Morena Lager, Malta Regional, Cardenal, Nevada, Mary, Kiero, Chinotto, Frescolita, Kampist, Salseritos, Fanta, Iselitas, Caledonia, Rupi, Charmy y Maxis Papas" loading="lazy"></div></div>
   <div class="marq"><div id="marq"></div></div>
 </section>
 
@@ -515,6 +604,8 @@ h2{font-family:var(--disp);text-transform:uppercase;font-size:clamp(28px,4.6vw,4
     <span class="eyebrow">Nuestra gente</span>
     <h2>Un equipo completo detrás de tu pedido</h2>
     <p class="lead">Desde que tocas “Confirmar” hasta que la mercancía llega a tu anaquel.</p>
+    <div class="photo"><img src="img/equipo-grupo.webp" alt="El equipo de Distribuidora Puerto Venado" loading="lazy"><p>Somos la familia Puerto Venado: distribuidor oficial en Amazonas.</p></div>
+    <div class="pgal" id="pgal"></div>
     <div class="team" id="team"></div>
   </div>
 </section>
@@ -524,6 +615,7 @@ h2{font-family:var(--disp);text-transform:uppercase;font-size:clamp(28px,4.6vw,4
     <span class="eyebrow">Clientes VIP</span>
     <h2>Negocios que crecen con nosotros</h2>
     <p class="lead">Gracias por su confianza. <span class="muted">(Se publican solo con su permiso.)</span></p>
+    <div class="photo"><img src="img/cliente-tienda.webp" alt="Negocio surtido con productos de Puerto Venado" loading="lazy" style="object-position:center 40%"><p>Así lucen los anaqueles de los negocios que surtimos.</p></div>
     <div class="vip" id="vipG"></div>
   </div>
 </section>
@@ -533,12 +625,13 @@ h2{font-family:var(--disp);text-transform:uppercase;font-size:clamp(28px,4.6vw,4
     <span class="eyebrow">Nuestra historia</span>
     <h2>De un camión a toda una red</h2>
     <p class="lead">Texto de ejemplo: aquí va la historia real de la empresa, contada por su fundador.</p>
-    <div class="time">
+    <div class="hist"><div class="time">
       <div class="ti reveal"><span class="y">🌱</span><div><b>Los inicios</b><p>Un camión, una ruta y la palabra empeñada con cada bodega.</p></div></div>
       <div class="ti reveal"><span class="y">🚚</span><div><b>Crecimos con nuestros clientes</b><p>Más rutas, más marcas y un almacén para no fallarle a nadie.</p></div></div>
       <div class="ti reveal"><span class="y">🤝</span><div><b>Crédito con confianza</b><p>Un sistema de crédito justo, que premia al que paga a tiempo.</p></div></div>
       <div class="ti reveal"><span class="y">📱</span><div><b>Hoy, también en tu celular</b><p>La misma atención de siempre, ahora a un toque y a cualquier hora.</p></div></div>
     </div>
+    <figure><img src="img/fundador.webp" alt="Integrante de Puerto Venado en el almacén" loading="lazy"><figcaption>Años de trabajo y la misma palabra con cada cliente.</figcaption></figure></div>
   </div>
 </section>
 
@@ -547,7 +640,7 @@ h2{font-family:var(--disp);text-transform:uppercase;font-size:clamp(28px,4.6vw,4
     <span class="eyebrow">Visítanos</span>
     <h2>Retira en nuestro almacén</h2>
     <div class="loc">
-      <a class="locmap" href="https://maps.app.goo.gl/9zTgWqwsDrXF8xLNA" target="_blank" rel="noopener" aria-label="Abrir en Google Maps"><span class="pin">📍</span><span class="lbl">Distribuidora Puerto Venado</span></a>
+      <a class="locmap" href="https://maps.app.goo.gl/9zTgWqwsDrXF8xLNA" target="_blank" rel="noopener" aria-label="Abrir en Google Maps"><span class="pin">📍</span><span class="lbl">Puerto Ayacucho · Amazonas</span></a>
       <div class="locc">
         <b style="font-size:19px">Distribuidora Suministros Puerto Venado</b>
         <span class="muted">📍 Puerto Ayacucho, Amazonas</span>
@@ -606,6 +699,8 @@ var RATE=0,P=[],BYID={},RUBROS=[],VIT=[];
 var $=function(s,r){return (r||document).querySelector(s)},$$=function(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))};
 var fmt=function(n){return n.toLocaleString('es-VE',{minimumFractionDigits:2,maximumFractionDigits:2})};
 var usd=function(n){return fmt(n)+' $'},bs=function(n){return RATE?'Bs '+fmt(n*RATE):''};
+var CUR='USD';try{if(localStorage.getItem('pv_cur')==='VES')CUR='VES'}catch(e){}
+var prim=function(n){return CUR==='VES'&&RATE?bs(n):usd(n)},secd=function(n){return CUR==='VES'&&RATE?usd(n):bs(n)};
 var esc=function(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})};
 var norm=function(s){return String(s||'').normalize('NFD').replace(/[̀-ͯ]/g,'').toLowerCase()};
 var FOT={};
@@ -625,13 +720,14 @@ function curMode(p){return mode[p.id]||modes(p)[0]}
 var sh=$('#shipTop');sh.textContent=SHIP.today?'🚚 Despacho HOY':'🚚 Sale mañana';if(!SHIP.today)sh.classList.add('tom');
 
 var SC=[
- ['🏪 Para bodegas, abastos y licorerías','Tu negocio <em>surtido</em> sin salir del mostrador','Pide al mayor desde el celular, a cualquier hora. Precios en $ y en Bs, y tu asesor de siempre detrás de cada pedido.'],
- ['🚚 Despacho propio','Pide antes de las 3 pm y <em>sale hoy</em>','O retíralo en nuestro almacén. Sigue tu pedido paso a paso.'],
+ ['🦌 Distribuidor oficial en Amazonas','Un equipo completo <em>detrás de tu pedido</em>','Pide al mayor desde el celular, a cualquier hora. Precios en $ y en Bs, y tu asesor de siempre detrás de cada pedido.'],
+ ['🚚 Despacho propio','Llegamos directo <em>a tu negocio</em>','Pide antes de las 3 pm y sale hoy. O retíralo en nuestro almacén y síguelo paso a paso.'],
+ ['💪 Gente que trabaja de verdad','Tu mercancía, <em>en buenas manos</em>','Cada caja sale completa y bien armada, de nuestro almacén a tu anaquel.'],
  ['🔥 Ofertas cada semana','Más <em>ganancia</em> en cada caja','Precio por caja, vitrinas de temporada y las marcas que tu cliente pide.']
 ];
 var si=0;function heroText(){$('#heroK').textContent=SC[si][0];$('#heroT').innerHTML=SC[si][1];$('#heroS').textContent=SC[si][2]}
 heroText();
-setInterval(function(){si=(si+1)%3;$$('.scene').forEach(function(s,i){s.classList.toggle('on',i===si)});$$('#dots i').forEach(function(d,i){d.classList.remove('on');if(i===si){void d.offsetWidth;d.classList.add('on')}});var h=$('#heroT');h.style.transition='opacity .4s';h.style.opacity=0;setTimeout(function(){heroText();h.style.opacity=1},380)},5000);
+setInterval(function(){si=(si+1)%SC.length;$$('.scene').forEach(function(s,i){s.classList.toggle('on',i===si)});$$('#dots i').forEach(function(d,i){d.classList.remove('on');if(i===si){void d.offsetWidth;d.classList.add('on')}});var h=$('#heroT');h.style.transition='opacity .4s';h.style.opacity=0;setTimeout(function(){heroText();h.style.opacity=1},380)},5000);
 
 Promise.all([fetch(API+'/api/tienda/catalogo').then(function(r){if(!r.ok)throw new Error(r.status);return r.json()}),fetch('fotos/manifest.json').then(function(r){return r.ok?r.json():{}}).catch(function(){return {}})]).then(function(x){FOT=x[1]||{};init(x[0])}).catch(function(){
   $('#list').innerHTML='<div class="empty">😕 No pudimos cargar el catálogo ahora. Intenta de nuevo en un momento.</div>';$('#rateTop').textContent='—'});
@@ -642,7 +738,7 @@ function vitProducts(v){var w=(v.buscar||[]).map(norm).filter(Boolean),cats=v.ca
   var hit=P.filter(function(p){return exc.indexOf(p.id)<0&&(cats.indexOf(p.category)>-1||inc.indexOf(p.id)>-1||w.some(function(x){return hayOf(p).indexOf(x)>-1}))});
   return hit.filter(function(p){return !p.agotado}).concat(hit.filter(function(p){return p.agotado}))}
 function init(d){
-  RATE=+d.rate||0;$('#rateTop').textContent=RATE?fmt(RATE):'—';
+  RATE=+d.rate||0;$('#rateTop').textContent=RATE?fmt(RATE):'—';$('#rateCur').textContent=RATE?'Bs '+fmt(RATE)+' por $':'—';
   var order=d.rubros||[];
   P=d.products.slice().sort(function(a,b){var ia=order.indexOf(a.category),ib=order.indexOf(b.category);ia=ia<0?99:ia;ib=ib<0?99:ib;return ia-ib||(a.sort||9999)-(b.sort||9999)||a.name.localeCompare(b.name,'es')});
   P.forEach(function(p){BYID[p.id]=p});
@@ -650,8 +746,21 @@ function init(d){
   RUBROS=[];P.forEach(function(p){if(RUBROS.indexOf(p.category)<0)RUBROS.push(p.category)});
   $('#nProd').dataset.n=P.length;
   VIT=((d.mkt&&d.mkt.vitrinas)||[]).filter(function(v){return v.activa!==false&&enFecha(v)}).map(function(v){return {v:v,ps:vitProducts(v)}}).filter(function(x){return x.ps.length});
-  heroPics();vitrinas();chips();render();upd();brands();$('#mnav').innerHTML='';
+  vitrinas();chips();render();upd();brands();nuevos();$('#mnav').innerHTML='';
 }
+function setCur(c){CUR=c;try{localStorage.setItem('pv_cur',c)}catch(e){}$$('.curseg button').forEach(function(b){b.classList.toggle('on',b.dataset.cur===c)});render();if(typeof drawCart==='function'&&$('#drawer').classList.contains('on'))drawCart();toast(c==='VES'?'💱 Precios en bolívares, a la tasa del día':'💵 Precios en dólares')}
+$$('.curseg button').forEach(function(b){b.classList.toggle('on',b.dataset.cur===CUR);b.onclick=function(){setCur(b.dataset.cur)}});
+$('.pill.rate').onclick=function(){setCur(CUR==='USD'?'VES':'USD')};
+function nuevos(){var ps=P.filter(function(p){return p.nuevo&&!p.agotado&&p.imageV});if(!ps.length)return;$('#nuevoW').hidden=false;
+  $('#nuevo').innerHTML=ps.map(function(p){var r=rub(p.category);return '<button class="nv" data-nv="'+esc(p.id)+'" style="--h:'+r.h+'"><span class="tg">Nuevo</span><img src="'+img(p)+'" alt="" loading="lazy"><b>'+esc(p.name)+'</b><small>'+esc(r.n)+'</small></button>'}).join('')}
+$('#nuevo').addEventListener('click',function(e){var b=e.target.closest('[data-nv]');if(!b)return;if(curVit>-1||$('#q').value){curVit=-1;$('#q').value='';render()}var el=document.querySelector('.prod[data-id="'+b.dataset.nv+'"]');if(el){el.scrollIntoView({behavior:'smooth',block:'center'});el.classList.remove('hl');void el.offsetWidth;el.classList.add('hl')}});
+/* repetir mi último pedido: se guarda al enviar un pedido en este teléfono */
+function lastOrder(){try{var o=JSON.parse(localStorage.getItem('pv_last_order')||'null');if(o&&typeof o==='object')return o}catch(e){}return null}
+function saveLast(){try{if(Object.keys(cart).length)localStorage.setItem('pv_last_order',JSON.stringify(cart))}catch(e){}}
+$('#heroRep').onclick=function(){if(!P.length){toast('Cargando el catálogo…');return}
+  var o=lastOrder(),demo=false;if(!o){demo=true;o={};var seen={};P.filter(function(p){return !p.agotado&&p.imageV&&isCut(p)}).forEach(function(p){if(Object.keys(o).length<4&&!seen[p.category]){seen[p.category]=1;o[p.id+'|'+modes(p)[0]]=2}})}
+  cart={};Object.keys(o).forEach(function(k){var p=BYID[k.split('|')[0]];if(p&&!p.agotado)cart[k]=o[k]});save();render();upd();openCart();
+  toast(demo?'↻ Pedido de ejemplo cargado: tu próximo pedido quedará guardado aquí':'↻ Tu último pedido está listo para enviar')};
 function heroPics(){var withPic=P.filter(function(p){return p.imageV&&!p.agotado&&isCut(p)});if(!withPic.length)withPic=P.filter(function(p){return p.imageV&&!p.agotado});
   var pick=function(words){var r=withPic.filter(function(p){return words.some(function(w){return hayOf(p).indexOf(w)>-1})});return (r.length>=3?r:withPic).slice(0,12)};
   var sets=[pick(['retornable','cocacola','coca']),pick(['kiero','salsa']),pick(['buchanan','old par','whisky','ron'])];
@@ -693,9 +802,9 @@ function card(p){
   return '<article class="prod g'+(p.agotado?' out':'')+'" data-id="'+esc(p.id)+'" style="--grp:'+grpHue(gkey(p))+'"><div class="ph">'+badge+(p.imageV?'<img src="'+img(p)+'" alt="'+esc(p.name)+'" loading="lazy" decoding="async" data-em="'+r.i+'"'+(isCut(p)?'':' class="raw"')+'>':'<span class="em">'+r.i+'</span>')+'</div>'+
    '<div class="bd">'+(subOf(p)?'<span class="grpt">'+esc(subOf(p))+'</span>':'')+'<h4>'+esc(p.name)+'</h4><span class="pres">'+esc([p.presentation,p.brand].filter(Boolean).join(' · '))+'</span>'+
    (ms.length>1?'<div class="seg"><button data-m="b" class="'+(m==='b'?'on':'')+'">'+esc(unitLbl(p,'b'))+'</button><button data-m="u" class="'+(m==='u'?'on':'')+'">Unidad</button></div>':'<span class="unit">'+esc(unitLbl(p,m))+'</span>')+
-   '<div class="price"><b>'+usd(pr)+'</b><span>'+bs(pr)+'</span></div>'+
-   (m==='b'&&sv>0?'<div class="save">💚 Ahorras '+usd(sv)+' por caja</div>':'')+
-   (p.agotado?'<button class="add" disabled>Agotado</button>':q?'<div class="qty"><button data-q="-1" aria-label="Quitar">−</button><span>'+q+' '+(m==='u'?'und':'cj')+'</span><button data-q="1" aria-label="Agregar">+</button></div>':'<button class="add" data-q="1">Agregar</button>')+
+   '<div class="price"><b>'+prim(pr)+'</b><span>'+secd(pr)+'</span></div>'+
+   (sv>0?(m==='b'?'<div class="save">💚 Ahorras '+prim(sv)+' por caja ('+Math.round(sv/(p.unitPrice*p.unitsPerBox)*100)+'%)</div>':'<div class="save alt">📦 Por caja te sale más barato</div>'):'')+
+   (p.agotado?'<button class="add" disabled>Agotado</button>':q?'<div class="qty"><button data-q="-1" aria-label="Quitar">−</button><span>'+q+' '+(m==='u'?'und':'cj')+'</span><button data-q="1" aria-label="Agregar">+</button></div>':'<button class="add" data-q="1">+ Agregar</button>')+
    '</div></article>';
 }
 function catBanner(c,ps){var r=rub(c),pics=ps.filter(function(p){return p.imageV&&!p.agotado&&isCut(p)}).slice(0,10),prices=ps.filter(function(p){return !p.agotado}).map(function(p){return priceOf(p,modes(p)[0])}).filter(function(x){return x>0}),min=prices.length?Math.min.apply(null,prices):0;
@@ -768,7 +877,7 @@ function stepNuevo(){var secs=SECLIST.map(function(z){return '<option>'+esc(z)+'
   $('#snd').onclick=function(){if($('#nb').value.trim().length<3||$('#nr').value.trim().length<5||$('#nt').value.replace(/\D/g,'').length<10||!$('#ns').value){toast('Completa todos los datos');return}if(!$('#ok18').checked){toast('Confirma que eres comercio y mayor de edad');return}who.biz=$('#nb').value.trim();who.nuevo=true;sendOrder()}}
 var num,timer;
 function track(step){var s=[['📥','Recibido','Lo tiene tu asesor'],['✅','Confirmado','Disponibilidad y total real'],['💳','Pagado','Verificamos tu pago'],[delivery==='retiro'?'🏪':'🚚',delivery==='retiro'?'Listo para retirar':'En camino','¡Ya casi!']];return '<div class="track">'+s.map(function(x,i){return '<div class="tk '+(i<step?'done':i===step?'now':'')+'"><span class="c">'+(i<step?'✓':x[0])+'</span><div><b>'+x[1]+'</b><small>'+x[2]+'</small></div></div>'}).join('')+'</div>'}
-function sendOrder(){num='PV-'+(1000+Math.floor(Math.random()*9000));var t=totals(),a=aseById(who.a);
+function sendOrder(){saveLast();num='PV-'+(1000+Math.floor(Math.random()*9000));var t=totals(),a=aseById(who.a);
   modal('<h3>🎉 ¡Pedido recibido!</h3><p>Número <b>'+num+'</b> · '+esc(who.biz)+'</p>'+track(1)+'<div class="note">⏳ '+esc(a.n)+' o nuestra atención en línea está revisando la disponibilidad. Te avisamos aquí y por WhatsApp.</div><p class="muted" style="font-size:12.5px">Demo: en 4 segundos simulamos la confirmación. No se envía ningún pedido real.</p>');
   setTimeout(function(){confirmOrder(t.t)},4000)}
 function confirmOrder(tot){var k=Object.keys(cart).filter(function(x){return cart[x]>1})[0],adj=0,txt='';
@@ -780,7 +889,7 @@ function confirmOrder(tot){var k=Object.keys(cart).filter(function(x){return car
   $$('[data-p]').forEach(function(b){b.onclick=function(){clearInterval(timer);var of=b.dataset.p==='of',msg=of?'<div class="note ok">🏪 Te esperamos en el almacén. Muestra el número <b>'+num+'</b> en caja.</div>':b.dataset.p==='ok'?'':'<div class="note ok">📸 Sube el comprobante y lo verificamos en minutos.</div>';
     modal('<h3>'+(of?'¡Listo!':'💳 Pago recibido')+'</h3><p>'+num+'</p>'+msg+track(of?1:3)+'<div style="text-align:center;margin-top:6px"><b>¿Cómo fue tu experiencia?</b><div class="stars" id="st">'+[1,2,3,4,5].map(function(i){return '<button data-s="'+i+'">⭐</button>'}).join('')+'</div></div><button class="btn gold" id="rep">🔁 Repetir este pedido la próxima vez</button><button class="btn line2" style="margin-top:8px" id="fin">Volver al catálogo</button>');
     $('#st').onclick=function(e){var s=e.target.closest('[data-s]');if(!s)return;var n=+s.dataset.s;$$('#st button').forEach(function(x){x.classList.toggle('on',+x.dataset.s<=n)});toast(n>=4?'💛 ¡Gracias! Tu opinión ayuda a otros negocios':'🙏 Gracias. Tu asesor te contactará para mejorar')};
-    $('#rep').onclick=function(){toast('💾 Guardado: lo verás como “Repetir mi último pedido”')};$('#fin').onclick=function(){cart={};save();render();closeAll()}}})}
+    $('#rep').onclick=function(){saveLast();toast('💾 Guardado: lo verás como “Repetir mi último pedido”')};$('#fin').onclick=function(){cart={};save();render();closeAll()}}})}
 $('#secList').innerHTML=SECLIST.map(function(x){return '<option value="'+esc(x)+'">'}).join('');
 function routeHTML(a){return (a.lug?'<li><b>Zona:</b> '+esc(a.lug.join(', '))+'</li>':'')+Object.keys(a.d).map(function(d){return '<li><b>'+esc(d)+':</b> '+esc(a.d[d].join(', '))+'</li>'}).join('')}
 function drawWho(){$('#who').innerHTML=ASE.concat([MAY]).map(function(a){var n=Object.keys(a.d).length+(a.lug?1:0);return '<div class="wcard"><div class="av" style="background:'+a.c+';margin:0">'+a.n[0]+'</div><div style="min-width:0;flex:1"><h4>'+esc(a.n)+'</h4><small>'+esc(a.r)+'</small>'+(n?'<details><summary>'+(a.lug?'📍 Ver su zona':'🗓 Ver su ruta')+'</summary><ul>'+routeHTML(a)+'</ul></details>':'<div class="rt">🏪 En el almacén y por la web, de 9 am a 6 pm</div>')+'</div><button class="wa" data-wa="'+esc(a.n)+'" aria-label="WhatsApp">💬</button></div>'}).join('')}
@@ -807,6 +916,16 @@ var RV=[['Bodega La Esquina','Pedí en la noche y en la mañana ya tenía la con
 $('#rlist').innerHTML=RV.map(function(r){return '<article class="rc"><span class="st">'+'★★★★★'.slice(0,r[2])+'<span style="color:#e2d3cc">'+'★★★★★'.slice(r[2])+'</span></span><p>“'+esc(r[1])+'”</p><div class="who2"><span class="av" style="background:'+r[3]+'">'+r[0][0]+'</span><span><b style="color:var(--ink)">'+esc(r[0])+'</b><br>Compra verificada · ejemplo</span></div></article>'}).join('');
 $('#rateBtn').onclick=function(){modal('<h3>⭐ Califica tu compra</h3><p>En la versión real solo califican los clientes que recibieron un pedido.</p><div class="stars" id="st2">'+[1,2,3,4,5].map(function(i){return '<button data-s="'+i+'">⭐</button>'}).join('')+'</div><label class="fld"><span>Tu comentario (opcional)</span><input id="rvT" placeholder="¿Qué te gustó?"></label><button class="btn gold" id="rvS">Enviar</button>');var n=0;$('#st2').onclick=function(e){var s=e.target.closest('[data-s]');if(!s)return;n=+s.dataset.s;$$('#st2 button').forEach(function(x){x.classList.toggle('on',+x.dataset.s<=n)})};$('#rvS').onclick=function(){if(!n){toast('Elige de 1 a 5 estrellas');return}closeAll();toast('💛 ¡Gracias por tu calificación!')}};
 var TM=[['🤝','Asesores de venta','Visitan tu negocio y llevan tu cuenta'],['🛍️','Venta directa','Atención en almacén y pedidos en línea'],['💼','Finanzas','Crédito, cobranza y pagos'],['📦','Almacén','Tu pedido completo y bien armado'],['🚚','Despacho','Carga y entrega en tu puerta'],['🗺️','Logística','Rutas para llegar a tiempo'],['🔧','Mantenimiento','Instalaciones siempre en orden'],['⚙️','Mecánica','Flota lista para salir'],['🛡️','Seguridad','Mercancía y equipo protegidos'],['📊','Gerencia','Que todo funcione cada día'],['⭐','Presidencia','La visión y la palabra de la casa']];
+var GAL=[['cargador','Despacho','Cada caja, hasta tu negocio'],['cajas','Almacén','Tu pedido completo y bien armado'],['ventas-kiero','Ventas','Las marcas que tu cliente pide'],['oficina','Administración','Crédito, cobranza y pagos'],['despacho-ok','Reparto','En la ruta de tu sector'],['carga-pickup','Logística','Cargamos para llegar a tiempo'],['calle','Despacho','Por las calles de Puerto Ayacucho'],['descarga','Almacén','Reposición todos los días']];
+$('#pgal').innerHTML=GAL.map(function(g){return '<figure><img src="img/'+g[0]+'.webp" alt="'+esc(g[1]+': '+g[2])+'" loading="lazy"><figcaption><b>'+g[1]+'</b>'+g[2]+'</figcaption></figure>'}).join('');
+var SG=[['📥','Recibido','Lo tiene tu asesor'],['✅','Confirmado','Disponibilidad y total real'],['📦','En preparación','Armando tu pedido en el almacén'],['🚚','En camino','Va rumbo a tu negocio'],['🏁','Entregado','¡Gracias por tu compra!']],sgI=0,sgT;
+function sgDraw(){$('#sgTl').innerHTML='<div class="track">'+SG.map(function(x,i){var done=i<sgI||sgI===4;return '<div class="tk '+(done?'done':i===sgI?'now':'')+'"><span class="c">'+(done?'✓':x[0])+'</span><div><b>'+x[1]+'</b><small>'+(i<=sgI?x[2]:'Pendiente')+'</small></div></div>'}).join('')+'</div>';var st=$('#sgSt');st.textContent=SG[sgI][1];st.classList.toggle('ok',sgI===4);$('#sgMsg').textContent=sgI===4?'¡Ya llegó! Toca las estrellas para calificar.':'Se activa cuando el pedido llega.'}
+function sgRun(){clearInterval(sgT);sgI=0;sgDraw();sgT=setInterval(function(){sgI++;sgDraw();if(sgI>=4)clearInterval(sgT)},1600)}
+sgDraw();$('#sgAgain').onclick=sgRun;
+if('IntersectionObserver' in window){var sgO=new IntersectionObserver(function(es){if(es[0].isIntersecting){sgRun();sgO.disconnect()}},{threshold:.35});sgO.observe($('#seguir'))}
+$('#sgStars').innerHTML=[1,2,3,4,5].map(function(i){return '<button data-s="'+i+'" aria-label="'+i+' estrellas">⭐</button>'}).join('');
+$('#sgStars').onclick=function(e){var s=e.target.closest('[data-s]');if(!s)return;if(sgI<4){toast('📦 Podrás calificar cuando tu pedido llegue');return}var n=+s.dataset.s;$$('#sgStars button').forEach(function(x){x.classList.toggle('on',+x.dataset.s<=n)});$('#sgMsg').textContent=n>=4?'💛 ¡Gracias! Tu reseña ya aparece en la tienda':'🙏 Gracias. Tu asesor te contactará para mejorar'};
+$('#accPay').onclick=function(){modal('<h3>💳 Pagar mi saldo</h3><p>Elige cómo pagar, sube el comprobante y Finanzas lo verifica. Tu semáforo se actualiza solo.</p><div class="pay"><button><span>📱</span>Pago móvil</button><button><span>🏦</span>Transferencia</button><button><span>💵</span>En oficina</button></div><button class="btn line2" data-close>Cerrar · demo</button>')};
 $('#team').innerHTML=TM.map(function(t){return '<div class="tm reveal"><div class="e">'+t[0]+'</div><b>'+t[1]+'</b><small>'+t[2]+'</small></div>'}).join('');
 var VIP=[['🏪','#fde7c2','Abasto Ejemplo','Cliente desde 2019'],['🍻','#dceaff','Licorería Muestra','Cliente desde 2020'],['🛒','#dff5e7','Bodega Modelo','Cliente desde 2018'],['🥂','#f6dde3','Licores Demo','Cliente desde 2021'],['🏬','#ece6ff','Súper Prueba','Cliente desde 2017']];
 $('#vipG').innerHTML=VIP.map(function(v){return '<div class="vp reveal"><div class="lg" style="background:'+v[1]+'">'+v[0]+'</div><b>'+v[2]+'</b><small>'+v[3]+'</small></div>'}).join('');
