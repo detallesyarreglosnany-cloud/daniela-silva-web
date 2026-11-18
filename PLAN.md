@@ -104,3 +104,8 @@ Colores: las tarjetas de soluciones SÍ mantienen colores distintos (decisión d
 - Sección Equipo: solo personas reales con autorización y foto; si no hay foto, rol + iniciales.
   Roles clave: implementación y capacitación en campo; comercial local; soporte; desarrollo junior; administración/contabilidad (medio tiempo o externo).
   Asesores: contable/tributario, legal, banca/finanzas, educación.
+
+## Frase de marca (franelas + bloque de principios) · en elección (2026-11-18)
+Daniela eligió la línea "Quedarse también es avanzar" / "que ningún amazonense tenga que irse" (muy larga).
+Opciones cortas: Quedarse también es avanzar · Me quedo y avanzo · Avanzar sin irse · Aquí también se avanza · Nadie tiene que irse · De aquí no me voy. Aquí avanzo.
+Evitar "para crecer" (descartado antes).
