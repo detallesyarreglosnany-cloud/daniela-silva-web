@@ -13,3 +13,4 @@
 - **2026-11-18** · Sección Alianzas (#alianzas) tras la biografía: financiar formación, pilotos, servicios financieros, encuentros. Quitada "No vendo horas".
 - **2026-11-18** · Publicadas Capacitación, Alianzas y bio sin 'No vendo horas'. Cifras de Agenda se mantienen. Recibida propuesta externa de biografía (en análisis).
 - **2026-11-18** · Biografía corta en el home + página /nosotros construidas (rama de trabajo), pendiente de aprobación.
+- **2026-11-18** · Publicadas biografía corta y /nosotros. Cifra cambiada a 8 años.
