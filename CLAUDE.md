@@ -26,4 +26,4 @@ La sesión principal (Opus) **orquesta**: decide, diseña, revisa el diff, hace 
 - No inventar títulos, fechas, cifras, clientes ni logos. Lo no confirmado: `[POR CONFIRMAR]`.
 - No presentar como disponible lo que no existe (integración bancaria, SENIAT).
 - No usar la palabra "startup".
-- Estilo de Daniela: **prohibido usar guiones largos (— o –) en textos**, ni para incisos ni para rangos ("de 9 a 11", no "9–11"). Tampoco paréntesis o corchetes para incisos. Frases cortas y naturales; que no suene a texto hecho con IA. Se permite resaltar palabras con colores.
+- Estilo de Daniela: **prohibido usar guiones largos (— o –) en textos**, ni para incisos ni para rangos ("de 9 a 11", no "9–11"). Tampoco paréntesis o corchetes para incisos. Frases cortas y naturales; que no suene a texto hecho con IA. Colores de marca: solo verde (#10B981 / #34D399), blanco y fondos oscuros. Para resaltar, verde o negrita blanca; nunca naranja, azul ni otros colores.
