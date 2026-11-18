@@ -3,8 +3,9 @@
 Sitio estático (HTML/CSS/JS) publicado en Vercel desde la raíz del repo. Sin build.
 
 ## Antes de trabajar
-- La memoria del proyecto (estado, plan, decisiones, ideas en espera) vive en el repo privado **KubIA HQ**.
-  Si está en la sesión, leer primero su `ESTADO.md`. Al terminar una tarea, actualizar `ESTADO.md` y `BITACORA.md`.
+- La memoria del proyecto (estado, plan, decisiones, ideas en espera, bitácora) vive en la rama **`kubia-hq`** de este repo.
+  Al empezar: `git fetch origin kubia-hq && git show origin/kubia-hq:ESTADO.md`
+  Al terminar una tarea: `git worktree add ../kubia-hq kubia-hq` (si no existe), actualizar `ESTADO.md` y `BITACORA.md`, commit y push a `kubia-hq`.
 - Este repo es **público**: no guardar aquí estrategia, propuestas a terceros ni datos sensibles.
 
 ## Cómo se reparte el trabajo (obligatorio en toda sesión)
