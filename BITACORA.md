@@ -11,3 +11,4 @@
 - **2026-11-18** · Publicada Amazonas Market y "Míralo funcionando" sin etiquetas. Confirmado KubIA Capacitación.
 - **2026-11-18** · Sección KubIA Capacitación (#capacitacion) construida, pendiente de aprobación.
 - **2026-11-18** · Sección Alianzas (#alianzas) tras la biografía: financiar formación, pilotos, servicios financieros, encuentros. Quitada "No vendo horas".
+- **2026-11-18** · Publicadas Capacitación, Alianzas y bio sin 'No vendo horas'. Cifras de Agenda se mantienen. Recibida propuesta externa de biografía (en análisis).

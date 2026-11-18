@@ -13,8 +13,8 @@
 ## Hecho hoy (2026-11-18)
 - [x] Demo de Puerto Venado retirada de kubiav.com (tarjeta, carpeta, imagen; la ruta vieja redirige a #casos). Publicado en main.
 - [x] Demo **Amazonas Market** publicada en kubiav.com. Sección "Míralo funcionando" sin etiquetas Demo/Cliente (decisión de Daniela).
-- [ ] Pendiente decidir: cifras en la tarjeta KubIA Agenda (index.html:627: −40%, +25%, 15 h).
-- [x] Secciones KubIA Capacitación y Alianzas construidas en la rama de trabajo; quitada la frase "No vendo horas" (Daniela no la quiere). Falta aprobación para publicar en main.
+- [x] Cifras de KubIA Agenda: se quedan (decisión de Daniela).
+- [x] Secciones KubIA Capacitación y Alianzas construidas en la rama de trabajo; quitada la frase "No vendo horas" (Daniela no la quiere). Publicadas en kubiav.com (2026-11-18).
 - [ ] Biografía: esperando texto o datos de Daniela (salida, beca Perú, estudios, trabajo afuera, regreso).
 
 ## Próximos pasos (en orden)
