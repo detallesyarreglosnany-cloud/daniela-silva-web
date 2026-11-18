@@ -13,10 +13,9 @@
 - Cifras de la bio: 5+ años de experiencia · Premio AWE 2022 · 5 países con clientes · capacito personas y equipos.
 - Sitio sin guiones largos (regla permanente).
 
-## En curso (rama de trabajo, sin publicar)
-- [x] Hero: subtítulo "comercios, empresas e instituciones"; botones "Para mi negocio" (#soluciones) y "Para empresas e instituciones" (#alianzas, luego al micrositio general).
-- [ ] Sección Equipo (#equipo) con espacio para fotos en /assets/equipo/ (agente programador).
-- [ ] Política de privacidad /privacidad + correo en el pie.
+- Hero: subtítulo "comercios, empresas e instituciones"; botones "Para mi negocio" (#soluciones) y "Para empresas e instituciones" (#alianzas, luego al micrositio general).
+- Sección Equipo (#equipo) con iniciales mientras llegan las fotos (/assets/equipo/).
+- Política de privacidad (/privacidad) y correo kubiasoluciones@gmail.com en el pie.
 
 ## Próximos pasos
 1. Micrositio privado GENERAL para instituciones (no indexado) → después versión Banesco personalizada.
