@@ -12,7 +12,7 @@
 
 ## Hecho hoy (2026-11-18)
 - [x] Demo de Puerto Venado retirada de kubiav.com (tarjeta, carpeta, imagen; la ruta vieja redirige a #casos). Publicado en main.
-- [ ] En curso: demo anónima **Amazonas Market** (insumos para bodegas) en /demo/amazonas-market/ + etiquetas Cliente/Demo en "Míralo funcionando" (agente programador).
+- [x] Demo **Amazonas Market** lista en la rama de trabajo (commit 01e9b7e), con etiquetas Cliente/Demo. **Falta: aprobación de Daniela para publicar en main.**
 
 ## Próximos pasos (en orden)
 1. [ ] **A · Banesco (urgente):** ficha ejecutiva de 1 página + correo final + visita a la agencia de Puerto Ayacucho.
