@@ -29,14 +29,14 @@ Estructura final del inicio:
 6. Soluciones agrupadas: Vender / Operar y cobrar / A la medida + "En camino" (pagos verificados, contable, tributario) ·
 7. Cómo funciona el QR · 8. Míralo funcionando · 9. Probar gratis · 10. Planes · 11. Capacitación ·
 12. Nosotros + Equipo · 13. Alianzas · 14. Preguntas · 15. Diagnóstico · 16. Comparte y gana · Pie.
-Página nueva: micrositio general para instituciones (/instituciones, no indexado) con historia, principios, demo "El recorrido de un pago", propuesta y cómo colaborar. El botón "Para empresas e instituciones" apunta ahí.
+Página nueva: micrositio general para instituciones (/aliados, no indexado) con historia, principios, demo "El recorrido de un pago", propuesta y cómo colaborar. El botón "Para empresas e instituciones" apunta ahí.
 Verificación antes de publicar: sin guiones largos, solo verde/blanco en textos, móvil y escritorio, enlaces, WhatsApp, cero errores JS, sin scroll horizontal.
 
-## LOTE 2 · Cuando lleguen insumos
-Fotos del equipo · versión Banesco del micrositio + ficha PDF de 1 página + correo · logos de patrocinantes.
+## LOTE 2 · Banesco (lo construimos nosotros)
+Versión Banesco del micrositio + ficha PDF de 1 página + correo. Daniela sube las fotos del equipo. Logos de patrocinantes cuando estén autorizados.
 
 ## LOTE 3 · Cumbre (antes del 4 dic)
-QR por sector hacia demos + diagnóstico · demo en modo avión · franelas ("Amazonas también avanza" / espalda "Quedarse también es avanzar · KubIA") · guion del video.
+QR por sector hacia demos + diagnóstico (usar enlaces fijos tipo kubiav.com/qr/... con redirección, para cambiar el destino sin reimprimir) · demo en modo avión · ajustes puntuales al guion del video. Franelas: diseño listo y cotizado por Daniela.
 
 ## Privado (no va en la web)
 Hoja de tracción: negocios activos, pedidos, pagos registrados, personas capacitadas.
