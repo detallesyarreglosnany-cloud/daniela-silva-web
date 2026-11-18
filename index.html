@@ -502,6 +502,13 @@ footer .copy{width:100%;font-size:12px;color:var(--muted2)}
 .deja-box .lead{margin-inline:auto}
 .deja-box .lead b{color:var(--white);font-weight:600}
 .deja-box .cta-row{justify-content:center;margin-top:24px}
+@property --ga{syntax:"<angle>";inherits:false;initial-value:0deg}
+.btn-glow{position:relative;isolation:isolate;box-shadow:0 0 22px rgba(52,211,153,.18);border-color:transparent!important;background:var(--ink)!important}
+.btn-glow::before{content:"";position:absolute;inset:-2px;border-radius:inherit;padding:2px;background:conic-gradient(from var(--ga),rgba(52,211,153,.35) 0deg,#34D399 40deg,#ECFDF5 70deg,#34D399 100deg,rgba(52,211,153,.35) 140deg,rgba(52,211,153,.35) 360deg);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;animation:gspin 3.2s linear infinite;z-index:-1}
+.btn-glow::after{content:"";position:absolute;inset:-6px;border-radius:inherit;background:conic-gradient(from var(--ga),transparent 0deg,rgba(52,211,153,.55) 70deg,transparent 140deg,transparent 360deg);filter:blur(12px);animation:gspin 3.2s linear infinite;z-index:-2;opacity:.8}
+.btn-glow:hover::after{opacity:1}
+@keyframes gspin{to{--ga:360deg}}
+@media (prefers-reduced-motion:reduce){.btn-glow::before,.btn-glow::after{animation:none}}
 </style>
 <script src="/assets/kubia-track.js"></script>
 </head>
@@ -543,7 +550,7 @@ footer .copy{width:100%;font-size:12px;color:var(--muted2)}
       <p class="lead">Desarrollamos <span class="hl-em">sistemas digitales</span> para <span class="hl-w">comercios, empresas e instituciones</span>, capacitamos a personas y equipos y acompañamos a cada cliente <span class="hl-em">en su mismo idioma</span>. <b>La luz que se va, la señal que falla y la distancia no nos detienen. Son nuestro punto de partida.</b></p>
       <div class="cta-row">
         <a class="btn btn-em" href="#soluciones">Para mi negocio</a>
-        <a class="btn btn-ghost" href="/aliados">Para empresas e instituciones</a>
+        <a class="btn btn-ghost btn-glow" href="/aliados"><span>Para empresas e instituciones</span></a>
       </div>
       <span class="refchip" id="refchip"></span>
       <a class="founder-mini" href="#nosotros"><img src="/assets/daniela-silva.jpg" alt="Daniela Silva" width="900" height="900"><div><b>Daniela Silva</b><span>Fundadora de KubIA · Conóceme ↓</span></div></a>
@@ -1029,7 +1036,7 @@ footer .copy{width:100%;font-size:12px;color:var(--muted2)}
     <div class="rv">
       <span class="eyebrow">Alianzas</span>
       <h2>Súmate para que ningún amazonense <span class="em">tenga que irse.</span></h2>
-      <p class="lead">KubIA nació de becas, capacitaciones y oportunidades que alguien abrió. Hoy queremos abrir esas mismas puertas en Amazonas. Invitamos a instituciones, empresas, bancos, ONG y organismos de cooperación a construirlas con nosotros.</p>
+      <p class="lead">KubIA es el resultado de becas, capacitaciones y oportunidades que alguien abrió. Hoy queremos abrir esas mismas puertas en Amazonas. Invitamos a instituciones, empresas, bancos, ONG y organismos de cooperación a construirlas con nosotros.</p>
     </div>
     <div class="cap-grid ali-grid">
       <article class="cap-card rv"><span class="tag" aria-hidden="true">🎓</span><h3>Financiar formación</h3><p>Becas y talleres para comerciantes, equipos de trabajo y jóvenes de Amazonas.</p></article>
