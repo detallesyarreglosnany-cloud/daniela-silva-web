@@ -14,6 +14,8 @@
 - [x] Demo de Puerto Venado retirada de kubiav.com (tarjeta, carpeta, imagen; la ruta vieja redirige a #casos). Publicado en main.
 - [x] Demo **Amazonas Market** publicada en kubiav.com. Sección "Míralo funcionando" sin etiquetas Demo/Cliente (decisión de Daniela).
 - [ ] Pendiente decidir: cifras en la tarjeta KubIA Agenda (index.html:627: −40%, +25%, 15 h).
+- [x] Sección KubIA Capacitación construida en la rama de trabajo; falta aprobación para main.
+- [ ] Biografía: esperando texto o datos de Daniela (salida, beca Perú, estudios, trabajo afuera, regreso).
 
 ## Próximos pasos (en orden)
 1. [ ] **A · Banesco (urgente):** ficha ejecutiva de 1 página + correo final + visita a la agencia de Puerto Ayacucho.
