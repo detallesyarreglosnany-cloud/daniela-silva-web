@@ -26,6 +26,5 @@
 
 ## Lo que Daniela tiene que enviar
 - [ ] Fotos del equipo con autorización: roxett-ceballos.jpg, mariana-cumana.jpg, ana-alicia-nieves.jpg, alis-silva.jpg (subir a assets/equipo/).
-- [ ] Decidir si se publica el RIF personal (contiene la cédula). NO guardarlo en este repo público.
 - [ ] Respuesta de Banesco sobre verificación de pagos.
 - [ ] Logos de patrocinantes de la Cumbre autorizados.

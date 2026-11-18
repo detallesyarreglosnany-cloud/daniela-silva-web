@@ -31,6 +31,8 @@
 | 2026-11-18 | Las tarjetas de Soluciones mantienen colores distintos; uniformidad solo en textos. | Decisión de Daniela. |
 | 2026-11-18 | Hero con dos caminos: "Para mi negocio" / "Para empresas e instituciones". | Decisión de Daniela. |
 
+| 2026-11-18 | RIF fuera de la web; se entrega solo si una institución lo pide. | Decisión de Daniela. |
+
 ## Hallazgos del código (hechos verificados)
 - `PWApedidos/src/lib/pagos.ts`: registra pago móvil, transferencia, Zelle, Binance, efectivo y COP con referencia y **revisión manual**. No hay conexión con ningún banco.
 - No existe nada de SENIAT ni facturación fiscal en el código revisado.
