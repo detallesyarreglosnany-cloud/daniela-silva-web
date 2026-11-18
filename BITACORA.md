@@ -10,3 +10,4 @@
 - **2026-11-18** · Amazonas Market construida (programador) y revisada (Opus): 61 KB, sin datos del cliente real, sin errores. Pendiente de aprobación para main.
 - **2026-11-18** · Publicada Amazonas Market y "Míralo funcionando" sin etiquetas. Confirmado KubIA Capacitación.
 - **2026-11-18** · Sección KubIA Capacitación (#capacitacion) construida, pendiente de aprobación.
+- **2026-11-18** · Sección Alianzas (#alianzas) tras la biografía: financiar formación, pilotos, servicios financieros, encuentros. Quitada "No vendo horas".
