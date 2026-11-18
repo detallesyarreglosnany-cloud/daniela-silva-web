@@ -5,3 +5,4 @@
 - **2026-11-18** · Creada la carpeta KubIA HQ y los agentes `programador` (Sonnet) y `lector` (Haiku).
 - **2026-11-18** · Daniela aprueba el reparto: Opus orquesta, Haiku ubica, Sonnet implementa. Memoria en rama `kubia-hq` de `daniela-silva-web`.
 - **2026-11-18** · Subidos a `main` de `daniela-silva-web`: `CLAUDE.md`, `.claude/agents/` (lector, programador) y `.vercelignore`. Las sesiones nuevas de este repo ya los cargan.
+- **2026-11-18** · PLAN v2: demos como portafolio con etiquetas Cliente/Demo, principio 'Hecho para Amazonas', demo 'Recorrido de un pago' para Banesco, Cumbre como generador de cifras propias.

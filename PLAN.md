@@ -1,61 +1,86 @@
-# PLAN · Hacia dónde vamos
+# PLAN MAESTRO · v2 (2026-11-18)
 
-## Visión
-KubIA pasa de "servicio para negocios" a **empresa de tecnología hecha en Amazonas** (sin usar la palabra "startup"):
-desarrolla sistemas, forma personas y acompaña negocios, para que nadie tenga que irse de su tierra para crecer.
+## 1. La idea central
+KubIA es una **empresa de soluciones digitales creada en Amazonas** (sin la palabra "startup"), en **etapa piloto**.
+No compite por volumen: demuestra **que sabe hacerlo, que ya lo está haciendo y que lo hace desde aquí**, ajustado a las limitaciones del territorio.
 
-**Hilo narrativo:** Daniela, amazonense, becaria y migrante en Perú durante la pandemia, aprendió afuera y volvió
-para aplicar ese conocimiento en Amazonas.
+**Lo que Banesco (y cualquier aliado) debe ver:**
+1. Sabemos hacerlo → demos funcionando + clientes reales.
+2. Lo estamos haciendo → personal en capacitación, sistemas en uso, verificación de pagos y módulo contable en camino.
+3. Desde Amazonas → diseñado para poca señal, internet lento y cortes de luz.
+4. Hacia dónde vamos → ruta clara, y el lugar exacto donde entra el banco.
 
-**Propuesta de hero:**
-> Tecnología hecha en Amazonas, para que nadie tenga que irse para crecer.
-> Desarrollamos sistemas, formamos personas y acompañamos negocios desde el lugar donde más cuesta.
-> [Necesito una solución] [Conocer KubIA]
-("Deja el cuaderno. Tu negocio cabe en tu bolsillo." se queda debajo, como la entrada para comerciantes.)
+**Historia que lo sostiene (video + ponencia + /nosotros):** amazonense, becaria y migrante en Perú durante la pandemia;
+aprovechó becas, capacitaciones y oportunidades; reconoce el valor de ONG, financiamiento y formación; volvió para devolverlo,
+para que ningún amazonense tenga que irse. [POR CONFIRMAR: fechas, beca, estudios, regreso]
 
-## Fase 1 · Antes del 4 de diciembre
-1. **Banesco**
-   - Ir en persona a la agencia de Puerto Ayacucho; el correo respalda la visita.
-   - Ofrecer: espacio en la Cumbre para abrir cuentas jurídicas y afiliar comercios a cobros digitales frente a ~300 asistentes.
-   - **Piloto concreto:** "Nuestros sistemas ya registran pagos móviles y transferencias de distribuidoras de Amazonas,
-     pero se verifican a mano. Proponemos un piloto con 3 comercios para conciliarlos automáticamente con Banesco,
-     sujeto a las autorizaciones correspondientes." (Base real: `PWApedidos/src/lib/pagos.ts`.)
-   - Asunto: "300 empresarios de Amazonas, 4 de diciembre: una propuesta para Banesco".
-   - Decir "unos 300 asistentes estimados", no "300 empresarios".
-   - Piezas: correo corto → ficha PDF de 1 página → micrositio/dossier interactivo.
-2. **Web (sin romper el flujo de ventas):** hero nuevo, `/nosotros`, `/impacto` (Amazonas + educación + enlace a la Cumbre), página privada para Banesco.
-3. **Video** de la historia de Daniela (para `/nosotros` y la ponencia).
+## 2. Hero
+Título (elegir): A. Herramientas digitales creadas en Amazonas, para que ningún amazonense tenga que irse.
+B. Creado en Amazonas, para que ningún amazonense tenga que irse. (recomendado para la web)
+C. Creado por una amazonense que tuvo que irse, para que ningún otro tenga que hacerlo. (recomendado para video/ponencia)
+D. Desde Amazonas, para que el amazonense no tenga que irse.
+Subtítulo: Desarrollamos sistemas digitales ajustados a cada negocio, capacitamos a personas y equipos, y acompañamos a cada
+cliente en su mismo idioma. Lo que aquí es limitación —la luz, la señal, la distancia— para nosotros es el punto de partida.
+Botones: [Necesito una solución] [Conocer KubIA]. Debajo sigue "Deja el cuaderno…". No mencionar al Estado.
 
-## Fase 2 · Después de la Cumbre
-- Menú: Inicio · Soluciones · Portafolio · Educación · Nosotros · Impacto y alianzas · Contacto (siempre visible).
-- Dos caminos: "Necesito una solución" / "Quiero conocer KubIA".
-- Portafolio con fichas por desarrollo y estado: implementado / en integración / en diseño.
-- Educación como sección propia, contada con lo que ya se hizo y "lo que viene, con aliados".
-- "Cómo trabajamos" en 6 pasos, con la capacitación dentro de la implementación.
-- FAQ por solución, footer como mapa del sitio, contacto institucional separado del comercial.
-- Mantener precios/planes de KubIA Tienda, la calculadora, el QR, prueba gratis y el diagnóstico.
+## 3. Principio de producto: "Hecho para Amazonas"
+Estándar propio, visible en la web y en el dossier:
+1. Funciona con poca señal y sigue funcionando sin internet (ya existe: app liviana/PWA).
+2. Pesa poco: carga rápido con datos móviles.
+3. Si sabe usar WhatsApp, sabe usar KubIA: teléfono, enlaces, formularios simples.
+4. Se aprende viendo: cada función tiene un video corto o recorrido guiado por voz (ya existe en Coalmar).
+5. Se comparte por enlace: el cliente final no instala nada.
+6. Se acompaña en persona: capacitación incluida en cada implementación.
 
-## De la propuesta externa: qué NO se toma
-- Hero genérico ("Tecnología que impulsa el desarrollo empresarial").
-- Exceso de categorías (3 categorías + 4 líneas + 7 programas + 6 pasos).
-- Siete programas educativos que todavía no existen.
-- Imágenes de stock / de otras empresas (Dribbble, Behance, etc.).
-- Hablar de "integración bancaria / tributaria (SENIAT)" como si ya existiera.
-- Plan de 5 fases antes de la Cumbre (no cabe en el calendario).
+## 4. Soluciones: 7 productos en 3 grupos + capacitación transversal
+- **Vender:** KubIA Tienda · KubIA Agenda · KubIA Asistente
+- **Operar y cobrar:** KubIA Distribución · KubIA Gestión · (en camino) Verificación de pagos · (en camino) Módulo contable
+- **A la medida:** KubIA a la Medida · KubIA Corporativo
+- **Capacitación:** incluida en todo + talleres propios
+Estado en cada uno: **Funcionando** / **En piloto** / **En camino**.
 
-## Hero · opciones en discusión (2026-11-18, falta que Daniela elija)
-Criterios de Daniela: no decir "tecnología hecha en Amazonas" (la tecnología es global; ella creó herramientas con ella);
-no decir "para crecer"; el protagonista es **el amazonense** que no tiene que irse.
-- A. Herramientas digitales creadas en Amazonas, para que ningún amazonense tenga que irse.
-- B. Creado en Amazonas, para que ningún amazonense tenga que irse.
-- C. Creado por una amazonense que tuvo que irse, para que ningún otro tenga que hacerlo.
-- D. Desde Amazonas, para que el amazonense no tenga que irse.
-Subtítulo propuesto: "Desarrollamos sistemas digitales ajustados a cada negocio, capacitamos a personas y equipos,
-y acompañamos a cada cliente en su mismo idioma. Lo que aquí es limitación —la luz, la señal, la distancia— para nosotros es el punto de partida."
-Evitar mencionar al Estado (riesgo ante un banco e instituciones).
+## 5. Vitrina de soluciones (demos + clientes)
+Las demos SON válidas como portafolio (práctica estándar: se protege la identidad del cliente). Regla de honestidad:
+- Etiqueta **Cliente** = negocio real que autorizó aparecer (Puerto Venado, Coalmar, Cleaning Angels [POR CONFIRMAR autorizaciones]).
+- Etiqueta **Demo** = negocio de ejemplo creado por KubIA (ej. consultorio de obstetricia).
+- ⚠️ Hoy la sección se titula "Casos reales" e incluye la demo de la obstetra (ficticia) → renombrar a "Míralo funcionando" con etiquetas.
+Demos por sector (existentes + a crear): distribución, tienda/bodega, agenda de servicios (Cleaning Angels), salud (obstetra),
+gestión administrativa (base: Mando / SOFTWARE-ADMINISTRATIVO), farmacia, restaurante, taller. Cada demo con vista
+"como cliente" y "como dueño", y video de 60 s.
 
-## Enfoque piloto (2026-11-18)
-KubIA está en etapa piloto: no competir por volumen ni cifras. Mostrar **dirección**:
-- Soluciones agrupadas en 3 (Vender · Operar y cobrar · A la medida), sin eliminar ninguno de los 7 productos; capacitación transversal.
-- Cada desarrollo con estado: Funcionando hoy / En piloto / Hacia dónde vamos.
-- Casos reales como evidencia de capacidad, no de escala.
+## 6. Demo especial para Banesco: "El recorrido de un pago"
+Mockup interactivo (etiquetado "Concepto") de una bodega de Puerto Ayacucho:
+cliente pide por enlace → paga por pago móvil → registra la referencia → **hoy: verificación manual** →
+**con el banco: verificación automática** → el pedido sale y el pago queda conciliado en Gestión/Contable.
+Muestra al banco exactamente dónde entra. Base real: `PWApedidos/src/lib/pagos.ts`.
+
+## 7. La Cumbre como motor (4 dic 2026)
+- Demo en vivo con el teléfono **en modo avión**: "si se va la señal, sigue funcionando".
+- QR en pantalla y en las mesas: cada asistente abre la demo de su sector y pide su diagnóstico gratuito.
+- Eso genera **cifras propias y honestas** (registros, diagnósticos, sectores) → informe post-Cumbre para Banesco y aliados.
+- Patrocinantes solo en cumbre.kubiav.com; en KubIA solo aliados autorizados.
+
+## 8. Educación: "Escuela KubIA" [nombre POR CONFIRMAR]
+- Primera cohorte: el personal que Daniela ya capacita [POR CONFIRMAR quién/autorización].
+- Formato Amazonas: cápsulas de video cortas por WhatsApp + práctica presencial.
+- Líneas: orientación digital para comerciantes; uso de herramientas para equipos; jóvenes en oficios digitales (con aliados).
+- Constancia de participación.
+
+## 9. Banesco: piezas
+1. Visita en persona a la agencia de Puerto Ayacucho.
+2. Correo corto. Asunto: "300 empresarios de Amazonas, 4 de diciembre: una propuesta para Banesco". Decir "unos 300 asistentes estimados".
+3. Ficha PDF de 1 página.
+4. Micrositio privado (dossier interactivo): Amazonas → Cumbre → Daniela → Hecho para Amazonas → Vitrina → Recorrido de un pago → Cómo participar.
+Ofertas: espacio en la Cumbre (cuentas jurídicas, afiliación de comercios a cobros digitales), ponencia, y piloto de verificación de pagos con 3 comercios.
+
+## 10. Web después de la Cumbre
+Menú: Inicio · Soluciones · Vitrina · Educación · Nosotros · Impacto y alianzas · Contacto.
+Se conservan: calculadora, QR, planes y precios de Tienda, prueba gratis, diagnóstico, comparte y gana (en área comercial), FAQ por solución.
+
+## 11. Activos que tenemos para aprovechar
+PWApedidos (Puerto Venado: pedidos, vendedores, rutas, pagos) · Coalmar (panel, créditos, comisiones, guía por voz) ·
+Cleaning Angels (agenda, DC/VA/MD) · demo obstetra · Mando (multi-negocio; aclarar licencia) · SOFTWARE-ADMINISTRATIVO ·
+módulo contable (en desarrollo aparte) · verificación de pagos (respuesta esta semana [POR CONFIRMAR de quién]).
+
+## 12. Qué no tomamos de la propuesta externa
+Hero genérico · exceso de categorías · programas educativos inventados · imágenes de stock · anunciar integración bancaria/SENIAT como existente · plan de 5 fases antes de la Cumbre.

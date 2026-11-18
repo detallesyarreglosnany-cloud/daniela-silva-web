@@ -8,7 +8,7 @@
 - Memoria guardada en la rama `kubia-hq` del repo `daniela-silva-web` (decisión de Daniela, sabiendo que el repo es público).
 - Agentes aprobados: `lector` (Haiku) y `programador` (Sonnet); reglas de delegación en `CLAUDE.md` de la rama de trabajo.
 - [x] Agentes, `CLAUDE.md` y `.vercelignore` ya están en `main` de `daniela-silva-web` (2026-11-18). PWApedidos y Mando-app NO: Daniela lo hará en cada proyecto.
-- **Esperando a Daniela:** elegir por dónde empezar (A o B) y enviar los datos reales de su historia.
+- PLAN v2 consolidado (todas las ideas de Daniela). **Esperando:** elección de hero, respuesta de verificación de pagos, datos de su historia.
 
 ## Próximos pasos (en orden)
 1. [ ] **A · Banesco (urgente):** ficha ejecutiva de 1 página + correo final + visita a la agencia de Puerto Ayacucho.
