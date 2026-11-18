@@ -20,6 +20,9 @@
 | 2026-11-18 | Educación se llama **KubIA Capacitación**. | Coherente con KubIA Tienda/Agenda/Gestión. |
 | 2026-11-18 | Cleaning Angels sin cifras: "Hoy sus clientes reservan solos." | Regla de no publicar cifras. |
 
+| 2026-11-18 | **Sin guiones largos (— –) ni incisos entre paréntesis** en ningún texto (web, correos, dossier). Que no suene a IA. Colores para resaltar sí. | Pedido de Daniela. |
+| 2026-11-18 | Hero publicado: "Creado en Amazonas, para que ningún amazonense tenga que irse." + "Deja el cuaderno" como franja para comerciantes. | Opción B aprobada. |
+
 ## Hallazgos del código (hechos verificados)
 - `PWApedidos/src/lib/pagos.ts`: registra pago móvil, transferencia, Zelle, Binance, efectivo y COP con referencia y **revisión manual**. No hay conexión con ningún banco.
 - No existe nada de SENIAT ni facturación fiscal en el código revisado.

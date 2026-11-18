@@ -17,6 +17,9 @@
 - [x] Secciones KubIA Capacitación y Alianzas construidas en la rama de trabajo; quitada la frase "No vendo horas" (Daniela no la quiere). Publicadas en kubiav.com (2026-11-18).
 - [x] Biografía final: versión corta en el home + página /nosotros publicadas en kubiav.com (2026-11-18). Cifras: "5+ años de experiencia" (empezó en 2020) , "Premio AWE 2022 · Embajada de EE. UU." (sin posición) y "capacito personas y equipos" (no solo jóvenes); se quitó "años formándome afuera".
 
+- [x] Hero nuevo publicado; todos los guiones largos eliminados del sitio.
+- [ ] Ordenar el menú de escritorio (9 enlaces, llega al borde).
+
 ## Próximos pasos (en orden)
 1. [ ] **A · Banesco (urgente):** ficha ejecutiva de 1 página + correo final + visita a la agencia de Puerto Ayacucho.
 2. [ ] **B · Web:** hero nuevo con dos botones + página `/nosotros` (historia completa) + `/impacto`.
