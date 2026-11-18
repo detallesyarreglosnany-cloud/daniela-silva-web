@@ -6,3 +6,4 @@
 - **2026-11-18** · Daniela aprueba el reparto: Opus orquesta, Haiku ubica, Sonnet implementa. Memoria en rama `kubia-hq` de `daniela-silva-web`.
 - **2026-11-18** · Subidos a `main` de `daniela-silva-web`: `CLAUDE.md`, `.claude/agents/` (lector, programador) y `.vercelignore`. Las sesiones nuevas de este repo ya los cargan.
 - **2026-11-18** · PLAN v2: demos como portafolio con etiquetas Cliente/Demo, principio 'Hecho para Amazonas', demo 'Recorrido de un pago' para Banesco, Cumbre como generador de cifras propias.
+- **2026-11-18** · Retirada la demo de Puerto Venado (expone precios en vivo, WhatsApp, nombres y fotos). Nueva demo: Amazonas Market, insumos para bodegas. Educación = KubIA Capacitación. Sin cifras en comunicaciones. Banesco responde esta semana sobre verificación de pagos.

@@ -10,6 +10,10 @@
 - [x] Agentes, `CLAUDE.md` y `.vercelignore` ya están en `main` de `daniela-silva-web` (2026-11-18). PWApedidos y Mando-app NO: Daniela lo hará en cada proyecto.
 - PLAN v2 consolidado (todas las ideas de Daniela). **Esperando:** elección de hero, respuesta de verificación de pagos, datos de su historia.
 
+## Hecho hoy (2026-11-18)
+- [x] Demo de Puerto Venado retirada de kubiav.com (tarjeta, carpeta, imagen; la ruta vieja redirige a #casos). Publicado en main.
+- [ ] En curso: demo anónima **Amazonas Market** (insumos para bodegas) en /demo/amazonas-market/ + etiquetas Cliente/Demo en "Míralo funcionando" (agente programador).
+
 ## Próximos pasos (en orden)
 1. [ ] **A · Banesco (urgente):** ficha ejecutiva de 1 página + correo final + visita a la agencia de Puerto Ayacucho.
 2. [ ] **B · Web:** hero nuevo con dos botones + página `/nosotros` (historia completa) + `/impacto`.
