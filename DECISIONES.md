@@ -26,7 +26,7 @@
 | 2026-11-18 | Colores de marca: solo verde y blanco para resaltar; nada de naranja ni azul. | Pedido de Daniela. |
 
 | 2026-11-18 | Correo oficial: kubiasoluciones@gmail.com. Daniela no tiene empresa ni firma personal registrada. | Datos de Daniela. |
-| 2026-11-18 | Equipo: Daniela Silva (fundadora, desarrollo y soporte), Roxett Ceballos (soporte y atención al cliente), Mariana Cumana (marketing). Asesoras: Ana Alicia Nieves (legal, abogada), Alis Silva (educación, magíster). | Datos de Daniela. |
+| 2026-11-18 | Equipo: Daniela Silva (fundadora, desarrollo y soporte), Roxett Ceballos (soporte y atención al cliente), Mariana Cumana (marketing). Asesoras: Ana Alicia Nieves (legal, abogada), Alis Mayris Silva (educación, magíster). | Datos de Daniela. |
 | 2026-11-18 | El RIF no se guarda en el repo (público) ni se publica sin confirmación: contiene la cédula. | Privacidad. |
 | 2026-11-18 | Las tarjetas de Soluciones mantienen colores distintos; uniformidad solo en textos. | Decisión de Daniela. |
 | 2026-11-18 | Hero con dos caminos: "Para mi negocio" / "Para empresas e instituciones". | Decisión de Daniela. |

@@ -22,3 +22,4 @@
 - **2026-11-18** · Hero corregido a verde y blanco (quitados naranja y azul).
 - **2026-11-18** · Hero inclusivo (comercios, empresas e instituciones). En curso: sección Equipo, política de privacidad y correo en el pie. ESTADO.md reescrito con todo lo publicado.
 - **2026-11-18** · Publicados: hero inclusivo, sección Equipo, /privacidad y correo en el pie.
+- **2026-11-18** · Corregido nombre: Alis Mayris Silva.
