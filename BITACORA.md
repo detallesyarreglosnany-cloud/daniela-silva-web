@@ -17,3 +17,4 @@
 - **2026-11-18** · Corregido: 5 años formándome afuera (no 8).
 - **2026-11-18** · Cifras del bloque de bio: 5+ años de experiencia · 3.º lugar AWE 2022 · 5 países · formo a jóvenes.
 - **2026-11-18** · Cifras: Premio AWE 2022 sin posición; 'capacito personas y equipos' en vez de 'formo a jóvenes'.
+- **2026-11-18** · Hero B construido (rama de trabajo): título, subtítulo, botones Necesito una solución / Conocer KubIA; 'Deja el cuaderno' como franja #comerciantes con WhatsApp y Probar gratis. Pendiente aprobación.
