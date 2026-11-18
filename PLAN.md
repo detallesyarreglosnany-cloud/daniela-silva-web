@@ -42,3 +42,20 @@ para aplicar ese conocimiento en Amazonas.
 - Imágenes de stock / de otras empresas (Dribbble, Behance, etc.).
 - Hablar de "integración bancaria / tributaria (SENIAT)" como si ya existiera.
 - Plan de 5 fases antes de la Cumbre (no cabe en el calendario).
+
+## Hero · opciones en discusión (2026-11-18, falta que Daniela elija)
+Criterios de Daniela: no decir "tecnología hecha en Amazonas" (la tecnología es global; ella creó herramientas con ella);
+no decir "para crecer"; el protagonista es **el amazonense** que no tiene que irse.
+- A. Herramientas digitales creadas en Amazonas, para que ningún amazonense tenga que irse.
+- B. Creado en Amazonas, para que ningún amazonense tenga que irse.
+- C. Creado por una amazonense que tuvo que irse, para que ningún otro tenga que hacerlo.
+- D. Desde Amazonas, para que el amazonense no tenga que irse.
+Subtítulo propuesto: "Desarrollamos sistemas digitales ajustados a cada negocio, capacitamos a personas y equipos,
+y acompañamos a cada cliente en su mismo idioma. Lo que aquí es limitación —la luz, la señal, la distancia— para nosotros es el punto de partida."
+Evitar mencionar al Estado (riesgo ante un banco e instituciones).
+
+## Enfoque piloto (2026-11-18)
+KubIA está en etapa piloto: no competir por volumen ni cifras. Mostrar **dirección**:
+- Soluciones agrupadas en 3 (Vender · Operar y cobrar · A la medida), sin eliminar ninguno de los 7 productos; capacitación transversal.
+- Cada desarrollo con estado: Funcionando hoy / En piloto / Hacia dónde vamos.
+- Casos reales como evidencia de capacidad, no de escala.
