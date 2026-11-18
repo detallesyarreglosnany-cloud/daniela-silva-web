@@ -96,3 +96,11 @@ Acciones antes de postular:
 4. Página/ruta institucional corta (micrositio Banesco) sin lo comercial.
 5. Señales formales: RIF, correo institucional, política de privacidad.
 Colores: las tarjetas de soluciones SÍ mantienen colores distintos (decisión de Daniela); uniformidad solo en textos.
+
+## Siguiente bloque acordado (2026-11-18)
+- Micrositio privado GENERAL para instituciones (no indexado, sin menú) + versión personalizada Banesco.
+- Hero: hablar también a empresas e instituciones (propuesta: subtítulo "comercios, empresas e instituciones" y botones "Para mi negocio" / "Para empresas e instituciones").
+- Política de privacidad + RIF + correo institucional en el pie (esperando correo y RIF de Daniela).
+- Sección Equipo: solo personas reales con autorización y foto; si no hay foto, rol + iniciales.
+  Roles clave: implementación y capacitación en campo; comercial local; soporte; desarrollo junior; administración/contabilidad (medio tiempo o externo).
+  Asesores: contable/tributario, legal, banca/finanzas, educación.
