@@ -7,10 +7,19 @@ Sitio estático (HTML/CSS/JS) publicado en Vercel desde la raíz del repo. Sin b
   Si está en la sesión, leer primero su `ESTADO.md`. Al terminar una tarea, actualizar `ESTADO.md` y `BITACORA.md`.
 - Este repo es **público**: no guardar aquí estrategia, propuestas a terceros ni datos sensibles.
 
-## Agentes
-- `lector` (Haiku): ubicar e inventariar; solo lectura.
-- `programador` (Sonnet): implementar tareas ya decididas; no hace commit.
-- La sesión principal decide, revisa el diff y publica.
+## Cómo se reparte el trabajo (obligatorio en toda sesión)
+La sesión principal (Opus) **orquesta**: decide, diseña, revisa el diff, hace commit y push. Delegar así:
+
+| Tarea | Quién | Ejemplo |
+|---|---|---|
+| Preguntas concretas sobre el proyecto: ubicar archivos, textos, precios, nombres; devolver `ruta:línea` | `lector` (Haiku, solo lectura) | "¿Dónde está el hero y qué dice?" |
+| Implementar una tarea **ya decidida**, con archivos y criterios claros | `programador` (Sonnet, no hace commit) | "Cambia el hero por este texto en index.html" |
+| Estrategia, decisiones, textos para instituciones, revisión final | Opus (sesión principal) | Plan Banesco, biografía |
+
+- Tarea grande = primero `lector` para ubicar, luego Opus decide, luego `programador` implementa, y Opus revisa.
+- Tarea pequeña (1-2 líneas) = hacerla directo; lanzar un agente cuesta más.
+- No pedirle a `lector` que "lea todo el proyecto" ni que audite: solo preguntas concretas.
+- Al lanzar `programador`, darle la tarea completa (archivos, texto exacto, criterio de terminado): empieza sin contexto.
 
 ## Reglas de contenido
 - No inventar títulos, fechas, cifras, clientes ni logos. Lo no confirmado: `[POR CONFIRMAR]`.
