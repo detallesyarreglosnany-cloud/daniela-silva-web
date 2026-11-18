@@ -22,15 +22,13 @@
 ## FORMA DE TRABAJO (desde 2026-11-18)
 Cambios por LOTES completos: planear → construir todo → verificar → publicar una sola vez. Nada de publicar frase por frase.
 
-## LOTE 1 · Web completa (en preparación, esperando visto bueno)
-Estructura final del inicio:
-1. Hero (dos caminos) · 2. Deja el cuaderno · 3. NUEVO "Amazonas también avanza" + 6 principios ·
-4. Problemas (fusionar "¿Te suena esto?" y "5 problemas, 1 solución" en una sola sección) · 5. Calculadora ·
-6. Soluciones agrupadas: Vender / Operar y cobrar / A la medida + "En camino" (pagos verificados, contable, tributario) ·
-7. Cómo funciona el QR · 8. Míralo funcionando · 9. Probar gratis · 10. Planes · 11. Capacitación ·
-12. Nosotros + Equipo · 13. Alianzas · 14. Preguntas · 15. Diagnóstico · 16. Comparte y gana · Pie.
-Página nueva: micrositio general para instituciones (/aliados, no indexado) con historia, principios, demo "El recorrido de un pago", propuesta y cómo colaborar. El botón "Para empresas e instituciones" apunta ahí.
-Verificación antes de publicar: sin guiones largos, solo verde/blanco en textos, móvil y escritorio, enlaces, WhatsApp, cero errores JS, sin scroll horizontal.
+## LOTE 1 · PUBLICADO (2026-11-18)
+- Bloque "Amazonas también avanza" (#amazonas) con 6 principios, después de "Deja el cuaderno".
+- Problemas fusionados en #problema (se quitó #cinco).
+- Soluciones en 3 grupos + franja "En camino" (pagos verificados, contable, tributario).
+- Micrositio /aliados (noindex): historia, principios, lo que funciona, en camino, recorrido de un pago (6 pasos), cómo colaborar, equipo, contacto.
+- Botón "Para empresas e instituciones" → /aliados.
+- Verificado: 0 guiones, 0 errores JS, sin scroll horizontal, anclas OK en móvil y escritorio.
 
 ## LOTE 2 · Banesco (lo construimos nosotros)
 Versión Banesco del micrositio + ficha PDF de 1 página + correo. Daniela sube las fotos del equipo. Logos de patrocinantes cuando estén autorizados.

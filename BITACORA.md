@@ -27,3 +27,4 @@
 - **2026-11-18** · Publicado: planes sin precios, Comparte y gana al final, menú de 7 enlaces, Cumbre en el pie.
 - **2026-11-18** · Frase de marca elegida: Amazonas también avanza. Definido trabajo por lotes; Lote 1 planificado.
 - **2026-11-18** · Micrositio en /aliados. Franelas listas (Daniela). Lote 1 en construcción.
+- **2026-11-18** · LOTE 1 publicado en una sola vez: principios, problemas fusionados, soluciones agrupadas y /aliados.
