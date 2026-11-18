@@ -96,6 +96,16 @@
       ],
       "destination": "/demo/obstetra/",
       "permanent": false
+    },
+    {
+      "source": "/demo/puerto-venado/:path*",
+      "destination": "/#casos",
+      "permanent": false
+    },
+    {
+      "source": "/demo/puerto-venado",
+      "destination": "/#casos",
+      "permanent": false
     }
   ]
 }
