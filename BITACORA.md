@@ -24,3 +24,4 @@
 - **2026-11-18** · Publicados: hero inclusivo, sección Equipo, /privacidad y correo en el pie.
 - **2026-11-18** · Corregido nombre: Alis Mayris Silva.
 - **2026-11-18** · RIF: no se publica.
+- **2026-11-18** · Publicado: planes sin precios, Comparte y gana al final, menú de 7 enlaces, Cumbre en el pie.

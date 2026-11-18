@@ -33,6 +33,9 @@
 
 | 2026-11-18 | RIF fuera de la web; se entrega solo si una institución lo pide. | Decisión de Daniela. |
 
+| 2026-11-18 | Sin precios públicos en los planes; precio según diagnóstico. | Llegará flujo institucional; Daniela no quiere precios visibles. |
+| 2026-11-18 | "Comparte y gana" va al final de la página y fuera del menú. | No es el enfoque principal. |
+
 ## Hallazgos del código (hechos verificados)
 - `PWApedidos/src/lib/pagos.ts`: registra pago móvil, transferencia, Zelle, Binance, efectivo y COP con referencia y **revisión manual**. No hay conexión con ningún banco.
 - No existe nada de SENIAT ni facturación fiscal en el código revisado.

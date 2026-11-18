@@ -16,12 +16,14 @@
 - Hero: subtítulo "comercios, empresas e instituciones"; botones "Para mi negocio" (#soluciones) y "Para empresas e instituciones" (#alianzas, luego al micrositio general).
 - Sección Equipo (#equipo) con iniciales mientras llegan las fotos (/assets/equipo/).
 - Política de privacidad (/privacidad) y correo kubiasoluciones@gmail.com en el pie.
+- Planes sin precios: "Precio según tu diagnóstico" (abre WhatsApp). "Comparte y gana" movido al final, antes del pie.
+- Menú de 7 enlaces: Soluciones, Míralo funcionando, Planes, Capacitación, Nosotros, Alianzas, Diagnóstico gratis. Pie con Mi historia, Comparte y gana y Cumbre Amazonas 2026.
 
 ## Próximos pasos
+0. Elegir la frase de marca (franelas + bloque "Hecho para Amazonas"), luego construir el bloque de principios y agrupar soluciones (Vender / Operar y cobrar / A la medida).
 1. Micrositio privado GENERAL para instituciones (no indexado) → después versión Banesco personalizada.
 2. Banesco: esperar su respuesta sobre verificación de pagos; ficha de 1 página + correo + visita a la agencia.
 3. Hoja PRIVADA de tracción (negocios activos, pedidos, pagos, personas capacitadas). No va en la web.
-4. Ordenar el menú de escritorio (ya son 10 enlaces).
 5. Guion del video (los 8 títulos de /nosotros = escenas).
 
 ## Lo que Daniela tiene que enviar
