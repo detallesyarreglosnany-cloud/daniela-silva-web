@@ -15,7 +15,7 @@
 - [x] Demo **Amazonas Market** publicada en kubiav.com. Sección "Míralo funcionando" sin etiquetas Demo/Cliente (decisión de Daniela).
 - [x] Cifras de KubIA Agenda: se quedan (decisión de Daniela).
 - [x] Secciones KubIA Capacitación y Alianzas construidas en la rama de trabajo; quitada la frase "No vendo horas" (Daniela no la quiere). Publicadas en kubiav.com (2026-11-18).
-- [x] Biografía final: versión corta en el home + página /nosotros publicadas en kubiav.com (2026-11-18). Cifra "5 años formándome afuera" (empezó en 2020).
+- [x] Biografía final: versión corta en el home + página /nosotros publicadas en kubiav.com (2026-11-18). Cifras: "5+ años de experiencia" (empezó en 2020) y "3.º lugar AWE 2022 · Embajada de EE. UU."; se quitó "años formándome afuera".
 
 ## Próximos pasos (en orden)
 1. [ ] **A · Banesco (urgente):** ficha ejecutiva de 1 página + correo final + visita a la agencia de Puerto Ayacucho.

@@ -15,3 +15,4 @@
 - **2026-11-18** · Biografía corta en el home + página /nosotros construidas (rama de trabajo), pendiente de aprobación.
 - **2026-11-18** · Publicadas biografía corta y /nosotros. Cifra cambiada a 8 años.
 - **2026-11-18** · Corregido: 5 años formándome afuera (no 8).
+- **2026-11-18** · Cifras del bloque de bio: 5+ años de experiencia · 3.º lugar AWE 2022 · 5 países · formo a jóvenes.
