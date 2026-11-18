@@ -12,6 +12,10 @@
 | 2026-11-17 | No usar la palabra "startup". | Pedido de Daniela. |
 | 2026-11-18 | Trabajo con agentes: Opus (orquesta y estrategia), `programador` = Sonnet (escribe código), `lector` = Haiku (lee e inventaria). | Ahorro de tokens; ver README de agentes. |
 
+| 2026-11-18 | Sin cifras en la comunicación ("empresarios de Amazonas", no "300"). | Decisión de Daniela. |
+| 2026-11-18 | Puerto Venado se retira de la web; su sistema pasa a demo anónima (otro nombre y rubro). | Datos sensibles: precios, personas, teléfonos, fotos. |
+| 2026-11-18 | La verificación de pagos se está conversando con Banesco (respuesta esta semana). | Une la invitación a la Cumbre con una conversación ya abierta. |
+
 ## Hallazgos del código (hechos verificados)
 - `PWApedidos/src/lib/pagos.ts`: registra pago móvil, transferencia, Zelle, Binance, efectivo y COP con referencia y **revisión manual**. No hay conexión con ningún banco.
 - No existe nada de SENIAT ni facturación fiscal en el código revisado.
@@ -20,3 +24,5 @@
 - Secciones actuales del home: inicio, problema, calculadora, qr, soluciones, casos, cinco, demo, planes, comparte, nosotros, preguntas, diagnóstico.
 - README y `package.json` de la web todavía dicen "Portfolio de Daniela Silva".
 - `daniela-silva-web` y `Mando-app` son repos **públicos**: no guardar ahí estrategia sensible.
+- Demo Puerto Venado: catálogo y tasa **en vivo** desde la API real `pedidospv.kubiav.com` (`demo/puerto-venado/index.html:695,732`); 4 WhatsApp reales (:858); asesores con nombre (:856-857); 163 fotos de productos + 15 imágenes (presidente, equipo, camión). Tarjeta en `index.html:688-690`, imagen `assets/casos/puerto-venado.webp`.
+- Lo que ya se publicó en un repo público queda en el historial de git aunque se borre.

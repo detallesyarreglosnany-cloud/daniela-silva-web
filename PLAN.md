@@ -41,7 +41,8 @@ Estado en cada uno: **Funcionando** / **En piloto** / **En camino**.
 
 ## 5. Vitrina de soluciones (demos + clientes)
 Las demos SON válidas como portafolio (práctica estándar: se protege la identidad del cliente). Regla de honestidad:
-- Etiqueta **Cliente** = negocio real que autorizó aparecer (Puerto Venado, Coalmar, Cleaning Angels [POR CONFIRMAR autorizaciones]).
+- Etiqueta **Cliente** = negocio real que autorizó aparecer (Coalmar, Cleaning Angels).
+- **Puerto Venado sale de la web**: su sistema se convierte en una demo con otro nombre y otro rubro (catálogo, pedidos, seguimiento de envío, pago en línea, cobranza y control administrativo).
 - Etiqueta **Demo** = negocio de ejemplo creado por KubIA (ej. consultorio de obstetricia).
 - ⚠️ Hoy la sección se titula "Casos reales" e incluye la demo de la obstetra (ficticia) → renombrar a "Míralo funcionando" con etiquetas.
 Demos por sector (existentes + a crear): distribución, tienda/bodega, agenda de servicios (Cleaning Angels), salud (obstetra),
@@ -60,7 +61,7 @@ Muestra al banco exactamente dónde entra. Base real: `PWApedidos/src/lib/pagos.
 - Eso genera **cifras propias y honestas** (registros, diagnósticos, sectores) → informe post-Cumbre para Banesco y aliados.
 - Patrocinantes solo en cumbre.kubiav.com; en KubIA solo aliados autorizados.
 
-## 8. Educación: "Escuela KubIA" [nombre POR CONFIRMAR]
+## 8. Educación: "KubIA Capacitación" (recomendado en singular, como KubIA Tienda/Agenda) [POR CONFIRMAR]
 - Primera cohorte: el personal que Daniela ya capacita [POR CONFIRMAR quién/autorización].
 - Formato Amazonas: cápsulas de video cortas por WhatsApp + práctica presencial.
 - Líneas: orientación digital para comerciantes; uso de herramientas para equipos; jóvenes en oficios digitales (con aliados).
@@ -68,7 +69,7 @@ Muestra al banco exactamente dónde entra. Base real: `PWApedidos/src/lib/pagos.
 
 ## 9. Banesco: piezas
 1. Visita en persona a la agencia de Puerto Ayacucho.
-2. Correo corto. Asunto: "300 empresarios de Amazonas, 4 de diciembre: una propuesta para Banesco". Decir "unos 300 asistentes estimados".
+2. Correo corto. Asunto: "Empresarios de Amazonas, 4 de diciembre: una propuesta para Banesco". **No poner cifras de asistentes** (decisión de Daniela).
 3. Ficha PDF de 1 página.
 4. Micrositio privado (dossier interactivo): Amazonas → Cumbre → Daniela → Hecho para Amazonas → Vitrina → Recorrido de un pago → Cómo participar.
 Ofertas: espacio en la Cumbre (cuentas jurídicas, afiliación de comercios a cobros digitales), ponencia, y piloto de verificación de pagos con 3 comercios.
@@ -80,7 +81,7 @@ Se conservan: calculadora, QR, planes y precios de Tienda, prueba gratis, diagn�
 ## 11. Activos que tenemos para aprovechar
 PWApedidos (Puerto Venado: pedidos, vendedores, rutas, pagos) · Coalmar (panel, créditos, comisiones, guía por voz) ·
 Cleaning Angels (agenda, DC/VA/MD) · demo obstetra · Mando (multi-negocio; aclarar licencia) · SOFTWARE-ADMINISTRATIVO ·
-módulo contable (en desarrollo aparte) · verificación de pagos (respuesta esta semana [POR CONFIRMAR de quién]).
+módulo contable (en desarrollo aparte) · verificación de pagos: **la respuesta la da Banesco esta semana** → ya hay conversación abierta con el banco.
 
 ## 12. Qué no tomamos de la propuesta externa
 Hero genérico · exceso de categorías · programas educativos inventados · imágenes de stock · anunciar integración bancaria/SENIAT como existente · plan de 5 fases antes de la Cumbre.
