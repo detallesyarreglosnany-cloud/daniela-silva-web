@@ -16,6 +16,10 @@
 | 2026-11-18 | Puerto Venado se retira de la web; su sistema pasa a demo anónima (otro nombre y rubro). | Datos sensibles: precios, personas, teléfonos, fotos. |
 | 2026-11-18 | La verificación de pagos se está conversando con Banesco (respuesta esta semana). | Une la invitación a la Cumbre con una conversación ya abierta. |
 
+| 2026-11-18 | En "Míralo funcionando" no se etiqueta Demo ni Cliente; si preguntan, se explica. | Decisión de Daniela. |
+| 2026-11-18 | Educación se llama **KubIA Capacitación**. | Coherente con KubIA Tienda/Agenda/Gestión. |
+| 2026-11-18 | Cleaning Angels sin cifras: "Hoy sus clientes reservan solos." | Regla de no publicar cifras. |
+
 ## Hallazgos del código (hechos verificados)
 - `PWApedidos/src/lib/pagos.ts`: registra pago móvil, transferencia, Zelle, Binance, efectivo y COP con referencia y **revisión manual**. No hay conexión con ningún banco.
 - No existe nada de SENIAT ni facturación fiscal en el código revisado.

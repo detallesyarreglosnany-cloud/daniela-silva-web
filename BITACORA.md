@@ -8,3 +8,4 @@
 - **2026-11-18** · PLAN v2: demos como portafolio con etiquetas Cliente/Demo, principio 'Hecho para Amazonas', demo 'Recorrido de un pago' para Banesco, Cumbre como generador de cifras propias.
 - **2026-11-18** · Retirada la demo de Puerto Venado (expone precios en vivo, WhatsApp, nombres y fotos). Nueva demo: Amazonas Market, insumos para bodegas. Educación = KubIA Capacitación. Sin cifras en comunicaciones. Banesco responde esta semana sobre verificación de pagos.
 - **2026-11-18** · Amazonas Market construida (programador) y revisada (Opus): 61 KB, sin datos del cliente real, sin errores. Pendiente de aprobación para main.
+- **2026-11-18** · Publicada Amazonas Market y "Míralo funcionando" sin etiquetas. Confirmado KubIA Capacitación.

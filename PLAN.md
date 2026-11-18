@@ -61,7 +61,7 @@ Muestra al banco exactamente dónde entra. Base real: `PWApedidos/src/lib/pagos.
 - Eso genera **cifras propias y honestas** (registros, diagnósticos, sectores) → informe post-Cumbre para Banesco y aliados.
 - Patrocinantes solo en cumbre.kubiav.com; en KubIA solo aliados autorizados.
 
-## 8. Educación: "KubIA Capacitación" (recomendado en singular, como KubIA Tienda/Agenda) [POR CONFIRMAR]
+## 8. Educación: "KubIA Capacitación" (confirmado)
 - Primera cohorte: el personal que Daniela ya capacita [POR CONFIRMAR quién/autorización].
 - Formato Amazonas: cápsulas de video cortas por WhatsApp + práctica presencial.
 - Líneas: orientación digital para comerciantes; uso de herramientas para equipos; jóvenes en oficios digitales (con aliados).
