@@ -7,7 +7,7 @@
 - Se analizó la propuesta externa de reestructuración de kubiav.com + dossier/correo para Banesco (ver `PLAN.md`).
 - Memoria guardada en la rama `kubia-hq` del repo `daniela-silva-web` (decisión de Daniela, sabiendo que el repo es público).
 - Agentes aprobados: `lector` (Haiku) y `programador` (Sonnet); reglas de delegación en `CLAUDE.md` de la rama de trabajo.
-- [ ] Pendiente: llevar los agentes y el `CLAUDE.md` a la rama `main` (y a PWApedidos / Mando-app si se trabaja ahí).
+- [x] Agentes, `CLAUDE.md` y `.vercelignore` ya están en `main` de `daniela-silva-web` (2026-11-18). PWApedidos y Mando-app NO: Daniela lo hará en cada proyecto.
 - **Esperando a Daniela:** elegir por dónde empezar (A o B) y enviar los datos reales de su historia.
 
 ## Próximos pasos (en orden)
