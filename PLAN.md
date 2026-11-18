@@ -85,3 +85,14 @@ módulo contable (en desarrollo aparte) · verificación de pagos: **la respuest
 
 ## 12. Qué no tomamos de la propuesta externa
 Hero genérico · exceso de categorías · programas educativos inventados · imágenes de stock · anunciar integración bancaria/SENIAT como existente · plan de 5 fases antes de la Cumbre.
+
+## Evaluación como inversor / Banesco Innova (2026-11-18)
+Fortalezas: historia real y coherente, producto que se puede probar, diseño para Amazonas (offline, liviano), encaje con banca (cobros/pago móvil), velocidad de ejecución.
+Debilidades: tracción no visible, fundadora sola (riesgo de dependencia), demasiadas líneas (7 productos + capacitación + gobierno + cumbre), home muy largo para lector institucional (16 secciones; "Comparte y gana" visible), faltan señales formales (RIF, correo institucional).
+Acciones antes de postular:
+1. Hoja interna de tracción (no pública): negocios activos, pedidos procesados, pagos registrados, personas capacitadas.
+2. Una cuña clara para el banco: pedidos + cobros verificados para distribuidoras y bodegas.
+3. Mostrar equipo: personal en capacitación, asesores, aliados técnicos.
+4. Página/ruta institucional corta (micrositio Banesco) sin lo comercial.
+5. Señales formales: RIF, correo institucional, política de privacidad.
+Colores: las tarjetas de soluciones SÍ mantienen colores distintos (decisión de Daniela); uniformidad solo en textos.
