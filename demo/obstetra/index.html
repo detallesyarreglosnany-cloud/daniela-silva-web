@@ -214,7 +214,7 @@ footer{padding:30px 0 100px;font-size:13px;color:var(--muted);text-align:center}
         <div class="calc" id="calc"></div></div></div>
     </div>
     <div class="box sum" id="sum"><div class="stp">TU CITA</div>
-      <div class="row"><span>Servicio</span><b id="sSvc">—</b></div><div class="row"><span>Día</span><b id="sDia">—</b></div><div class="row"><span>Hora</span><b id="sHora">—</b></div>
+      <div class="row"><span>Servicio</span><b id="sSvc">Por elegir</b></div><div class="row"><span>Día</span><b id="sDia">Por elegir</b></div><div class="row"><span>Hora</span><b id="sHora">Por elegir</b></div>
       <div class="tog"><button id="tFull" class="on" type="button">Pago completo</button><button id="tAbono" type="button">Abono 50 %</button></div>
       <div style="display:flex;justify-content:space-between;align-items:baseline;margin-top:12px"><span style="color:var(--muted);font-size:14px">A pagar ahora</span><div style="text-align:right"><div class="tot" id="sTot">0 $</div><small id="sBs" style="color:var(--muted)">Bs 0 · tasa de ejemplo</small></div></div>
       <div class="stp" style="margin-top:16px">PAGO</div>
@@ -233,9 +233,9 @@ footer{padding:30px 0 100px;font-size:13px;color:var(--muted);text-align:center}
 <section style="background:#fff"><div class="wrap">
   <div class="rv"><span class="eyebrow">Ellas lo cuentan</span><h2>Mamás y mujeres <i>acompañadas</i></h2></div>
   <div class="tst" style="margin-top:16px">
-    <div>"Agendé de madrugada desde el teléfono y al día siguiente ya tenía la confirmación. Me sentí escuchada de verdad."<b>— María G. · Testimonio de ejemplo</b></div>
-    <div>"Con el Plan Mamá supe en cada semana qué me tocaba. Y mandar mis exámenes antes ahorró mucho tiempo."<b>— Andreína P. · Testimonio de ejemplo</b></div>
-    <div>"La teleconsulta me salvó: estaba fuera de la ciudad y resolví mi duda el mismo día."<b>— Carolina M. · Testimonio de ejemplo</b></div>
+    <div>"Agendé de madrugada desde el teléfono y al día siguiente ya tenía la confirmación. Me sentí escuchada de verdad."<b>María G. · Testimonio de ejemplo</b></div>
+    <div>"Con el Plan Mamá supe en cada semana qué me tocaba. Y mandar mis exámenes antes ahorró mucho tiempo."<b>Andreína P. · Testimonio de ejemplo</b></div>
+    <div>"La teleconsulta me salvó: estaba fuera de la ciudad y resolví mi duda el mismo día."<b>Carolina M. · Testimonio de ejemplo</b></div>
   </div>
   <div class="faq" style="margin-top:26px;max-width:760px">
     <details><summary>¿Qué llevo a mi consulta?</summary><p>Tu cédula, tus exámenes recientes (o súbelos aquí antes) y, si estás embarazada, tu carnet prenatal.</p></details>
@@ -333,7 +333,7 @@ $('tFull').onclick=function(){sel.abono=false;this.classList.add('on');$('tAbono
 $('tAbono').onclick=function(){sel.abono=true;this.classList.add('on');$('tFull').classList.remove('on');sum()};
 $('cap').onclick=function(){sel.cap=true;this.innerHTML='✅ captura_pago.jpg adjuntada';this.style.borderColor='#10B981';this.style.color='#0A7D58'};
 function money(n){return (Math.round(n*100)/100).toLocaleString('es-VE',{maximumFractionDigits:2})}
-function sum(){var s=byId[sel.svc];$('sSvc').textContent=s.e+' '+s.n;$('sDia').textContent=sel.dia?fdia(sel.dia):'—';$('sHora').textContent=sel.hora||'—';var t=s.p*(sel.abono?.5:1);$('sTot').textContent=money(t)+' $';$('sBs').textContent='Bs '+money(t*TASA)+' · tasa de ejemplo'}
+function sum(){var s=byId[sel.svc];$('sSvc').textContent=s.e+' '+s.n;$('sDia').textContent=sel.dia?fdia(sel.dia):'Por elegir';$('sHora').textContent=sel.hora||'Por elegir';var t=s.p*(sel.abono?.5:1);$('sTot').textContent=money(t)+' $';$('sBs').textContent='Bs '+money(t*TASA)+' · tasa de ejemplo'}
 sum();
 document.addEventListener('click',function(e){var p=e.target.closest('[data-pick]');if(p){sel.svc=p.dataset.pick;$('bSvc').value=sel.svc;sum();closeAll();location.hash='';$('agenda').scrollIntoView({behavior:'smooth'})}
  if(e.target.closest('[data-back]'))e.target.closest('.flip').classList.remove('on');

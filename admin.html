@@ -99,7 +99,7 @@ td select{min-height:34px;border-radius:8px;border:1px solid var(--line);backgro
         <form id="fRef" class="grid2" style="margin-top:10px">
           <label class="f">Afiliado (código)<select id="rAf" required></select></label>
           <label class="f">Negocio<input id="rNeg" required maxlength="120"></label>
-          <label class="f">Plan<select id="rPlan"><option value="">—</option><option>Arranque</option><option>Crece</option><option>Total</option><option>A la medida</option></select></label>
+          <label class="f">Plan<select id="rPlan"><option value="">Elegir</option><option>Arranque</option><option>Crece</option><option>Total</option><option>A la medida</option></select></label>
           <label class="f">Estado<select id="rEst"><option value="contacto">Contactó</option><option value="diagnostico">Diagnóstico</option><option value="compro">Compró</option><option value="descartado">Descartado</option></select></label>
           <label class="f">Fecha en que pagó la implementación<input id="rFecha" type="date"></label>
           <label class="f">Notas<input id="rNot" maxlength="200"></label>
@@ -137,7 +137,7 @@ a.href='https://wa.me/'+WA+'?text='+encodeURIComponent(m);a.target='_blank';a.re
   var $=function(id){return document.getElementById(id)};
   function money(n){return (Math.round(Number(n||0)*100)/100).toLocaleString('es-VE',{maximumFractionDigits:2})+' $'}
   function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
-  function fecha(d){return d?new Date(String(d).length<=10?d+'T12:00':d).toLocaleDateString('es-VE',{day:'2-digit',month:'short'}):'—'}
+  function fecha(d){return d?new Date(String(d).length<=10?d+'T12:00':d).toLocaleDateString('es-VE',{day:'2-digit',month:'short'}):'Sin dato'}
   var AF=[];
   $('fLog').onsubmit=async function(e){e.preventDefault();$('lMsg').textContent='Entrando…';
     var r=await sb.auth.signInWithPassword({email:$('lMail').value.trim(),password:$('lPass').value});
@@ -171,7 +171,7 @@ a.href='https://wa.me/'+WA+'?text='+encodeURIComponent(m);a.target='_blank';a.re
     var ests={contacto:'Contactó',diagnostico:'Diagnóstico',compro:'Compró',pagada:'Pagada',descartado:'Descartado',reembolso:'Reembolso'};
     $('tRef').innerHTML=refs.length?refs.map(function(r){var a=byId[r.afiliado_id]||{};
       var sel='<select data-id="'+r.id+'" class="cEst">'+Object.keys(ests).map(function(k){return '<option value="'+k+'"'+(k===r.estado?' selected':'')+'>'+ests[k]+'</option>'}).join('')+'</select>';
-      return '<tr><td>'+esc(r.negocio)+'</td><td>'+esc(a.codigo||'')+'</td><td>'+esc(r.plan||'—')+'</td><td>'+sel+'<br><span class="pill'+(r.estado_texto==='Lista para cobrar'?' warn':'')+'" style="margin-top:4px">'+esc(r.estado_texto)+'</span></td><td>'+fecha(r.fecha_pago_impl)+'</td><td>'+(r.meses_gratis?r.meses_gratis+' meses':money(r.comision))+'</td></tr>'}).join(''):'<tr><td colspan="6" style="color:var(--muted)">Sin referidos todavía.</td></tr>';
+      return '<tr><td>'+esc(r.negocio)+'</td><td>'+esc(a.codigo||'')+'</td><td>'+esc(r.plan||'Sin dato')+'</td><td>'+sel+'<br><span class="pill'+(r.estado_texto==='Lista para cobrar'?' warn':'')+'" style="margin-top:4px">'+esc(r.estado_texto)+'</span></td><td>'+fecha(r.fecha_pago_impl)+'</td><td>'+(r.meses_gratis?r.meses_gratis+' meses':money(r.comision))+'</td></tr>'}).join(''):'<tr><td colspan="6" style="color:var(--muted)">Sin referidos todavía.</td></tr>';
     document.querySelectorAll('.cEst').forEach(function(s){s.onchange=async function(){var r=await sb.from('referidos').update({estado:s.value}).eq('id',s.dataset.id);if(r.error)alert('No se pudo cambiar: '+r.error.message);cargar()}});
     var porPagar=refs.filter(function(r){return r.estado_texto==='Lista para cobrar'});
     $('tPagar').innerHTML=porPagar.length?porPagar.map(function(r){var a=byId[r.afiliado_id]||{};
@@ -179,7 +179,7 @@ a.href='https://wa.me/'+WA+'?text='+encodeURIComponent(m);a.target='_blank';a.re
     document.querySelectorAll('.mPag').forEach(function(b){b.onclick=async function(){if(!confirm('¿Confirmas que ya pagaste esta comisión?'))return;await sb.from('referidos').update({estado:'pagada'}).eq('id',b.dataset.id);cargar()}});
     $('tAf').innerHTML=AF.length?AF.map(function(a){return '<tr><td>'+esc(a.nombre)+'<br><span style="color:var(--muted)">'+esc(a.email||'')+'</span></td><td><b>'+esc(a.codigo)+'</b></td><td>'+esc(a.whatsapp)+'</td><td><select data-id="'+a.id+'" class="cTipo"><option value="promotor"'+(a.tipo==='promotor'?' selected':'')+'>Promotor</option><option value="cliente"'+(a.tipo==='cliente'?' selected':'')+'>Cliente</option></select></td><td>'+fecha(a.created_at)+'</td></tr>'}).join(''):'<tr><td colspan="5" style="color:var(--muted)">Sin afiliados todavía.</td></tr>';
     document.querySelectorAll('.cTipo').forEach(function(s){s.onchange=async function(){await sb.from('afiliados').update({tipo:s.value}).eq('id',s.dataset.id);cargar()}});
-    $('tCon').innerHTML=con.length?con.map(function(c){return '<tr><td>'+new Date(c.created_at).toLocaleString('es-VE',{day:'2-digit',month:'short',hour:'2-digit',minute:'2-digit'})+'</td><td>'+esc(c.ref_code||'—')+'</td><td>'+esc(c.origen)+'</td><td>'+esc(c.pagina)+'</td></tr>'}).join(''):'<tr><td colspan="4" style="color:var(--muted)">Sin contactos todavía.</td></tr>';
+    $('tCon').innerHTML=con.length?con.map(function(c){return '<tr><td>'+new Date(c.created_at).toLocaleString('es-VE',{day:'2-digit',month:'short',hour:'2-digit',minute:'2-digit'})+'</td><td>'+esc(c.ref_code||'Sin dato')+'</td><td>'+esc(c.origen)+'</td><td>'+esc(c.pagina)+'</td></tr>'}).join(''):'<tr><td colspan="4" style="color:var(--muted)">Sin contactos todavía.</td></tr>';
   }
   $('fRef').onsubmit=async function(e){e.preventDefault();
     var r=await sb.from('referidos').insert({afiliado_id:$('rAf').value,negocio:$('rNeg').value.trim(),plan:$('rPlan').value||null,estado:$('rEst').value,fecha_pago_impl:$('rFecha').value||null,notas:$('rNot').value||null});

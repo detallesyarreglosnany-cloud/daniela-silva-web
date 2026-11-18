@@ -627,8 +627,8 @@ body.touring .fab{display:none}
       <div class="meter"><i id="credM"></i></div>
       <small style="color:var(--muted);font-weight:600">Usas el <b id="credP">0</b>% de tu límite</small>
       <div style="margin-top:8px">
-        <div class="kv"><span>Límite de crédito</span><b>$ —</b></div>
-        <div class="kv"><span>Saldo por pagar</span><b>$ —</b></div>
+        <div class="kv"><span>Límite de crédito</span><b>$ ···</b></div>
+        <div class="kv"><span>Saldo por pagar</span><b>$ ···</b></div>
         <div class="kv"><span>Próximo vencimiento</span><b>en 5 días</b></div>
         <div class="kv"><span>Plazo</span><b>15 días</b></div>
       </div>
@@ -664,7 +664,7 @@ body.touring .fab{display:none}
     </div>
   </div>
 
-  <div class="fab"><button class="cartbar" id="cartBar" hidden><span>🛒 <span id="cbN">0</span> productos<small>Ver pedido</small></span><span>$ — →</span></button><a class="help" href="https://wa.me/584126950037" target="_blank" rel="noopener" aria-label="Escribir a Ventas por WhatsApp">💬</a></div>
+  <div class="fab"><button class="cartbar" id="cartBar" hidden><span>🛒 <span id="cbN">0</span> productos<small>Ver pedido</small></span><span>$ ··· →</span></button><a class="help" href="https://wa.me/584126950037" target="_blank" rel="noopener" aria-label="Escribir a Ventas por WhatsApp">💬</a></div>
 
   <footer class="sf">
     <b>Inversiones Coalmar</b> · RIF J-31351466-7<br>
@@ -691,7 +691,7 @@ body.touring .fab{display:none}
       <div class="card kpi warn"><small>Pagos por verificar</small><b id="kPv">0</b></div>
       <div class="card kpi bad"><small>Créditos vencidos</small><b id="kCv">0</b></div>
     </div>
-    <p style="font-size:11.5px;color:var(--muted);margin:-4px 0 10px">Clientes, cifras y metas de ejemplo para la demo. Los montos se muestran como $ — porque la propuesta no incluye precios.</p>
+    <p style="font-size:11.5px;color:var(--muted);margin:-4px 0 10px">Clientes, cifras y metas de ejemplo para la demo. Los montos se muestran como $ ··· porque la propuesta no incluye precios.</p>
     <nav class="ptabs" id="ptabs">
       <button data-t="ped" aria-pressed="true">📥 Pedidos <span class="c" id="tPc"></span></button>
       <button data-t="pag" aria-pressed="false">💸 Pagos</button>
@@ -873,7 +873,7 @@ const S={cur:'USD',cat:'todo',q:'',by:{},cart:{},seq:1048,tab:'ped',dev:'',
 
 /* ---------------- utilidades ---------------- */
 const curSym=()=>S.cur==='USD'?'$':S.cur==='VES'?'Bs':'€';
-const altTxt=()=>S.cur==='USD'?'Bs — · € — a tasa del día':S.cur==='VES'?'$ — · € — · tasa BCV de hoy':'$ — · Bs — a tasa del día';
+const altTxt=()=>S.cur==='USD'?'Bs ··· · € ··· a tasa del día':S.cur==='VES'?'$ ··· · € ··· · tasa BCV de hoy':'$ ··· · Bs ··· a tasa del día';
 function toast(html,ms=3200){const t=document.createElement('div');t.className='toast';t.innerHTML=html;document.body.appendChild(t);setTimeout(()=>t.remove(),ms)}
 let AC;function bell(){try{AC=AC||new (window.AudioContext||window.webkitAudioContext)();const t=AC.currentTime;[880,1320].forEach((f,i)=>{const o=AC.createOscillator(),g=AC.createGain();o.type='sine';o.frequency.value=f;g.gain.setValueAtTime(0.0001,t+i*.14);g.gain.exponentialRampToValueAtTime(0.22,t+i*.14+.02);g.gain.exponentialRampToValueAtTime(0.0001,t+i*.14+.6);o.connect(g).connect(AC.destination);o.start(t+i*.14);o.stop(t+i*.14+.65)})}catch(e){}}
 const ago=m=>m<1?'ahora':m<60?`hace ${m} min`:m<1440?`hace ${Math.round(m/60)} h`:'ayer';
@@ -919,8 +919,8 @@ function card(p){
   <div class="ph"><div class="badges">${bd}</div>${ph}</div>
   <div class="bd"><span class="br">${esc(p.br)}</span><span class="nm">${esc(p.n)}</span><span class="pr">${esc(p.pr)}</span>
    <div class="tog" role="group" aria-label="Comprar por"><button data-by="${p.id}|caja" aria-pressed="${by==='caja'}">Caja</button><button data-by="${p.id}|unidad" aria-pressed="${by==='unidad'}">Unidad</button></div>
-   <div class="price"><b>${curSym()} —</b><small>${by==='caja'?'Precio por caja':'Precio por unidad'} · ${altTxt()}</small></div>
-   ${by==='caja'?'<span class="save">💰 Ahorras —% llevando la caja</span>':'<span class="save" style="background:#fff6e0;color:#92400e">Por caja te sale más barato</span>'}
+   <div class="price"><b>${curSym()} ···</b><small>${by==='caja'?'Precio por caja':'Precio por unidad'} · ${altTxt()}</small></div>
+   ${by==='caja'?'<span class="save">💰 Ahorras llevando la caja</span>':'<span class="save" style="background:#fff6e0;color:#92400e">Por caja te sale más barato</span>'}
    <div class="add">${add}</div></div></article>`;
 }
 function renderCatalog(){
@@ -944,13 +944,13 @@ $('#catalog').addEventListener('click',e=>{
 
 /* carrito */
 const cartCount=()=>Object.keys(S.cart).length;
-function renderCart(){const n=cartCount();$('#cartN').hidden=!n;$('#cartN').textContent=n;$('#cartBar').hidden=!n;$('#cbN').textContent=n;$('#cartBar').lastElementChild.textContent=`${curSym()} — →`}
+function renderCart(){const n=cartCount();$('#cartN').hidden=!n;$('#cartN').textContent=n;$('#cartBar').hidden=!n;$('#cbN').textContent=n;$('#cartBar').lastElementChild.textContent=`${curSym()} ··· →`}
 function openSheet(html){closeSheet();const s=document.createElement('div');s.className='sheet';s.id='sheet';s.innerHTML=`<div class="box" role="dialog" aria-modal="true">${html}</div>`;s.addEventListener('click',e=>{if(e.target===s||e.target.closest('[data-x]'))closeSheet()});document.body.appendChild(s);return s}
 function closeSheet(){const s=$('#sheet');if(s)s.remove()}
-function cartLines(){return Object.entries(S.cart).map(([id,c])=>{const p=PM[id];return `<div class="ln">${p.img?`<img src="${B}img/${p.img}.webp" alt="">`:'<span style="width:52px;text-align:center;font-size:24px">📸</span>'}<div class="t"><b>${esc(p.br)} · ${esc(p.n)}</b><small>${c.q} ${c.by==='caja'?'caja(s)':'unidad(es)'} · ${esc(p.pr)}</small></div><b>${curSym()} —</b></div>`}).join('')}
+function cartLines(){return Object.entries(S.cart).map(([id,c])=>{const p=PM[id];return `<div class="ln">${p.img?`<img src="${B}img/${p.img}.webp" alt="">`:'<span style="width:52px;text-align:center;font-size:24px">📸</span>'}<div class="t"><b>${esc(p.br)} · ${esc(p.n)}</b><small>${c.q} ${c.by==='caja'?'caja(s)':'unidad(es)'} · ${esc(p.pr)}</small></div><b>${curSym()} ···</b></div>`}).join('')}
 function openCart(){
  if(!cartCount()){openSheet(`<h3>🛒 Tu pedido <button class="x" data-x aria-label="Cerrar">✕</button></h3><p class="note">Tu carrito está vacío. ¿Repetimos tu último pedido?</p><button class="btn sun block" id="rep2">↻ Repetir mi último pedido</button>`);$('#rep2').onclick=()=>{repeatLast();openCart()};return}
- openSheet(`<h3>🛒 Tu pedido <button class="x" data-x aria-label="Cerrar">✕</button></h3>${cartLines()}<div class="tot"><span>Total estimado</span><b>${curSym()} —</b></div><div class="note">${altTxt()}. Tu asesor confirma disponibilidad en minutos.</div><button class="btn navy block" id="toCk">Continuar →</button>`);
+ openSheet(`<h3>🛒 Tu pedido <button class="x" data-x aria-label="Cerrar">✕</button></h3>${cartLines()}<div class="tot"><span>Total estimado</span><b>${curSym()} ···</b></div><div class="note">${altTxt()}. Tu asesor confirma disponibilidad en minutos.</div><button class="btn navy block" id="toCk">Continuar →</button>`);
  $('#toCk').onclick=()=>checkout(1);
 }
 $('#cartBtn').onclick=openCart;$('#cartBar').onclick=openCart;
@@ -993,7 +993,7 @@ function checkout(step){
    <button data-v="cr" aria-pressed="${CK.pay==='cr'}"><span class="e">💳</span><div><b>A crédito</b><small>Si tu cuenta tiene crédito aprobado</small></div></button>
   </div>
   <div id="upW"></div>
-  <div class="tot"><span>Total</span><b>${curSym()} —</b></div>
+  <div class="tot"><span>Total</span><b>${curSym()} ···</b></div>
   <button class="btn sun block" id="send">Enviar pedido ✓</button>`);
   const upd=()=>{$$('#pay button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.v===CK.pay));$('#upW').innerHTML=(CK.pay==='pm'||CK.pay==='tr')?`<label class="f" for="ckR">Referencia</label><input class="in" id="ckR" value="${esc(CK.ref)}" placeholder="Últimos 6 dígitos" inputmode="numeric"><button class="up${CK.up?' ok':''}" id="upB" style="width:100%">${CK.up?'✅ Comprobante cargado · captura_pago.jpg':'📎 Subir captura del comprobante'}</button>`:'';
    const r=$('#ckR');if(r)r.oninput=e=>CK.ref=e.target.value;const u=$('#upB');if(u)u.onclick=()=>{CK.up=true;if(!CK.ref)CK.ref='019284';upd()}};
@@ -1027,7 +1027,7 @@ function advanceMine(st){S.my.st=st;renderTrack()}
 /* crédito */
 let credDone=false;function credAnim(){$('#credM').style.width='62%';let n=0;const t=setInterval(()=>{n+=2;$('#credP').textContent=Math.min(n,62);if(n>=62)clearInterval(t)},20);credDone=true}
 new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting&&!credDone)credAnim()}),{threshold:.4}).observe($('#credito'));
-$('#payNow').onclick=()=>{openSheet(`<h3>💳 Pagar mi saldo <button class="x" data-x aria-label="Cerrar">✕</button></h3><p class="note">Elige el método, sube tu comprobante y Cobranza lo verifica. Tu semáforo se actualiza solo.</p><div class="opts"><button aria-pressed="true"><span class="e">📲</span><div><b>Pago móvil</b><small>Bs — a tasa del día</small></div></button><button aria-pressed="false"><span class="e">🏦</span><div><b>Transferencia</b><small>Bs o divisas</small></div></button></div><button class="btn sun block" style="margin-top:12px" data-x>📎 Subir comprobante</button>`)};
+$('#payNow').onclick=()=>{openSheet(`<h3>💳 Pagar mi saldo <button class="x" data-x aria-label="Cerrar">✕</button></h3><p class="note">Elige el método, sube tu comprobante y Cobranza lo verifica. Tu semáforo se actualiza solo.</p><div class="opts"><button aria-pressed="true"><span class="e">📲</span><div><b>Pago móvil</b><small>Bs ··· a tasa del día</small></div></button><button aria-pressed="false"><span class="e">🏦</span><div><b>Transferencia</b><small>Bs o divisas</small></div></button></div><button class="btn sun block" style="margin-top:12px" data-x>📎 Subir comprobante</button>`)};
 
 /* equipo */
 $('#team').innerHTML=TEAM.map(t=>`<div class="card mem"><span class="av" style="background:${t.c}">${t.i}</span><b>${esc(t.n)}</b><small>${esc(t.r)}${t.tl?' · '+t.tl:''}</small><a href="https://wa.me/${t.t}" target="_blank" rel="noopener">💬 WhatsApp</a></div>`).join('');
@@ -1043,12 +1043,12 @@ function renderPanel(fresh){
    <input type="checkbox" aria-label="Seleccionar ${o.id}" ${o.st==='Por confirmar'?'':'disabled'}>
    <div class="m"><b>${esc(o.cli)}</b> <span class="st ${STC[o.st]}">${o.st}</span>${o.mine?' <span class="bdg new">Web</span>':''}
     <div class="meta"><span>🧾 ${o.id}</span><span>📍 ${esc(o.city)}</span><span>🧭 ${esc(o.z.split(' · ')[0])}</span><span>👤 ${esc(o.as)}${o.re?' <b style="color:var(--amber)">↻ reasignado</b>':''}</span><span>📦 ${o.ren} renglones</span><span>⏱ ${ago(o.min)}</span><span class="cdot"><i style="background:${crTxt[o.cr][0]}"></i>${crTxt[o.cr][1]}</span></div></div>
-   <div class="r"><span class="mt">$ —<small>Bs — · ${esc(o.pay)}</small></span>${o.st==='Por confirmar'?`<button class="sbtn" data-cf="${o.id}">Confirmar</button>`:o.st==='En cola por deuda'?`<button class="sbtn l" data-ex="${o.id}">Excepción…</button>`:o.st!=='Entregado'?`<button class="sbtn l" data-nx="${o.id}">→ ${ST[ST.indexOf(o.st)+1]}</button>`:'<span class="st en">✓ Entregado</span>'}</div></div>`).join('')}</div>`;
+   <div class="r"><span class="mt">$ ···<small>Bs ··· · ${esc(o.pay)}</small></span>${o.st==='Por confirmar'?`<button class="sbtn" data-cf="${o.id}">Confirmar</button>`:o.st==='En cola por deuda'?`<button class="sbtn l" data-ex="${o.id}">Excepción…</button>`:o.st!=='Entregado'?`<button class="sbtn l" data-nx="${o.id}">→ ${ST[ST.indexOf(o.st)+1]}</button>`:'<span class="st en">✓ Entregado</span>'}</div></div>`).join('')}</div>`;
  }else if(t==='pag'){
   const reps={};S.orders.forEach(o=>{if(o.ref)reps[o.ref]=(reps[o.ref]||0)+1});
-  h=`<div class="tbar">Cada comprobante llega pegado a su pedido. Al verificar, el pedido avanza solo.</div><div class="rows">${S.orders.filter(o=>o.ref||!o.pv).map(o=>`<div class="row" data-p="${o.id}"><span style="font-size:24px">${o.pv?'✅':'🧾'}</span><div class="m"><b>${esc(o.cli)} · ${o.id}</b><div class="meta"><span>${esc(o.pay)}</span><span>Ref. <b>${o.ref||'—'}</b></span><span>📎 captura_pago.jpg</span>${reps[o.ref]>1?'<span class="flag">⚠️ Referencia repetida en otro pedido</span>':''}</div></div><div class="r"><span class="mt">$ —<small>Bs — esperado</small></span>${o.pv?'<span class="st en">Verificado</span>':`<button class="sbtn g" data-pv="${o.id}">✓ Verificar</button>`}</div></div>`).join('')}</div>`;
+  h=`<div class="tbar">Cada comprobante llega pegado a su pedido. Al verificar, el pedido avanza solo.</div><div class="rows">${S.orders.filter(o=>o.ref||!o.pv).map(o=>`<div class="row" data-p="${o.id}"><span style="font-size:24px">${o.pv?'✅':'🧾'}</span><div class="m"><b>${esc(o.cli)} · ${o.id}</b><div class="meta"><span>${esc(o.pay)}</span><span>Ref. <b>${o.ref||'···'}</b></span><span>📎 captura_pago.jpg</span>${reps[o.ref]>1?'<span class="flag">⚠️ Referencia repetida en otro pedido</span>':''}</div></div><div class="r"><span class="mt">$ ···<small>Bs ··· esperado</small></span>${o.pv?'<span class="st en">Verificado</span>':`<button class="sbtn g" data-pv="${o.id}">✓ Verificar</button>`}</div></div>`).join('')}</div>`;
  }else if(t==='cre'){
-  h=`<div class="tbar"><span class="rule">🔔 Recordatorios automáticos: 3 días antes · el día del vencimiento · 3 días después</span></div><div class="rows">${S.credits.map(c=>`<div class="row"><span class="cdot" style="font-size:22px"><i style="width:14px;height:14px;background:${crTxt[c.cr][0]}"></i></span><div class="m"><b>${esc(c.cli)}</b><div class="meta"><span>🧭 ${c.z}</span><span>Usa ${c.u}% de su límite</span><span>${c.d>0?`<b style="color:var(--red)">Vencido hace ${c.d} días</b>`:c.d===0?'Vence hoy':`Vence en ${-c.d} días`}</span><span>Saldo $ —</span></div><div class="meter" style="margin:6px 0 0;height:7px"><i style="width:${c.u}%;background:${crTxt[c.cr][0]}"></i></div></div><div class="r"><button class="sbtn ${c.cr==='r'?'':'l'}" data-rem="${esc(c.cli)}">🔔 Recordar</button><button class="sbtn l" data-his="${esc(c.cli)}">Historial</button></div></div>`).join('')}</div>`;
+  h=`<div class="tbar"><span class="rule">🔔 Recordatorios automáticos: 3 días antes · el día del vencimiento · 3 días después</span></div><div class="rows">${S.credits.map(c=>`<div class="row"><span class="cdot" style="font-size:22px"><i style="width:14px;height:14px;background:${crTxt[c.cr][0]}"></i></span><div class="m"><b>${esc(c.cli)}</b><div class="meta"><span>🧭 ${c.z}</span><span>Usa ${c.u}% de su límite</span><span>${c.d>0?`<b style="color:var(--red)">Vencido hace ${c.d} días</b>`:c.d===0?'Vence hoy':`Vence en ${-c.d} días`}</span><span>Saldo $ ···</span></div><div class="meter" style="margin:6px 0 0;height:7px"><i style="width:${c.u}%;background:${crTxt[c.cr][0]}"></i></div></div><div class="r"><button class="sbtn ${c.cr==='r'?'':'l'}" data-rem="${esc(c.cli)}">🔔 Recordar</button><button class="sbtn l" data-his="${esc(c.cli)}">Historial</button></div></div>`).join('')}</div>`;
  }else if(t==='inv'){
   h=`<div class="tbar">Cada venta descuenta del inventario. Si se agota, la tienda deja de venderlo sola.</div><div class="card" style="padding:6px 10px;overflow-x:auto"><table class="t inv"><thead><tr><th></th><th>Producto</th><th>Existencia</th><th>Estado</th><th></th></tr></thead><tbody>${P.map(p=>{const s=p.s==='out'?0:S.stock[p.id],pct=Math.min(100,s/3.4),col=s===0?'var(--red)':s<30?'var(--amber)':'var(--green)';return `<tr><td>${p.img?`<img src="${B}img/${p.img}.webp" alt="">`:'📸'}</td><td><b>${esc(p.br)}</b><br><small>${esc(p.n)}</small></td><td><div class="stk"><i style="width:${pct}%;background:${col}"></i></div><small>${s} cajas</small></td><td>${s===0?'<span class="st dq">Agotado</span>':s<30?'<span class="st pc">Reponer pronto</span>':'<span class="st en">OK</span>'}</td><td><button class="sbtn l" data-out="${p.id}">${p.s==='out'?'Reponer':'Marcar agotado'}</button></td></tr>`}).join('')}</tbody></table></div>`;
  }else if(t==='ven'){
@@ -1058,9 +1058,9 @@ function renderPanel(fresh){
   <div class="card pbox"><h4>😴 Clientes que dejaron de comprar</h4><table class="t"><tr><td><b>Abasto Los Pinos</b><br><small>Oriente · último pedido hace 21 días</small></td><td><button class="sbtn l" data-vis>Agendar visita</button></td></tr><tr><td><b>Bodega Mi Esperanza</b><br><small>Occidente · hace 18 días</small></td><td><button class="sbtn l" data-vis>Agendar visita</button></td></tr><tr><td><b>Comercial Del Mar</b><br><small>Oriente · hace 16 días</small></td><td><button class="sbtn l" data-vis>Agendar visita</button></td></tr></table></div></div>`;
  }else if(t==='com'){
   h=`<div class="tbar"><span class="rule">🏅 Se calculan sobre lo entregado y cobrado. Las devoluciones se descuentan solas.</span></div><div class="card" style="padding:6px 10px;overflow-x:auto"><table class="t"><thead><tr><th>Asesor</th><th>Zona</th><th>Pedidos entregados</th><th>Entregado y cobrado</th><th>Comisión</th><th>Estado</th></tr></thead><tbody>
-   <tr><td><b>Freddy Hernández</b></td><td>Oriente</td><td>148</td><td>$ —</td><td>$ —</td><td><span class="st en">Calculada</span></td></tr>
-   <tr><td><b>Ronald Agraz</b></td><td>Occidente</td><td>97</td><td>$ —</td><td>$ —</td><td><span class="st en">Calculada</span></td></tr>
-   <tr><td><b>Ventas oficina</b></td><td>Centro</td><td>41</td><td>$ —</td><td>$ —</td><td><span class="st pc">2 cobros pendientes</span></td></tr></tbody></table></div><button class="btn navy" style="margin-top:12px" id="cierreMes">📄 Cerrar el mes en un clic</button>`;
+   <tr><td><b>Freddy Hernández</b></td><td>Oriente</td><td>148</td><td>$ ···</td><td>$ ···</td><td><span class="st en">Calculada</span></td></tr>
+   <tr><td><b>Ronald Agraz</b></td><td>Occidente</td><td>97</td><td>$ ···</td><td>$ ···</td><td><span class="st en">Calculada</span></td></tr>
+   <tr><td><b>Ventas oficina</b></td><td>Centro</td><td>41</td><td>$ ···</td><td>$ ···</td><td><span class="st pc">2 cobros pendientes</span></td></tr></tbody></table></div><button class="btn navy" style="margin-top:12px" id="cierreMes">📄 Cerrar el mes en un clic</button>`;
  }
  $('#pbody').innerHTML=h;
  requestAnimationFrame(()=>$$('#pbody .bars .t i').forEach(i=>i.style.width=i.style.getPropertyValue('--w')));

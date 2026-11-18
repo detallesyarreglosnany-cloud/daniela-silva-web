@@ -185,7 +185,7 @@ a.href='https://wa.me/'+WA+'?text='+encodeURIComponent(m);a.target='_blank';a.re
   async function cargar(){
     var u=(await sb.auth.getUser()).data.user;if(!u)return;
     var p=(await sb.from('afiliados').select('*').eq('id',u.id).maybeSingle()).data;
-    if(!p){var md=u.user_metadata||{};var r=await sb.rpc('registrar_afiliado',{p_nombre:md.nombre||u.email.split('@')[0],p_whatsapp:md.whatsapp||'—'});
+    if(!p){var md=u.user_metadata||{};var r=await sb.rpc('registrar_afiliado',{p_nombre:md.nombre||u.email.split('@')[0],p_whatsapp:md.whatsapp||'Sin dato'});
       if(r.error){msg('No pudimos crear tu perfil. Escríbenos por WhatsApp.');return}p=r.data}
     $('auth').classList.add('hide');$('panel').classList.remove('hide');
     $('pNom').textContent=p.nombre.split(' ')[0];$('pCod').textContent=p.codigo;$('pTipo').textContent=p.tipo==='cliente'?'Cliente KubIA · ganas meses gratis':'Promotor';
@@ -201,9 +201,9 @@ a.href='https://wa.me/'+WA+'?text='+encodeURIComponent(m);a.target='_blank';a.re
     $('kCom').textContent=compr.length;
     $('kGan').textContent=p.tipo==='cliente'?compr.reduce(function(s,r){return s+r.meses_gratis},0)+' meses':money(compr.reduce(function(s,r){return s+Number(r.comision)},0));
     $('kPend').textContent=money(refs.filter(function(r){return r.estado==='compro'}).reduce(function(s,r){return s+Number(r.comision)},0));
-    if(refs.length)$('pRefs').innerHTML=refs.map(function(r){var prem=r.meses_gratis?r.meses_gratis+' meses gratis':(Number(r.comision)?money(r.comision):'—');
+    if(refs.length)$('pRefs').innerHTML=refs.map(function(r){var prem=r.meses_gratis?r.meses_gratis+' meses gratis':(Number(r.comision)?money(r.comision):'Sin dato');
       var st=r.estado_texto+(r.cobrable_desde&&r.estado==='compro'?' (desde '+new Date(r.cobrable_desde+'T12:00').toLocaleDateString('es-VE')+')':'');
-      return '<tr><td>'+esc(r.negocio)+'</td><td>'+esc(r.plan||'—')+'</td><td><span class="pill">'+esc(st)+'</span></td><td>'+prem+'</td></tr>'}).join('');
+      return '<tr><td>'+esc(r.negocio)+'</td><td>'+esc(r.plan||'Sin dato')+'</td><td><span class="pill">'+esc(st)+'</span></td><td>'+prem+'</td></tr>'}).join('');
   }
   sb.auth.onAuthStateChange(function(ev){if(ev==='PASSWORD_RECOVERY'){setTimeout(async function(){var np=prompt('Escribe tu nueva contraseña (mínimo 8 caracteres)');if(np&&np.length>=8){var r=await sb.auth.updateUser({password:np});alert(r.error?'No se pudo cambiar.':'✅ Contraseña actualizada.')}},300)}if(ev==='SIGNED_IN'||ev==='PASSWORD_RECOVERY')cargar()});
   cargar();

@@ -11,6 +11,7 @@ Reglas:
 - Respeta el estilo existente: HTML estático, CSS en línea, sin frameworks nuevos ni dependencias sin permiso.
 - Textos en español venezolano, cercano y claro. Nunca inventes datos de Daniela, cifras, clientes o logos: si falta un dato, deja `[POR CONFIRMAR]`.
 - No anuncies como disponibles funciones que no existen (integración bancaria, SENIAT).
+- Nunca uses guiones largos (— o –) en textos visibles, ni paréntesis para incisos. Rangos: "de 9 a 11".
 - Mobile-first, accesible (contraste, alt, teclado) y liviano (Amazonas tiene mala conexión).
 - No hagas commit ni push: el orquestador revisa y publica.
 - Al terminar responde en máximo 10 líneas: archivos tocados, qué cambiaste, qué quedó pendiente y cómo probarlo.
