@@ -475,6 +475,14 @@ footer .copy{width:100%;font-size:12px;color:var(--muted2)}
 @media(min-width:700px){.cap-grid.ali-grid{grid-template-columns:repeat(2,1fr)}}
 @media(min-width:1000px){.cap-grid.ali-grid{grid-template-columns:repeat(4,1fr)}}
 @media(min-width:700px){.cap-grid{grid-template-columns:repeat(3,1fr)}.cap-how ul{grid-template-columns:repeat(4,1fr)}.cap-cta{flex-direction:row}}
+.eq-sub{margin-top:32px;font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--em2)}
+.eq-grid{display:grid;gap:14px;margin-top:14px;grid-template-columns:1fr}
+.eq-card{display:flex;align-items:center;gap:18px;border-radius:var(--r);background:var(--ink2);border:1px solid var(--line);padding:20px}
+.eq-ph{position:relative;flex:none;width:104px;height:104px;border-radius:50%;overflow:hidden;background:var(--ink3);border:2px solid rgba(16,185,129,.45);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:28px;color:var(--em)}
+.eq-ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 20%;font-size:0;color:transparent}
+.eq-card h4{font-size:18px;font-weight:700;color:var(--white);letter-spacing:-.02em}
+.eq-card p{margin-top:4px;font-size:14px;color:var(--em2)}
+@media(min-width:700px){.eq-grid{grid-template-columns:repeat(3,1fr)}.eq-card{flex-direction:column;text-align:center}}
 .hero h1.mision{font-size:clamp(34px,4.8vw,58px)}
 .hero h1 .grad{color:#34D399;text-shadow:0 2px 18px rgba(52,211,153,.35)}
 .hl-em{color:#34D399;font-weight:600}.hl-w{color:var(--white);font-weight:600}
@@ -502,6 +510,7 @@ footer .copy{width:100%;font-size:12px;color:var(--muted2)}
       <a href="#casos">Míralo funcionando</a>
       <a href="#capacitacion">Capacitación</a>
       <a href="#alianzas">Alianzas</a>
+      <a href="#equipo">Equipo</a>
       <a href="#demo">Probar gratis</a>
       <a href="#planes">Planes</a>
       <a href="/sirve-para-mi">¿Sirve para mí?</a>
@@ -1008,6 +1017,28 @@ footer .copy{width:100%;font-size:12px;color:var(--muted2)}
   </div>
 </section>
 
+<!-- EQUIPO -->
+<section id="equipo">
+  <div class="wrap">
+    <div class="rv">
+      <span class="eyebrow">Nuestro equipo</span>
+      <h2>Las personas detrás de <span class="em">KubIA</span></h2>
+      <p class="lead">Un equipo pequeño, cercano y comprometido con Amazonas. Cada quien aporta lo suyo para que la tecnología llegue y se quede funcionando.</p>
+    </div>
+    <h3 class="eq-sub rv">Equipo</h3>
+    <div class="eq-grid">
+      <article class="eq-card rv"><div class="eq-ph" aria-hidden="false">DS<img src="/assets/daniela-silva.jpg" alt="Daniela Silva" loading="lazy" width="208" height="208" onerror="this.remove()"></div><div><h4>Daniela Silva</h4><p>Fundadora · Desarrollo y soporte técnico</p></div></article>
+      <article class="eq-card rv"><div class="eq-ph" aria-hidden="false">RC<img src="/assets/equipo/roxett-ceballos.jpg" alt="Roxett Ceballos" loading="lazy" width="208" height="208" onerror="this.remove()"></div><div><h4>Roxett Ceballos</h4><p>Soporte y atención al cliente</p></div></article>
+      <article class="eq-card rv"><div class="eq-ph" aria-hidden="false">MC<img src="/assets/equipo/mariana-cumana.jpg" alt="Mariana Cumana" loading="lazy" width="208" height="208" onerror="this.remove()"></div><div><h4>Mariana Cumana</h4><p>Marketing</p></div></article>
+    </div>
+    <h3 class="eq-sub rv">Asesoras</h3>
+    <div class="eq-grid">
+      <article class="eq-card rv"><div class="eq-ph" aria-hidden="false">AN<img src="/assets/equipo/ana-alicia-nieves.jpg" alt="Ana Alicia Nieves" loading="lazy" width="208" height="208" onerror="this.remove()"></div><div><h4>Ana Alicia Nieves</h4><p>Asesora legal · Abogada</p></div></article>
+      <article class="eq-card rv"><div class="eq-ph" aria-hidden="false">AS<img src="/assets/equipo/alis-silva.jpg" alt="Alis Silva" loading="lazy" width="208" height="208" onerror="this.remove()"></div><div><h4>Alis Silva</h4><p>Asesora en educación · Magíster en Educación</p></div></article>
+    </div>
+  </div>
+</section>
+
 <!-- ALIANZAS -->
 <section id="alianzas">
   <div class="wrap">
@@ -1147,9 +1178,12 @@ footer .copy{width:100%;font-size:12px;color:var(--muted2)}
       <a href="#casos">⭐ Míralo funcionando</a>
       <a href="#capacitacion">🎓 Capacitación</a>
       <a href="#alianzas">🤝 Alianzas</a>
+      <a href="#equipo">👥 Equipo</a>
       <a href="/sirve-para-mi">¿KubIA sirve para mi negocio?</a>
       <a href="/afiliados">Gana recomendando KubIA</a>
-      <a href="/terminos">Términos y privacidad</a>
+      <a href="/terminos">Términos de servicio</a>
+      <a href="/privacidad">Política de privacidad</a>
+      <a href="mailto:kubiasoluciones@gmail.com">✉️ kubiasoluciones@gmail.com</a>
     </div>
     <p class="copy">© <span id="yr">2026</span> KubIA Soluciones. Todos los derechos reservados. Marca, diseños, textos, videos y sistemas son propiedad de KubIA; prohibida su reproducción total o parcial sin autorización. Hecho en Amazonas, para el mundo.</p>
   </div>
