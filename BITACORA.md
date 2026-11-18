@@ -20,3 +20,4 @@
 - **2026-11-18** · Hero B construido (rama de trabajo): título, subtítulo, botones Necesito una solución / Conocer KubIA; 'Deja el cuaderno' como franja #comerciantes con WhatsApp y Probar gratis. Pendiente aprobación.
 - **2026-11-18** · Publicado hero B con colores; eliminados los 41 guiones largos del sitio; regla anti-guiones en CLAUDE.md y agente programador.
 - **2026-11-18** · Hero corregido a verde y blanco (quitados naranja y azul).
+- **2026-11-18** · Hero inclusivo (comercios, empresas e instituciones). En curso: sección Equipo, política de privacidad y correo en el pie. ESTADO.md reescrito con todo lo publicado.
