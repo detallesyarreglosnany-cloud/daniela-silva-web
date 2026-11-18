@@ -461,6 +461,15 @@ footer .copy{width:100%;font-size:12px;color:var(--muted2)}
 .rv.in{opacity:1;transform:none}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}.qr h2 span{opacity:1}}
 :focus-visible{outline:2px solid var(--em2);outline-offset:3px;border-radius:8px}
+.cap-grid{display:grid;gap:14px;margin-top:28px}
+.cap-card{border-radius:var(--r);background:var(--ink2);border:1px solid var(--line);padding:24px}
+.cap-card .tag{display:inline-flex;align-items:center;justify-content:center;width:56px;height:56px;border-radius:16px;font-size:30px;background:rgba(16,185,129,.15);border:1px solid rgba(16,185,129,.35);margin-bottom:14px}
+.cap-card p{color:var(--muted);font-size:15px;margin-top:8px}
+.cap-how{margin-top:24px}.cap-how h3{font-size:16px;margin-bottom:12px}
+.cap-how ul{list-style:none;display:grid;gap:10px;padding:0}
+.cap-how li{padding:14px 16px;border-radius:16px;border:1px solid var(--line);background:rgba(255,255,255,.02);font-size:15px;color:var(--white)}
+.cap-cta{display:flex;flex-direction:column;gap:12px;margin-top:28px}
+@media(min-width:700px){.cap-grid{grid-template-columns:repeat(3,1fr)}.cap-how ul{grid-template-columns:repeat(4,1fr)}.cap-cta{flex-direction:row}}
 </style>
 <script src="/assets/kubia-track.js"></script>
 </head>
@@ -478,6 +487,7 @@ footer .copy{width:100%;font-size:12px;color:var(--muted2)}
     <nav aria-label="Secciones">
       <a href="#soluciones">Soluciones</a>
       <a href="#casos">Míralo funcionando</a>
+      <a href="#capacitacion">Capacitación</a>
       <a href="#demo">Probar gratis</a>
       <a href="#planes">Planes</a>
       <a href="/sirve-para-mi">¿Sirve para mí?</a>
@@ -903,6 +913,32 @@ footer .copy{width:100%;font-size:12px;color:var(--muted2)}
 </section>
 
 <!-- 9 · CÓMO NACE KUBIA + SOBRE MÍ -->
+<!-- KubIA CAPACITACION -->
+<section id="capacitacion">
+  <div class="wrap">
+    <div class="rv">
+      <span class="eyebrow">KubIA Capacitación</span>
+      <h2>La tecnología sirve cuando <span class="em">sabes usarla.</span></h2>
+      <p class="lead">Capacitamos a personas, equipos y empresas en su mismo idioma, sin tecnicismos. Si sabes usar WhatsApp, puedes aprender a manejar tu negocio desde el teléfono.</p>
+    </div>
+    <div class="cap-grid">
+      <article class="cap-card rv"><span class="tag" aria-hidden="true">🛒</span><h3>Comerciantes y emprendedores</h3><p>Vende por internet, ordena tu inventario y cobra sin perder el control. Talleres prácticos con tu propio teléfono.</p></article>
+      <article class="cap-card rv"><span class="tag" aria-hidden="true">👥</span><h3>Equipos de trabajo</h3><p>Capacitamos a tu personal para usar el sistema desde el primer día: vendedores, despachadores, caja y administración. Incluida en cada implementación.</p></article>
+      <article class="cap-card rv"><span class="tag" aria-hidden="true">🎓</span><h3>Jóvenes</h3><p>Formación en oficios digitales para que el talento de Amazonas encuentre oportunidades aquí. Junto a aliados e instituciones.</p></article>
+    </div>
+    <div class="cap-how rv">
+      <h3>Así enseñamos</h3>
+      <ul>
+        <li>📱 Videos cortos por WhatsApp</li><li>🤝 Práctica presencial</li><li>📶 Material liviano, funciona con poca señal</li><li>🗣️ Sin tecnicismos</li>
+      </ul>
+    </div>
+    <div class="cap-cta rv">
+      <a class="btn btn-em wa-link" href="#" data-msg="Hola, quiero información sobre KubIA Capacitación para mi equipo.">Quiero capacitar a mi equipo</a>
+      <a class="btn btn-ghost wa-link" href="#" data-msg="Hola, represento a una institución y quiero conversar sobre una alianza con KubIA Capacitación.">Soy una institución: hablemos</a>
+    </div>
+  </div>
+</section>
+
 <section class="ama" id="nosotros">
   <div class="orb"></div>
   <div class="wrap" style="position:relative">
@@ -1062,6 +1098,7 @@ footer .copy{width:100%;font-size:12px;color:var(--muted2)}
       <a class="wa-link" href="#" data-msg="Hola Daniela, vi el sitio de KubIA.">💬 WhatsApp 0422-1754245</a>
       <a href="/kubia/">▶ Probar gratis</a>
       <a href="#casos">⭐ Míralo funcionando</a>
+      <a href="#capacitacion">🎓 Capacitación</a>
       <a href="/sirve-para-mi">¿KubIA sirve para mi negocio?</a>
       <a href="/afiliados">Gana recomendando KubIA</a>
       <a href="/terminos">Términos y privacidad</a>
