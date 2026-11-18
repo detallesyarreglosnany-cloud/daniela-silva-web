@@ -30,7 +30,13 @@ Cambios por LOTES completos: planear → construir todo → verificar → public
 - Botón "Para empresas e instituciones" → /aliados.
 - Verificado: 0 guiones, 0 errores JS, sin scroll horizontal, anclas OK en móvil y escritorio.
 
-## LOTE 2 · Banesco (lo construimos nosotros)
+## LOTE 2 · Banesco · PUBLICADO (2026-11-18)
+- kubiav.com/banesco (noindex): contexto, 6 formas de sumarse, recorrido de un pago, aporte de KubIA, equipo, próximo paso.
+- Ficha A4 de 1 página: kubiav.com/KubIA-Propuesta-Banesco.pdf.
+- Pendiente: correo de seguimiento tras la reunión.
+- Hero: botón de instituciones con borde animado. Alianzas: "KubIA es el resultado de becas".
+
+(Original)
 Versión Banesco del micrositio + ficha PDF de 1 página + correo. Daniela sube las fotos del equipo. Logos de patrocinantes cuando estén autorizados.
 
 ## LOTE 3 · Cumbre (antes del 4 dic)

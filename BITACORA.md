@@ -28,3 +28,4 @@
 - **2026-11-18** · Frase de marca elegida: Amazonas también avanza. Definido trabajo por lotes; Lote 1 planificado.
 - **2026-11-18** · Micrositio en /aliados. Franelas listas (Daniela). Lote 1 en construcción.
 - **2026-11-18** · LOTE 1 publicado en una sola vez: principios, problemas fusionados, soluciones agrupadas y /aliados.
+- **2026-11-18** · Propuesta Banesco publicada (página + PDF) antes de la visita de Daniela a la agencia.
