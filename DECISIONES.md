@@ -23,6 +23,8 @@
 | 2026-11-18 | **Sin guiones largos (— –) ni incisos entre paréntesis** en ningún texto (web, correos, dossier). Que no suene a IA. Colores para resaltar sí. | Pedido de Daniela. |
 | 2026-11-18 | Hero publicado: "Creado en Amazonas, para que ningún amazonense tenga que irse." + "Deja el cuaderno" como franja para comerciantes. | Opción B aprobada. |
 
+| 2026-11-18 | Colores de marca: solo verde y blanco para resaltar; nada de naranja ni azul. | Pedido de Daniela. |
+
 ## Hallazgos del código (hechos verificados)
 - `PWApedidos/src/lib/pagos.ts`: registra pago móvil, transferencia, Zelle, Binance, efectivo y COP con referencia y **revisión manual**. No hay conexión con ningún banco.
 - No existe nada de SENIAT ni facturación fiscal en el código revisado.

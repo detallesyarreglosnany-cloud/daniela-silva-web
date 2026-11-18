@@ -19,3 +19,4 @@
 - **2026-11-18** · Cifras: Premio AWE 2022 sin posición; 'capacito personas y equipos' en vez de 'formo a jóvenes'.
 - **2026-11-18** · Hero B construido (rama de trabajo): título, subtítulo, botones Necesito una solución / Conocer KubIA; 'Deja el cuaderno' como franja #comerciantes con WhatsApp y Probar gratis. Pendiente aprobación.
 - **2026-11-18** · Publicado hero B con colores; eliminados los 41 guiones largos del sitio; regla anti-guiones en CLAUDE.md y agente programador.
+- **2026-11-18** · Hero corregido a verde y blanco (quitados naranja y azul).
