@@ -4,7 +4,7 @@
 |---|---|---|
 | 2026-11-17 | La web de KubIA es el repo `daniela-silva-web` (HTML estático en Vercel, sin WordPress). No se cambia de plataforma. | Se amplía rápido sin rehacer nada. |
 | 2026-11-17 | Un solo nombre de producto: **KubIA Gestión** (no crear "KubIA Administrativo"). | Ya es público, tiene página y SEO; un nombre nuevo confunde a un banco. |
-| 2026-11-17 | Mando App solo se presenta como antecedente **después** de aclarar la alianza. | La propuesta de Mando ofrece licencia perpetua del código (Opción B): riesgo de propiedad intelectual. |
+| 2026-11-18 | Mando App no se menciona en la web ni en la bio: era un nombre ficticio; todo se presenta como plataforma KubIA. | Decisión de Daniela. |
 | 2026-11-17 | Patrocinantes de la Cumbre van en la web de la Cumbre; en KubIA solo aliados autorizados. | No confundir patrocinio de un evento con alianza permanente. |
 | 2026-11-17 | Educación tendrá sección propia en el menú, contada con lo ya realizado. | Es el diferenciador de Daniela. |
 | 2026-11-17 | Nada se anuncia como disponible si no existe: pagos con bancos y SENIAT son "en diseño". | Credibilidad ante bancos e instituciones. |

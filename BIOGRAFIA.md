@@ -1,26 +1,12 @@
-# BIOGRAFÍA · versión de trabajo (2026-11-18)
+# BIOGRAFÍA · versión 3 (2026-11-18, pendiente de aprobación final)
 
-## Datos confirmados por Daniela
-- Originaria de Amazonas. 2007: Caracas. 2018: emigra a Perú.
-- 2019: beca para formarse como visitadora médica.
-- 2020 (pandemia): primera cohorte de la Escuela de Soñadores de Venezolanos en Perú; capital semilla para un emprendimiento de manualidades.
-- 2021: DreamBuilder. 2022: AWE Creativa 2.0 (Emprende UP, Universidad del Pacífico, con respaldo de la Embajada de EE.UU.), tercer lugar.
-- Marketing digital en UCAL; inglés intensivo 1 año y 8 meses en USMP; cursos/diplomados de IA y plataformas; bootcamps y talleres en EE.UU.
-- Empresa registrada en línea; ventas en Falabella, Ripley y Oechsle.
-- Sistema de reservas y cotizaciones para empresa de limpieza en EE.UU. → SaaS (Cleaning Angels).
-- 8 años fuera de Venezuela; regreso a Amazonas. KubIA. Mando App (Daniela afirma: implementado y usado por empresas).
-- [POR CONFIRMAR] "clientes en 5 países" (bio actual de la web).
+## Datos confirmados
+Amazonas → Caracas 2007 → Perú 2018 · 2019 beca visitadora médica · 2020 Escuela de Soñadores (1.ª cohorte, pandemia, desempleada, sola, capital semilla para manualidades) · 2021 DreamBuilder · 2022 AWE Creativa 2.0 (Emprende UP, U. del Pacífico, Embajada de EE.UU.), 3.er lugar, premio entregado por la embajadora de EE.UU. en Perú y autoridades de la universidad · UCAL marketing digital · inglés USMP 1a8m · cursos IA · bootcamps EE.UU. · empresa en línea aceptada en Falabella, Ripley, Oechsle · SaaS reservas/cotizaciones limpieza EE.UU. · 8 años fuera → Amazonas → KubIA.
+- **Mando App NO se menciona**: era un nombre ficticio; todo se engloba en la plataforma KubIA.
+- Ya funciona: ventas, pedidos, seguimiento, cobranza, administración, finanzas, agendamiento, clínicas/consultorios virtuales.
+- En desarrollo: pagos verificados en línea al momento, herramientas contables y tributarias.
+- Línea institucional: alcaldías, ministerios y entes públicos o privados.
+- Pendiente: "clientes en 5 países" (bio actual) sin confirmar.
 
-## Versión CORTA (inicio)
-Daniela Silva — Fundadora de KubIA · Emprendedora tecnológica · Facilitadora de transformación empresarial
-
-Soy de Amazonas y, como muchos amazonenses, tuve que irme. Primero a Caracas; en 2018, a Perú, donde empecé de cero.
-
-Allá encontré personas e instituciones que apostaron por mí: becas, capital semilla y programas de emprendimiento me enseñaron a convertir una idea en un negocio. Vendí en grandes tiendas en línea, estudié marketing digital e inteligencia artificial, y terminé creando sistemas para empresas, incluso en Estados Unidos.
-
-Después de ocho años fuera, volví. Hoy, desde KubIA, desarrollo soluciones digitales para los negocios de mi región y capacito a quienes las usan.
-
-A mí me abrieron puertas. Ahora me toca abrirlas aquí, para que ningún amazonense tenga que irse.
-[Conoce mi historia →]
-
-## Versión COMPLETA (/nosotros) — ver chat 2026-11-18 (7 momentos + trayectoria)
+## Versión corta y versión completa
+Texto final en el chat del 2026-11-18 (respuesta "Biografía v3"). Copiar aquí al aprobar.
