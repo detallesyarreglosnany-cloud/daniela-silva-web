@@ -174,7 +174,12 @@ h3{font-size:20px;letter-spacing:-.02em;line-height:1.2}
 .chip b{color:var(--em2);font-weight:700}
 
 /* Soluciones */
-.cards{display:grid;gap:14px;margin-top:28px;align-items:start}
+.grp-t{display:flex;margin-top:36px}
+.cards{display:grid;gap:14px;margin-top:14px;align-items:start}
+.soon{margin-top:44px;padding:22px;border-radius:var(--r);border:1px dashed rgba(16,185,129,.4)}
+.soon-chips{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0 12px}
+.soon-chips span{padding:8px 14px;border-radius:999px;background:var(--ink2);border:1px solid var(--line);font-size:14px;font-weight:600;color:var(--white)}
+.soon p{font-size:13px;color:var(--muted)}
 @media(min-width:680px){.cards{grid-template-columns:1fr 1fr}}
 @media(min-width:1020px){.cards{grid-template-columns:repeat(3,1fr)}}
 .card{position:relative;overflow:hidden;border-radius:var(--r);background:radial-gradient(120% 90% at 100% 0%,color-mix(in srgb,var(--c) 22%,transparent),transparent 60%),var(--ink2);border:1px solid color-mix(in srgb,var(--c) 30%,var(--line));transition:border-color .3s,transform .3s}
@@ -200,7 +205,7 @@ h3{font-size:20px;letter-spacing:-.02em;line-height:1.2}
 .case .nums{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:10px;text-align:center}
 .case .nums strong{display:block;font-size:20px;color:var(--em2);letter-spacing:-.02em}
 .card .pz{margin-top:14px;font-size:13px;font-weight:600;color:var(--muted)}
-@media(min-width:1020px){.card.corp{grid-column:1/-1}}
+@media(min-width:1020px){.card.corp{grid-column:auto}}
 .card .wa{display:inline-flex;margin-top:18px;font-size:14px;font-weight:600;color:var(--c)}
 
 .rubros{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:18px}
@@ -224,6 +229,9 @@ h3{font-size:20px;letter-spacing:-.02em;line-height:1.2}
 
 .sync{display:grid;gap:22px;align-items:center;margin-top:28px;padding:clamp(22px,4vw,34px);border-radius:var(--r);background:linear-gradient(120deg,rgba(16,185,129,.16),var(--ink) 70%);border:1px solid rgba(16,185,129,.4)}
 @media(min-width:900px){.sync{grid-template-columns:1fr 1.1fr}}
+.problem .sync{background:linear-gradient(120deg,#0B3D2E,var(--ink) 70%)}
+.problem .sync h3{color:var(--white)}
+.problem .closing{margin-top:22px}
 .sync h3{font-size:clamp(22px,2.6vw,28px)}
 .sync p{color:var(--muted);margin-top:8px;font-size:15px}
 .flow{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;position:relative}
@@ -464,6 +472,9 @@ footer .copy{width:100%;font-size:12px;color:var(--muted2)}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}.qr h2 span{opacity:1}}
 :focus-visible{outline:2px solid var(--em2);outline-offset:3px;border-radius:8px}
 .cap-grid{display:grid;gap:14px;margin-top:28px}
+.am-grid{grid-template-columns:1fr}
+@media(min-width:700px){.am-grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1000px){.am-grid{grid-template-columns:repeat(3,1fr)}}
 .cap-card{border-radius:var(--r);background:var(--ink2);border:1px solid var(--line);padding:24px}
 .cap-card .tag{display:inline-flex;align-items:center;justify-content:center;width:56px;height:56px;border-radius:16px;font-size:30px;background:rgba(16,185,129,.15);border:1px solid rgba(16,185,129,.35);margin-bottom:14px}
 .cap-card p{color:var(--muted);font-size:15px;margin-top:8px}
@@ -532,7 +543,7 @@ footer .copy{width:100%;font-size:12px;color:var(--muted2)}
       <p class="lead">Desarrollamos <span class="hl-em">sistemas digitales</span> para <span class="hl-w">comercios, empresas e instituciones</span>, capacitamos a personas y equipos y acompañamos a cada cliente <span class="hl-em">en su mismo idioma</span>. <b>La luz que se va, la señal que falla y la distancia no nos detienen. Son nuestro punto de partida.</b></p>
       <div class="cta-row">
         <a class="btn btn-em" href="#soluciones">Para mi negocio</a>
-        <a class="btn btn-ghost" href="#alianzas">Para empresas e instituciones</a>
+        <a class="btn btn-ghost" href="/aliados">Para empresas e instituciones</a>
       </div>
       <span class="refchip" id="refchip"></span>
       <a class="founder-mini" href="#nosotros"><img src="/assets/daniela-silva.jpg" alt="Daniela Silva" width="900" height="900"><div><b>Daniela Silva</b><span>Fundadora de KubIA · Conóceme ↓</span></div></a>
@@ -561,23 +572,55 @@ footer .copy{width:100%;font-size:12px;color:var(--muted2)}
   </div>
 </section>
 
-<section class="problem" id="problema">
-  <div class="wrap pgrid">
+<!-- HECHO PARA AMAZONAS -->
+<section id="amazonas">
+  <div class="wrap">
     <div class="rv">
-      <span class="eyebrow">El problema</span>
-      <h2>¿Te suena esto?</h2>
-      <div class="pains">
-        <div class="pain"><span class="e">💬</span><p>99+ mensajes preguntando "¿precio?"</p></div>
-        <div class="pain"><span class="e">📒</span><p>Pedidos anotados en un cuaderno que nadie entiende</p></div>
-        <div class="pain"><span class="e">📊</span><p>Un Excel que solo sabe usar una persona</p></div>
-        <div class="pain"><span class="e">💸</span><p>Clientes que deben y no sabes cuánto</p></div>
-      </div>
-      <p class="closing">No es falta de ganas. <span>Es que tu negocio creció y tus herramientas no.</span></p>
+      <span class="eyebrow">Hecho para Amazonas</span>
+      <h2>Amazonas <span class="em">también avanza.</span></h2>
+      <p class="lead">Quedarse también es avanzar. Por eso creamos herramientas que funcionan aquí: con poca señal, cuando se va la luz y en el teléfono que ya tienes.</p>
     </div>
-    <div class="rv">
-      <div class="reel">
-        <video id="reel" src="/kubia/videos/KubIA-Reel-Mercadito-movil.mp4" muted loop playsinline preload="metadata" poster="/assets/reel-poster.jpg" aria-label="Reel: Mercadito Orinoco"></video>
-        <button class="snd" id="reelSnd" type="button">🔇 Activar sonido</button>
+    <div class="cap-grid am-grid">
+      <div class="cap-card rv"><span class="tag">📶</span><h3>Funciona con poca señal</h3><p>Y sigue funcionando sin internet. Todo se pone al día cuando vuelve la conexión.</p></div>
+      <div class="cap-card rv"><span class="tag">🪶</span><h3>Pesa poco</h3><p>Carga rápido con datos móviles, sin gastarte el saldo.</p></div>
+      <div class="cap-card rv"><span class="tag">💬</span><h3>Si usas WhatsApp, sabes usar KubIA</h3><p>Botones grandes, pasos cortos y nada de palabras raras.</p></div>
+      <div class="cap-card rv"><span class="tag">🎬</span><h3>Se aprende viendo</h3><p>Videos cortos y recorridos guiados por voz.</p></div>
+      <div class="cap-card rv"><span class="tag">🔗</span><h3>Se comparte por enlace</h3><p>Tus clientes no instalan nada: abren el enlace y compran.</p></div>
+      <div class="cap-card rv"><span class="tag">🤝</span><h3>Te acompañamos en persona</h3><p>Instalamos, capacitamos a tu equipo y seguimos contigo.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="problem" id="problema">
+  <div class="wrap">
+    <div class="pgrid">
+      <div class="rv">
+        <span class="eyebrow">El problema</span>
+        <h2>¿Te suena esto?</h2>
+        <p class="lead">Mensajes sin responder, pedidos en un cuaderno, cuentas que no cuadran. <b>KubIA lo resuelve.</b></p>
+        <p class="closing">No es falta de ganas. <span>Es que tu negocio creció y tus herramientas no.</span></p>
+      </div>
+      <div class="rv">
+        <div class="reel">
+          <video id="reel" src="/kubia/videos/KubIA-Reel-Mercadito-movil.mp4" muted loop playsinline preload="metadata" poster="/assets/reel-poster.jpg" aria-label="Reel: Mercadito Orinoco"></video>
+          <button class="snd" id="reelSnd" type="button">🔇 Activar sonido</button>
+        </div>
+      </div>
+    </div>
+    <div class="five" style="margin-top:48px">
+      <div class="fv rv"><span class="e">💬</span><s>Clientes esperando respuesta</s><p>Ven tus productos y precios solos, a cualquier hora.</p></div>
+      <div class="fv rv"><span class="e">📒</span><s>Pedidos perdidos en el chat</s><p>Cada pedido llega completo y ordenado.</p></div>
+      <div class="fv rv"><span class="e">📦</span><s>No saber qué te queda</s><p>El inventario se descuenta solo con cada venta.</p></div>
+      <div class="fv rv"><span class="e">💸</span><s>Cuentas que no cuadran</s><p>Sabes quién pagó y quién debe, en la moneda que uses.</p></div>
+      <div class="fv rv"><span class="e">📶</span><s>Se fue la señal, se paró todo</s><p>Sigues vendiendo y todo se pone al día al volver.</p><div class="offline-demo" id="net"><span class="dot"></span><span class="t">Sin señal · guardando</span></div></div>
+    </div>
+    <div class="sync rv">
+      <div><h3>⚡ Todo se sincroniza en segundos</h3><p>Pedidos, despachos, estados y pagos. Lo que pasa en el teléfono de tu cliente, tu vendedor o tu repartidor aparece en tu panel al instante. Y si no hay señal, se pone al día apenas vuelve.</p></div>
+      <div class="flow" aria-hidden="true">
+        <div class="fl"><i>🛒</i>Pedidos<small>al instante</small></div>
+        <div class="fl"><i>🚚</i>Despachos<small>al instante</small></div>
+        <div class="fl"><i>📍</i>Estados<small>al instante</small></div>
+        <div class="fl"><i>💳</i>Pagos<small>al instante</small></div>
       </div>
     </div>
   </div>
@@ -634,6 +677,7 @@ footer .copy{width:100%;font-size:12px;color:var(--muted2)}
       <p class="lead">Toca cada una para ver qué incluye.</p>
     </div>
     <div class="rubros rv"><span>¿Cuál es tu negocio?</span><a href="/sirve-para-mi" style="border-color:var(--em);color:var(--em2);font-weight:700">✨ Ver los 24 tipos de negocio →</a><a href="/para/bodegones">🛒 Bodegones y abastos</a><a href="/para/distribuidoras">🚚 Distribuidoras</a><a href="/para/carnicerias">🥩 Carnicerías y charcuterías</a><a href="/para/restaurantes">🍔 Restaurantes y comida</a><a href="/para/tiendas-de-ropa">👗 Tiendas de ropa y accesorios</a><a href="/para/repuestos">🔧 Repuestos y ferreterías</a><a href="/para/salud-y-belleza">💅 Salud, belleza y servicios</a></div>
+    <span class="eyebrow grp-t rv">Vender</span>
     <div class="cards">
       <details class="card rv" data-e="🛍️" style="--c:#10B981">
         <summary>
@@ -645,17 +689,6 @@ footer .copy{width:100%;font-size:12px;color:var(--muted2)}
         <div class="body"><ul>
           <li>Catálogo con fotos y precios en varias monedas, a la tasa del día</li><li>QR para pedir y pagar</li><li>Carrito con sugerencias</li><li>Delivery, retiro o envío nacional</li><li>Pago con QR del banco y captura</li><li>Confirmación por WhatsApp</li><li>Seguimiento del pedido</li><li>"Repetir mi último pedido"</li>
         </ul><a class="btn-ver" href="/demo/coalmar/" target="_blank" rel="noopener" style="--c:#10B981">▶ Ver ejemplo</a><a class="wa" href="#planes">Ver planes →</a></div>
-      </details>
-      <details class="card rv" data-e="🚚" style="--c:#F59E0B">
-        <summary>
-          <span class="tag">🚚</span>
-          <h3><span class="k">KubIA</span> Distribución</h3>
-          <p class="f">Preventa en ruta, despachos organizados y cobranzas al día.</p>
-          <span class="more">Qué incluye</span>
-        </summary>
-        <div class="body"><ul>
-          <li>Preventa en ruta desde el teléfono</li><li>Pedidos aunque no haya señal</li><li>Organización de despachos y hoja de carga</li><li>Seguimiento de cobranzas y cuentas por cobrar</li><li>Control de crédito por cliente</li><li>Tasa del día</li><li>Reportes por vendedor</li>
-        </ul><a class="btn-ver" href="/demo/coalmar/" target="_blank" rel="noopener" style="--c:#F59E0B">▶ Ver ejemplo real</a><p class="pz">Precio según tu diagnóstico</p><a class="wa wa-link" href="#" data-msg="Hola Daniela, me interesa KubIA Distribución.">Pide tu diagnóstico →</a></div>
       </details>
       <details class="card rv" data-e="📅" style="--c:#A78BFA">
         <summary>
@@ -672,17 +705,6 @@ footer .copy{width:100%;font-size:12px;color:var(--muted2)}
         </div>
         <p class="pz">Precio según tu diagnóstico</p><a class="wa wa-link" href="#" data-msg="Hola Daniela, me interesa KubIA Agenda.">Pide tu diagnóstico →</a></div>
       </details>
-      <details class="card rv" data-e="📊" style="--c:#38BDF8">
-        <summary>
-          <span class="tag">📊</span>
-          <h3><span class="k">KubIA</span> Gestión</h3>
-          <p class="f">Inventario, finanzas y quién te debe, en tiempo real.</p>
-          <span class="more">Qué incluye</span>
-        </summary>
-        <div class="body"><ul>
-          <li>Inventario en vivo con alertas</li><li>Ventas en mostrador y en línea juntas</li><li>Finanzas y flujo de caja</li><li>Quién te debe y desde cuándo</li><li>Clientes (CRM) con historial</li><li>Roles y permisos para tu equipo</li><li>Reportes en tu teléfono</li>
-        </ul><a class="btn-ver" href="/demo/coalmar/" target="_blank" rel="noopener" style="--c:#38BDF8">▶ Ver el panel en acción</a><p class="pz">Precio según tu diagnóstico</p><a class="wa wa-link" href="#" data-msg="Hola Daniela, me interesa KubIA Gestión.">Pide tu diagnóstico →</a></div>
-      </details>
       <details class="card rv" data-e="🤖" style="--c:#F472B6">
         <summary>
           <span class="tag">🤖</span>
@@ -694,6 +716,34 @@ footer .copy{width:100%;font-size:12px;color:var(--muted2)}
           <li>Responde precios y disponibilidad</li><li>Toma pedidos y reservas</li><li>Atiende de noche y fines de semana</li><li>Te pasa los casos difíciles</li>
         </ul><p class="pz">Precio según tu diagnóstico</p><a class="wa wa-link" href="#" data-msg="Hola Daniela, me interesa KubIA Asistente.">Pide tu diagnóstico →</a></div>
       </details>
+    </div>
+    <span class="eyebrow grp-t rv">Operar y cobrar</span>
+    <div class="cards">
+      <details class="card rv" data-e="🚚" style="--c:#F59E0B">
+        <summary>
+          <span class="tag">🚚</span>
+          <h3><span class="k">KubIA</span> Distribución</h3>
+          <p class="f">Preventa en ruta, despachos organizados y cobranzas al día.</p>
+          <span class="more">Qué incluye</span>
+        </summary>
+        <div class="body"><ul>
+          <li>Preventa en ruta desde el teléfono</li><li>Pedidos aunque no haya señal</li><li>Organización de despachos y hoja de carga</li><li>Seguimiento de cobranzas y cuentas por cobrar</li><li>Control de crédito por cliente</li><li>Tasa del día</li><li>Reportes por vendedor</li>
+        </ul><a class="btn-ver" href="/demo/coalmar/" target="_blank" rel="noopener" style="--c:#F59E0B">▶ Ver ejemplo real</a><p class="pz">Precio según tu diagnóstico</p><a class="wa wa-link" href="#" data-msg="Hola Daniela, me interesa KubIA Distribución.">Pide tu diagnóstico →</a></div>
+      </details>
+      <details class="card rv" data-e="📊" style="--c:#38BDF8">
+        <summary>
+          <span class="tag">📊</span>
+          <h3><span class="k">KubIA</span> Gestión</h3>
+          <p class="f">Inventario, finanzas y quién te debe, en tiempo real.</p>
+          <span class="more">Qué incluye</span>
+        </summary>
+        <div class="body"><ul>
+          <li>Inventario en vivo con alertas</li><li>Ventas en mostrador y en línea juntas</li><li>Finanzas y flujo de caja</li><li>Quién te debe y desde cuándo</li><li>Clientes (CRM) con historial</li><li>Roles y permisos para tu equipo</li><li>Reportes en tu teléfono</li>
+        </ul><a class="btn-ver" href="/demo/coalmar/" target="_blank" rel="noopener" style="--c:#38BDF8">▶ Ver el panel en acción</a><p class="pz">Precio según tu diagnóstico</p><a class="wa wa-link" href="#" data-msg="Hola Daniela, me interesa KubIA Gestión.">Pide tu diagnóstico →</a></div>
+      </details>
+    </div>
+    <span class="eyebrow grp-t rv">A la medida</span>
+    <div class="cards">
       <details class="card custom rv" data-e="💡" style="--c:#FACC15">
         <summary>
           <span class="tag">💡</span>
@@ -716,6 +766,11 @@ footer .copy{width:100%;font-size:12px;color:var(--muted2)}
           <li>Varias sedes y departamentos en un solo sistema</li><li>Muchos usuarios, con permisos por área</li><li>Conexión con los sistemas que ya usan</li><li>Reportes para la gerencia</li><li>Capacitación para todo el personal</li><li>Soporte dedicado</li>
         </ul><p class="pz">Precio a convenir</p><a class="wa wa-link" href="#" data-msg="Hola Daniela, escribo por KubIA Corporativo para nuestra institución / empresa.">Agendemos una reunión →</a></div>
       </details>
+    </div>
+    <div class="soon rv">
+      <span class="eyebrow">En camino</span>
+      <div class="soon-chips"><span>Pagos verificados en línea y al momento</span><span>Herramientas contables</span><span>Herramientas tributarias</span></div>
+      <p>Estamos desarrollando estos módulos para que cada negocio los use completos o por partes.</p>
     </div>
   </div>
 </section>
@@ -746,33 +801,6 @@ footer .copy{width:100%;font-size:12px;color:var(--muted2)}
       </a>
     </div>
     <p class="casos-note">¿Quieres el tuyo? <a href="#demo" style="color:var(--em2);font-weight:700">Pruébalo gratis</a> o <a class="wa-link" href="#" data-msg="Hola Daniela, vi los casos reales en kubiav.com y quiero uno para mi negocio." style="color:var(--em2);font-weight:700">escríbenos</a>.</p>
-  </div>
-</section>
-
-<!-- 5 · CINCO PROBLEMAS, UNA SOLUCIÓN -->
-<section class="here" id="cinco">
-  <div class="wrap">
-    <div class="rv">
-      <span class="eyebrow">5 problemas, 1 solución</span>
-      <h2>Lo que hoy te frena, <br><span class="em">KubIA lo resuelve.</span></h2>
-    </div>
-    <div class="five">
-      <div class="fv rv"><span class="e">💬</span><s>Clientes esperando respuesta</s><p>Ven tus productos y precios solos, a cualquier hora.</p></div>
-      <div class="fv rv"><span class="e">📒</span><s>Pedidos perdidos en el chat</s><p>Cada pedido llega completo y ordenado.</p></div>
-      <div class="fv rv"><span class="e">📦</span><s>No saber qué te queda</s><p>El inventario se descuenta solo con cada venta.</p></div>
-      <div class="fv rv"><span class="e">💸</span><s>Cuentas que no cuadran</s><p>Sabes quién pagó y quién debe, en la moneda que uses.</p></div>
-      <div class="fv rv"><span class="e">📶</span><s>Se fue la señal, se paró todo</s><p>Sigues vendiendo y todo se pone al día al volver.</p><div class="offline-demo" id="net"><span class="dot"></span><span class="t">Sin señal · guardando</span></div></div>
-    </div>
-    <div class="sync rv">
-      <div><h3>⚡ Todo se sincroniza en segundos</h3><p>Pedidos, despachos, estados y pagos. Lo que pasa en el teléfono de tu cliente, tu vendedor o tu repartidor aparece en tu panel al instante. Y si no hay señal, se pone al día apenas vuelve.</p></div>
-      <div class="flow" aria-hidden="true">
-        <div class="fl"><i>🛒</i>Pedidos<small>al instante</small></div>
-        <div class="fl"><i>🚚</i>Despachos<small>al instante</small></div>
-        <div class="fl"><i>📍</i>Estados<small>al instante</small></div>
-        <div class="fl"><i>💳</i>Pagos<small>al instante</small></div>
-      </div>
-    </div>
-    <p class="punch rv">No necesitas saber de tecnología. Necesitas que tu negocio no se detenga. <span class="em">Para eso existe KubIA.</span></p>
   </div>
 </section>
 
