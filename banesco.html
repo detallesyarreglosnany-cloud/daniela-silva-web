@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Propuesta para Banesco · KubIA</title>
+<meta name="description" content="Propuesta de KubIA para Banesco: seis formas de trabajar juntos por el comercio de Amazonas.">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#0B1210">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+<link rel="apple-touch-icon" href="/assets/icon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=Cormorant+Garamond:ital,wght@1,500;1,600&display=swap">
+<style>
+:root{
+  --ink:#0B1210; --ink2:#111A17; --ink3:#18241F; --line:#22322C;
+  --em:#10B981; --em2:#34D399; --emd:#0A7D58; --glow:rgba(16,185,129,.35);
+  --white:#FFFFFF; --muted:#8FA39B; --muted2:#5E6F68; --text:#E8EFEC;
+  --r:22px; --gut:clamp(16px,4vw,40px); --max:1160px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{background:var(--ink);color:var(--text);font-family:Sora,system-ui,sans-serif;font-weight:400;line-height:1.55;overflow-x:hidden}
+img{max-width:100%;display:block;height:auto}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--max);margin:0 auto;padding-inline:var(--gut)}
+h1,h2,h3{font-weight:700;letter-spacing:-.035em;line-height:1.1;color:var(--white)}
+.em{color:var(--em)}
+a:focus-visible{outline:3px solid var(--em2);outline-offset:3px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 24px;border-radius:999px;font-weight:600;font-size:15px;transition:transform .2s,box-shadow .2s,background .2s}
+.btn:active{transform:scale(.97)}
+.btn-em{background:var(--em);color:#04140E;box-shadow:0 10px 30px -8px var(--glow)}
+.btn-em:hover{background:var(--em2)}
+.btn-ghost{border:1.5px solid var(--line);color:var(--white);background:rgba(255,255,255,.02)}
+.btn-ghost:hover{border-color:var(--em);color:var(--em2)}
+.btn svg{width:20px;height:20px;flex:none}
+.logo{display:inline-flex;align-items:flex-end;font-weight:600;letter-spacing:-.045em;line-height:.78;font-size:26px;color:var(--white)}
+.logo .ia{position:relative;color:var(--em)}
+.logo .sol{position:absolute;right:.02em;top:100%;margin-top:3px;font-family:"Cormorant Garamond",serif;font-style:italic;font-weight:500;font-size:.34em;letter-spacing:0;color:var(--muted);white-space:nowrap;line-height:1}
+.top{border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top,0px)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;height:70px;gap:16px}
+.top .btn{min-height:42px;padding:0 18px;font-size:14px}
+
+
+.top .btn svg,.btn svg{width:20px;height:20px}
+section{padding-block:clamp(40px,7vw,80px)}
+.eyebrow{display:inline-block;font-size:13px;font-weight:600;color:var(--em2);letter-spacing:.04em;margin-bottom:14px}
+.tag{display:inline-block;font-size:12px;font-weight:600;color:var(--em2);border:1px solid var(--em);border-radius:999px;padding:4px 12px;margin-bottom:14px;background:rgba(16,185,129,.08)}
+.hero{position:relative;overflow:hidden;padding-block:clamp(48px,9vw,110px)}
+.orb{position:absolute;width:480px;height:480px;border-radius:50%;filter:blur(80px);background:#065F46;opacity:.4;right:-200px;top:-120px;pointer-events:none}
+.hero .wrap{position:relative}
+.hero h1{font-size:clamp(40px,8vw,84px);margin-bottom:20px}
+.lead{font-size:clamp(17px,2.2vw,20px);color:#C4D2CC;max-width:640px;margin-bottom:28px;line-height:1.6}
+.acciones{display:flex;flex-wrap:wrap;gap:12px}
+h2.t{font-size:clamp(28px,4.4vw,44px);margin-bottom:12px}
+.sub{color:var(--muted);max-width:620px;margin-bottom:28px}
+.alt{background:var(--ink2);border-block:1px solid var(--line)}
+.hist{display:grid;gap:32px;align-items:center}
+@media(min-width:900px){.hist{grid-template-columns:.7fr 1.3fr;gap:56px}}
+.portrait{position:relative;max-width:340px;width:100%;margin:0 auto}
+.portrait img{width:100%;aspect-ratio:1;object-fit:cover;object-position:center 20%;border-radius:28px;position:relative;z-index:1}
+.portrait::before{content:"";position:absolute;inset:14px -14px -14px 14px;border-radius:28px;border:1.5px solid var(--em);opacity:.6}
+.hist h2{font-size:clamp(26px,3.6vw,36px)}
+.perfil{font-size:13px;font-weight:600;color:var(--em2);line-height:1.4;margin:6px 0 18px}
+.hist p{color:#C4D2CC;font-size:17px;line-height:1.7}
+.proposito{margin:20px 0;padding:16px 20px;border-left:3px solid var(--em);background:rgba(16,185,129,.07);border-radius:0 14px 14px 0;color:var(--white);font-weight:600;font-size:18px;line-height:1.5}
+.more{color:var(--em2);font-weight:600}
+.more:hover{text-decoration:underline}
+.chips{display:flex;flex-wrap:wrap;gap:8px;list-style:none;margin-top:22px}
+.chips li{font-size:13px;font-weight:600;color:var(--white);border:1px solid var(--line);background:var(--ink3);border-radius:999px;padding:8px 14px}
+.grid{display:grid;gap:14px;grid-template-columns:1fr}
+@media(min-width:640px){.grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:960px){.grid.g3{grid-template-columns:repeat(3,1fr)}}
+.card{background:var(--ink2);border:1px solid var(--line);border-radius:var(--r);padding:22px}
+.alt .card{background:var(--ink3)}
+.card .ic{font-size:26px;display:block;margin-bottom:10px}
+.card h3{font-size:18px;letter-spacing:-.02em;margin-bottom:6px}
+.card p{color:var(--muted);font-size:15px}
+.card.plain h3{margin:0;font-size:16px;font-weight:600;letter-spacing:-.01em;display:flex;gap:12px;align-items:flex-start}
+.card.plain h3::before{content:"";flex:none;width:10px;height:10px;border-radius:50%;background:var(--em);margin-top:6px}
+.cta-row{margin-top:26px}
+.nota{font-size:13px;color:var(--muted2);margin-top:16px}
+.nota-line{margin-top:20px;color:#C4D2CC;font-size:17px}
+.pago{display:grid;gap:28px;align-items:center;margin-top:8px}
+@media(min-width:900px){.pago{grid-template-columns:1fr 1fr;gap:56px}}
+.phone{width:240px;height:440px;margin:0 auto;border:8px solid #000;outline:1.5px solid var(--line);border-radius:36px;background:var(--ink);padding:14px 12px;display:flex;flex-direction:column;position:relative;overflow:hidden}
+.phone::before{content:"";position:absolute;top:6px;left:50%;width:56px;height:6px;margin-left:-28px;border-radius:6px;background:var(--line)}
+.scr{display:none;flex-direction:column;gap:10px;margin-top:14px;flex:1}
+.scr.on{display:flex}
+.scr .bar{font-size:12px;font-weight:700;color:var(--white);padding-bottom:8px;border-bottom:1px solid var(--line)}
+.scr .row{background:var(--ink3);border:1px solid var(--line);border-radius:12px;padding:10px 12px;font-size:12px;color:#C4D2CC;display:flex;justify-content:space-between;gap:8px}
+.scr .row b{color:var(--white)}
+.scr .pill{margin-top:auto;background:var(--em);color:#04140E;border-radius:999px;text-align:center;font-weight:700;font-size:13px;padding:11px}
+.scr .pill.off{background:transparent;border:1px solid var(--line);color:var(--muted)}
+.scr .field{border:1.5px solid var(--em);border-radius:10px;padding:10px;font-size:14px;color:var(--white);letter-spacing:.08em}
+.scr .big{margin:auto;text-align:center;color:var(--white);font-weight:700;font-size:15px}
+.scr .big span{display:grid;place-items:center;width:64px;height:64px;margin:0 auto 12px;border-radius:50%;border:3px solid var(--em);color:var(--em2);font-size:30px}
+.scr .big small{display:block;margin-top:6px;font-weight:400;font-size:12px;color:var(--muted)}
+.scr .big.wait span{border-style:dashed;color:var(--muted);border-color:var(--muted2)}
+.stepbox{min-width:0}
+.badge{display:inline-block;font-size:12px;font-weight:700;border-radius:999px;padding:4px 12px;margin-bottom:12px;border:1px solid var(--em);color:var(--em2);background:rgba(16,185,129,.08)}
+.badge.hoy{border-color:var(--muted);color:var(--white);background:rgba(255,255,255,.06)}
+.badge[hidden]{display:none}
+.stepnum{font-size:14px;color:var(--muted);font-weight:600;margin-bottom:6px}
+#stepText{font-size:clamp(20px,2.6vw,26px);font-weight:600;color:var(--white);line-height:1.35;letter-spacing:-.02em;min-height:5.4em}
+.prog{display:flex;gap:6px;margin:18px 0}
+.prog i{flex:1;height:5px;border-radius:5px;background:var(--line)}
+.prog i.on{background:var(--em)}
+.nav{display:flex;gap:12px}
+button.btn{font-family:inherit;cursor:pointer;border:none}
+button.btn-ghost{border:1.5px solid var(--line)}
+button:disabled{opacity:.4;cursor:not-allowed}
+button:focus-visible{outline:3px solid var(--em2);outline-offset:3px}
+.team{list-style:none;display:grid;gap:10px}
+@media(min-width:760px){.team{grid-template-columns:repeat(2,1fr)}}
+.team li{background:var(--ink2);border:1px solid var(--line);border-radius:16px;padding:14px 18px;color:var(--muted);font-size:15px}
+.team b{display:block;color:var(--white);font-size:16px}
+.cierre{text-align:center}
+.cierre .sub{margin-inline:auto}
+.cierre .acciones{justify-content:center}
+.cierre .more{display:inline-block;margin-top:22px}
+footer{padding:36px 0 calc(32px + env(safe-area-inset-bottom,0px));border-top:1px solid var(--line);font-size:14px;color:var(--muted)}
+footer .wrap{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-between;align-items:center}
+footer a:hover{color:var(--em2)}
+footer .copy{width:100%;font-size:12px;color:var(--muted2)}
+.num{display:inline-grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--em);color:#04140E;font-weight:800;font-size:16px;margin-bottom:12px}
+.lista{list-style:none;display:grid;gap:12px;max-width:760px}
+.lista li{display:flex;gap:14px;align-items:flex-start;font-size:17px;color:#C4D2CC;line-height:1.5}
+.lista li::before{content:"";flex:none;width:10px;height:10px;border-radius:50%;background:var(--em);margin-top:8px}
+.who{display:grid;gap:28px;align-items:center}
+@media(min-width:900px){.who{grid-template-columns:.7fr 1.3fr;gap:56px}}
+.who h2{font-size:clamp(26px,3.6vw,36px)}
+.who p{color:#C4D2CC;font-size:17px;line-height:1.7;margin:10px 0 14px}
+.team{margin-top:28px}
+
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2Zm5.8 14.13c-.25.69-1.44 1.32-1.98 1.37-.51.05-.99.24-3.34-.7-2.82-1.11-4.6-4-4.74-4.18-.14-.19-1.13-1.5-1.13-2.87s.71-2.03.97-2.31c.25-.28.55-.35.73-.35l.53.01c.17.01.4-.06.62.48.25.6.85 2.07.92 2.22.07.15.12.32.02.51-.1.19-.15.31-.29.48l-.44.51c-.15.15-.3.31-.13.6.17.28.76 1.25 1.63 2.03 1.12 1 2.07 1.31 2.36 1.46.29.15.46.12.63-.07.17-.19.73-.85.92-1.14.19-.29.38-.24.65-.15.26.1 1.68.79 1.97.94.29.15.48.22.55.34.07.12.07.69-.18 1.38Z"/></symbol>
+</svg>
+
+
+<header class="top">
+  <div class="wrap">
+    <a href="/" class="logo" aria-label="KubIA Soluciones, inicio">Kub<span class="ia">IA<span class="sol">Soluciones</span></span></a>
+    <a class="btn btn-em wa-link" href="#" data-msg="Hola Daniela, te escribo de Banesco sobre la propuesta de KubIA."><svg aria-hidden="true"><use href="#i-wa"/></svg>Hablemos</a>
+  </div>
+</header>
+
+<main>
+<div class="hero">
+  <div class="orb"></div>
+  <div class="wrap">
+    <span class="eyebrow">Propuesta para Banesco</span>
+    <h1>Amazonas <span class="em">también avanza.</span></h1>
+    <p class="lead">Banesco y KubIA comparten un objetivo: que el comercio de Amazonas crezca con herramientas digitales. Proponemos varias formas de trabajar juntos; Banesco puede elegir una o varias.</p>
+    <div class="acciones">
+      <a class="btn btn-em" href="#opciones">Ver las opciones</a>
+      <a class="btn btn-ghost wa-link" href="#" data-msg="Hola Daniela, te escribo de Banesco sobre la propuesta de KubIA."><svg aria-hidden="true"><use href="#i-wa"/></svg>Conversemos</a>
+    </div>
+  </div>
+</div>
+
+<section id="contexto" class="alt"><div class="wrap">
+  <h2 class="t">El contexto</h2>
+  <div class="grid g3"><div class="card"><span class="ic" aria-hidden="true">📲</span><p>Los comercios ya cobran por pago móvil y transferencia, pero verifican cada pago a mano.</p></div><div class="card"><span class="ic" aria-hidden="true">📶</span><p>La señal es débil y la luz se va: las herramientas deben funcionar igual.</p></div><div class="card"><span class="ic" aria-hidden="true">📒</span><p>Muchos negocios están pasando del cuaderno y el Excel al teléfono y necesitan acompañamiento.</p></div></div>
+</div></section>
+
+<section id="opciones"><div class="wrap">
+  <h2 class="t">Seis formas en que Banesco puede sumarse</h2>
+  <div class="grid g3"><div class="card"><span class="num" aria-hidden="true">1</span><h3>Piloto de verificación de pagos</h3><p>Un piloto con un grupo pequeño de comercios de Puerto Ayacucho para verificar pagos al momento desde los sistemas de KubIA, sujeto a las autorizaciones de Banesco.</p></div><div class="card"><span class="num" aria-hidden="true">2</span><h3>Cumbre de Transformación Empresarial</h3><p>Viernes 4 de diciembre de 2026, Club Parapata, Puerto Ayacucho. Presencia institucional, ponencia o panel, y un espacio para abrir cuentas y afiliar comercios a cobros digitales en el mismo evento.</p></div><div class="card"><span class="num" aria-hidden="true">3</span><h3>Educación financiera y digital</h3><p>Talleres con KubIA Capacitación para comerciantes y emprendedores: pagos digitales, banca en línea y orden de las finanzas del negocio.</p></div><div class="card"><span class="num" aria-hidden="true">4</span><h3>Bancarización del comercio local</h3><p>KubIA como puente para acercar los servicios de Banesco a los comercios que usan nuestras herramientas.</p></div><div class="card"><span class="num" aria-hidden="true">5</span><h3>Impulso y financiamiento</h3><p>Acompañar a KubIA desde los programas de innovación de Banesco, y apoyar a los comercios que se digitalizan.</p></div><div class="card"><span class="num" aria-hidden="true">6</span><h3>Alianza tecnológica a largo plazo</h3><p>Integrar servicios bancarios en las soluciones de KubIA y desarrollar juntos herramientas para el comercio de Amazonas.</p></div></div>
+  <p class="nota-line">Cada opción puede empezar pequeña y crecer. No es necesario elegir una sola.</p>
+</div></section>
+
+<section id="pago" class="alt"><div class="wrap">
+  <span class="tag">Concepto</span>
+  <h2 class="t">Así cambia un pago con Banesco como aliado</h2>
+  <div class="pago">
+<div class="phone" aria-hidden="true">
+<div class="scr on" data-s="0"><div class="bar">Tienda en línea</div><div class="row"><span>Camisa lino</span><b>$12</b></div><div class="row"><span>Gorra</span><b>$6</b></div><div class="pill">Pedir</div></div>
+<div class="scr" data-s="1"><div class="bar">Pagar pedido</div><div class="row"><span>Total</span><b>$18</b></div><div class="row"><span>Pago móvil</span><b>Elegido</b></div><div class="pill">Ya pagué</div></div>
+<div class="scr" data-s="2"><div class="bar">Tu pedido</div><div class="row"><span>Referencia del pago</span></div><div class="field">00483917</div><div class="pill">Enviar</div></div>
+<div class="scr" data-s="3"><div class="bar">Panel del negocio</div><div class="big wait"><span>?</span>Revisando el banco a mano<small>Pago por confirmar</small></div><div class="pill off">Esperando</div></div>
+<div class="scr" data-s="4"><div class="bar">Panel del negocio</div><div class="big"><span>✓</span>Pago verificado<small>Al momento, sin revisar a mano</small></div></div>
+<div class="scr" data-s="5"><div class="bar">Panel del negocio</div><div class="row"><span>Pedido</span><b>En camino</b></div><div class="row"><span>Pago</span><b>Conciliado</b></div><div class="pill">Ver gestión</div></div>
+</div>
+<div class="stepbox">
+<span class="badge hoy" id="badge" hidden></span>
+<p class="stepnum" id="stepNum">Paso 1 de 6</p>
+<p id="stepText" aria-live="polite"></p>
+<div class="prog" id="prog" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+<div class="nav"><button type="button" class="btn btn-ghost" id="prev">Anterior</button><button type="button" class="btn btn-em" id="next">Siguiente</button></div>
+<p class="nota">El paso 5 requiere la integración y autorización de una entidad bancaria.</p>
+</div></div>
+</div></section>
+
+<section id="aporte"><div class="wrap">
+  <h2 class="t">Lo que aporta KubIA</h2>
+  <ul class="lista"><li>Tecnología que ya funciona en comercios reales y demos para probar</li><li>Diseñada para Amazonas: poca señal, datos móviles y fácil de usar</li><li>Capacitación en persona, en el idioma del comerciante</li><li>Conocimiento del territorio y de sus negocios</li><li>La Cumbre como espacio de encuentro con los empresarios de la región</li></ul>
+</div></section>
+
+<section id="quien" class="alt"><div class="wrap">
+  <div class="hist who">
+    <div class="portrait"><img src="/assets/daniela-silva.jpg" alt="Daniela Silva, fundadora de KubIA" width="900" height="900" loading="lazy"></div>
+    <div>
+      <h2>Daniela Silva</h2>
+      <p class="perfil">Fundadora de KubIA</p>
+      <p>Amazonense, de regreso después de ocho años fuera, con formación y experiencia creando sistemas para negocios de varios países. Premio AWE 2022 con el respaldo de la Embajada de EE. UU.</p>
+      <a class="more" href="/nosotros">Conoce la historia completa →</a>
+    </div>
+  </div>
+  <ul class="team"><li><b>Roxett Ceballos</b>Soporte y atención al cliente</li><li><b>Mariana Cumana</b>Marketing</li><li><b>Ana Alicia Nieves</b>Asesora legal</li><li><b>Alis Mayris Silva</b>Asesora en educación</li></ul>
+</div></section>
+
+<section id="siguiente" class="cierre"><div class="wrap">
+  <h2 class="t">Próximo paso</h2>
+  <p class="sub">Elegir una o varias opciones y agendar una reunión de trabajo para definir el alcance.</p>
+  <div class="acciones">
+    <a class="btn btn-em wa-link" href="#" data-msg="Hola Daniela, te escribo de Banesco sobre la propuesta de KubIA."><svg aria-hidden="true"><use href="#i-wa"/></svg>Escribir por WhatsApp</a>
+    <a class="btn btn-ghost" href="mailto:kubiasoluciones@gmail.com">kubiasoluciones@gmail.com</a>
+  </div>
+  <a class="more" href="https://cumbre.kubiav.com/" target="_blank" rel="noopener">Cumbre Amazonas 2026</a>
+</div></section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <a href="/" class="logo" aria-label="KubIA Soluciones, inicio">Kub<span class="ia">IA<span class="sol">Soluciones</span></span></a>
+    <a href="/">← Volver al inicio</a>
+    <a href="mailto:kubiasoluciones@gmail.com">✉️ kubiasoluciones@gmail.com</a>
+    <a href="/privacidad">Política de privacidad</a>
+    <p class="copy">© <span id="yr">2026</span> KubIA Soluciones. Hecho en Amazonas, para el mundo.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var WA='584221754245';
+  function wa(msg){return 'https://wa.me/'+WA+'?text='+encodeURIComponent(msg)}
+  document.querySelectorAll('.wa-link').forEach(function(a){
+    a.href=wa(a.dataset.msg||'Hola Daniela');a.target='_blank';a.rel='noopener';
+  });
+  document.getElementById('yr').textContent=new Date().getFullYear();
+  var T=['El cliente pide desde un enlace, sin instalar nada.','Paga por pago móvil o transferencia.','Escribe la referencia del pago en su pedido.','El negocio revisa el banco y confirma el pago a mano. Toma tiempo y se presta a errores.','El pago se verifica solo, al momento.','El pedido sale y el pago queda conciliado en la gestión del negocio.'];
+  var B={3:'Hoy',4:'Con un banco aliado'};
+  var i=0,scr=document.querySelectorAll('.scr'),bars=document.querySelectorAll('#prog i'),
+    p=document.getElementById('prev'),n=document.getElementById('next'),b=document.getElementById('badge');
+  function show(){
+    scr.forEach(function(s,k){s.classList.toggle('on',k===i)});
+    bars.forEach(function(s,k){s.classList.toggle('on',k<=i)});
+    document.getElementById('stepNum').textContent='Paso '+(i+1)+' de 6';
+    document.getElementById('stepText').textContent=T[i];
+    if(B[i]){b.hidden=false;b.textContent=B[i];b.className='badge'+(i===3?' hoy':'')}else{b.hidden=true}
+    p.disabled=i===0;n.disabled=i===5;
+  }
+  p.onclick=function(){if(i>0){i--;show()}};
+  n.onclick=function(){if(i<5){i++;show()}};
+  show();
+})();
+</script>
+</body>
+</html>
