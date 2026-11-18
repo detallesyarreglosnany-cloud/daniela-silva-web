@@ -36,6 +36,9 @@
 | 2026-11-18 | Sin precios públicos en los planes; precio según diagnóstico. | Llegará flujo institucional; Daniela no quiere precios visibles. |
 | 2026-11-18 | "Comparte y gana" va al final de la página y fuera del menú. | No es el enfoque principal. |
 
+| 2026-11-18 | Frase de marca: **"Amazonas también avanza."** (franela frente, título del bloque de principios). Espalda: "Quedarse también es avanzar · KubIA". Siempre junto al logo. | Decisión de Daniela. |
+| 2026-11-18 | Trabajo por lotes: planear, construir, verificar, publicar una vez. | Pedido de Daniela. |
+
 ## Hallazgos del código (hechos verificados)
 - `PWApedidos/src/lib/pagos.ts`: registra pago móvil, transferencia, Zelle, Binance, efectivo y COP con referencia y **revisión manual**. No hay conexión con ningún banco.
 - No existe nada de SENIAT ni facturación fiscal en el código revisado.
