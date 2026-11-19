@@ -30,3 +30,4 @@
 - **2026-11-18** · LOTE 1 publicado en una sola vez: principios, problemas fusionados, soluciones agrupadas y /aliados.
 - **2026-11-18** · Propuesta Banesco publicada (página + PDF) antes de la visita de Daniela a la agencia.
 - **2026-11-19** · Logo nuevo aplicado en todo el sitio, favicon, og-image, app y PDF de Banesco.
+- **2026-11-19** · Corregido logo comprimido en computadora (flex:none) y menú visible desde 1100 px; probado de 760 a 1920 px en 9 páginas.
