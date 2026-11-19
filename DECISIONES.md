@@ -39,6 +39,8 @@
 | 2026-11-18 | Frase de marca: **"Amazonas también avanza."** (franela frente, título del bloque de principios). Espalda: "Quedarse también es avanzar · KubIA". Siempre junto al logo. | Decisión de Daniela. |
 | 2026-11-18 | Trabajo por lotes: planear, construir, verificar, publicar una vez. | Pedido de Daniela. |
 
+| 2026-11-19 | Logo nuevo oficial: "Kub" blanco (o tinta #0B1210 sobre fondo claro), "IA" turquesa #00C6AE, "Soluciones" debajo. Archivos: assets/logo-kubia(.webp/.png) y logo-kubia-dark. Favicon e íconos con "IA" turquesa sobre negro. | Rediseño de Daniela. |
+
 ## Hallazgos del código (hechos verificados)
 - `PWApedidos/src/lib/pagos.ts`: registra pago móvil, transferencia, Zelle, Binance, efectivo y COP con referencia y **revisión manual**. No hay conexión con ningún banco.
 - No existe nada de SENIAT ni facturación fiscal en el código revisado.

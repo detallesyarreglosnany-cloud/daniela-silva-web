@@ -30,6 +30,9 @@ Cambios por LOTES completos: planear → construir todo → verificar → public
 - Botón "Para empresas e instituciones" → /aliados.
 - Verificado: 0 guiones, 0 errores JS, sin scroll horizontal, anclas OK en móvil y escritorio.
 
+- Logo nuevo aplicado en las 40 páginas, app KubIA, favicon, ícono, imagen para redes y ficha PDF (2026-11-19).
+- [ ] Decidir si el verde del sitio pasa al turquesa del logo (#00C6AE).
+
 ## LOTE 2 · Banesco · PUBLICADO (2026-11-18)
 - kubiav.com/banesco (noindex): contexto, 6 formas de sumarse, recorrido de un pago, aporte de KubIA, equipo, próximo paso.
 - Ficha A4 de 1 página: kubiav.com/KubIA-Propuesta-Banesco.pdf.
